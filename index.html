@@ -1,675 +1,746 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js" >
+<html lang="ru" class="scroll-smooth">
 <head>
-
-    <!--- basic page needs
-    ================================================== -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hudson</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Персональный сайт-портфолио Еремея, студента и разработчика">
+    <title>Еремей | Портфолио</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script>
-        document.documentElement.classList.remove('no-js');
-        document.documentElement.classList.add('js');
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        base: '#FAF9F6',
+                        darkPrimary: '#0B1D32',
+                        darkSecondary: '#193D3B',
+                        accent: '#C8A165',
+                        darkAccent: '#9c7a4a',
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                        'slide-up': 'slideUp 0.6s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
     </script>
+    <style>
+        :root {
+            --color-base: #FAF9F6;
+            --color-dark-primary: #0B1D32;
+            --color-dark-secondary: #193D3B;
+            --color-accent: #C8A165;
+        }
 
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/styles.css">
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-base: #0B1D32;
+                --color-dark-primary: #FAF9F6;
+                --color-dark-secondary: #e6e6e6;
+                --color-accent: #C8A165;
+            }
+        }
 
-    <!-- favicons
-    ================================================== -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
 
+        body {
+            background-color: var(--color-base);
+            color: var(--color-dark-primary);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .logo-svg {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            fill: var(--color-dark-primary);
+        }
+
+        .accent-path {
+            fill: #C8A165;
+        }
+
+        .menu-active {
+            position: relative;
+        }
+
+        .menu-active:after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #C8A165;
+        }
+
+        .roadmap-card:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 2rem;
+            background-color: #C8A165;
+        }
+
+        .timeline-dot {
+            position: relative;
+        }
+
+        .timeline-dot:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -2.5rem;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #C8A165;
+            border: 2px solid var(--color-base);
+            box-shadow: 0 0 0 2px #C8A165;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+        }
+
+        @media (max-width: 768px) {
+            .roadmap-item {
+                padding-left: 2.5rem;
+            }
+
+            .timeline-dot:before {
+                left: -2rem;
+            }
+        }
+    </style>
 </head>
+<body class="bg-base text-darkPrimary min-h-screen flex flex-col">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 bg-base/90 backdrop-blur-sm py-4 border-b border-darkSecondary/20">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center">
+                <svg width="120" height="40" viewBox="0 0 240 80" class="logo-svg">
+                    <text x="0" y="50" font-size="40" font-weight="700">Еремей</text>
+                    <path d="M5 60 L 90 60 L 95 65 L 100 55 L 120 55" stroke="#C8A165" stroke-width="3" fill="none" class="accent-path"/>
+                </svg>
+            </a>
 
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="font-body text-lg hover:text-accent transition menu-active">Главная</a>
+                <a href="#blog" class="font-body text-lg hover:text-accent transition">Блог</a>
+                <a href="#roadmap" class="font-body text-lg hover:text-accent transition">Roadmap</a>
+                <a href="#culttech" class="font-body text-lg hover:text-accent transition">CultTech</a>
+                <a href="#contact" class="font-body text-lg hover:text-accent transition">Контакты</a>
+            </nav>
 
-<body id="top">
+            <!-- Language Toggle -->
+            <div class="flex items-center space-x-2">
+                <button class="font-body font-medium text-lg hover:text-accent transition">RU</button>
+                <div class="h-5 w-px bg-darkPrimary/30"></div>
+                <button class="font-body font-medium text-lg text-darkPrimary/50 hover:text-accent transition">EN</button>
+            </div>
 
-    
-    <!-- preloader
-    ================================================== -->
-    <div id="preloader">
-        <div id="loader" class="dots-fade">
-            <div></div>
-            <div></div>
-            <div></div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-base shadow-lg py-4 px-4">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="font-body text-lg hover:text-accent transition">Главная</a>
+                <a href="#blog" class="font-body text-lg hover:text-accent transition">Блог</a>
+                <a href="#roadmap" class="font-body text-lg hover:text-accent transition">Roadmap</a>
+                <a href="#culttech" class="font-body text-lg hover:text-accent transition">CultTech</a>
+                <a href="#contact" class="font-body text-lg hover:text-accent transition">Контакты</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="home" class="py-20 md:py-28">
+            <div class="container mx-auto px-4 md:px-6 max-w-5xl flex flex-col-reverse md:flex-row items-center">
+                <div class="md:w-1/2 mt-12 md:mt-0 animate-fade-in">
+                    <h1 class="font-heading text-4xl md:text-6xl font-bold leading-tight">
+                        Еремей. <br>
+                        <span class="text-accent">Студент</span>, создающий технологии будущего
+                    </h1>
+                    <p class="font-body text-lg md:text-xl mt-6 text-darkSecondary">
+                        Исследую пересечение культуры, технологий и предпринимательства для создания новых форм диалога и взаимодействия в цифровом мире.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <a href="#contact" class="px-8 py-3 bg-accent text-base font-bold font-body rounded-md hover:bg-darkAccent transition text-white">
+                            Связаться со мной
+                        </a>
+                        <a href="#culttech" class="px-8 py-3 border border-accent text-accent font-bold font-body rounded-md hover:bg-accent/10 transition">
+                            Присоединиться к сообществу
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center animate-fade-in">
+                    <div class="relative">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-64 h-64 md:w-80 md:h-80 bg-accent/10 border-accent/30 flex items-center justify-center">
+                            <i class="fas fa-user text-accent/20 text-9xl"></i>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-accent px-6 py-2 text-white font-bold font-heading rounded-md">
+                            Student & Creator
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Preview Section -->
+        <section id="blog" class="py-20 bg-base-100">
+            <div class="container mx-auto px-4 md:px-6 max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold">
+                        Последние размышления <span class="text-accent">в блоге</span>
+                    </h2>
+                    <p class="font-body text-lg text-darkSecondary mt-4 max-w-2xl mx-auto">
+                        Мысли о культуре, технологиях и образовании, которые формируют современный мир и мой взгляд на будущее
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Blog Post 1 -->
+                    <div class="bg-base border border-darkPrimary/10 rounded-xl overflow-hidden hover:shadow-lg transition animate-slide-up">
+                        <div class="h-48 bg-gradient-to-r from-darkPrimary/10 to-accent/10 flex items-center justify-center">
+                            <i class="fas fa-book text-accent/50 text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-sm font-body font-medium text-accent">Культура</span>
+                            <h3 class="font-heading text-xl font-bold mt-2">Образование будущего: Что нам нужно?</h3>
+                            <p class="font-body text-darkSecondary mt-3">
+                                Размышления о том, как должны измениться образовательные системы в мире технологий и искусственного интеллекта.
+                            </p>
+                            <a href="#" class="mt-4 inline-block font-body font-medium text-accent hover:underline">
+                                Читать полностью →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 2 -->
+                    <div class="bg-base border border-darkPrimary/10 rounded-xl overflow-hidden hover:shadow-lg transition animate-slide-up animation-delay-200">
+                        <div class="h-48 bg-gradient-to-r from-darkSecondary/10 to-accent/10 flex items-center justify-center">
+                            <i class="fas fa-microchip text-accent/50 text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-sm font-body font-medium text-accent">Технологии</span>
+                            <h3 class="font-heading text-xl font-bold mt-2">Открытый исходный код как философия</h3>
+                            <p class="font-body text-darkSecondary mt-3">
+                                Как принципы Open Source формируют новую этику создания технологий и коллективного знания.
+                            </p>
+                            <a href="#" class="mt-4 inline-block font-body font-medium text-accent hover:underline">
+                                Читать полностью →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 3 -->
+                    <div class="bg-base border border-darkPrimary/10 rounded-xl overflow-hidden hover:shadow-lg transition animate-slide-up animation-delay-300">
+                        <div class="h-48 bg-gradient-to-r from-accent/10 to-darkSecondary/10 flex items-center justify-center">
+                            <i class="fas fa-seedling text-accent/50 text-6xl"></i>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-sm font-body font-medium text-accent">Предпринимательство</span>
+                            <h3 class="font-heading text-xl font-bold mt-2">Построение бизнеса с душой</h3>
+                            <p class="font-body text-darkSecondary mt-3">
+                                Как создавать компании, которые не только зарабатывают, но и вносят вклад в культурное развитие общества.
+                            </p>
+                            <a href="#" class="mt-4 inline-block font-body font-medium text-accent hover:underline">
+                                Читать полностью →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="#" class="px-8 py-3 border border-accent text-accent font-bold font-body rounded-md hover:bg-accent/10 transition inline-flex items-center">
+                        Все записи <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap Section -->
+        <section id="roadmap" class="py-20 bg-base-100">
+            <div class="container mx-auto px-4 md:px-6 max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold">
+                        Мой <span class="text-accent">путь</span>
+                    </h2>
+                    <p class="font-body text-lg text-darkSecondary mt-4 max-w-2xl mx-auto">
+                        Важные вехи и поворотные моменты, которые сформировали мой академический и профессиональный опыт
+                    </p>
+                </div>
+
+                <div class="relative">
+                    <!-- Roadmap Line -->
+                    <div class="hidden md:block absolute top-0 left-1/2 w-1 h-full bg-accent/30 transform -translate-x-1/2"></div>
+
+                    <div class="space-y-12">
+                        <!-- Roadmap Item 1 -->
+                        <div class="roadmap-item flex flex-col md:flex-row gap-8">
+                            <div class="md:w-1/2 md:pr-12 md:text-right timeline-dot">
+                                <div class="roadmap-card">
+                                    <h3 class="font-heading text-2xl font-bold">2023</h3>
+                                    <p class="font-body text-accent mt-2">Академический прорыв</p>
+                                    <p class="font-body mt-3">
+                                        Опубликовал первое исследование в области цифровых гуманитарных наук. Начал сотрудничество с международной лабораторией при университете.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 md:mt-0 mt-4 flex justify-center md:block">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-48 bg-accent/10 border-accent/10 flex items-center justify-center">
+                                    <i class="fas fa-medal text-accent/50 text-6xl"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Roadmap Item 2 -->
+                        <div class="roadmap-item flex flex-col md:flex-row gap-8">
+                            <div class="md:w-1/2 md:pr-12 md:text-right md:hidden timeline-dot">
+                                <div class="roadmap-card">
+                                    <h3 class="font-heading text-2xl font-bold">2022</h3>
+                                    <p class="font-body text-accent mt-2">Технологический скачок</p>
+                                    <p class="font-body mt-3">
+                                        Завершил курсы по machine learning и блокчейну. Стал участником летней школы "Культура в цифровом измерении" в Берлине.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 md:mt-0 mt-4 flex justify-center md:block">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-48 bg-accent/10 border-accent/10 flex items-center justify-center">
+                                    <i class="fas fa-rocket text-accent/50 text-6xl"></i>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 md:text-left timeline-dot hidden md:block">
+                                <div class="roadmap-card">
+                                    <h3 class="font-heading text-2xl font-bold">2022</h3>
+                                    <p class="font-body text-accent mt-2">Технологический скачок</p>
+                                    <p class="font-body mt-3">
+                                        Завершил курсы по machine learning и блокчейну. Стал участником летней школы "Культура в цифровом измерении" в Берлине.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Roadmap Item 3 -->
+                        <div class="roadmap-item flex flex-col md:flex-row gap-8">
+                            <div class="md:w-1/2 md:pr-12 md:text-right timeline-dot">
+                                <div class="roadmap-card">
+                                    <h3 class="font-heading text-2xl font-bold">2021</h3>
+                                    <p class="font-body text-accent mt-2">Начало пути</p>
+                                    <p class="font-body mt-3">
+                                        Поступил на факультет цифровых гуманитарных наук. Основал первый студенческий клуб на стыке технологий и искусства.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 md:mt-0 mt-4 flex justify-center md:block">
+                                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-48 bg-accent/10 border-accent/10 flex items-center justify-center">
+                                    <i class="fas fa-map-signs text-accent/50 text-6xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CultTech Hub Section -->
+        <section id="culttech" class="py-20 bg-base">
+            <div class="container mx-auto px-4 md:px-6 max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold">
+                        Сообщество <span class="text-accent">CultTech Hub</span>
+                    </h2>
+                    <p class="font-body text-lg text-darkSecondary mt-4 max-w-2xl mx-auto">
+                        Место для соединения идей и людей, работающих на пересечении культуры, IT и предпринимательства
+                    </p>
+                </div>
+
+                <!-- Filters -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button class="px-6 py-2 bg-accent text-white font-bold font-body rounded-full">Все</button>
+                    <button class="px-6 py-2 bg-base border border-accent text-accent font-bold font-body rounded-full hover:bg-accent/10 transition">Культура</button>
+                    <button class="px-6 py-2 bg-base border border-accent text-accent font-bold font-body rounded-full hover:bg-accent/10 transition">IT</button>
+                    <button class="px-6 py-2 bg-base border border-accent text-accent font-bold font-body rounded-full hover:bg-accent/10 transition">Предпринимательство</button>
+                </div>
+
+                <!-- Members Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Member 1 -->
+                    <div class="bg-base border border-darkPrimary/10 rounded-xl p-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-accent/20 flex items-center justify-center">
+                                <i class="fas fa-user text-accent/70 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading text-lg font-bold">Анна С.</h3>
+                                <p class="font-body text-sm text-accent">Искусство и технологии</p>
+                            </div>
+                        </div>
+                        <p class="font-body mt-4">
+                            Создаю интерактивные инсталляции на стыке искусства и технологий. Работаю с AR и проекционным мэппингом.
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="inline-flex items-center text-accent font-bold font-body">
+                                <i class="fab fa-telegram text-lg mr-2"></i> @ann_digitalart
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div class="bg-base border border-darkPrimary/10 rounded-xl p-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-accent/20 flex items-center justify-center">
+                                <i class="fas fa-user text-accent/70 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading text-lg font-bold">Максим П.</h3>
+                                <p class="font-body text-sm text-accent">Blockchain для культуры</p>
+                            </div>
+                        </div>
+                        <p class="font-body mt-4">
+                            Разрабатываю решения для отслеживания происхождения культурных артефактов и управления правами с помощью блокчейна.
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="inline-flex items-center text-accent font-bold font-body">
+                                <i class="fab fa-linkedin text-lg mr-2"></i> Максим Петров
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Member 3 -->
+                    <div class="bg-base border border-darkPrimary/10 rounded-xl p-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 rounded-full bg-accent/20 flex items-center justify-center">
+                                <i class="fas fa-user text-accent/70 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-heading text-lg font-bold">Дарья К.</h3>
+                                <p class="font-body text-sm text-accent">Культурные стартапы</p>
+                            </div>
+                        </div>
+                        <p class="font-body mt-4">
+                            Инвестирую и консультирую проекты в сфере культурных инноваций. В фокусе — социальное влияние и устойчивость.
+                        </p>
+                        <div class="mt-4">
+                            <a href="#" class="inline-flex items-center text-accent font-bold font-body">
+                                <i class="fab fa-telegram text-lg mr-2"></i> @daria_invest
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add Member Button -->
+                <div class="mt-16 text-center">
+                    <button id="open-member-form" class="px-8 py-4 bg-accent text-white font-bold font-body rounded-full hover:bg-darkAccent transition text-lg">
+                        <i class="fas fa-plus mr-3"></i> Предложить контакт
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-base-100">
+            <div class="container mx-auto px-4 md:px-6 max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold">
+                        Давайте <span class="text-accent">обсудим</span>
+                    </h2>
+                    <p class="font-body text-lg text-darkSecondary mt-4 max-w-2xl mx-auto">
+                        Свяжитесь со мной для сотрудничества, вопросов или просто содержательной дискуссии
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-base rounded-xl border border-darkPrimary/10 p-8">
+                        <h3 class="font-heading text-2xl font-bold">Написать сообщение</h3>
+                        <form class="mt-6 space-y-6">
+                            <div>
+                                <label class="font-body font-medium block mb-2">Ваше имя</label>
+                                <input type="text" class="w-full px-4 py-3 border border-darkPrimary/20 rounded-lg focus:ring-accent focus:border-accent">
+                            </div>
+                            <div>
+                                <label class="font-body font-medium block mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 border border-darkPrimary/20 rounded-lg focus:ring-accent focus:border-accent">
+                            </div>
+                            <div>
+                                <label class="font-body font-medium block mb-2">Сообщение</label>
+                                <textarea rows="4" class="w-full px-4 py-3 border border-darkPrimary/20 rounded-lg focus:ring-accent focus:border-accent"></textarea>
+                            </div>
+                            <button type="submit" class="w-full px-8 py-4 bg-accent text-white font-bold font-body rounded-lg hover:bg-darkAccent transition">
+                                Отправить сообщение
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Support and Socials -->
+                    <div class="space-y-8">
+                        <!-- Support Card -->
+                        <div class="bg-base border border-darkPrimary/10 rounded-xl p-8">
+                            <div class="flex justify-between items-center">
+                                <h3 class="font-heading text-2xl font-bold">Поддержка проектов</h3>
+                                <button id="open-support" class="text-accent hover:text-darkAccent">
+                                    <i class="fas fa-info-circle text-xl"></i>
+                                </button>
+                            </div>
+                            <p class="font-body mt-4">
+                                Если вы хотите поддержать мои исследования и проекты на стыке культуры и технологий, это можно сделать через криптовалютные платежи
+                            </p>
+                            <div class="mt-6">
+                                <button id="show-crypto" class="px-6 py-3 bg-accent/10 text-accent font-bold font-body rounded-lg hover:bg-accent/20 transition">
+                                    <i class="fas fa-wallet mr-2"></i> Показать кошельки
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Social Media -->
+                        <div class="bg-base border border-darkPrimary/10 rounded-xl p-8">
+                            <h3 class="font-heading text-2xl font-bold">Связь через соцсети</h3>
+                            <div class="flex gap-4 mt-6">
+                                <a href="#" class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent hover:bg-accent/20 transition">
+                                    <i class="fab fa-telegram text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent hover:bg-accent/20 transition">
+                                    <i class="fab fa-github text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent hover:bg-accent/20 transition">
+                                    <i class="fab fa-linkedin-in text-xl"></i>
+                                </a>
+                                <a href="#" class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent hover:bg-accent/20 transition">
+                                    <i class="fab fa-twitter text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-darkPrimary text-base py-12">
+        <div class="container mx-auto px-4 md:px-6 max-w-5xl">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <a href="#" class="flex items-center">
+                        <svg width="120" height="40" viewBox="0 0 240 80" class="logo-svg">
+                            <text x="0" y="50" font-size="40" font-weight="700" fill="#FAF9F6">Еремей</text>
+                            <path d="M5 60 L 90 60 L 95 65 L 100 55 L 120 55" stroke="#C8A165" stroke-width="3" fill="none" class="accent-path"/>
+                        </svg>
+                    </a>
+                    <p class="font-body mt-4 max-w-xs">
+                        Платформа для изучения и создания на пересечении культуры и технологий. Студент и исследователь.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="font-heading text-xl font-bold text-white mb-4">Разделы</h3>
+                    <ul class="space-y-2 font-body">
+                        <li><a href="#home" class="hover:text-accent transition">Главная</a></li>
+                        <li><a href="#blog" class="hover:text-accent transition">Блог</a></li>
+                        <li><a href="#roadmap" class="hover:text-accent transition">Roadmap</a></li>
+                        <li><a href="#culttech" class="hover:text-accent transition">CultTech</a></li>
+                        <li><a href="#contact" class="hover:text-accent transition">Контакты</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-heading text-xl font-bold text-white mb-4">Ресурсы</h3>
+                    <ul class="space-y-2 font-body">
+                        <li><a href="#" class="hover:text-accent transition">Моё резюме</a></li>
+                        <li><a href="#" class="hover:text-accent transition">Исследования</a></li>
+                        <li><a href="#" class="hover:text-accent transition">GitHub проекты</a></li>
+                        <li><a href="#" class="hover:text-accent transition">Архив статей</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-12 pt-8 text-center">
+                <p class="font-body">
+                    © 2023 Еремей. Все права защищены.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+
+    <!-- Add Member Modal -->
+    <div id="member-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+        <div class="modal-overlay absolute inset-0"></div>
+        <div class="relative bg-base rounded-xl p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <button id="close-member-form" class="absolute top-4 right-4 text-2xl text-darkPrimary hover:text-accent">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <h3 class="font-heading text-3xl font-bold">Добавить контакт в CultTech Hub</h3>
+            <p class="font-body mt-2 text-darkSecondary">
+                Предложите интересного человека для сообщества, работающего на пересечении культуры, IT и предпринимательства
+            </p>
+
+            <form class="mt-8 space-y-6">
+                <div>
+                    <label class="font-body font-medium block mb-2">Имя и фамилия *</label>
+                    <input type="text" required class="w-full px-4 py-3 border border-darkPrimary/20 rounded-lg focus:ring-accent focus:border-accent">
+                </div>
+                <div>
+                    <label class="font-body font-medium block mb-2">Сфера деятельности *</label>
+                    <select class="w-full px-4 py-3 border border-darkPrimary/20 rounded-lg focus:ring-accent focus:border-accent">
+                        <option>Культура</option>
+                        <option>IT</option>
+                        <option>Предпринимательство</option>
+                        <option>Другое</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="font-body font-medium block mb-2">Краткое описание *</label>
+                    <textarea rows="3" required class="w-full px-4 py-3 border border-darkPrimary/20 rounded-lg focus:ring-accent focus:border-accent"></textarea>
+                </div>
+                <div>
+                    <label class="font-body font-medium block mb-2">Ссылка на Telegram или LinkedIn *</label>
+                    <input type="url" required class="w-full px-4 py-3 border border-darkPrimary/20 rounded-lg focus:ring-accent focus:border-accent">
+                </div>
+                <div>
+                    <button type="submit" class="w-full px-8 py-4 bg-accent text-white font-bold font-body rounded-lg hover:bg-darkAccent transition">
+                        Отправить заявку
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 
+    <!-- Support Modal -->
+    <div id="support-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+        <div class="modal-overlay absolute inset-0"></div>
+        <div class="relative bg-base rounded-xl p-8 max-w-md w-full mx-4">
+            <button id="close-support" class="absolute top-4 right-4 text-2xl text-darkPrimary hover:text-accent">
+                <i class="fas fa-times"></i>
+            </button>
 
-    <!-- page wrap
-    ================================================== -->
-    <div id="page" class="s-pagewrap">
+            <h3 class="font-heading text-3xl font-bold text-center">Поддержка проектов</h3>
+            <p class="font-body mt-4 text-center text-darkSecondary">
+                Поддержите исследования и проекты на стыке культуры и технологий
+            </p>
 
-
-        <!-- # site header 
-        ================================================== -->
-        <header class="s-header">
-            <div class="row s-header__inner">
-
-                <div class="s-header__block">
-                    <div class="s-header__logo">
-                        <a class="logo" href="index.html">
-                            <img src="images/logo.svg" alt="Homepage">
-                        </a>
+            <div class="mt-8 space-y-8">
+                <!-- USDT -->
+                <div class="bg-base-100 p-6 rounded-lg border border-accent/30">
+                    <div class="flex flex-col items-center">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-48 h-48 bg-accent/10 border-accent/10 flex items-center justify-center">
+                            <i class="fas fa-qrcode text-accent/50 text-6xl"></i>
+                        </div>
+                        <p class="font-body font-bold text-center mt-4">USDT (TRC-20)</p>
+                        <div class="mt-3 flex items-center justify-center bg-base-100 border border-accent/20 rounded-lg px-4 py-2">
+                            <span class="font-mono text-sm">TX3R9...gH76s</span>
+                            <button class="ml-2 text-accent">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
                     </div>
+                </div>
 
-                    <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
-                </div> <!-- end s-header__block -->
-
-                <nav class="s-header__nav">    
-                    <ul class="s-header__menu-links">
-                        <li class="current"><a class="smoothscroll" href="#intro">Intro</a></li>
-                        <li><a class="smoothscroll" href="#about">About</a></li>
-                        <li><a class="smoothscroll" href="#works">Works</a></li>
-                        <li><a class="smoothscroll" href="#footer">Contact</a></li>
-                    </ul> <!-- s-header__menu-links -->    
-                </nav> <!-- end s-header__nav -->
-
-            </div> <!-- end s-header__inner -->
-        </header> <!-- end s-header -->
-
-
-        <!-- # intro
-        ================================================== -->
-        <section id="intro" class="s-intro target-section">
-
-            <div class="row s-intro__content width-sixteen-col">
-                <div class="column lg-12 s-intro__content-inner grid-block grid-16">
-                    
-                    <div class="s-intro__content-text">
-
-                        <div class="s-intro__content-pretitle text-pretitle">Hello</div>
-                        <h1 class="s-intro__content-title">
-                        I'm Jonathan Doe <br>
-                        a product designer <br>
-                        base in Somewhere.
-                        </h1>                            
-
-                        <div class="s-intro__content-btns">
-                            <a class="smoothscroll btn" href="#about">More About Me</a>
-                            <a class="smoothscroll btn btn--stroke" href="#footer">Get In Touch</a>
-                        </div> <!-- s-intro__content-btns -->   
-
-                    </div> <!-- s-intro__content-text -->                     
-                    
-                </div> <!-- s-intro__content-inner -->  
-            </div> <!-- s-intro__content -->
-
-            <ul class="s-intro__social social-list">
-                <li>
-                    <a href="#0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg>
-                        <span class="u-screen-reader-text">Facebook</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809 c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793 c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05 c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032 c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028 c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22 c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z"></path></svg>
-                        <span class="u-screen-reader-text">Twitter</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg>
-                        <span class="u-screen-reader-text">Instagram</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M20.66 6.98a9.932 9.932 0 0 0-3.641-3.64C15.486 2.447 13.813 2 12 2s-3.486.447-5.02 1.34c-1.533.893-2.747 2.107-3.64 3.64S2 10.187 2 12s.446 3.487 1.34 5.02a9.924 9.924 0 0 0 3.641 3.64C8.514 21.553 10.187 22 12 22s3.486-.447 5.02-1.34a9.932 9.932 0 0 0 3.641-3.64C21.554 15.487 22 13.813 22 12s-.446-3.487-1.34-5.02zM12 3.66c2 0 3.772.64 5.32 1.919-.92 1.174-2.286 2.14-4.1 2.9-1.002-1.813-2.088-3.327-3.261-4.54A7.715 7.715 0 0 1 12 3.66zM5.51 6.8a8.116 8.116 0 0 1 2.711-2.22c1.212 1.201 2.325 2.7 3.34 4.5-2 .6-4.114.9-6.341.9-.573 0-1.006-.013-1.3-.04A8.549 8.549 0 0 1 5.51 6.8zM3.66 12c0-.054.003-.12.01-.2.007-.08.01-.146.01-.2.254.014.641.02 1.161.02 2.666 0 5.146-.367 7.439-1.1.187.373.381.793.58 1.26-1.32.293-2.674 1.006-4.061 2.14S6.4 16.247 5.76 17.5c-1.4-1.587-2.1-3.42-2.1-5.5zM12 20.34c-1.894 0-3.594-.587-5.101-1.759.601-1.187 1.524-2.322 2.771-3.401 1.246-1.08 2.483-1.753 3.71-2.02a29.441 29.441 0 0 1 1.56 6.62 8.166 8.166 0 0 1-2.94.56zm7.08-3.96a8.351 8.351 0 0 1-2.58 2.621c-.24-2.08-.7-4.107-1.379-6.081.932-.066 1.765-.1 2.5-.1.799 0 1.686.034 2.659.1a8.098 8.098 0 0 1-1.2 3.46zm-1.24-5c-1.16 0-2.233.047-3.22.14a27.053 27.053 0 0 0-.68-1.62c2.066-.906 3.532-2.006 4.399-3.3 1.2 1.414 1.854 3.027 1.96 4.84-.812-.04-1.632-.06-2.459-.06z"></path></svg>
-                        <span class="u-screen-reader-text">Dribbble</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#0">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M11.99 2C6.472 2 2 6.473 2 11.99c0 4.232 2.633 7.85 6.35 9.306-.088-.79-.166-2.006.034-2.868.182-.78 1.172-4.966 1.172-4.966s-.299-.599-.299-1.484c0-1.388.805-2.425 1.808-2.425.853 0 1.264.64 1.264 1.407 0 .858-.546 2.139-.827 3.327-.235.994.499 1.805 1.479 1.805 1.775 0 3.141-1.872 3.141-4.575 0-2.392-1.719-4.064-4.173-4.064-2.843 0-4.512 2.132-4.512 4.335 0 .858.331 1.779.744 2.28a.3.3 0 0 1 .069.286c-.076.315-.245.994-.277 1.133-.044.183-.145.222-.335.134-1.247-.581-2.027-2.405-2.027-3.871 0-3.151 2.289-6.045 6.601-6.045 3.466 0 6.159 2.469 6.159 5.77 0 3.444-2.171 6.213-5.184 6.213-1.013 0-1.964-.525-2.29-1.146l-.623 2.374c-.225.868-.834 1.956-1.241 2.62a10 10 0 0 0 2.958.445c5.517 0 9.99-4.473 9.99-9.99S17.507 2 11.99 2"></path></svg>
-                        <span class="u-screen-reader-text">Pinterest</span>
-                    </a>
-                </li>
-            </ul> <!-- end s-intro__social -->
-
-            <div class="s-intro__content-media">                               
-                <img src="images/intro-bg.jpg" srcset="images/intro-bg.jpg 1x, images/intro-bg.jpg 2x" alt="">
-            </div> <!-- s-intro__content-media -->                
-
-            <div class="s-intro__btn-download">
-                <a class="btn btn--stroke" href="#0">Get My CV</a>
-            </div> <!-- end s-intro__btn-download -->
-            
-            <div class="s-intro__scroll-down">
-                <a href="#about" class="smoothscroll">
-                    <div class="scroll-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M11.178 19.569a.998.998 0 0 0 1.644 0l9-13A.999.999 0 0 0 21 5H3a1.002 1.002 0 0 0-.822 1.569l9 13z"></path></svg>
+                <!-- TON -->
+                <div class="bg-base-100 p-6 rounded-lg border border-accent/30">
+                    <div class="flex flex-col items-center">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-48 h-48 bg-accent/10 border-accent/10 flex items-center justify-center">
+                            <i class="fas fa-qrcode text-accent/50 text-6xl"></i>
+                        </div>
+                        <p class="font-body font-bold text-center mt-4">TON / TonCoin</p>
+                        <div class="mt-3 flex items-center justify-center bg-base-100 border border-accent/20 rounded-lg px-4 py-2">
+                            <span class="font-mono text-sm">EQZ8P...KJ45e</span>
+                            <button class="ml-2 text-accent">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
                     </div>
-                    <span class="scroll-text u-screen-reader-text">Scroll Down</span>
-                </a>
-            </div> <!-- s-intro__scroll-down -->
-
-        </section> <!-- end s-intro -->
-
-
-        <!-- # about
-        ================================================== -->
-        <section id="about" class="s-about target-section">
-
-            <div class="row s-about__content">
-                <div class="column xl-12">    
-                    
-                    <div class="section-header" data-num="01">
-                        <h2 class="text-display-title">About Me.</h2>
-                    </div> <!-- end section-header -->
-
-                    <p class="attention-getter">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas explicabo id debitis cupiditate cumque, error quia! Debitis cupiditate ipsa nihil labore, earum atque dolor quos saepe vero inventore, odit nam deleniti accusantium omnis mollitia consequatur harum incidunt! Ex modi aut repudiandae doloremque commodi recusandae labore sit. Perspiciatis omnis dolor dolores fuga iusto, recusandae animi nisi consequuntur exercitationem id maxime earum pariatur voluptas! Porro non quos quae tempora fuga quis sequi minus sed sint debitis reiciendis, nostrum natus suscipit iusto odio.
-                    </p>
-
-                    <p class="attention-getter">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit. Ut enim ad minim     
-                    </p>
-
-                    <div class="grid-list-items s-about__blocks">
-
-                        <div class="grid-list-items__item s-about__block">
-                            <h4 class="s-about__block-title">Experience</h4>
-                            <ul class="s-about__list">
-                                <li>
-                                    Spotify
-                                    <span>Product Designer</span>
-                                </li>
-                                <li>
-                                    Dropbox
-                                    <span>Interface Developer</span>
-                                </li>
-                                <li>
-                                    Google
-                                    <span>Lead UI Designer</span>
-                                </li>
-                                <li>
-                                    Figma
-                                    <span>UI Designer</span>
-                                </li>
-                                <li>
-                                    Microsoft
-                                    <span>UI Designer</span>
-                                </li>
-                            </ul>
-                        </div> <!--end s-about__block -->
-
-                        <div class="grid-list-items__item s-about__block">
-                            <h4 class="s-about__block-title">Awards</h4>
-
-                            <ul class="s-about__list">
-                                <li>
-                                    <a href="#0">
-                                        Site Of The Month
-                                        <span>Awwwards — 2023</span>
-                                    </a>                                        
-                                </li>
-                                <li>
-                                    <a href="#0">
-                                        Site Of The Day
-                                        <span>Awwwards — 2023</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#0">
-                                        Agency of The Year
-                                        <span>Awwwards — 2022</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#0">
-                                        FWA of The Month
-                                        <span>FWA — 2022</span>
-                                    </a>
-                                </li><li>
-                                    <a href="#0">
-                                        Site Of The Month
-                                        <span>Awwwards — 2022</span>
-                                    </a>                                        
-                                </li>
-                            </ul>
-                        </div> <!--end s-about__block -->
-                        
-                        <div class="grid-list-items__item s-about__block">
-                            <h4 class="s-about__block-title">Skills</h4>
-
-                            <ul class="s-about__list">
-                                <li>
-                                    Product Design
-                                </li>
-                                <li>
-                                    UI/UX Design
-                                </li>
-                                <li>
-                                    Prototyping
-                                </li>
-                                <li>
-                                    Frontend Development
-                                </li>
-                                <li>
-                                    Illustration
-                                </li>
-                                <li>
-                                    Visual Design
-                                </li>
-                            </ul>
-                        </div> <!--end s-about__block -->
-
-                    </div> <!-- grid-list-items -->
-
-                </div> <!--end column -->
-            </div> <!--end s-about__content -->
-            
-        </section> <!-- end s-about -->   
-
-
-
-        <!-- # works
-        ================================================== -->
-        <section id="works" class="s-works target-section">
-
-            <div class="row">
-                <div class="column xl-12">
-                    <div class="section-header" data-num="02">
-                        <h2 class="text-display-title">Selected Works.</h2>
-                    </div> <!-- end section-header -->
                 </div>
             </div>
 
-            <div class="row folio-entries">
-
-                <div class="column entry">
-                    <a href="images/folio/gallery/g-turban.jpg" class="entry__link glightbox" data-glightbox="title: White Knit Cap; description: .entry__desc-01">
-                        <div class="entry__thumb">
-                            <img src="images/folio/white_turban.jpg" srcset="images/folio/white_turban.jpg 1x, images/folio/white_turban@2x.jpg 2x" alt="">
-                        </div>
-                        <div class="entry__info">
-                            <h4 class="entry__title">White Knit Cap</h4>
-                            <div class="entry__cat">Frontend Design</div>
-                        </div>
-                    </a>
-
-                    <div class="glightbox-desc entry__desc-01">
-                        <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Inventore ipsum iste soluta fugiat, impedit illum ducimus 
-                        deleniti facilis ab, tempora non! Nisi, tempora provident.
-                        <a href="https://www.behance.net/">Project Link</a>.
-                        </p>
-                    </div>
-                </div> <!-- entry -->
-
-                <div class="column entry">
-                    <a href="images/folio/gallery/g-woodcraft.jpg" class="entry__link glightbox" data-glightbox="title: WoodCraft; description: .entry__desc-02">
-                        <div class="entry__thumb">
-                            <img src="images/folio/woodcraft.jpg" srcset="images/folio/woodcraft.jpg 1x, images/folio/woodcraft@2x.jpg 2x" alt="">
-                        </div>
-                        <div class="entry__info">
-                            <h4 class="entry__title">WoodCraft</h4>
-                            <div class="entry__cat">Product Design</div>
-                        </div>
-                    </a>
-
-                    <div class="glightbox-desc entry__desc-02">
-                        <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Inventore ipsum iste soluta fugiat, impedit illum ducimus 
-                        deleniti facilis ab, tempora non! Nisi, tempora provident.
-                        <a href="https://www.behance.net/">Project Link</a>.
-                        </p>
-                    </div>
-                </div> <!-- entry -->
-
-                <div class="column entry">
-                    <a href="images/folio/gallery/g-tulips.jpg" class="entry__link glightbox" data-glightbox="title: Caffeine & Tulips; description: .entry__desc-03">
-                        <div class="entry__thumb">
-                            <img src="images/folio/caffeine_and_tulips.jpg" srcset="images/folio/caffeine_and_tulips.jpg 1x, images/folio/caffeine_and_tulips@2x.jpg 2x" alt="">
-                        </div>
-                        <div class="entry__info">
-                            <h4 class="entry__title">Caffeine & Tulips</h4>
-                            <div class="entry__cat">Brand Identity</div>
-                        </div>
-                    </a>
-
-                    <div class="glightbox-desc entry__desc-03">
-                        <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Inventore ipsum iste soluta fugiat, impedit illum ducimus 
-                        deleniti facilis ab, tempora non! Nisi, tempora provident.
-                        <a href="https://www.behance.net/">Project Link</a>.
-                        </p>
-                    </div>
-                </div> <!-- entry -->
-
-                <div class="column entry">
-                    <a href="images/folio/gallery/g-grayscale.jpg" class="entry__link glightbox" data-glightbox="title: Grayscale; description: .entry__desc-04">
-                        <div class="entry__thumb">
-                            <img src="images/folio/grayscale.jpg" srcset="images/folio/grayscale.jpg 1x, images/folio/grayscale@2x.jpg 2x" alt="">
-                        </div>
-                        <div class="entry__info">
-                            <h4 class="entry__title">Grayscale</h4>
-                            <div class="entry__cat">Product Design</div>
-                        </div>
-                    </a>
-
-                    <div class="glightbox-desc entry__desc-04">
-                        <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Inventore ipsum iste soluta fugiat, impedit illum ducimus 
-                        deleniti facilis ab, tempora non! Nisi, tempora provident.
-                        <a href="https://www.behance.net/">Project Link</a>.
-                        </p>
-                    </div>
-                </div> <!-- entry -->
-
-                <div class="column entry">
-                    <a href="images/folio/gallery/g-lamp.jpg" class="entry__link glightbox" data-glightbox="title: The Lamp; description: .entry__desc-05">
-                        <div class="entry__thumb">
-                            <img src="images/folio/lamp.jpg" srcset="images/folio/lamp.jpg 1x, images/folio/lamp@2x.jpg 2x" alt="">
-                        </div>
-                        <div class="entry__info">
-                            <h4 class="entry__title">The Lamp</h4>
-                            <div class="entry__cat">Brand Identity</div>
-                        </div>
-                    </a>
-
-                    <div class="glightbox-desc entry__desc-05">
-                        <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Inventore ipsum iste soluta fugiat, impedit illum ducimus 
-                        deleniti facilis ab, tempora non! Nisi, tempora provident.
-                        <a href="https://www.behance.net/">Project Link</a>.
-                        </p>
-                    </div>
-                </div> <!-- entry -->
-
-                <div class="column entry">
-                    <a href="images/folio/gallery/g-tropical.jpg" class="entry__link glightbox" data-glightbox="title: Tropical; description: .entry__desc-06">
-                        <div class="entry__thumb">
-                            <img src="images/folio/tropical.jpg" srcset="images/folio/tropical.jpg 1x, images/folio/tropical@2x.jpg 2x" alt="">
-                        </div>
-                        <div class="entry__info">
-                            <h4 class="entry__title">Tropical</h4>
-                            <div class="entry__cat">Frontend Design</div>
-                        </div>
-                    </a>
-
-                    <div class="glightbox-desc entry__desc-06">
-                        <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Inventore ipsum iste soluta fugiat, impedit illum ducimus 
-                        deleniti facilis ab, tempora non! Nisi, tempora provident.
-                        <a href="https://www.behance.net/">Project Link</a>.
-                        </p>
-                    </div>
-                </div> <!-- entry --> 
-
-            </div> <!-- folio entries -->
-
-
-            <div class="row s-testimonials">
-                <div class="column xl-12">
-
-                    <h3 class="s-testimonials__header">Hear it from My Happy Clients</h3>
-    
-                    <div class="swiper-container s-testimonials__slider">
-    
-                        <div class="swiper-wrapper">
-
-                            <div class="s-testimonials__slide swiper-slide">
-                                <div class="s-testimonials__author">
-                                    <img src="images/avatars/user-02.jpg" alt="Author image" class="s-testimonials__avatar">
-                                    <cite class="s-testimonials__cite">
-                                        <strong>John Rockefeller</strong>
-                                        <span>Standard Oil Co.</span>
-                                    </cite>
-                                </div>
-                                <p>
-                                Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. 
-                                Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum.
-                                Laudantium quia consequatur molestias.
-                                </p>
-                            </div> <!-- end s-testimonials__slide -->
-            
-                            <div class="s-testimonials__slide swiper-slide">
-                                <div class="s-testimonials__author">
-                                    <img src="images/avatars/user-03.jpg" alt="Author image" class="s-testimonials__avatar">
-                                    <cite class="s-testimonials__cite">
-                                        <strong>Andrew Carnegie</strong>
-                                        <span>Carnegie Steel Co.</span>
-                                    </cite>
-                                </div>
-                                <p>
-                                Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                                Nisi eaque consequatur. Voluptatem dignissimos ut ducimus accusantium perspiciatis.
-                                Quasi voluptas eius distinctio. Atque eos maxime.
-                                </p>
-                            </div> <!-- end s-testimonials__slide -->
-            
-                            <div class="s-testimonials__slide swiper-slide">
-                                <div class="s-testimonials__author">
-                                    <img src="images/avatars/user-01.jpg" alt="Author image" class="s-testimonials__avatar">
-                                    <cite class="s-testimonials__cite">
-                                        <strong>John Morgan</strong>
-                                        <span>JP Morgan & Co.</span>
-                                    </cite>
-                                </div>
-                                <p>
-                                Repellat dignissimos libero. Qui sed at corrupti expedita voluptas odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam.  
-                                Autem eaque officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas eius distinctio.
-                                Voluptatem dignissimos ut.
-                                </p>
-                            </div> <!-- end s-testimonials__slide -->
-    
-                            <div class="s-testimonials__slide swiper-slide">
-                                <div class="s-testimonials__author">
-                                    <img src="images/avatars/user-06.jpg" alt="Author image" class="s-testimonials__avatar">
-                                    <cite class="s-testimonials__cite">
-                                        <strong>Henry Ford</strong>
-                                        <span>Ford Motor Co.</span>
-                                    </cite>
-                                </div>
-                                <p>
-                                Nunc interdum lacus sit amet orci. Vestibulum dapibus nunc ac augue. Fusce vel dui. In ac felis 
-                                quis tortor malesuada pretium. Curabitur vestibulum aliquam leo. Qui sed at corrupti expedita voluptas odit. 
-                                Nihil ea quia nesciunt. Ducimus aut sed ipsam.
-                                </p>
-                            </div> <!-- end s-testimonials__slide -->
-        
-                        </div> <!-- end swiper-wrapper -->
-    
-                        <div class="swiper-pagination"></div>
-    
-                    </div> <!-- end swiper-container -->
-    
-                </div> <!-- end column -->
-            </div> <!-- end s-testimonials -->
-
-        </section> <!-- end s-works --> 
-
-
-        <!-- # numbers
-        ================================================== -->
-        <section id="numbers" class="s-numbers">
-
-            <div class="row counter-items">
-
-                <div class="column counter-items__item">
-                    <div class="num">
-                        80
-                        <span>+</span>
-                    </div>
-                    <h5>Happy Customers</h5>
-                    <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Vel harum magni quae voluptate error quo repellendus inventore 
-                    laborum ex veniam. 
-                    </p>
-                </div> <!-- end counter-items__item -->
-
-                <div class="column counter-items__item">
-                    <div class="num">
-                        120
-                        <span>+</span>
-                    </div>
-                    <h5>Projects Completed</h5>
-                    <p>
-                    Nunc interdum lacus sit amet orci. Vestibulum dapibus nunc ac augue. 
-                    Fusce vel dui. In ac felis 
-                    quis tortor malesuada pretium
-                    </p>
-                </div> <!-- end counter-items__item -->
-
-                <div class="column counter-items__item">
-                    <div class="num">
-                        23k
-                        <span>+</span>
-                    </div>
-                    <h5>Lines of Code</h5>
-                    <p>
-                    Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam quos repellat voluptas animi adipisci.
-                    Nisi eaque consequatur. Voluptatem dignissimos ut ducimus
-                    </p>
-                </div> <!-- end counter-items__item -->
-
-                <div class="column counter-items__item">
-                    <div class="num">
-                        85
-                        <span>+</span>
-                    </div>
-                    <h5>Positive Feedback</h5>
-                    <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel harum magni quae voluptate error 
-                    quo repellendus inventore laborum ex veniam.
-                    </p>
-                </div> <!-- end counter-items__item -->
-
-            </div>  <!-- end counter-items -->
-
-        </section> <!-- end s-numbers -->
-
-
-        <!-- # footer 
-        ================================================== -->
-        <footer id="footer" class="s-footer target-section">
-
-            <div class="row">
-                <div class="column lg-12">
-                    <div class="section-header light-on-dark" data-num="03">
-                        <h2 class="text-display-title">Get In Touch.</h2>
-                    </div> <!-- end section-header -->
-                </div>
+            <div class="mt-8">
+                <button class="w-full px-6 py-3 border border-accent text-accent font-bold font-body rounded-lg hover:bg-accent/10 transition">
+                    Сохранить кошельки
+                </button>
             </div>
+        </div>
+    </div>
 
-            <div class="row s-footer__content">
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-                <div class="column xl-6 md-12 s-footer__block s-footer__about">                    
-                    <p class="attention-getter">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas illum quasi facere libero, 
-                    fugiat laboriosam possimus amet consectetur adipisicing elit reprehenderit eveniet tempore quisquam ipsa id esse. Facere ratione dignissimos.
-                    </p>               
-                </div> <!-- end section-footer__about -->
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-                <div class="column xl-6 md-12 s-footer__block s-footer__site-links">
-                    <div class="row">
-                        <div class="column xl-4 lg-5 md-6 tab-12">
-                            <h5>Follow Me</h5>
-                            <ul class="link-list">
-                                <li><a href="#0">Facebook</a></li>
-                                <li><a href="#0">Twitter</a></li>
-                                <li><a href="#0">Instagram</a></li>
-                                <li><a href="#0">Dribbble</a></li>
-                                <li><a href="https://styleshout.com/go/hostinger/">Hostinger</a></li>
-                            </ul>
-                        </div>
-                        <div class="column xl-6 md-6 tab-12">
-                            <h5>Contact Me</h5>
-                            <ul class="link-list">
-                                <li><a href="mailto:#0">sayhello@hudson.com</a></li>
-                                <li><a href="tel:+1975432345">+197 543 2345</a></li>
-                            </ul> 
-                        </div>
-                    </div>                    
-                </div> <!-- end section-footer__site-links -->
+        // Contact Form Handling
+        document.getElementById('open-member-form').addEventListener('click', () => {
+            document.getElementById('member-modal').classList.remove('hidden');
+        });
 
-            </div> <!-- end section-footer__content -->
+        document.getElementById('close-member-form').addEventListener('click', () => {
+            document.getElementById('member-modal').classList.add('hidden');
+        });
 
+        // Support Modal Handling
+        document.getElementById('show-crypto').addEventListener('click', () => {
+            document.getElementById('support-modal').classList.remove('hidden');
+        });
 
-            <div class="row s-footer__buttons">
-               
-                <div class="column xl-6 tab-12">
-                    <a href="mailto:#0" class="btn btn--primary btn--large u-fullwidth">Message Me</a>
-                </div>
-          
-                <div class="column xl-6 tab-12">                    
-                    <a href="#0" class="btn btn--stroke btn--large u-fullwidth">Get My CV</a>
-                </div>
-            
-            </div> <!-- end section-footer__buttons -->              
-            
-            <div class="row s-footer__bottom">
-                
-                <div class="column xl-6 lg-12">
-                    <ul class="s-footer__social social-list">
-                        <li>
-                            <a href="#0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z"></path></svg>
-                                <span class="u-screen-reader-text">Facebook</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809 c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793 c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05 c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032 c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028 c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22 c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z"></path></svg>
-                                <span class="u-screen-reader-text">Twitter</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:rgba(0, 0, 0, 1);transform:;-ms-filter:"><path d="M11.999,7.377c-2.554,0-4.623,2.07-4.623,4.623c0,2.554,2.069,4.624,4.623,4.624c2.552,0,4.623-2.07,4.623-4.624 C16.622,9.447,14.551,7.377,11.999,7.377L11.999,7.377z M11.999,15.004c-1.659,0-3.004-1.345-3.004-3.003 c0-1.659,1.345-3.003,3.004-3.003s3.002,1.344,3.002,3.003C15.001,13.659,13.658,15.004,11.999,15.004L11.999,15.004z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533,6.111c-0.469-1.209-1.424-2.165-2.633-2.632c-0.699-0.263-1.438-0.404-2.186-0.42 c-0.963-0.042-1.268-0.054-3.71-0.054s-2.755,0-3.71,0.054C7.548,3.074,6.809,3.215,6.11,3.479C4.9,3.946,3.945,4.902,3.477,6.111 c-0.263,0.7-0.404,1.438-0.419,2.186c-0.043,0.962-0.056,1.267-0.056,3.71c0,2.442,0,2.753,0.056,3.71 c0.015,0.748,0.156,1.486,0.419,2.187c0.469,1.208,1.424,2.164,2.634,2.632c0.696,0.272,1.435,0.426,2.185,0.45 c0.963,0.042,1.268,0.055,3.71,0.055s2.755,0,3.71-0.055c0.747-0.015,1.486-0.157,2.186-0.419c1.209-0.469,2.164-1.424,2.633-2.633 c0.263-0.7,0.404-1.438,0.419-2.186c0.043-0.962,0.056-1.267,0.056-3.71s0-2.753-0.056-3.71C20.941,7.57,20.801,6.819,20.533,6.111z M19.315,15.643c-0.007,0.576-0.111,1.147-0.311,1.688c-0.305,0.787-0.926,1.409-1.712,1.711c-0.535,0.199-1.099,0.303-1.67,0.311 c-0.95,0.044-1.218,0.055-3.654,0.055c-2.438,0-2.687,0-3.655-0.055c-0.569-0.007-1.135-0.112-1.669-0.311 c-0.789-0.301-1.414-0.923-1.719-1.711c-0.196-0.534-0.302-1.099-0.311-1.669c-0.043-0.95-0.053-1.218-0.053-3.654 c0-2.437,0-2.686,0.053-3.655c0.007-0.576,0.111-1.146,0.311-1.687c0.305-0.789,0.93-1.41,1.719-1.712 c0.534-0.198,1.1-0.303,1.669-0.311c0.951-0.043,1.218-0.055,3.655-0.055c2.437,0,2.687,0,3.654,0.055 c0.571,0.007,1.135,0.112,1.67,0.311c0.786,0.303,1.407,0.925,1.712,1.712c0.196,0.534,0.302,1.099,0.311,1.669 c0.043,0.951,0.054,1.218,0.054,3.655c0,2.436,0,2.698-0.043,3.654H19.315z"></path></svg>
-                                <span class="u-screen-reader-text">Instagram</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M20.66 6.98a9.932 9.932 0 0 0-3.641-3.64C15.486 2.447 13.813 2 12 2s-3.486.447-5.02 1.34c-1.533.893-2.747 2.107-3.64 3.64S2 10.187 2 12s.446 3.487 1.34 5.02a9.924 9.924 0 0 0 3.641 3.64C8.514 21.553 10.187 22 12 22s3.486-.447 5.02-1.34a9.932 9.932 0 0 0 3.641-3.64C21.554 15.487 22 13.813 22 12s-.446-3.487-1.34-5.02zM12 3.66c2 0 3.772.64 5.32 1.919-.92 1.174-2.286 2.14-4.1 2.9-1.002-1.813-2.088-3.327-3.261-4.54A7.715 7.715 0 0 1 12 3.66zM5.51 6.8a8.116 8.116 0 0 1 2.711-2.22c1.212 1.201 2.325 2.7 3.34 4.5-2 .6-4.114.9-6.341.9-.573 0-1.006-.013-1.3-.04A8.549 8.549 0 0 1 5.51 6.8zM3.66 12c0-.054.003-.12.01-.2.007-.08.01-.146.01-.2.254.014.641.02 1.161.02 2.666 0 5.146-.367 7.439-1.1.187.373.381.793.58 1.26-1.32.293-2.674 1.006-4.061 2.14S6.4 16.247 5.76 17.5c-1.4-1.587-2.1-3.42-2.1-5.5zM12 20.34c-1.894 0-3.594-.587-5.101-1.759.601-1.187 1.524-2.322 2.771-3.401 1.246-1.08 2.483-1.753 3.71-2.02a29.441 29.441 0 0 1 1.56 6.62 8.166 8.166 0 0 1-2.94.56zm7.08-3.96a8.351 8.351 0 0 1-2.58 2.621c-.24-2.08-.7-4.107-1.379-6.081.932-.066 1.765-.1 2.5-.1.799 0 1.686.034 2.659.1a8.098 8.098 0 0 1-1.2 3.46zm-1.24-5c-1.16 0-2.233.047-3.22.14a27.053 27.053 0 0 0-.68-1.62c2.066-.906 3.532-2.006 4.399-3.3 1.2 1.414 1.854 3.027 1.96 4.84-.812-.04-1.632-.06-2.459-.06z"></path></svg>
-                                <span class="u-screen-reader-text">Dribbble</span>
-                            </a>
-                        </li>
-                    </ul> 
-                </div> <!-- end section-footer__social -->
+        document.getElementById('open-support').addEventListener('click', () => {
+            document.getElementById('support-modal').classList.remove('hidden');
+        });
 
-                <div class="column xl-6 lg-12">
-                    <p class="ss-copyright">
-                        <span>© Copyright Hudson 2023</span> 
-                        <span>Design by <a href="https://styleshout.com/">StyleShout</a></span>
-                    </p>
-                </div>
+        document.getElementById('close-support').addEventListener('click', () => {
+            document.getElementById('support-modal').classList.add('hidden');
+        });
 
-            </div> <!-- end section-footer__bottom -->          
-
-            <div class="ss-go-top">
-                <a class="smoothscroll" title="Back to Top" href="#top">                 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M5.536 21.886a1.004 1.004 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886z"></path></svg>
-                </a>                                
-                <span>Back To Top</span>   
-            </div> <!-- end ss-go-top -->
-            
-        </footer> <!-- end s-footer -->
-
-    </div> <!-- end page-wrap -->
-
-
-    <!-- Java Script
-    ================================================== -->
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-
+        // Close modals when clicking outside
+        const modals = document.querySelectorAll('#member-modal, #support-modal');
+        modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
