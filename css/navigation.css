@@ -147,4 +147,7 @@
     background-color: var(--color-stone-800);
     color: var(--color-primary);
   }
+  .nav-link.active {
+    color: var(--color-primary-900);
+  }
 }
