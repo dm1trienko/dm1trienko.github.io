@@ -103,18 +103,22 @@
     position: fixed;
     inset: 0;
     width: 100vw;
+    height: 100vh;
     background: var(--color-surface);
     flex-direction: column;
-    padding: calc(var(--header-height) + var(--spacing-lg)) var(--spacing-lg);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     gap: var(--spacing-lg);
-    transform: translateX(100%);
+    padding: 0 var(--spacing-lg);
+    transform: scale(0);
     opacity: 0;
     visibility: hidden;
     transition: transform var(--transition-base), opacity var(--transition-base);
     z-index: 1000;
   }
   .nav-menu.active {
-    transform: translateX(0);
+    transform: scale(1);
     opacity: 1;
     visibility: visible;
   }
