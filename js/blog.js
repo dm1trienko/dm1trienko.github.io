@@ -3,6 +3,7 @@ class BlogPage {
     this.repo = 'dm1trienko/dm1trienko.github.io'
     this.loadPosts()
     this.setupSearch()
+    this.setupModal()
   }
 
   async loadPosts() {
@@ -63,9 +64,7 @@ class BlogPage {
     const card = document.createElement('article')
     card.className = 'blog-card'
     card.innerHTML = `
-      <h3><a href="post.html?file=${encodeURIComponent(post.file)}">${
-      post.title
-    }</a></h3>
+      <h3><a href="post.html?file=${encodeURIComponent(post.file)}" data-file="${post.file}">${post.title}</a></h3>
       <time datetime="${post.date}">${this.formatDate(post.date)}</time>
       <p>${post.excerpt}</p>
     `
@@ -82,6 +81,59 @@ class BlogPage {
         card.style.display = text.includes(term) ? '' : 'none'
       })
     })
+  }
+
+  setupModal() {
+    this.modal = document.getElementById('blog-modal')
+    if (!this.modal) return
+    this.modalTitle = document.getElementById('modal-title')
+    this.modalDate = document.getElementById('modal-date')
+    this.modalBody = document.getElementById('modal-body')
+    const closeBtn = document.getElementById('blog-modal-close')
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => this.closeModal())
+    }
+    this.modal.addEventListener('click', (e) => {
+      if (e.target === this.modal) this.closeModal()
+    })
+    const grid = document.getElementById('blog-grid')
+    if (grid) {
+      grid.addEventListener('click', (e) => {
+        const link = e.target.closest('a[data-file]')
+        if (!link) return
+        e.preventDefault()
+        const file = link.getAttribute('data-file')
+        if (file) this.openPost(file)
+      })
+    }
+  }
+
+  async openPost(file) {
+    try {
+      const res = await fetch('posts/' + file)
+      if (!res.ok) throw new Error(res.statusText)
+      const md = await res.text()
+      const { meta, content } = this.parseFrontmatter(md)
+      if (meta.title) {
+        this.modalTitle.textContent = meta.title
+      } else {
+        this.modalTitle.textContent = ''
+      }
+      if (meta.date) {
+        this.modalDate.setAttribute('datetime', meta.date)
+        this.modalDate.textContent = this.formatDate(meta.date)
+      } else {
+        this.modalDate.textContent = ''
+      }
+      this.modalBody.innerHTML = marked.parse(content)
+    } catch {
+      this.modalBody.textContent = 'Не удалось загрузить пост'
+    }
+    this.modal.classList.add('active')
+  }
+
+  closeModal() {
+    this.modal.classList.remove('active')
   }
 
   formatDate(dateStr) {
