@@ -446,6 +446,11 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+.btn-primary:active {
+  background: var(--color-stone-100);
+  color: var(--color-amber-600);
+}
+
 .btn-secondary {
   background: transparent;
   color: white;
@@ -456,6 +461,11 @@
   background: white;
   color: var(--color-amber-600);
   transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+  background: var(--color-stone-50);
+  color: var(--color-amber-600);
 }
 
 /* Animations */

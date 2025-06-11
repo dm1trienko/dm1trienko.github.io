@@ -13,6 +13,10 @@
   --color-text-muted: #877f77;
   --color-text: var(--color-text-primary);
 
+  /* System color schemes */
+  color-scheme: light;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+
   /* Extended palette */
   --color-primary-50: #e9e5e1;
   --color-primary-100: #d6cfc9;
@@ -96,7 +100,10 @@
     --color-border: #4a4744;
     --color-text-primary: #eae5de;
     --color-text-secondary: #e8e0d7;
-    --color-text-muted: #d0c6bd;
+  --color-text-muted: #d0c6bd;
+
+    color-scheme: dark;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -469,6 +476,11 @@ a:focus {
   box-shadow: var(--shadow-lg);
 }
 
+.btn-primary:active {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+}
+
 .btn-secondary {
   background-color: transparent;
   color: var(--color-primary);
@@ -480,6 +492,12 @@ a:focus {
   border-color: var(--color-accent);
   transform: translateY(-1px);
   box-shadow: var(--shadow-base);
+}
+
+.btn-secondary:active {
+  background-color: var(--color-surface);
+  border-color: var(--color-accent-dark);
+  color: var(--color-primary);
 }
 
 /* Sections */
