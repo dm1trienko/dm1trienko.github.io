@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Soft Old Money Light Theme */
+    --background: 39 100% 98%;
+    --foreground: 20 14% 20%;
+    --card: 39 100% 99%;
+    --card-foreground: 20 14% 20%;
+    --popover: 39 100% 99%;
+    --popover-foreground: 20 14% 20%;
+    --primary: 25 30% 35%;
+    --primary-foreground: 39 100% 98%;
+    --secondary: 39 30% 95%;
+    --secondary-foreground: 25 20% 30%;
+    --muted: 39 30% 96%;
+    --muted-foreground: 25 10% 50%;
+    --accent: 39 40% 92%;
+    --accent-foreground: 25 20% 30%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 39 100% 98%;
+    --border: 39 20% 90%;
+    --input: 39 20% 90%;
+    --ring: 25 30% 35%;
+    --radius: 0.75rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      /* Soft Old Money Dark Theme */
+      --background: 20 14% 12%;
+      --foreground: 39 100% 95%;
+      --card: 20 14% 14%;
+      --card-foreground: 39 100% 95%;
+      --popover: 20 14% 14%;
+      --popover-foreground: 39 100% 95%;
+      --primary: 39 80% 85%;
+      --primary-foreground: 20 14% 20%;
+      --secondary: 20 10% 18%;
+      --secondary-foreground: 39 80% 85%;
+      --muted: 20 10% 18%;
+      --muted-foreground: 39 30% 70%;
+      --accent: 20 10% 22%;
+      --accent-foreground: 39 80% 85%;
+      --destructive: 0 65% 45%;
+      --destructive-foreground: 39 100% 95%;
+      --border: 20 10% 22%;
+      --input: 20 10% 22%;
+      --ring: 39 80% 75%;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-variant-numeric: oldstyle-nums;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+    letter-spacing: -0.025em;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Soft Old Money Design System */
+  .old-money-gradient {
+    @apply bg-gradient-to-br from-cream-50 via-stone-50 to-warm-50 
+           dark:from-stone-900 dark:via-warm-900 dark:to-stone-800;
+  }
+
+  .old-money-card {
+    @apply bg-cream-50/60 dark:bg-stone-800/60 backdrop-blur-sm
+           border border-stone-200/60 dark:border-stone-700/60
+           shadow-md shadow-stone-200/30 dark:shadow-stone-900/30;
+  }
+
+  .old-money-text-primary {
+    @apply text-stone-800 dark:text-cream-100;
+  }
+
+  .old-money-text-secondary {
+    @apply text-stone-600 dark:text-stone-300;
+  }
+
+  .old-money-text-accent {
+    @apply text-warm-600 dark:text-warm-400;
+  }
+
+  /* Enhanced Link Styles */
+  .old-money-link {
+    @apply text-warm-700 dark:text-warm-300 
+           hover:text-gold-600 dark:hover:text-gold-400
+           transition-all duration-300 ease-out
+           relative inline-block
+           font-medium cursor-pointer;
+  }
+
+  .old-money-link::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-0 h-0.5 
+           bg-gold-500 dark:bg-gold-400
+           transition-all duration-300 ease-out;
+  }
+
+  .old-money-link:hover::after {
+    @apply w-full;
+  }
+
+  .old-money-link-subtle {
+    @apply text-stone-600 dark:text-stone-400
+           hover:text-warm-700 dark:hover:text-warm-300
+           transition-colors duration-200 cursor-pointer;
+  }
+
+  /* Button Enhancements */
+  .old-money-button-primary {
+    @apply bg-warm-600 hover:bg-warm-700 
+           text-cream-50 
+           border border-warm-500
+           shadow-md shadow-warm-600/25
+           transition-all duration-200;
+  }
+
+  .old-money-button-secondary {
+    @apply bg-cream-100 hover:bg-stone-100
+           text-warm-800 
+           border border-stone-300
+           shadow-sm shadow-stone-200/30
+           transition-all duration-200;
+  }
+
+  /* Card Hover Effects */
+  .old-money-card-hover {
+    @apply hover:shadow-lg hover:shadow-stone-300/40 dark:hover:shadow-stone-900/40
+           hover:-translate-y-0.5 
+           transition-all duration-300 ease-out;
+  }
+
+  /* Navigation Enhancements */
+  .old-money-nav {
+    @apply bg-cream-50/90 dark:bg-stone-900/90 
+           backdrop-blur-md 
+           border-b border-stone-200/60 dark:border-stone-700/60
+           shadow-sm shadow-stone-200/20 dark:shadow-stone-900/30;
+  }
+
+  /* Form Enhancements */
+  .old-money-input {
+    @apply bg-cream-50 dark:bg-stone-800
+           border-stone-300 dark:border-stone-600
+           focus:border-gold-400 dark:focus:border-gold-500
+           focus:ring-gold-400/20 dark:focus:ring-gold-500/20
+           placeholder:text-stone-500 dark:placeholder:text-stone-400;
+  }
+}
+
+/* Enhanced Prose Styles */
+.prose {
+  @apply text-stone-700 dark:text-stone-300 max-w-none;
+}
+
+.prose h1 {
+  @apply text-4xl font-serif font-bold text-stone-900 dark:text-cream-100 mb-6 leading-tight;
+}
+
+.prose h2 {
+  @apply text-3xl font-serif font-bold text-stone-900 dark:text-cream-100 mt-12 mb-6 leading-tight;
+}
+
+.prose h3 {
+  @apply text-2xl font-serif font-semibold text-stone-900 dark:text-cream-100 mt-8 mb-4;
+}
+
+.prose p {
+  @apply mb-6 leading-relaxed text-lg text-stone-600 dark:text-stone-300;
+}
+
+.prose strong {
+  @apply font-semibold text-stone-900 dark:text-cream-100;
+}
+
+.prose a {
+  @apply text-warm-700 dark:text-warm-300 hover:text-gold-600 dark:hover:text-gold-400 transition-colors duration-200 underline decoration-gold-500/30 hover:decoration-gold-500 cursor-pointer;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-gold-400 dark:border-gold-500 
+         pl-6 italic text-stone-600 dark:text-stone-400
+         bg-stone-50 dark:bg-stone-800 
+         py-4 rounded-r-lg;
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Enhanced Focus Styles */
+.focus-visible:focus {
+  @apply outline-none ring-2 ring-gold-400/50 ring-offset-2 
+         ring-offset-background rounded-md;
+}
+
+/* High Contrast Support */
+@media (prefers-contrast: high) {
+  .old-money-text-primary {
+    @apply text-black dark:text-white;
+  }
+
+  .old-money-text-secondary {
+    @apply text-gray-800 dark:text-gray-200;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .old-money-gradient {
+    @apply bg-white;
+  }
+
+  .old-money-card {
+    @apply bg-white border border-gray-300;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}

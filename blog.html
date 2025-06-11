@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог - Еремей</title>
+    <meta name="description" content="Блог Еремея - мысли о культуре, технологиях и предпринимательстве">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/blog.css">
+    
+    <!-- Theme -->
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#f5f5f4" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1c1917" media="(prefers-color-scheme: dark)">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">Еремей</a>
+                
+                <!-- Desktop Navigation -->
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="blog.html" class="nav-link active">Блог</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="roadmap.html" class="nav-link">Life Roadmap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="culttech.html" class="nav-link">CultTech Hub</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contacts.html" class="nav-link">Контакты</a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Language Switcher -->
+                    <div class="nav-lang">
+                        <svg class="nav-lang-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="m8 12 4-4 4 4"/>
+                        </svg>
+                        <button class="nav-lang-btn" id="lang-toggle">RU</button>
+                    </div>
+                </div>
+                
+                <!-- Mobile Toggle -->
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Blog Header -->
+        <section class="blog-header">
+            <div class="container">
+                <div class="blog-header-content">
+                    <span class="hero-badge">Мысли и исследования</span>
+                    <h1 class="blog-title">Блог</h1>
+                    <p class="blog-subtitle">Мысли о культуре, технологиях и жизни</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search and Filters -->
+        <section class="blog-filters">
+            <div class="container">
+                <div class="filters-container">
+                    <div class="search-container">
+                        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                        </svg>
+                        <input type="text" class="search-input" placeholder="Поиск по статьям..." id="search-input">
+                    </div>
+                    
+                    <div class="category-filters">
+                        <button class="filter-btn active" data-category="all">Все</button>
+                        <button class="filter-btn" data-category="culture">Культура</button>
+                        <button class="filter-btn" data-category="tech">Технологии</button>
+                        <button class="filter-btn" data-category="business">Бизнес</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Post -->
+        <section class="featured-post">
+            <div class="container">
+                <a href="blog/text-1.html" class="featured-card">
+                    <div class="featured-visual">
+                        <div class="featured-badge">Рекомендуемое</div>
+                        <div class="featured-category">Культура</div>
+                    </div>
+                    <div class="featured-content">
+                        <div class="featured-meta">
+                            <div class="meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="16" y1="2" x2="16" y2="6"/>
+                                    <line x1="8" y1="2" x2="8" y2="6"/>
+                                    <line x1="3" y1="10" x2="21" y2="10"/>
+                                </svg>
+                                15 января 2024
+                            </div>
+                            <div class="meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12,6 12,12 16,14"/>
+                                </svg>
+                                5 мин
+                            </div>
+                        </div>
+                        <h2 class="featured-title">Размышления о культуре в цифровую эпоху</h2>
+                        <p class="featured-excerpt">
+                            Как технологии меняют наше восприятие культурного наследия и какие новые формы искусства появляются в результате цифровой трансформации. Исследование влияния виртуальной реальности на музейное дело.
+                        </p>
+                        <div class="featured-tags">
+                            <span class="tag">Культура</span>
+                            <span class="tag">Технологии</span>
+                            <span class="tag">Искусство</span>
+                            <span class="tag">VR</span>
+                        </div>
+                        <div class="featured-read-more">
+                            Читать далее
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12,5 19,12 12,19"/>
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Blog Posts Grid -->
+        <section class="blog-posts">
+            <div class="container">
+                <div class="posts-grid" id="posts-grid">
+                    <a href="blog/text-2.html" class="post-card" data-category="business">
+                        <div class="post-header">
+                            <span class="post-category">Бизнес</span>
+                            <div class="post-meta">
+                                <div class="meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                        <line x1="16" y1="2" x2="16" y2="6"/>
+                                        <line x1="8" y1="2" x2="8" y2="6"/>
+                                        <line x1="3" y1="10" x2="21" y2="10"/>
+                                    </svg>
+                                    10 января 2024
+                                </div>
+                                <div class="meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <polyline points="12,6 12,12 16,14"/>
+                                    </svg>
+                                    7 мин
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="post-title">Предпринимательство и социальная ответственность</h3>
+                        <p class="post-excerpt">
+                            Роль молодых предпринимателей в создании устойчивого будущего. Как совместить коммерческий успех с положительным социальным воздействием и почему ESG-критерии становятся новым стандартом.
+                        </p>
+                        <div class="post-tags">
+                            <span class="tag">Предпринимательство</span>
+                            <span class="tag">ESG</span>
+                            <span class="tag">Социум</span>
+                        </div>
+                        <div class="post-read-more">
+                            Читать далее
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12,5 19,12 12,19"/>
+                            </svg>
+                        </div>
+                    </a>
+
+                    <a href="blog/text-3.html" class="post-card" data-category="tech">
+                        <div class="post-header">
+                            <span class="post-category">Технологии</span>
+                            <div class="post-meta">
+                                <div class="meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                        <line x1="16" y1="2" x2="16" y2="6"/>
+                                        <line x1="8" y1="2" x2="8" y2="6"/>
+                                        <line x1="3" y1="10" x2="21" y2="10"/>
+                                    </svg>
+                                    5 января 2024
+                                </div>
+                                <div class="meta-item">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <polyline points="12,6 12,12 16,14"/>
+                                    </svg>
+                                    6 мин
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="post-title">IT-образование: вызовы и возможности</h3>
+                        <p class="post-excerpt">
+                            Личный опыт изучения технологий и построения карьеры в IT. Советы для студентов и размышления о будущем образования в эпоху искусственного интеллекта и автоматизации.
+                        </p>
+                        <div class="post-tags">
+                            <span class="tag">Образование</span>
+                            <span class="tag">IT</span>
+                            <span class="tag">Карьера</span>
+                        </div>
+                        <div class="post-read-more">
+                            Читать далее
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12,5 19,12 12,19"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Newsletter Signup -->
+                <div class="newsletter-signup">
+                    <div class="newsletter-card">
+                        <h3 class="newsletter-title">Подписаться на обновления</h3>
+                        <p class="newsletter-description">
+                            Получайте уведомления о новых статьях и исследованиях на пересечении культуры и технологий
+                        </p>
+                        <form class="newsletter-form" id="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Ваш email" required>
+                            <button type="submit" class="btn btn-primary">Подписаться</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">Еремей</a>
+                    <p class="footer-description">
+                        Исследователь на пересечении культуры, технологий и предпринимательства. 
+                        Создаю мосты между традициями и инновациями.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Навигация</h4>
+                    <ul class="footer-links">
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="roadmap.html">Life Roadmap</a></li>
+                        <li><a href="culttech.html">CultTech Hub</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Связь</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:hello@eremeya.dev">hello@eremeya.dev</a></li>
+                        <li><a href="https://t.me/eremeya_dev" target="_blank" rel="noopener noreferrer">@eremeya_dev</a></li>
+                        <li>Москва, Россия</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2024 Еремей. Все права защищены.</p>
+                <div class="footer-legal">
+                    <button class="footer-legal-link">Конфиденциальность</button>
+                    <button class="footer-legal-link">Условия использования</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>
