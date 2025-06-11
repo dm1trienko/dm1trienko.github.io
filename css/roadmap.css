@@ -475,16 +475,16 @@
 /* Print Styles */
 @media print {
   .timeline::before {
-    background: #000 !important;
+    background: var(--color-primary-900) !important;
   }
 
   .timeline-dot {
-    border-color: #000 !important;
-    background: #fff !important;
+    border-color: var(--color-primary-900) !important;
+    background: var(--color-surface) !important;
   }
 
   .timeline-content {
-    border-color: #000 !important;
+    border-color: var(--color-primary-900) !important;
     box-shadow: none !important;
   }
 
