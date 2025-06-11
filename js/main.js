@@ -144,12 +144,14 @@ class PortfolioApp {
 
     elements.forEach((element) => {
       const text = element.getAttribute(`data-${this.currentLang}`)
-      if (text) {
-        if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
-          element.placeholder = text
-        } else {
-          element.textContent = text
-        }
+      if (!text) return
+
+      if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+        element.placeholder = text
+      } else if (element.tagName === "TITLE") {
+        document.title = text
+      } else {
+        element.textContent = text
       }
     })
 
