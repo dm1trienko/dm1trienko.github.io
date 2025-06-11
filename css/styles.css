@@ -67,7 +67,7 @@
 
   /* Layout */
   --container-max-width: 1200px;
-  --header-height: 4rem;
+  --header-height: 5rem;
   --border-radius: 0.5rem;
   --border-radius-lg: 1rem;
 
@@ -226,7 +226,7 @@ a:focus {
 }
 
 .nav-link {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-xl);
   font-weight: 600;
   color: var(--color-text-secondary);
   text-decoration: none;
@@ -254,7 +254,7 @@ a:focus {
 .nav-controls {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
 }
 
 .lang-toggle {

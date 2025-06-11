@@ -5,6 +5,7 @@ class BlogManager {
   }
 
   init() {
+    this.loadMarkdownPosts()
     this.setupReadingProgress()
     this.setupPostNavigation()
     this.setupSearchFunctionality()
@@ -38,6 +39,35 @@ class BlogManager {
     const progress = (scrollTop / documentHeight) * 100
 
     progressFill.style.width = Math.min(progress, 100) + "%"
+  }
+
+  loadMarkdownPosts() {
+    const posts = document.querySelectorAll(".post-content[data-src]")
+    if (!posts.length) return
+
+    const loadPromises = []
+
+    posts.forEach((container) => {
+      const src = container.dataset.src
+      if (!src) return
+
+      const p = fetch(src)
+        .then((r) => r.text())
+        .then((md) => {
+          if (window.marked) {
+            container.innerHTML = window.marked.parse(md)
+          } else {
+            container.textContent = md
+          }
+        })
+        .catch(() => {
+          container.textContent = "Не удалось загрузить статью."
+        })
+
+      loadPromises.push(p)
+    })
+
+    Promise.all(loadPromises).then(() => this.initializeReadingTime())
   }
 
   setupPostNavigation() {
