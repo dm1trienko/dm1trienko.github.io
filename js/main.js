@@ -85,6 +85,7 @@ class PortfolioApp {
     const navMenu = document.getElementById("nav-menu")
 
     navMenu.classList.add("active")
+    navMenu.setAttribute("aria-hidden", "false")
     navToggle.classList.add("active")
     navToggle.setAttribute("aria-expanded", "true")
 
@@ -97,6 +98,7 @@ class PortfolioApp {
     const navMenu = document.getElementById("nav-menu")
 
     navMenu.classList.remove("active")
+    navMenu.setAttribute("aria-hidden", "true")
     navToggle.classList.remove("active")
     navToggle.setAttribute("aria-expanded", "false")
 
@@ -106,18 +108,34 @@ class PortfolioApp {
 
   setupLanguageToggle() {
     const langToggle = document.getElementById("lang-toggle")
+    const langOptions = document.getElementById("lang-options")
 
-    if (langToggle) {
-      langToggle.addEventListener("click", () => {
-        this.toggleLanguage()
+    if (langToggle && langOptions) {
+      langToggle.addEventListener("click", (e) => {
+        e.stopPropagation()
+        const expanded = langToggle.getAttribute("aria-expanded") === "true"
+        langToggle.setAttribute("aria-expanded", expanded ? "false" : "true")
+        langOptions.classList.toggle("open", !expanded)
+      })
+
+      langOptions.querySelectorAll("[data-lang]").forEach((option) => {
+        option.addEventListener("click", () => {
+          const lang = option.getAttribute("data-lang")
+          this.currentLang = lang
+          this.updateLanguage()
+          this.saveLanguagePreference()
+          langOptions.classList.remove("open")
+          langToggle.setAttribute("aria-expanded", "false")
+        })
+      })
+
+      document.addEventListener("click", (e) => {
+        if (!langToggle.contains(e.target) && !langOptions.contains(e.target)) {
+          langOptions.classList.remove("open")
+          langToggle.setAttribute("aria-expanded", "false")
+        }
       })
     }
-  }
-
-  toggleLanguage() {
-    this.currentLang = this.currentLang === "ru" ? "en" : "ru"
-    this.updateLanguage()
-    this.saveLanguagePreference()
   }
 
   updateLanguage() {
@@ -141,6 +159,14 @@ class PortfolioApp {
       if (langCurrent) {
         langCurrent.textContent = this.currentLang.toUpperCase()
       }
+    }
+
+    const langOptions = document.getElementById("lang-options")
+    if (langOptions) {
+      langOptions.querySelectorAll("[data-lang]").forEach((opt) => {
+        const selected = opt.getAttribute("data-lang") === this.currentLang
+        opt.setAttribute("aria-selected", selected ? "true" : "false")
+      })
     }
 
     // Update document language
