@@ -702,3 +702,10 @@
   width: 160px;
   height: 160px;
 }
+
+/* Dark theme override for donate section */
+@media (prefers-color-scheme: dark) {
+  .donate-section {
+    background: var(--color-stone-900);
+  }
+}
