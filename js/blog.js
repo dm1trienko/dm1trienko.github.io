@@ -1,43 +1,43 @@
 class BlogPage {
   constructor() {
+    this.repo = 'dm1trienko/dm1trienko.github.io'
     this.loadPosts()
     this.setupSearch()
   }
 
   async loadPosts() {
     const container = document.getElementById('blog-grid')
+    const status = document.getElementById('blog-status')
     if (!container) return
 
-    const postFiles = ['post1.md', 'post2.md', 'post3.md']
-    const posts = await Promise.all(postFiles.map((f) => this.fetchPost(f)))
+    status.textContent = 'Загрузка статей...'
 
-    posts.forEach((post) => {
-      if (!post) return
-      const card = document.createElement('article')
-      card.className = 'blog-card'
-      card.innerHTML = `
-        <h3><a href="post.html?file=${post.file}">${post.title}</a></h3>
-        <p>${post.excerpt}</p>
-        <time datetime="${post.date}">${this.formatDate(post.date)}</time>
-      `
-      container.appendChild(card)
-    })
-  }
-
-  async fetchPost(file) {
     try {
-      const res = await fetch('posts/' + file)
-      const text = await res.text()
-      const { meta, content } = this.parseFrontmatter(text)
-      const words = content.trim().split(/\s+/).slice(0, 30).join(' ')
-      return {
-        file,
-        title: meta.title || 'Без названия',
-        date: meta.date || '',
-        excerpt: words + '...'
-      }
-    } catch (e) {
-      return null
+      const api = `https://api.github.com/repos/${this.repo}/contents/posts`
+      const listRes = await fetch(api)
+      const files = (await listRes.json()).filter((f) => f.name.endsWith('.md'))
+
+      const posts = await Promise.all(
+        files.map(async (file) => {
+          const md = await fetch(file.download_url).then((r) => r.text())
+          const { meta, excerpt } = this.parseFrontmatter(md)
+          return {
+            file: file.name,
+            title: meta.title || file.name,
+            date: meta.date || '',
+            excerpt,
+          }
+        })
+      )
+
+      posts
+        .sort((a, b) => new Date(b.date) - new Date(a.date))
+        .forEach((post) => {
+          container.appendChild(this.renderCard(post))
+        })
+      status.textContent = posts.length ? '' : 'Посты не найдены'
+    } catch {
+      status.textContent = 'Не удалось загрузить статьи'
     }
   }
 
@@ -52,7 +52,24 @@ class BlogPage {
       })
       body = md.slice(match[0].length)
     }
-    return { meta, content: body }
+    const excerpt = body
+      .trim()
+      .split(/\n{2,}/)[0]
+      .replace(/[#*_`>\[\]]/g, '')
+    return { meta, excerpt }
+  }
+
+  renderCard(post) {
+    const card = document.createElement('article')
+    card.className = 'blog-card'
+    card.innerHTML = `
+      <h3><a href="post.html?file=${encodeURIComponent(post.file)}">${
+      post.title
+    }</a></h3>
+      <time datetime="${post.date}">${this.formatDate(post.date)}</time>
+      <p>${post.excerpt}</p>
+    `
+    return card
   }
 
   setupSearch() {

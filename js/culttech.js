@@ -292,7 +292,6 @@ function handleJoinSubmit(form) {
     submitBtn.textContent = originalText
     submitBtn.disabled = false
 
-    console.log("Join form submitted:", data)
   }, 2000)
 }
 
