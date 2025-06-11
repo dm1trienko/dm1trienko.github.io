@@ -8,20 +8,28 @@ class BlogPostPage {
     }
     try {
       const res = await fetch('posts/' + file)
+      if (!res.ok) {
+        throw new Error(res.status + ' ' + res.statusText)
+      }
       const text = await res.text()
       const { meta, content } = this.parseFrontmatter(text)
+
       if (meta.title) {
         document.getElementById('post-title').textContent = meta.title
         document.title = meta.title + ' - Еремей Дмитриенко'
       }
+
       if (meta.date) {
         const dateEl = document.getElementById('post-date')
         dateEl.setAttribute('datetime', meta.date)
         dateEl.textContent = this.formatDate(meta.date)
       }
+
       document.getElementById('post-content').innerHTML = marked.parse(content)
     } catch (e) {
-      document.getElementById('post-content').textContent = 'Unable to load post'
+      const msg = e && e.message ? e.message : 'Unknown error'
+      document.getElementById('post-content').textContent =
+        'Не удалось загрузить пост: ' + msg
     }
   }
 
