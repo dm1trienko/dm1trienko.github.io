@@ -222,14 +222,15 @@ a:focus {
   list-style: none;
   gap: var(--spacing-xl);
   margin: 0;
+  align-items: center;
 }
 
 .nav-link {
-  font-size: var(--font-size-sm);
-  font-weight: 500;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
   color: var(--color-text-secondary);
   text-decoration: none;
-  padding: var(--spacing-sm) 0;
+  padding: var(--spacing-md) 0;
   position: relative;
   transition: color var(--transition-fast);
 }
@@ -243,10 +244,10 @@ a:focus {
 .nav-link.active::after {
   content: "";
   position: absolute;
-  bottom: -2px;
+  bottom: -3px;
   left: 0;
   right: 0;
-  height: 2px;
+  height: 3px;
   background-color: var(--color-accent);
 }
 
