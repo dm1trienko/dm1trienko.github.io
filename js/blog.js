@@ -54,10 +54,22 @@ class BlogManager {
       const p = fetch(src)
         .then((r) => r.text())
         .then((md) => {
+          const { meta, content } = this.parseFrontmatter(md)
+
           if (window.marked) {
-            container.innerHTML = window.marked.parse(md)
+            container.innerHTML = window.marked.parse(content)
           } else {
-            container.textContent = md
+            container.textContent = content
+          }
+
+          if (meta.date) {
+            const timeEl = container
+              .closest(".blog-post")
+              .querySelector(".post-date")
+            if (timeEl) {
+              timeEl.setAttribute("datetime", meta.date)
+              timeEl.textContent = this.formatDate(meta.date)
+            }
           }
         })
         .catch(() => {
@@ -67,7 +79,10 @@ class BlogManager {
       loadPromises.push(p)
     })
 
-    Promise.all(loadPromises).then(() => this.initializeReadingTime())
+    Promise.all(loadPromises).then(() => {
+      this.initializeReadingTime()
+      this.setupShowMore()
+    })
   }
 
   setupPostNavigation() {
@@ -327,8 +342,51 @@ class BlogManager {
     })
   }
 
+  setupShowMore() {
+    const posts = document.querySelectorAll('.blog-post')
+    const showMoreBtn = document.getElementById('show-more-posts')
+
+    if (!showMoreBtn || posts.length <= 3) return
+
+    posts.forEach((post, index) => {
+      if (index >= 3) {
+        post.style.display = 'none'
+      }
+    })
+
+    showMoreBtn.addEventListener('click', () => {
+      posts.forEach((post) => (post.style.display = ''))
+      showMoreBtn.remove()
+    })
+  }
+
   countWords(text) {
     return text.trim().split(/\s+/).length
+  }
+
+  parseFrontmatter(md) {
+    const match = md.match(/^---\n([\s\S]*?)\n---/)
+    const meta = {}
+
+    if (match) {
+      const lines = match[1].split(/\n/)
+      lines.forEach((line) => {
+        const [key, ...rest] = line.split(":")
+        meta[key.trim()] = rest.join(":").trim()
+      })
+      md = md.slice(match[0].length)
+    }
+
+    return { meta, content: md }
+  }
+
+  formatDate(dateStr) {
+    const date = new Date(dateStr)
+    return date.toLocaleDateString(document.documentElement.lang === "ru" ? "ru-RU" : "en-GB", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
   }
 
   // Utility functions
