@@ -13,50 +13,29 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
-            <a href="index.html" class="nav__logo">Еремей</a>
-            
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="index.html" class="nav__link">
-                            <span data-ru="Главная" data-en="Home">Главная</span>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="blog.html" class="nav__link">
-                            <span data-ru="Блог" data-en="Blog">Блог</span>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="roadmap.html" class="nav__link">
-                            <span data-ru="Roadmap" data-en="Roadmap">Roadmap</span>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="culttech.html" class="nav__link nav__link--active">
-                            <span data-ru="CultTech" data-en="CultTech">CultTech</span>
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="contacts.html" class="nav__link">
-                            <span data-ru="Контакты" data-en="Contacts">Контакты</span>
-                        </a>
-                    </li>
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Основная навигация">
+            <div class="nav-container">
+                <a href="index.html" class="logo" aria-label="На главную">Еремей</a>
+
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link" data-ru="Главная" data-en="Home">Главная</a></li>
+                    <li><a href="blog.html" class="nav-link" data-ru="Блог" data-en="Blog">Блог</a></li>
+                    <li><a href="roadmap.html" class="nav-link" data-ru="Roadmap" data-en="Roadmap">Roadmap</a></li>
+                    <li><a href="culttech.html" class="nav-link active" data-ru="CultTech Hub" data-en="CultTech Hub">CultTech Hub</a></li>
+                    <li><a href="contacts.html" class="nav-link" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
                 </ul>
-                
-                <div class="nav__controls">
+
+                <div class="nav-controls">
                     <button class="lang-toggle" id="lang-toggle" aria-label="Переключить язык">
-                        <span class="lang-toggle__text">EN</span>
+                        <span class="lang-current">RU</span>
+                    </button>
+                    <button class="nav-toggle" id="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </button>
                 </div>
-            </div>
-            
-            <div class="nav__toggle" id="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
             </div>
         </nav>
     </header>
@@ -506,52 +485,18 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <div class="footer__content">
-                <div class="footer__section">
-                    <h3 class="footer__title">Еремей</h3>
-                    <p class="footer__text">
-                        <span data-ru="Студент, исследователь пересечений культуры, технологий и предпринимательства" 
-                              data-en="Student, researcher of intersections between culture, technology and entrepreneurship">
-                            Студент, исследователь пересечений культуры, технологий и предпринимательства
-                        </span>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p class="footer-text" data-ru="© 2024 Еремей. Все права защищены." data-en="© 2024 Eremeya. All rights reserved.">
+                        © 2024 Еремей. Все права защищены.
                     </p>
                 </div>
-                
-                <div class="footer__section">
-                    <h4 class="footer__subtitle">
-                        <span data-ru="Навигация" data-en="Navigation">Навигация</span>
-                    </h4>
-                    <ul class="footer__links">
-                        <li><a href="index.html" data-ru="Главная" data-en="Home">Главная</a></li>
-                        <li><a href="blog.html" data-ru="Блог" data-en="Blog">Блог</a></li>
-                        <li><a href="roadmap.html" data-ru="Roadmap" data-en="Roadmap">Roadmap</a></li>
-                        <li><a href="culttech.html" data-ru="CultTech" data-en="CultTech">CultTech</a></li>
-                        <li><a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
-                    </ul>
+                <div class="footer-links">
+                    <a href="contacts.html" class="footer-link" data-ru="Контакты" data-en="Contacts">Контакты</a>
+                    <a href="blog.html" class="footer-link" data-ru="Блог" data-en="Blog">Блог</a>
                 </div>
-                
-                <div class="footer__section">
-                    <h4 class="footer__subtitle">
-                        <span data-ru="Связь" data-en="Contact">Связь</span>
-                    </h4>
-                    <ul class="footer__links">
-                        <li><a href="mailto:hello@eremeya.dev">hello@eremeya.dev</a></li>
-                        <li><a href="https://t.me/eremeya" target="_blank">Telegram</a></li>
-                        <li><a href="https://linkedin.com/in/eremeya" target="_blank">LinkedIn</a></li>
-                        <li><a href="https://github.com/eremeya" target="_blank">GitHub</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer__bottom">
-                <p class="footer__copyright">
-                    <span data-ru="© 2024 Еремей. Все права защищены." 
-                          data-en="© 2024 Eremeya. All rights reserved.">
-                        © 2024 Еремей. Все права защищены.
-                    </span>
-                </p>
             </div>
         </div>
     </footer>
