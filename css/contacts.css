@@ -1,5 +1,9 @@
 /* Contacts Page Styles */
 
+body {
+  overflow-x: hidden;
+}
+
 /* Hero Section */
 .hero-section {
   padding: 8rem 0 4rem;
@@ -701,6 +705,16 @@
 .donate-item img {
   width: 160px;
   height: 160px;
+}
+
+.copy-address {
+  cursor: pointer;
+}
+
+.copy-feedback {
+  font-size: 0.875rem;
+  color: var(--color-green-600);
+  min-height: 1em;
 }
 
 /* Dark theme override for donate section */

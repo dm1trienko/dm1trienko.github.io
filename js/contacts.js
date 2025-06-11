@@ -16,6 +16,7 @@ class ContactsPage {
     this.setupCharacterCounter()
     this.setupFAQ()
     this.setupFormSubmission()
+    this.setupCopyButtons()
     this.setupAccessibility()
   }
 
@@ -232,6 +233,29 @@ class ContactsPage {
     setTimeout(() => {
       this.successMessage.classList.remove("show")
     }, 10000)
+  }
+
+  setupCopyButtons() {
+    const buttons = document.querySelectorAll(".copy-address")
+
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const address = btn.getAttribute("data-address")
+        try {
+          await navigator.clipboard.writeText(address)
+          const feedback = btn.nextElementSibling
+          if (feedback) {
+            const text = document.documentElement.lang === "en" ? "Copied!" : "Скопировано!"
+            feedback.textContent = text
+            setTimeout(() => {
+              feedback.textContent = ""
+            }, 2000)
+          }
+        } catch (e) {
+          console.error("Copy failed", e)
+        }
+      })
+    })
   }
 
   setupAccessibility() {
