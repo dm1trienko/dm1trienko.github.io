@@ -103,7 +103,7 @@
   --color-text-muted: #d0c6bd;
 
     color-scheme: dark;
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.05);
   }
 }
 
