@@ -150,6 +150,8 @@ class PortfolioApp {
         element.placeholder = text
       } else if (element.tagName === "TITLE") {
         document.title = text
+        // also update the actual <title> element text for consistency
+        element.textContent = text
       } else {
         element.textContent = text
       }
