@@ -135,3 +135,16 @@
     transform: rotate(-45deg) translate(7px, -6px);
   }
 }
+
+/* Active state for navigation links */
+.nav-link:active {
+  background-color: var(--color-accent-50);
+  color: var(--color-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav-link:active {
+    background-color: var(--color-stone-800);
+    color: var(--color-primary);
+  }
+}
