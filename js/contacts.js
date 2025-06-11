@@ -238,11 +238,30 @@ class ContactsPage {
   setupCopyButtons() {
     const buttons = document.querySelectorAll(".copy-address")
 
+    const copyText = async (text) => {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(text)
+      } else {
+        const temp = document.createElement("textarea")
+        temp.value = text
+        temp.style.position = "fixed"
+        temp.style.top = "-1000px"
+        document.body.appendChild(temp)
+        temp.focus()
+        temp.select()
+        try {
+          document.execCommand("copy")
+        } finally {
+          document.body.removeChild(temp)
+        }
+      }
+    }
+
     buttons.forEach((btn) => {
       btn.addEventListener("click", async () => {
         const address = btn.getAttribute("data-address")
         try {
-          await navigator.clipboard.writeText(address)
+          await copyText(address)
           const feedback = btn.nextElementSibling
           if (feedback) {
             const text = document.documentElement.lang === "en" ? "Copied!" : "Скопировано!"
