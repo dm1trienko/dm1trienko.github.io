@@ -271,6 +271,12 @@ a:focus {
   padding: var(--spacing-sm) var(--spacing-md);
 }
 
+@media (prefers-color-scheme: dark) {
+  .nav-link.active {
+    color: var(--color-primary-900);
+  }
+}
+
 .nav-link.active::after {
   display: none;
 }
