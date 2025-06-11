@@ -575,6 +575,15 @@
   .faq-answer p {
     color: var(--color-stone-300);
   }
+
+  .donate-section {
+    background: var(--color-stone-800);
+  }
+
+  .donate-section p,
+  .donate-section code {
+    color: var(--color-stone-100);
+  }
 }
 
 /* Responsive Design */
