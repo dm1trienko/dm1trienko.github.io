@@ -205,7 +205,7 @@ class PortfolioApp {
   }
 
   scrollToElement(element) {
-    const headerHeight = document.querySelector(".header").offsetHeight
+    const headerHeight = document.querySelector(".navbar").offsetHeight
     const elementPosition = element.offsetTop - headerHeight - 20
 
     window.scrollTo({
@@ -244,7 +244,7 @@ class PortfolioApp {
   }
 
   handleScroll() {
-    const header = document.querySelector(".header")
+    const header = document.querySelector(".navbar")
     const scrollY = window.scrollY
 
     // Add/remove scrolled class to header
@@ -388,7 +388,7 @@ const animationStyles = `
         }
     }
     
-    .header.scrolled {
+    .navbar.scrolled {
         box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     }
 `
