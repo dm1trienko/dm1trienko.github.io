@@ -365,11 +365,11 @@ class BlogManager {
   }
 
   parseFrontmatter(md) {
-    const match = md.match(/^---\n([\s\S]*?)\n---/)
+    const match = md.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/)
     const meta = {}
 
     if (match) {
-      const lines = match[1].split(/\n/)
+      const lines = match[1].split(/\r?\n/)
       lines.forEach((line) => {
         const [key, ...rest] = line.split(":")
         meta[key.trim()] = rest.join(":").trim()
