@@ -6,6 +6,7 @@
   --color-accent: #bfa181;
   --color-background: #f5f2ed;
   --color-surface: #ffffff;
+  --navbar-background: rgba(255, 255, 255, 0.95);
   --color-border: #d6cec3;
   --color-text-primary: #362f2d;
   --color-text-secondary: #5c544d;
@@ -91,6 +92,7 @@
     --color-accent-dark: #c19c77;
     --color-background: #2b2927;
     --color-surface: #3b3835;
+    --navbar-background: rgba(59, 56, 53, 0.95);
     --color-border: #4a4744;
     --color-text-primary: #eae5de;
     --color-text-secondary: #e8e0d7;
