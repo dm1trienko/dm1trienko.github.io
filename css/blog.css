@@ -72,11 +72,7 @@
 }
 
 .post-meta {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-lg);
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
+  display: none;
 }
 
 .post-date {
@@ -113,9 +109,7 @@
 }
 
 .post-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
+  display: none;
 }
 
 .tag {
@@ -245,9 +239,7 @@
   }
 
   .post-meta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--spacing-xs);
+    display: none;
   }
 
   .post-reading-time::before {
@@ -265,7 +257,7 @@
   }
 
   .post-tags {
-    gap: var(--spacing-xs);
+    display: none;
   }
 
   .tag {
