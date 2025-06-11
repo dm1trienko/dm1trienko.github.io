@@ -240,20 +240,25 @@ class ContactsPage {
 
     const copyText = async (text) => {
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(text)
-      } else {
-        const temp = document.createElement("textarea")
-        temp.value = text
-        temp.style.position = "fixed"
-        temp.style.top = "-1000px"
-        document.body.appendChild(temp)
-        temp.focus()
-        temp.select()
         try {
-          document.execCommand("copy")
-        } finally {
-          document.body.removeChild(temp)
+          await navigator.clipboard.writeText(text)
+          return
+        } catch (err) {
+          console.warn("Clipboard API failed, falling back", err)
         }
+      }
+
+      const temp = document.createElement("textarea")
+      temp.value = text
+      temp.style.position = "fixed"
+      temp.style.top = "-1000px"
+      document.body.appendChild(temp)
+      temp.focus()
+      temp.select()
+      try {
+        document.execCommand("copy")
+      } finally {
+        document.body.removeChild(temp)
       }
     }
 
