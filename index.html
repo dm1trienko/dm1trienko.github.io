@@ -3,318 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Еремей - Персональное портфолио</title>
-    <meta name="description" content="Персональный сайт-портфолио студента Еремея. Культура, технологии, предпринимательство.">
-    <meta name="keywords" content="портфолио, студент, IT, культура, предпринимательство, блог">
-    <meta name="author" content="Еремей">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Еремей - Персональное портфолио">
-    <meta property="og:description" content="Персональный сайт-портфолио студента Еремея. Культура, технологии, предпринимательство.">
-    <meta property="og:url" content="https://eremeya.dev">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Еремей - Персональное портфолио">
-    <meta name="twitter:description" content="Персональный сайт-портфолио студента Еремея. Культура, технологии, предпринимательство.">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    
-    <!-- Fonts -->
+    <title>Еремей - Портфолио</title>
+    <meta name="description" content="Персональный сайт-портфолио студента Еремея">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css">
-    
-    <!-- Theme -->
-    <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" content="#f5f5f4" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#1c1917" media="(prefers-color-scheme: dark)">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header" id="header">
-        <nav class="nav">
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Основная навигация">
             <div class="nav-container">
-                <a href="#home" class="nav-logo">Еремей</a>
+                <a href="#" class="logo" aria-label="На главную">Еремей</a>
                 
-                <!-- Desktop Navigation -->
-                <div class="nav-menu" id="nav-menu">
-                    <ul class="nav-list">
-                        <li class="nav-item">
-                            <a href="#home" class="nav-link">Главная</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="blog.html" class="nav-link">Блог</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="roadmap.html" class="nav-link">Life Roadmap</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="culttech.html" class="nav-link">CultTech Hub</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="contacts.html" class="nav-link">Контакты</a>
-                        </li>
-                    </ul>
-                    
-                    <!-- Language Switcher -->
-                    <div class="nav-lang">
-                        <svg class="nav-lang-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="2" y1="12" x2="22" y2="12"/>
-                            <path d="m8 12 4-4 4 4"/>
-                        </svg>
-                        <button class="nav-lang-btn" id="lang-toggle">RU</button>
-                    </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html" class="nav-link active" data-ru="Главная" data-en="Home">Главная</a></li>
+                    <li><a href="blog.html" class="nav-link" data-ru="Блог" data-en="Blog">Блог</a></li>
+                    <li><a href="roadmap.html" class="nav-link" data-ru="Roadmap" data-en="Roadmap">Roadmap</a></li>
+                    <li><a href="culttech.html" class="nav-link" data-ru="CultTech Hub" data-en="CultTech Hub">CultTech Hub</a></li>
+                    <li><a href="contacts.html" class="nav-link" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+                </ul>
+
+                <div class="nav-controls">
+                    <button class="lang-toggle" id="lang-toggle" aria-label="Переключить язык">
+                        <span class="lang-current">RU</span>
+                    </button>
+                    <button class="nav-toggle" id="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
-                
-                <!-- Mobile Toggle -->
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                    <span class="nav-toggle-line"></span>
-                    <span class="nav-toggle-line"></span>
-                    <span class="nav-toggle-line"></span>
-                </button>
             </div>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <div class="hero-container">
+    <main class="main" role="main">
+        <section class="hero" id="hero">
+            <div class="container">
                 <div class="hero-content">
-                    <span class="hero-badge">Добро пожаловать в мой мир</span>
-                    <h1 class="hero-title">Еремей</h1>
-                    <p class="hero-subtitle">Студент • Исследователь • Визионер</p>
-                    <p class="hero-description">
-                        Добро пожаловать в мой цифровой мир, где пересекаются культура, технологии и предпринимательство.
+                    <h1 class="hero-title" data-ru="Еремей" data-en="Eremeya">Еремей</h1>
+                    <p class="hero-subtitle" data-ru="Студент, исследователь культуры и технологий" data-en="Student, culture and technology researcher">
+                        Студент, исследователь культуры и технологий
                     </p>
-                    <div class="hero-actions">
-                        <a href="roadmap.html" class="btn btn-primary">
-                            Исследовать портфолио
-                            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="5" y1="12" x2="19" y2="12"/>
-                                <polyline points="12,5 19,12 12,19"/>
-                            </svg>
-                        </a>
-                        <a href="culttech.html" class="btn btn-secondary">
-                            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                            </svg>
-                            Присоединиться к сообществу
-                        </a>
+                    <div class="hero-cta">
+                        <a href="#announcements" class="btn btn-primary" data-ru="Узнать больше" data-en="Learn more">Узнать больше</a>
+                        <a href="contacts.html" class="btn btn-secondary" data-ru="Связаться" data-en="Contact">Связаться</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Announcements Section -->
-        <section class="announcements">
+        <section class="announcements" id="announcements">
+            <div class="container">
+                <h2 class="section-title" data-ru="Анонсы" data-en="Announcements">Анонсы</h2>
+                <div class="announcements-grid">
+                    <article class="announcement-card">
+                        <div class="card-content">
+                            <h3 class="card-title" data-ru="Новый проект в разработке" data-en="New project in development">
+                                Новый проект в разработке
+                            </h3>
+                            <p class="card-description" data-ru="Работаю над интересным исследованием на стыке культуры и технологий" data-en="Working on an interesting research at the intersection of culture and technology">
+                                Работаю над интересным исследованием на стыке культуры и технологий
+                            </p>
+                            <time class="card-date" datetime="2024-12-01">Декабрь 2024</time>
+                        </div>
+                    </article>
+
+                    <article class="announcement-card">
+                        <div class="card-content">
+                            <h3 class="card-title" data-ru="Участие в конференции" data-en="Conference participation">
+                                Участие в конференции
+                            </h3>
+                            <p class="card-description" data-ru="Планирую выступление на студенческой конференции по инновациям" data-en="Planning to speak at a student innovation conference">
+                                Планирую выступление на студенческой конференции по инновациям
+                            </p>
+                            <time class="card-date" datetime="2024-11-15">Ноябрь 2024</time>
+                        </div>
+                    </article>
+
+                    <article class="announcement-card">
+                        <div class="card-content">
+                            <h3 class="card-title" data-ru="Обновление портфолио" data-en="Portfolio update">
+                                Обновление портфолио
+                            </h3>
+                            <p class="card-description" data-ru="Добавлены новые проекты и исследования в области предпринимательства" data-en="Added new projects and research in entrepreneurship">
+                                Добавлены новые проекты и исследования в области предпринимательства
+                            </p>
+                            <time class="card-date" datetime="2024-10-20">Октябрь 2024</time>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="blog-preview" id="blog-preview">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Анонсы</h2>
-                    <p class="section-description">Последние новости и предстоящие события</p>
+                    <h2 class="section-title" data-ru="Последние записи" data-en="Latest posts">Последние записи</h2>
+                    <a href="blog.html" class="section-link" data-ru="Все записи" data-en="All posts">Все записи →</a>
                 </div>
-                
-                <div class="announcements-grid">
-                    <a href="culttech.html" class="announcement-card">
-                        <div class="announcement-header">
-                            <div class="announcement-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                                </svg>
-                            </div>
-                            <span class="announcement-status status-new">Новое</span>
-                            <div class="announcement-date">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                                    <line x1="16" y1="2" x2="16" y2="6"/>
-                                    <line x1="8" y1="2" x2="8" y2="6"/>
-                                    <line x1="3" y1="10" x2="21" y2="10"/>
-                                </svg>
-                                20 января 2024
-                            </div>
-                        </div>
-                        <h3 class="announcement-title">Запуск CultTech Hub</h3>
-                        <p class="announcement-description">
-                            Новая интерактивная платформа для нетворкинга в области культуры и технологий готова к тестированию
-                        </p>
-                    </a>
-                    
-                    <a href="contacts.html" class="announcement-card">
-                        <div class="announcement-header">
-                            <div class="announcement-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                    <circle cx="9" cy="7" r="4"/>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                                </svg>
-                            </div>
-                            <span class="announcement-status status-soon">Скоро</span>
-                            <div class="announcement-date">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                                    <line x1="16" y1="2" x2="16" y2="6"/>
-                                    <line x1="8" y1="2" x2="8" y2="6"/>
-                                    <line x1="3" y1="10" x2="21" y2="10"/>
-                                </svg>
-                                15 февраля 2024
-                            </div>
-                        </div>
-                        <h3 class="announcement-title">Участие в Tech Conference 2024</h3>
-                        <p class="announcement-description">
-                            Выступление на международной конференции с докладом "Культура и технологии: синергия будущего"
-                        </p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Latest Blog Posts -->
-        <section class="blog-preview">
-            <div class="container">
-                <div class="section-header-flex">
-                    <div>
-                        <h2 class="section-title">Последние записи</h2>
-                        <p class="section-description">Исследования на пересечении культуры и технологий</p>
-                    </div>
-                    <a href="blog.html" class="btn btn-outline">
-                        <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-                        </svg>
-                        Все статьи
-                    </a>
-                </div>
-                
                 <div class="blog-grid">
-                    <a href="blog/text-1.html" class="blog-card">
-                        <div class="blog-card-header">
-                            <span class="blog-category">Культура</span>
-                            <div class="blog-meta">
-                                <span>15 января 2024</span>
-                                <span>•</span>
-                                <span>5 мин</span>
-                            </div>
+                    <article class="blog-card">
+                        <div class="card-content">
+                            <h3 class="card-title">
+                                <a href="blog.html#text-1" data-ru="Размышления о культуре" data-en="Thoughts on culture">
+                                    Размышления о культуре
+                                </a>
+                            </h3>
+                            <p class="card-excerpt" data-ru="Исследование современных культурных трендов и их влияния на общество..." data-en="Research on modern cultural trends and their impact on society...">
+                                Исследование современных культурных трендов и их влияния на общество...
+                            </p>
+                            <time class="card-date" datetime="2024-11-01">1 ноября 2024</time>
                         </div>
-                        <h3 class="blog-card-title">Размышления о культуре в цифровую эпоху</h3>
-                        <p class="blog-card-excerpt">
-                            Как технологии меняют наше восприятие культурного наследия и какие новые формы искусства появляются...
-                        </p>
-                        <div class="blog-card-footer">
-                            <span class="blog-read-more">
-                                Читать далее
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="5" y1="12" x2="19" y2="12"/>
-                                    <polyline points="12,5 19,12 12,19"/>
-                                </svg>
-                            </span>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="card-content">
+                            <h3 class="card-title">
+                                <a href="blog.html#text-2" data-ru="Технологии будущего" data-en="Future technologies">
+                                    Технологии будущего
+                                </a>
+                            </h3>
+                            <p class="card-excerpt" data-ru="Анализ перспективных технологических решений и их потенциала..." data-en="Analysis of promising technological solutions and their potential...">
+                                Анализ перспективных технологических решений и их потенциала...
+                            </p>
+                            <time class="card-date" datetime="2024-10-15">15 октября 2024</time>
                         </div>
-                    </a>
-                    
-                    <a href="blog/text-2.html" class="blog-card">
-                        <div class="blog-card-header">
-                            <span class="blog-category">Бизнес</span>
-                            <div class="blog-meta">
-                                <span>10 января 2024</span>
-                                <span>•</span>
-                                <span>7 мин</span>
-                            </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="card-content">
+                            <h3 class="card-title">
+                                <a href="blog.html#text-3" data-ru="Предпринимательство в IT" data-en="Entrepreneurship in IT">
+                                    Предпринимательство в IT
+                                </a>
+                            </h3>
+                            <p class="card-excerpt" data-ru="Опыт создания стартапов и работы в технологической сфере..." data-en="Experience in creating startups and working in the technology sector...">
+                                Опыт создания стартапов и работы в технологической сфере...
+                            </p>
+                            <time class="card-date" datetime="2024-09-30">30 сентября 2024</time>
                         </div>
-                        <h3 class="blog-card-title">Предпринимательство и социальная ответственность</h3>
-                        <p class="blog-card-excerpt">
-                            Роль молодых предпринимателей в создании устойчивого будущего и социального воздействия...
-                        </p>
-                        <div class="blog-card-footer">
-                            <span class="blog-read-more">
-                                Читать далее
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="5" y1="12" x2="19" y2="12"/>
-                                    <polyline points="12,5 19,12 12,19"/>
-                                </svg>
-                            </span>
-                        </div>
-                    </a>
-                    
-                    <a href="blog/text-3.html" class="blog-card">
-                        <div class="blog-card-header">
-                            <span class="blog-category">Технологии</span>
-                            <div class="blog-meta">
-                                <span>5 января 2024</span>
-                                <span>•</span>
-                                <span>6 мин</span>
-                            </div>
-                        </div>
-                        <h3 class="blog-card-title">IT-образование: вызовы и возможности</h3>
-                        <p class="blog-card-excerpt">
-                            Личный опыт изучения технологий и построения карьеры в современной IT-индустрии...
-                        </p>
-                        <div class="blog-card-footer">
-                            <span class="blog-read-more">
-                                Читать далее
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="5" y1="12" x2="19" y2="12"/>
-                                    <polyline points="12,5 19,12 12,19"/>
-                                </svg>
-                            </span>
-                        </div>
-                    </a>
+                    </article>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <a href="#home" class="footer-logo">Еремей</a>
-                    <p class="footer-description">
-                        Исследователь на пересечении культуры, технологий и предпринимательства. 
-                        Создаю мосты между традициями и инновациями.
+                <div class="footer-info">
+                    <p class="footer-text" data-ru="© 2024 Еремей. Все права защищены." data-en="© 2024 Eremeya. All rights reserved.">
+                        © 2024 Еремей. Все права защищены.
                     </p>
                 </div>
-                
-                <div class="footer-section">
-                    <h4 class="footer-title">Навигация</h4>
-                    <ul class="footer-links">
-                        <li><a href="blog.html">Блог</a></li>
-                        <li><a href="roadmap.html">Life Roadmap</a></li>
-                        <li><a href="culttech.html">CultTech Hub</a></li>
-                        <li><a href="contacts.html">Контакты</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4 class="footer-title">Связь</h4>
-                    <ul class="footer-links">
-                        <li><a href="mailto:hello@eremeya.dev">hello@eremeya.dev</a></li>
-                        <li><a href="https://t.me/eremeya_dev" target="_blank" rel="noopener noreferrer">@eremeya_dev</a></li>
-                        <li>Москва, Россия</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p class="footer-copyright">© 2024 Еремей. Все права защищены.</p>
-                <div class="footer-legal">
-                    <button class="footer-legal-link">Конфиденциальность</button>
-                    <button class="footer-legal-link">Условия использования</button>
+                <div class="footer-links">
+                    <a href="contacts.html" class="footer-link" data-ru="Контакты" data-en="Contacts">Контакты</a>
+                    <a href="blog.html" class="footer-link" data-ru="Блог" data-en="Blog">Блог</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="js/main.js"></script>
 </body>
 </html>

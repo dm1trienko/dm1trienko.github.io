@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CultTech Hub - Еремей</title>
+    <meta name="description" content="Интерактивная платформа для нетворкинга на пересечении культуры, технологий и предпринимательства">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/culttech.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo">Еремей</a>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">
+                            <span data-ru="Главная" data-en="Home">Главная</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="blog.html" class="nav__link">
+                            <span data-ru="Блог" data-en="Blog">Блог</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="roadmap.html" class="nav__link">
+                            <span data-ru="Roadmap" data-en="Roadmap">Roadmap</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="culttech.html" class="nav__link nav__link--active">
+                            <span data-ru="CultTech" data-en="CultTech">CultTech</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="contacts.html" class="nav__link">
+                            <span data-ru="Контакты" data-en="Contacts">Контакты</span>
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="nav__controls">
+                    <button class="lang-toggle" id="lang-toggle" aria-label="Переключить язык">
+                        <span class="lang-toggle__text">EN</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="nav__toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progress-bar"></div>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero culttech-hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        <span data-ru="CultTech Hub" data-en="CultTech Hub">CultTech Hub</span>
+                    </h1>
+                    <p class="hero__subtitle">
+                        <span data-ru="Нетворкинг на пересечении культуры, технологий и предпринимательства" 
+                              data-en="Networking at the intersection of culture, technology and entrepreneurship">
+                            Нетворкинг на пересечении культуры, технологий и предпринимательства
+                        </span>
+                    </p>
+                    
+                    <!-- Interactive Venn Diagram -->
+                    <div class="venn-diagram" id="venn-diagram">
+                        <div class="venn-circle venn-circle--culture" data-category="culture">
+                            <span class="venn-label" data-ru="Культура" data-en="Culture">Культура</span>
+                        </div>
+                        <div class="venn-circle venn-circle--tech" data-category="tech">
+                            <span class="venn-label" data-ru="Технологии" data-en="Technology">Технологии</span>
+                        </div>
+                        <div class="venn-circle venn-circle--business" data-category="business">
+                            <span class="venn-label" data-ru="Бизнес" data-en="Business">Бизнес</span>
+                        </div>
+                        <div class="venn-intersection venn-intersection--all">
+                            <span class="intersection-label" data-ru="Инновации" data-en="Innovation">Инновации</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span data-ru="Проекты на пересечении" data-en="Intersection Projects">Проекты на пересечении</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        <span data-ru="Исследуем синергию между различными сферами" 
+                              data-en="Exploring synergy between different spheres">
+                            Исследуем синергию между различными сферами
+                        </span>
+                    </p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="filter-buttons">
+                    <button class="filter-btn filter-btn--active" data-filter="all">
+                        <span data-ru="Все" data-en="All">Все</span>
+                    </button>
+                    <button class="filter-btn" data-filter="culture-tech">
+                        <span data-ru="Культура + IT" data-en="Culture + Tech">Культура + IT</span>
+                    </button>
+                    <button class="filter-btn" data-filter="tech-business">
+                        <span data-ru="IT + Бизнес" data-en="Tech + Business">IT + Бизнес</span>
+                    </button>
+                    <button class="filter-btn" data-filter="culture-business">
+                        <span data-ru="Культура + Бизнес" data-en="Culture + Business">Культура + Бизнес</span>
+                    </button>
+                    <button class="filter-btn" data-filter="all-three">
+                        <span data-ru="Все три" data-en="All Three">Все три</span>
+                    </button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Culture + Tech Projects -->
+                    <div class="project-card" data-category="culture-tech">
+                        <div class="project-card__image">
+                            <div class="project-placeholder">🎨</div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">
+                                <span data-ru="Цифровые музеи" data-en="Digital Museums">Цифровые музеи</span>
+                            </h3>
+                            <p class="project-card__description">
+                                <span data-ru="VR-экскурсии и интерактивные выставки" 
+                                      data-en="VR tours and interactive exhibitions">
+                                    VR-экскурсии и интерактивные выставки
+                                </span>
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag tag--culture">Culture</span>
+                                <span class="tag tag--tech">Tech</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="culture-tech">
+                        <div class="project-card__image">
+                            <div class="project-placeholder">🎵</div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">
+                                <span data-ru="AI в музыке" data-en="AI in Music">AI в музыке</span>
+                            </h3>
+                            <p class="project-card__description">
+                                <span data-ru="Генерация музыки с помощью нейросетей" 
+                                      data-en="Music generation using neural networks">
+                                    Генерация музыки с помощью нейросетей
+                                </span>
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag tag--culture">Culture</span>
+                                <span class="tag tag--tech">Tech</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tech + Business Projects -->
+                    <div class="project-card" data-category="tech-business">
+                        <div class="project-card__image">
+                            <div class="project-placeholder">🚀</div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">
+                                <span data-ru="EdTech стартапы" data-en="EdTech Startups">EdTech стартапы</span>
+                            </h3>
+                            <p class="project-card__description">
+                                <span data-ru="Платформы для онлайн-обучения" 
+                                      data-en="Online learning platforms">
+                                    Платформы для онлайн-обучения
+                                </span>
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag tag--tech">Tech</span>
+                                <span class="tag tag--business">Business</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="tech-business">
+                        <div class="project-card__image">
+                            <div class="project-placeholder">💳</div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">
+                                <span data-ru="Финтех решения" data-en="Fintech Solutions">Финтех решения</span>
+                            </h3>
+                            <p class="project-card__description">
+                                <span data-ru="Цифровые платежные системы" 
+                                      data-en="Digital payment systems">
+                                    Цифровые платежные системы
+                                </span>
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag tag--tech">Tech</span>
+                                <span class="tag tag--business">Business</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Culture + Business Projects -->
+                    <div class="project-card" data-category="culture-business">
+                        <div class="project-card__image">
+                            <div class="project-placeholder">🎭</div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">
+                                <span data-ru="Креативные индустрии" data-en="Creative Industries">Креативные индустрии</span>
+                            </h3>
+                            <p class="project-card__description">
+                                <span data-ru="Монетизация творческого контента" 
+                                      data-en="Monetization of creative content">
+                                    Монетизация творческого контента
+                                </span>
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag tag--culture">Culture</span>
+                                <span class="tag tag--business">Business</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- All Three Projects -->
+                    <div class="project-card" data-category="all-three">
+                        <div class="project-card__image">
+                            <div class="project-placeholder">🌟</div>
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">
+                                <span data-ru="Культурные NFT" data-en="Cultural NFTs">Культурные NFT</span>
+                            </h3>
+                            <p class="project-card__description">
+                                <span data-ru="Блокчейн для сохранения культурного наследия" 
+                                      data-en="Blockchain for cultural heritage preservation">
+                                    Блокчейн для сохранения культурного наследия
+                                </span>
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag tag--culture">Culture</span>
+                                <span class="tag tag--tech">Tech</span>
+                                <span class="tag tag--business">Business</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Map Section -->
+        <section class="community-map">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span data-ru="Карта сообщества" data-en="Community Map">Карта сообщества</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        <span data-ru="Найдите единомышленников в вашем городе" 
+                              data-en="Find like-minded people in your city">
+                            Найдите единомышленников в вашем городе
+                        </span>
+                    </p>
+                </div>
+
+                <div class="map-container">
+                    <div class="interactive-map" id="community-map">
+                        <!-- Moscow -->
+                        <div class="map-point" style="top: 30%; left: 55%;" data-city="moscow">
+                            <div class="map-marker">
+                                <span class="marker-count">12</span>
+                            </div>
+                            <div class="map-tooltip">
+                                <h4 data-ru="Москва" data-en="Moscow">Москва</h4>
+                                <p data-ru="12 участников" data-en="12 members">12 участников</p>
+                            </div>
+                        </div>
+
+                        <!-- St. Petersburg -->
+                        <div class="map-point" style="top: 25%; left: 52%;" data-city="spb">
+                            <div class="map-marker">
+                                <span class="marker-count">8</span>
+                            </div>
+                            <div class="map-tooltip">
+                                <h4 data-ru="Санкт-Петербург" data-en="St. Petersburg">Санкт-Петербург</h4>
+                                <p data-ru="8 участников" data-en="8 members">8 участников</p>
+                            </div>
+                        </div>
+
+                        <!-- London -->
+                        <div class="map-point" style="top: 35%; left: 45%;" data-city="london">
+                            <div class="map-marker">
+                                <span class="marker-count">15</span>
+                            </div>
+                            <div class="map-tooltip">
+                                <h4 data-ru="Лондон" data-en="London">Лондон</h4>
+                                <p data-ru="15 участников" data-en="15 members">15 участников</p>
+                            </div>
+                        </div>
+
+                        <!-- New York -->
+                        <div class="map-point" style="top: 40%; left: 25%;" data-city="ny">
+                            <div class="map-marker">
+                                <span class="marker-count">23</span>
+                            </div>
+                            <div class="map-tooltip">
+                                <h4 data-ru="Нью-Йорк" data-en="New York">Нью-Йорк</h4>
+                                <p data-ru="23 участника" data-en="23 members">23 участника</p>
+                            </div>
+                        </div>
+
+                        <!-- Berlin -->
+                        <div class="map-point" style="top: 32%; left: 48%;" data-city="berlin">
+                            <div class="map-marker">
+                                <span class="marker-count">11</span>
+                            </div>
+                            <div class="map-tooltip">
+                                <h4 data-ru="Берлин" data-en="Berlin">Берлин</h4>
+                                <p data-ru="11 участников" data-en="11 members">11 участников</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Community Section -->
+        <section class="join-community">
+            <div class="container">
+                <div class="join-form-wrapper">
+                    <div class="join-form-content">
+                        <h2 class="join-title">
+                            <span data-ru="Присоединяйтесь к сообществу" data-en="Join the Community">Присоединяйтесь к сообществу</span>
+                        </h2>
+                        <p class="join-subtitle">
+                            <span data-ru="Станьте частью глобальной сети инноваторов" 
+                                  data-en="Become part of a global network of innovators">
+                                Станьте частью глобальной сети инноваторов
+                            </span>
+                        </p>
+
+                        <form class="join-form" id="join-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="join-name" class="form-label">
+                                        <span data-ru="Имя" data-en="Name">Имя</span>
+                                    </label>
+                                    <input type="text" id="join-name" name="name" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="join-email" class="form-label">Email</label>
+                                    <input type="email" id="join-email" name="email" class="form-input" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="join-interests" class="form-label">
+                                    <span data-ru="Сферы интересов" data-en="Areas of Interest">Сферы интересов</span>
+                                </label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="interests" value="culture">
+                                        <span class="checkbox-custom"></span>
+                                        <span data-ru="Культура" data-en="Culture">Культура</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="interests" value="tech">
+                                        <span class="checkbox-custom"></span>
+                                        <span data-ru="Технологии" data-en="Technology">Технологии</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="interests" value="business">
+                                        <span class="checkbox-custom"></span>
+                                        <span data-ru="Предпринимательство" data-en="Entrepreneurship">Предпринимательство</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="join-city" class="form-label">
+                                    <span data-ru="Город" data-en="City">Город</span>
+                                </label>
+                                <input type="text" id="join-city" name="city" class="form-input" 
+                                       placeholder="Москва, Лондон, Нью-Йорк...">
+                            </div>
+
+                            <button type="submit" class="btn btn--primary btn--full">
+                                <span data-ru="Присоединиться" data-en="Join Community">Присоединиться</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section class="events">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span data-ru="Предстоящие мероприятия" data-en="Upcoming Events">Предстоящие мероприятия</span>
+                    </h2>
+                    <p class="section-subtitle">
+                        <span data-ru="Встречи, воркшопы и конференции" 
+                              data-en="Meetups, workshops and conferences">
+                            Встречи, воркшопы и конференции
+                        </span>
+                    </p>
+                </div>
+
+                <div class="events-grid">
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="event-day">15</span>
+                            <span class="event-month" data-ru="ДЕК" data-en="DEC">ДЕК</span>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">
+                                <span data-ru="AI в креативных индустриях" data-en="AI in Creative Industries">AI в креативных индустриях</span>
+                            </h3>
+                            <p class="event-location">
+                                <span data-ru="Москва, онлайн" data-en="Moscow, online">Москва, онлайн</span>
+                            </p>
+                            <p class="event-description">
+                                <span data-ru="Обсуждаем применение ИИ в искусстве и дизайне" 
+                                      data-en="Discussing AI applications in art and design">
+                                    Обсуждаем применение ИИ в искусстве и дизайне
+                                </span>
+                            </p>
+                        </div>
+                        <button class="event-btn">
+                            <span data-ru="Участвовать" data-en="Join">Участвовать</span>
+                        </button>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="event-day">22</span>
+                            <span class="event-month" data-ru="ДЕК" data-en="DEC">ДЕК</span>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">
+                                <span data-ru="Стартап-питч культурных проектов" data-en="Cultural Projects Startup Pitch">Стартап-питч культурных проектов</span>
+                            </h3>
+                            <p class="event-location">
+                                <span data-ru="Санкт-Петербург" data-en="St. Petersburg">Санкт-Петербург</span>
+                            </p>
+                            <p class="event-description">
+                                <span data-ru="Презентация инновационных проектов в сфере культуры" 
+                                      data-en="Presentation of innovative cultural projects">
+                                    Презентация инновационных проектов в сфере культуры
+                                </span>
+                            </p>
+                        </div>
+                        <button class="event-btn">
+                            <span data-ru="Участвовать" data-en="Join">Участвовать</span>
+                        </button>
+                    </div>
+
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="event-day">10</span>
+                            <span class="event-month" data-ru="ЯНВ" data-en="JAN">ЯНВ</span>
+                        </div>
+                        <div class="event-content">
+                            <h3 class="event-title">
+                                <span data-ru="Воркшоп по NFT в искусстве" data-en="NFT in Art Workshop">Воркшоп по NFT в искусстве</span>
+                            </h3>
+                            <p class="event-location">
+                                <span data-ru="Лондон, онлайн" data-en="London, online">Лондон, онлайн</span>
+                            </p>
+                            <p class="event-description">
+                                <span data-ru="Практический воркшоп по созданию и продаже NFT" 
+                                      data-en="Hands-on workshop on creating and selling NFTs">
+                                    Практический воркшоп по созданию и продаже NFT
+                                </span>
+                            </p>
+                        </div>
+                        <button class="event-btn">
+                            <span data-ru="Участвовать" data-en="Join">Участвовать</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">Еремей</h3>
+                    <p class="footer__text">
+                        <span data-ru="Студент, исследователь пересечений культуры, технологий и предпринимательства" 
+                              data-en="Student, researcher of intersections between culture, technology and entrepreneurship">
+                            Студент, исследователь пересечений культуры, технологий и предпринимательства
+                        </span>
+                    </p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">
+                        <span data-ru="Навигация" data-en="Navigation">Навигация</span>
+                    </h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html" data-ru="Главная" data-en="Home">Главная</a></li>
+                        <li><a href="blog.html" data-ru="Блог" data-en="Blog">Блог</a></li>
+                        <li><a href="roadmap.html" data-ru="Roadmap" data-en="Roadmap">Roadmap</a></li>
+                        <li><a href="culttech.html" data-ru="CultTech" data-en="CultTech">CultTech</a></li>
+                        <li><a href="contacts.html" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">
+                        <span data-ru="Связь" data-en="Contact">Связь</span>
+                    </h4>
+                    <ul class="footer__links">
+                        <li><a href="mailto:hello@eremeya.dev">hello@eremeya.dev</a></li>
+                        <li><a href="https://t.me/eremeya" target="_blank">Telegram</a></li>
+                        <li><a href="https://linkedin.com/in/eremeya" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://github.com/eremeya" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    <span data-ru="© 2024 Еремей. Все права защищены." 
+                          data-en="© 2024 Eremeya. All rights reserved.">
+                        © 2024 Еремей. Все права защищены.
+                    </span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/culttech.js"></script>
+</body>
+</html>

@@ -1,367 +1,485 @@
-// Blog-specific functionality
+// Blog-specific JavaScript functionality
 class BlogManager {
   constructor() {
-    this.posts = []
-    this.filteredPosts = []
-    this.currentFilter = "all"
-    this.searchTerm = ""
     this.init()
   }
 
   init() {
-    this.setupFilters()
-    this.setupSearch()
-    this.loadPosts()
-    this.setupNewsletterForm()
+    this.setupReadingProgress()
+    this.setupPostNavigation()
+    this.setupSearchFunctionality()
+    this.setupSocialSharing()
+    this.initializeReadingTime()
   }
 
-  // Load posts data
-  loadPosts() {
-    // In a real application, this would fetch from an API
-    this.posts = [
-      {
-        id: "text-1",
-        title: "Размышления о культуре в цифровую эпоху",
-        excerpt:
-          "Как технологии меняют наше восприятие культурного наследия и какие новые формы искусства появляются в результате цифровой трансформации.",
-        category: "culture",
-        date: "2024-01-15",
-        readTime: "5 мин",
-        tags: ["Культура", "Технологии", "Искусство", "VR"],
-        featured: true,
-        url: "blog/text-1.html",
-      },
-      {
-        id: "text-2",
-        title: "Предпринимательство и социальная ответственность",
-        excerpt:
-          "Роль молодых предпринимателей в создании устойчивого будущего. Как совместить коммерческий успех с положительным социальным воздействием.",
-        category: "business",
-        date: "2024-01-10",
-        readTime: "7 мин",
-        tags: ["Предпринимательство", "ESG", "Социум", "Устойчивость"],
-        featured: false,
-        url: "blog/text-2.html",
-      },
-      {
-        id: "text-3",
-        title: "IT-образование: вызовы и возможности",
-        excerpt:
-          "Личный опыт изучения технологий и построения карьеры в IT. Советы для студентов и размышления о будущем образования.",
-        category: "tech",
-        date: "2024-01-05",
-        readTime: "6 мин",
-        tags: ["Образование", "IT", "Карьера", "AI"],
-        featured: false,
-        url: "blog/text-3.html",
-      },
-    ]
+  setupReadingProgress() {
+    // Create reading progress bar
+    const progressBar = document.createElement("div")
+    progressBar.className = "reading-progress"
+    progressBar.innerHTML = '<div class="reading-progress-fill"></div>'
+    document.body.appendChild(progressBar)
 
-    this.filteredPosts = [...this.posts]
-    this.renderPosts()
+    // Update progress on scroll
+    window.addEventListener(
+      "scroll",
+      this.throttle(() => {
+        this.updateReadingProgress()
+      }, 16),
+    )
   }
 
-  // Setup category filters
-  setupFilters() {
-    const filterButtons = document.querySelectorAll(".filter-btn")
+  updateReadingProgress() {
+    const progressFill = document.querySelector(".reading-progress-fill")
+    if (!progressFill) return
 
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        // Remove active class from all buttons
-        filterButtons.forEach((btn) => btn.classList.remove("active"))
+    const windowHeight = window.innerHeight
+    const documentHeight = document.documentElement.scrollHeight - windowHeight
+    const scrollTop = window.pageYOffset
+    const progress = (scrollTop / documentHeight) * 100
 
-        // Add active class to clicked button
-        button.classList.add("active")
+    progressFill.style.width = Math.min(progress, 100) + "%"
+  }
 
-        // Update current filter
-        this.currentFilter = button.dataset.category
+  setupPostNavigation() {
+    // Add smooth scrolling to post anchors
+    const postLinks = document.querySelectorAll('a[href^="#text-"]')
 
-        // Filter and render posts
-        this.filterPosts()
+    postLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault()
+        const targetId = link.getAttribute("href").substring(1)
+        const targetElement = document.getElementById(targetId)
+
+        if (targetElement) {
+          this.scrollToPost(targetElement)
+        }
       })
     })
   }
 
-  // Setup search functionality
-  setupSearch() {
-    const searchInput = document.getElementById("search-input")
+  scrollToPost(element) {
+    const headerHeight = document.querySelector(".header").offsetHeight
+    const elementPosition = element.offsetTop - headerHeight - 20
 
-    if (searchInput) {
-      // Debounce search input
-      let searchTimeout
-      searchInput.addEventListener("input", (e) => {
-        clearTimeout(searchTimeout)
-        searchTimeout = setTimeout(() => {
-          this.searchTerm = e.target.value.toLowerCase().trim()
-          this.filterPosts()
-        }, 300)
-      })
-    }
-  }
-
-  // Filter posts based on category and search term
-  filterPosts() {
-    this.filteredPosts = this.posts.filter((post) => {
-      // Skip featured posts in grid
-      if (post.featured) return false
-
-      // Category filter
-      const categoryMatch = this.currentFilter === "all" || post.category === this.currentFilter
-
-      // Search filter
-      const searchMatch =
-        !this.searchTerm ||
-        post.title.toLowerCase().includes(this.searchTerm) ||
-        post.excerpt.toLowerCase().includes(this.searchTerm) ||
-        post.tags.some((tag) => tag.toLowerCase().includes(this.searchTerm))
-
-      return categoryMatch && searchMatch
+    window.scrollTo({
+      top: elementPosition,
+      behavior: "smooth",
     })
 
-    this.renderPosts()
-  }
-
-  // Render posts to the grid
-  renderPosts() {
-    const postsGrid = document.getElementById("posts-grid")
-    if (!postsGrid) return
-
-    // Add loading state
-    postsGrid.classList.add("loading")
-
+    // Highlight the post temporarily
+    element.classList.add("highlighted")
     setTimeout(() => {
-      if (this.filteredPosts.length === 0) {
-        this.renderNoResults(postsGrid)
-      } else {
-        this.renderPostCards(postsGrid)
-      }
-
-      postsGrid.classList.remove("loading")
-    }, 300)
+      element.classList.remove("highlighted")
+    }, 2000)
   }
 
-  // Render individual post cards
-  renderPostCards(container) {
-    const postsHTML = this.filteredPosts.map((post) => this.createPostCard(post)).join("")
+  setupSearchFunctionality() {
+    // Create search widget if it doesn't exist
+    this.createSearchWidget()
 
-    // Keep newsletter signup at the end
-    const newsletterSignup = container.querySelector(".newsletter-signup")
-    container.innerHTML = postsHTML
-
-    if (newsletterSignup) {
-      container.appendChild(newsletterSignup)
+    const searchInput = document.getElementById("blog-search")
+    if (searchInput) {
+      searchInput.addEventListener(
+        "input",
+        this.debounce((e) => {
+          this.performSearch(e.target.value)
+        }, 300),
+      )
     }
-
-    // Animate cards in
-    const cards = container.querySelectorAll(".post-card")
-    cards.forEach((card, index) => {
-      card.style.opacity = "0"
-      card.style.transform = "translateY(20px)"
-
-      setTimeout(() => {
-        card.style.transition = "opacity 0.4s ease-out, transform 0.4s ease-out"
-        card.style.opacity = "1"
-        card.style.transform = "translateY(0)"
-      }, index * 100)
-    })
   }
 
-  // Create HTML for a post card
-  createPostCard(post) {
-    const categoryNames = {
-      culture: "Культура",
-      tech: "Технологии",
-      business: "Бизнес",
-    }
+  createSearchWidget() {
+    const sidebar = document.querySelector(".blog-sidebar")
+    if (!sidebar) return
 
-    const tagsHTML = post.tags
-      .slice(0, 3)
-      .map((tag) => `<span class="tag">${tag}</span>`)
-      .join("")
-
-    return `
-            <a href="${post.url}" class="post-card" data-category="${post.category}">
-                <div class="post-header">
-                    <span class="post-category">${categoryNames[post.category] || post.category}</span>
-                    <div class="post-meta">
-                        <div class="meta-item">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                                <line x1="16" y1="2" x2="16" y2="6"/>
-                                <line x1="8" y1="2" x2="8" y2="6"/>
-                                <line x1="3" y1="10" x2="21" y2="10"/>
-                            </svg>
-                            ${this.formatDate(post.date)}
-                        </div>
-                        <div class="meta-item">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12,6 12,12 16,14"/>
-                            </svg>
-                            ${post.readTime}
-                        </div>
-                    </div>
-                </div>
-                <h3 class="post-title">${post.title}</h3>
-                <p class="post-excerpt">${post.excerpt}</p>
-                <div class="post-tags">${tagsHTML}</div>
-                <div class="post-read-more">
-                    Читать далее
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="5" y1="12" x2="19" y2="12"/>
-                        <polyline points="12,5 19,12 12,19"/>
-                    </svg>
-                </div>
-            </a>
-        `
-  }
-
-  // Render no results message
-  renderNoResults(container) {
-    const newsletterSignup = container.querySelector(".newsletter-signup")
-
-    container.innerHTML = `
-            <div class="no-results">
-                <h3>Статьи не найдены</h3>
-                <p>Попробуйте изменить критерии поиска или выберите другую категорию.</p>
+    const searchWidget = document.createElement("div")
+    searchWidget.className = "sidebar-widget search-widget"
+    searchWidget.innerHTML = `
+            <h3 class="widget-title" data-ru="Поиск" data-en="Search">Поиск</h3>
+            <div class="search-container">
+                <input type="text" id="blog-search" class="search-input" 
+                       placeholder="Поиск по блогу..." 
+                       data-ru="Поиск по блогу..." 
+                       data-en="Search blog...">
+                <div class="search-results" id="search-results"></div>
             </div>
         `
 
-    if (newsletterSignup) {
-      container.appendChild(newsletterSignup)
-    }
+    sidebar.insertBefore(searchWidget, sidebar.firstChild)
   }
 
-  // Format date for display
-  formatDate(dateString) {
-    const date = new Date(dateString)
-    const months = [
-      "января",
-      "февраля",
-      "марта",
-      "апреля",
-      "мая",
-      "июня",
-      "июля",
-      "августа",
-      "сентября",
-      "октября",
-      "ноября",
-      "декабря",
-    ]
+  performSearch(query) {
+    const posts = document.querySelectorAll(".blog-post")
+    const resultsContainer = document.getElementById("search-results")
 
-    return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
-  }
-
-  // Setup newsletter form
-  setupNewsletterForm() {
-    const form = document.getElementById("newsletter-form")
-
-    if (form) {
-      form.addEventListener("submit", (e) => {
-        e.preventDefault()
-
-        const email = form.querySelector('input[type="email"]').value
-
-        if (this.isValidEmail(email)) {
-          this.subscribeToNewsletter(email)
-        } else {
-          this.showMessage("Пожалуйста, введите корректный email адрес", "error")
-        }
-      })
-    }
-  }
-
-  // Validate email
-  isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    return emailRegex.test(email)
-  }
-
-  // Subscribe to newsletter
-  async subscribeToNewsletter(email) {
-    try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-
-      this.showMessage("Спасибо за подписку! Вы будете получать уведомления о новых статьях.", "success")
-
-      // Reset form
-      const form = document.getElementById("newsletter-form")
-      if (form) form.reset()
-    } catch (error) {
-      console.error("Newsletter subscription error:", error)
-      this.showMessage("Произошла ошибка при подписке. Попробуйте позже.", "error")
-    }
-  }
-
-  // Show message to user
-  showMessage(message, type = "info") {
-    const messageEl = document.createElement("div")
-    messageEl.className = `message message-${type}`
-    messageEl.textContent = message
-
-    const styles = {
-      position: "fixed",
-      top: "20px",
-      right: "20px",
-      padding: "1rem 1.5rem",
-      borderRadius: "var(--radius-md)",
-      boxShadow: "var(--shadow-lg)",
-      zIndex: "10000",
-      transform: "translateX(100%)",
-      transition: "transform 0.3s ease-out",
-      maxWidth: "400px",
-      fontSize: "0.875rem",
-      fontWeight: "500",
+    if (!query.trim()) {
+      resultsContainer.innerHTML = ""
+      posts.forEach((post) => (post.style.display = "block"))
+      return
     }
 
-    // Apply base styles
-    Object.assign(messageEl.style, styles)
+    const results = []
+    posts.forEach((post) => {
+      const title = post.querySelector(".post-title").textContent.toLowerCase()
+      const content = post.querySelector(".post-content").textContent.toLowerCase()
+      const searchTerm = query.toLowerCase()
 
-    // Apply type-specific styles
-    if (type === "success") {
-      messageEl.style.background = "#10b981"
-      messageEl.style.color = "white"
-    } else if (type === "error") {
-      messageEl.style.background = "#ef4444"
-      messageEl.style.color = "white"
+      if (title.includes(searchTerm) || content.includes(searchTerm)) {
+        results.push(post)
+        post.style.display = "block"
+      } else {
+        post.style.display = "none"
+      }
+    })
+
+    this.displaySearchResults(results, query)
+  }
+
+  displaySearchResults(results, query) {
+    const resultsContainer = document.getElementById("search-results")
+
+    if (results.length === 0) {
+      resultsContainer.innerHTML = `
+                <div class="search-no-results">
+                    <p data-ru="Ничего не найдено" data-en="Nothing found">Ничего не найдено</p>
+                </div>
+            `
     } else {
-      messageEl.style.background = "var(--color-warm-600)"
-      messageEl.style.color = "white"
+      resultsContainer.innerHTML = `
+                <div class="search-results-info">
+                    <p data-ru="Найдено: ${results.length}" data-en="Found: ${results.length}">
+                        Найдено: ${results.length}
+                    </p>
+                </div>
+            `
     }
+  }
 
-    document.body.appendChild(messageEl)
+  setupSocialSharing() {
+    // Add social sharing buttons to each post
+    const posts = document.querySelectorAll(".blog-post")
 
-    // Animate in
+    posts.forEach((post) => {
+      this.addSocialButtons(post)
+    })
+  }
+
+  addSocialButtons(post) {
+    const postFooter = post.querySelector(".post-footer")
+    if (!postFooter) return
+
+    const socialButtons = document.createElement("div")
+    socialButtons.className = "social-sharing"
+    socialButtons.innerHTML = `
+            <span class="share-label" data-ru="Поделиться:" data-en="Share:">Поделиться:</span>
+            <button class="share-btn" data-platform="twitter" aria-label="Поделиться в Twitter">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-platform="facebook" aria-label="Поделиться в Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+            </button>
+            <button class="share-btn" data-platform="linkedin" aria-label="Поделиться в LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+            </button>
+            <button class="share-btn copy-link" aria-label="Копировать ссылку">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                </svg>
+            </button>
+        `
+
+    postFooter.appendChild(socialButtons)
+
+    // Add event listeners for sharing
+    const shareButtons = socialButtons.querySelectorAll(".share-btn")
+    shareButtons.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        this.handleShare(e, post)
+      })
+    })
+  }
+
+  handleShare(event, post) {
+    const platform = event.currentTarget.dataset.platform
+    const postTitle = post.querySelector(".post-title").textContent
+    const postUrl = window.location.href + "#" + post.id
+
+    switch (platform) {
+      case "twitter":
+        this.shareToTwitter(postTitle, postUrl)
+        break
+      case "facebook":
+        this.shareToFacebook(postUrl)
+        break
+      case "linkedin":
+        this.shareToLinkedIn(postTitle, postUrl)
+        break
+      default:
+        this.copyToClipboard(postUrl)
+    }
+  }
+
+  shareToTwitter(title, url) {
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`
+    window.open(twitterUrl, "_blank", "width=600,height=400")
+  }
+
+  shareToFacebook(url) {
+    const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`
+    window.open(facebookUrl, "_blank", "width=600,height=400")
+  }
+
+  shareToLinkedIn(title, url) {
+    const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`
+    window.open(linkedinUrl, "_blank", "width=600,height=400")
+  }
+
+  copyToClipboard(text) {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        this.showNotification("Ссылка скопирована!", "success")
+      })
+      .catch(() => {
+        // Fallback for older browsers
+        const textArea = document.createElement("textarea")
+        textArea.value = text
+        document.body.appendChild(textArea)
+        textArea.select()
+        document.execCommand("copy")
+        document.body.removeChild(textArea)
+        this.showNotification("Ссылка скопирована!", "success")
+      })
+  }
+
+  showNotification(message, type = "info") {
+    const notification = document.createElement("div")
+    notification.className = `notification notification-${type}`
+    notification.textContent = message
+
+    document.body.appendChild(notification)
+
     setTimeout(() => {
-      messageEl.style.transform = "translateX(0)"
+      notification.classList.add("show")
     }, 100)
 
-    // Remove after 4 seconds
     setTimeout(() => {
-      messageEl.style.transform = "translateX(100%)"
+      notification.classList.remove("show")
       setTimeout(() => {
-        if (document.body.contains(messageEl)) {
-          document.body.removeChild(messageEl)
-        }
+        document.body.removeChild(notification)
       }, 300)
-    }, 4000)
+    }, 3000)
   }
 
-  // Analytics tracking (placeholder)
-  trackEvent(eventName, properties = {}) {
-    // In a real application, this would send data to analytics service
-    console.log("Analytics Event:", eventName, properties)
+  initializeReadingTime() {
+    // Calculate and update reading times
+    const posts = document.querySelectorAll(".blog-post")
+
+    posts.forEach((post) => {
+      const content = post.querySelector(".post-content")
+      const readingTimeElement = post.querySelector(".post-reading-time")
+
+      if (content && readingTimeElement) {
+        const wordCount = this.countWords(content.textContent)
+        const readingTime = Math.ceil(wordCount / 200) // 200 words per minute
+
+        const currentLang = document.documentElement.lang || "ru"
+        const timeText = currentLang === "ru" ? `${readingTime} мин чтения` : `${readingTime} min read`
+
+        readingTimeElement.textContent = timeText
+      }
+    })
+  }
+
+  countWords(text) {
+    return text.trim().split(/\s+/).length
+  }
+
+  // Utility functions
+  throttle(func, limit) {
+    let inThrottle
+    return function () {
+      const args = arguments
+      
+      if (!inThrottle) {
+        func.apply(this, args)
+        inThrottle = true
+        setTimeout(() => (inThrottle = false), limit)
+      }
+    }
+  }
+
+  debounce(func, wait, immediate) {
+    let timeout
+    return function () {
+      
+      const args = arguments
+      const later = () => {
+        timeout = null
+        if (!immediate) func.apply(this, args)
+      }
+      const callNow = immediate && !timeout
+      clearTimeout(timeout)
+      timeout = setTimeout(later, wait)
+      if (callNow) func.apply(this, args)
+    }
   }
 }
 
-// Initialize blog functionality when DOM is loaded
-document.addEventListener("DOMContentLoaded", () => {
-  new BlogManager()
-})
+// Additional CSS for blog functionality
+const blogStyles = `
+    .reading-progress {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: rgba(139, 115, 85, 0.1);
+        z-index: 999;
+    }
+    
+    .reading-progress-fill {
+        height: 100%;
+        background-color: var(--color-accent);
+        width: 0%;
+        transition: width 0.1s ease;
+    }
+    
+    .blog-post.highlighted {
+        border-color: var(--color-accent);
+        box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.2);
+        transition: all 0.3s ease;
+    }
+    
+    .search-widget {
+        order: -1;
+    }
+    
+    .search-container {
+        position: relative;
+    }
+    
+    .search-input {
+        width: 100%;
+        padding: var(--spacing-sm) var(--spacing-md);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        font-size: var(--font-size-sm);
+        background-color: var(--color-background);
+        color: var(--color-text-primary);
+        transition: border-color var(--transition-fast);
+    }
+    
+    .search-input:focus {
+        outline: none;
+        border-color: var(--color-accent);
+    }
+    
+    .search-results {
+        margin-top: var(--spacing-md);
+    }
+    
+    .search-results-info p,
+    .search-no-results p {
+        font-size: var(--font-size-xs);
+        color: var(--color-text-muted);
+        margin: 0;
+    }
+    
+    .social-sharing {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        margin-top: var(--spacing-md);
+        padding-top: var(--spacing-md);
+        border-top: 1px solid var(--color-border);
+    }
+    
+    .share-label {
+        font-size: var(--font-size-xs);
+        color: var(--color-text-muted);
+        font-weight: 500;
+    }
+    
+    .share-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        background-color: var(--color-surface);
+        color: var(--color-text-secondary);
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+    
+    .share-btn:hover {
+        background-color: var(--color-accent);
+        color: white;
+        border-color: var(--color-accent);
+        transform: translateY(-1px);
+    }
+    
+    .notification {
+        position: fixed;
+        top: calc(var(--header-height) + var(--spacing-md));
+        right: var(--spacing-md);
+        padding: var(--spacing-md) var(--spacing-lg);
+        background-color: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-lg);
+        font-size: var(--font-size-sm);
+        z-index: 1001;
+        transform: translateX(100%);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    
+    .notification.show {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+    .notification-success {
+        border-left: 4px solid #10b981;
+        color: #10b981;
+    }
+    
+    @media (max-width: 768px) {
+        .social-sharing {
+            flex-wrap: wrap;
+        }
+        
+        .share-btn {
+            width: 28px;
+            height: 28px;
+        }
+        
+        .notification {
+            right: var(--spacing-sm);
+            left: var(--spacing-sm);
+            transform: translateY(-100%);
+        }
+        
+        .notification.show {
+            transform: translateY(0);
+        }
+    }
+`
 
-// Export for module usage if needed
-if (typeof module !== "undefined" && module.exports) {
-  module.exports = { BlogManager }
-}
+// Inject blog styles
+const blogStyleSheet = document.createElement("style")
+blogStyleSheet.textContent = blogStyles
+document.head.appendChild(blogStyleSheet)
+
+// Initialize blog manager
+const blogManager = new BlogManager()
