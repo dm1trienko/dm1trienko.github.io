@@ -87,13 +87,14 @@
   :root {
     --color-primary: #eae5de;
     --color-secondary: #d0c8be;
-    --color-accent: #bfa181;
+    --color-accent: #cdb397;
+    --color-accent-dark: #c19c77;
     --color-background: #2b2927;
     --color-surface: #3b3835;
     --color-border: #4a4744;
     --color-text-primary: #eae5de;
-    --color-text-secondary: #dcd2c7;
-    --color-text-muted: #c0b9b0;
+    --color-text-secondary: #e8e0d7;
+    --color-text-muted: #d0c6bd;
   }
 }
 
