@@ -5,12 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initTimelineAnimations()
   initScrollProgress()
   initStatsCounter()
-
-  // Language toggle functionality (inherited from main.js)
-  const langToggle = document.getElementById("lang-toggle")
-  if (langToggle) {
-    langToggle.addEventListener("click", toggleLanguage)
-  }
 })
 
 // Timeline animations on scroll
@@ -203,40 +197,3 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
-// Language toggle function (if not already defined in main.js)
-function toggleLanguage() {
-  const currentLang = document.documentElement.lang
-  const newLang = currentLang === "ru" ? "en" : "ru"
-
-  document.documentElement.lang = newLang
-
-  // Update language toggle button
-  const langToggle = document.getElementById("lang-toggle")
-  const langCurrent = langToggle.querySelector(".lang-current")
-  langCurrent.textContent = newLang.toUpperCase()
-
-  // Update all translatable elements
-  const translatableElements = document.querySelectorAll("[data-en]")
-  translatableElements.forEach((element) => {
-    if (newLang === "en") {
-      element.textContent = element.getAttribute("data-en")
-    } else {
-      // Store original Russian text if not already stored
-      if (!element.hasAttribute("data-ru")) {
-        element.setAttribute("data-ru", element.textContent)
-      }
-      element.textContent = element.getAttribute("data-ru")
-    }
-  })
-
-  // Save language preference
-  localStorage.setItem("preferred-language", newLang)
-}
-
-// Load saved language preference
-document.addEventListener("DOMContentLoaded", () => {
-  const savedLang = localStorage.getItem("preferred-language")
-  if (savedLang && savedLang !== document.documentElement.lang) {
-    toggleLanguage()
-  }
-})
