@@ -1,15 +1,48 @@
 /* CSS Custom Properties */
 :root {
-  /* Colors - Old Money Minimalism */
-  --color-primary: #1a1a1a;
-  --color-secondary: #4a4a4a;
-  --color-accent: #8b7355;
-  --color-background: #fefefe;
+  /* Colors - Old Money Beige palette */
+  --color-primary: #362f2d;
+  --color-secondary: #544d4b;
+  --color-accent: #bfa181;
+  --color-background: #f5f2ed;
   --color-surface: #ffffff;
-  --color-border: #e5e5e5;
-  --color-text-primary: #1a1a1a;
-  --color-text-secondary: #666666;
-  --color-text-muted: #999999;
+  --color-border: #d6cec3;
+  --color-text-primary: #362f2d;
+  --color-text-secondary: #5c544d;
+  --color-text-muted: #877f77;
+  --color-text: var(--color-text-primary);
+
+  /* Extended palette */
+  --color-primary-50: #e9e5e1;
+  --color-primary-100: #d6cfc9;
+  --color-primary-900: #1c1918;
+  --color-accent-50: #f7f1e8;
+  --color-accent-100: #eddcc7;
+  --color-accent-900: #7a674e;
+  --color-accent-dark: #8f775c;
+  --color-stone-50: #f5f2ed;
+  --color-stone-100: #e5e0d8;
+  --color-stone-200: #d5cfc5;
+  --color-stone-300: #c6bfb3;
+  --color-stone-400: #b8b0a4;
+  --color-stone-500: #a79f93;
+  --color-stone-600: #948c80;
+  --color-stone-700: #80796d;
+  --color-stone-800: #6d665c;
+  --color-stone-900: #544d4b;
+  --color-amber-50: #f9f5ec;
+  --color-amber-300: #e2cfa6;
+  --color-amber-400: #d1b98c;
+  --color-amber-500: #bfa181;
+  --color-amber-600: #a98b6b;
+  --color-amber-700: #93765a;
+  --color-green-50: #e6f5e9;
+  --color-green-200: #b7ddb7;
+  --color-green-700: #407d52;
+  --color-red-400: #e08080;
+  --color-red-500: #d46a6a;
+  --color-red-600: #c05050;
+  --color-white: #ffffff;
 
   /* Typography */
   --font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -52,15 +85,15 @@
 /* Dark Theme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: #ffffff;
-    --color-secondary: #b3b3b3;
-    --color-accent: #d4c4a8;
-    --color-background: #0a0a0a;
-    --color-surface: #1a1a1a;
-    --color-border: #2a2a2a;
-    --color-text-primary: #ffffff;
-    --color-text-secondary: #b3b3b3;
-    --color-text-muted: #666666;
+    --color-primary: #eae5de;
+    --color-secondary: #d0c8be;
+    --color-accent: #bfa181;
+    --color-background: #2b2927;
+    --color-surface: #3b3835;
+    --color-border: #4a4744;
+    --color-text-primary: #eae5de;
+    --color-text-secondary: #b8aea3;
+    --color-text-muted: #93897c;
   }
 }
 
