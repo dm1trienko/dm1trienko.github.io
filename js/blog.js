@@ -49,15 +49,39 @@ class BlogPage {
     if (match) {
       match[1].split(/\n/).forEach((line) => {
         const [k, ...r] = line.split(':')
-        meta[k.trim()] = r.join(':').trim()
+        let val = r.join(':').trim()
+        if (
+          (val.startsWith('"') && val.endsWith('"')) ||
+          (val.startsWith("'") && val.endsWith("'"))
+        ) {
+          val = val.slice(1, -1)
+        }
+        meta[k.trim()] = val
       })
       body = md.slice(match[0].length)
     }
+    body = this.stripTitleFromContent(body, meta.title)
     const excerpt = body
       .trim()
       .split(/\n{2,}/)[0]
       .replace(/[#*_`>\[\]]/g, '')
     return { meta, excerpt, content: body }
+  }
+
+  stripTitleFromContent(content, title) {
+    if (!title) return content
+    const lines = content.split(/\n/)
+    while (lines[0] && lines[0].trim() === '') {
+      lines.shift()
+    }
+    if (lines[0] && /^#\s+/.test(lines[0])) {
+      const heading = lines[0].replace(/^#\s+/, '').trim()
+      if (heading === title) {
+        lines.shift()
+        while (lines[0] && lines[0].trim() === '') lines.shift()
+      }
+    }
+    return lines.join('\n')
   }
 
   renderCard(post) {
