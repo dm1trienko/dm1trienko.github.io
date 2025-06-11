@@ -119,6 +119,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+}
+
 /* Typography */
 h1,
 h2,
