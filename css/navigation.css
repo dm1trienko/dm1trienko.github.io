@@ -89,6 +89,8 @@
   border: none;
   padding: var(--spacing-xs);
   cursor: pointer;
+  position: relative;
+  z-index: 1001;
 }
 .nav-toggle span {
   width: 20px;
@@ -99,13 +101,9 @@
 @media (max-width: 768px) {
   .nav-menu {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 70vw;
-    max-width: 280px;
+    inset: 0;
+    width: 100vw;
     background: var(--color-surface);
-    border-left: 1px solid var(--color-border);
     flex-direction: column;
     padding: calc(var(--header-height) + var(--spacing-lg)) var(--spacing-lg);
     gap: var(--spacing-lg);
@@ -113,6 +111,7 @@
     opacity: 0;
     visibility: hidden;
     transition: transform var(--transition-base), opacity var(--transition-base);
+    z-index: 1000;
   }
   .nav-menu.active {
     transform: translateX(0);
