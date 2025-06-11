@@ -1,3 +1,11 @@
+// Preserve saved language early
+(function () {
+  const saved = localStorage.getItem("portfolio-lang")
+  if (saved === "en" || saved === "ru") {
+    document.documentElement.lang = saved
+  }
+})()
+
 // Main JavaScript functionality
 class PortfolioApp {
   constructor() {
@@ -6,12 +14,12 @@ class PortfolioApp {
   }
 
   init() {
+    this.loadLanguage()
     this.setupEventListeners()
     this.setupMobileMenu()
     this.setupLanguageToggle()
     this.setupSmoothScrolling()
     this.setupAnimations()
-    this.loadLanguage()
   }
 
   setupEventListeners() {

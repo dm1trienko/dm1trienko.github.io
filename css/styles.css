@@ -67,7 +67,7 @@
 
   /* Layout */
   --container-max-width: 1200px;
-  --header-height: 5rem;
+  --header-height: 4rem;
   --border-radius: 0.5rem;
   --border-radius-lg: 1rem;
 
@@ -230,7 +230,7 @@ a:focus {
   font-weight: 600;
   color: var(--color-text-secondary);
   text-decoration: none;
-  padding: var(--spacing-md) 0;
+  padding: var(--spacing-sm) 0;
   position: relative;
   transition: color var(--transition-fast);
 }
