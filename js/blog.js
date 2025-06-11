@@ -57,7 +57,7 @@ class BlogPage {
       .trim()
       .split(/\n{2,}/)[0]
       .replace(/[#*_`>\[\]]/g, '')
-    return { meta, excerpt }
+    return { meta, excerpt, content: body }
   }
 
   renderCard(post) {
