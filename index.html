@@ -16,7 +16,7 @@
             <div class="nav-container">
                 <a href="#" class="logo" aria-label="На главную">Еремей Дмитриенко</a>
                 
-                <ul class="nav-menu" id="nav-menu">
+                <ul class="nav-menu" id="nav-menu" aria-hidden="true">
                     <li><a href="index.html" class="nav-link active" data-ru="Главная" data-en="Home">Главная</a></li>
                     <li><a href="blog.html" class="nav-link" data-ru="Блог" data-en="Blog">Блог</a></li>
                     <li><a href="roadmap.html" class="nav-link" data-ru="Путь" data-en="Path">Путь</a></li>
@@ -25,10 +25,19 @@
                 </ul>
 
                 <div class="nav-controls">
-                    <button class="lang-toggle" id="lang-toggle" aria-label="Переключить язык">
-                        <span class="lang-current">RU</span>
-                    </button>
-                    <button class="nav-toggle" id="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+                    <div class="language-selector">
+                        <button class="lang-toggle" id="lang-toggle" aria-label="Переключить язык" aria-haspopup="listbox" aria-controls="lang-options" aria-expanded="false">
+                            <svg class="lang-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm3.46-12h2.08a8.05 8.05 0 00-2.5-2.5c.22.75.36 1.6.42 2.5zm-3.46-2c-.8 0-1.54.9-2.05 2h4.1c-.5-1.1-1.25-2-2.05-2zm-3.54.5a8.05 8.05 0 00-2.5 2.5h2.08c.06-.9.2-1.75.42-2.5zM6.5 12c0-.7.05-1.37.15-2H4.6a8.06 8.06 0 000 4h2.05A13.5 13.5 0 016.5 12zm.46 3.5H4.88a8.05 8.05 0 002.5 2.5c-.22-.75-.36-1.6-.42-2.5zm3.54 2c.8 0 1.55-.9 2.05-2h-4.1c.5 1.1 1.25 2 2.05 2zm3.54-.5a8.05 8.05 0 002.5-2.5h-2.08c-.06.9-.2 1.75-.42 2.5zM17.5 12c0 .7-.05 1.37-.15 2h2.05a8.06 8.06 0 000-4h-2.05c.1.63.15 1.3.15 2z"/>
+                            </svg>
+                            <span class="lang-current">RU</span>
+                        </button>
+                        <ul class="lang-options" id="lang-options" role="listbox" aria-label="Выбор языка">
+                            <li data-lang="ru" role="option" aria-selected="true">RU</li>
+                            <li data-lang="en" role="option" aria-selected="false">EN</li>
+                        </ul>
+                    </div>
+                    <button class="nav-toggle" id="nav-toggle" aria-label="Открыть меню" aria-controls="nav-menu" aria-expanded="false">
                         <span></span>
                         <span></span>
                         <span></span>
