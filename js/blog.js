@@ -71,11 +71,14 @@ class BlogPage {
   stripTitleFromContent(content, title) {
     if (!title) return content
     const lines = content.split(/\n/)
+    while (lines.length && lines[0].trim() === '') {
+      lines.shift()
+    }
     if (lines[0] && /^#\s+/.test(lines[0])) {
       const heading = lines[0].replace(/^#\s+/, '').trim()
       if (heading === title) {
         lines.shift()
-        if (lines[0] && lines[0].trim() === '') lines.shift()
+        if (lines.length && lines[0].trim() === '') lines.shift()
       }
     }
     return lines.join('\n')
