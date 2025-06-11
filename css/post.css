@@ -1,0 +1,20 @@
+.post-container {
+  padding: var(--spacing-3xl) 0;
+}
+
+.post-title {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-primary);
+}
+
+.post-date {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-xl);
+  display: block;
+}
+
+.post-content {
+  line-height: 1.7;
+}

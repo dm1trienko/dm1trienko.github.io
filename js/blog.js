@@ -16,7 +16,7 @@ class BlogPage {
       const card = document.createElement('article')
       card.className = 'blog-card'
       card.innerHTML = `
-        <h3><a href="#" data-file="${post.file}">${post.title}</a></h3>
+        <h3><a href="post.html?file=${post.file}">${post.title}</a></h3>
         <p>${post.excerpt}</p>
         <time datetime="${post.date}">${this.formatDate(post.date)}</time>
       `
