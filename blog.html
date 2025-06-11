@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Блог - Еремей Дмитриенко</title>
-    <meta name="description" content="Блог Еремея - размышления о культуре, технологиях и предпринимательстве">
+    <meta name="description" content="Статьи о культуре, технологиях и предпринимательстве">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/blog.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
         <nav class="nav" role="navigation" aria-label="Основная навигация">
             <div class="nav-container">
                 <a href="index.html" class="logo" aria-label="На главную">Еремей Дмитриенко</a>
-                
+
                 <ul class="nav-menu" id="nav-menu">
                     <li><a href="index.html" class="nav-link" data-ru="Главная" data-en="Home">Главная</a></li>
                     <li><a href="blog.html" class="nav-link active" data-ru="Блог" data-en="Blog">Блог</a></li>
@@ -44,105 +44,19 @@
             <div class="container">
                 <div class="blog-hero-content">
                     <h1 class="blog-title" data-ru="Блог" data-en="Blog">Блог</h1>
-                    <p class="blog-subtitle" data-ru="Размышления о культуре, технологиях и предпринимательстве" data-en="Thoughts on culture, technology and entrepreneurship">
-                        Размышления о культуре, технологиях и предпринимательстве
+                    <p class="blog-subtitle" data-ru="Мысли о культуре, технологиях и предпринимательстве" data-en="Thoughts on culture, technology and entrepreneurship">
+                        Мысли о культуре, технологиях и предпринимательстве
                     </p>
                 </div>
             </div>
         </section>
 
-        <section class="blog-content">
+        <section class="blog-list">
             <div class="container">
-                <div class="blog-posts">
-                    <article class="blog-post" id="text-1">
-                        <header class="post-header">
-                            <h2 class="post-title" data-ru="Размышления о культуре" data-en="Thoughts on culture">
-                                Размышления о культуре
-                            </h2>
-                            <div class="post-meta">
-                                <time class="post-date" datetime="2025-11-01">1 ноября 2025</time>
-                                <span class="post-reading-time" data-ru="5 мин чтения" data-en="5 min read">5 мин чтения</span>
-                            </div>
-                        </header>
-                        <div class="post-content" data-src="posts/post1.md"></div>
-                        <footer class="post-footer">
-                            <div class="post-tags">
-                                <span class="tag" data-ru="Культура" data-en="Culture">Культура</span>
-                                <span class="tag" data-ru="Общество" data-en="Society">Общество</span>
-                                <span class="tag" data-ru="Исследования" data-en="Research">Исследования</span>
-                            </div>
-                        </footer>
-                    </article>
-
-                    <article class="blog-post" id="text-2">
-                        <header class="post-header">
-                            <h2 class="post-title" data-ru="Технологии будущего" data-en="Future technologies">
-                                Технологии будущего
-                            </h2>
-                            <div class="post-meta">
-                                <time class="post-date" datetime="2025-10-15">15 октября 2025</time>
-                                <span class="post-reading-time" data-ru="7 мин чтения" data-en="7 min read">7 мин чтения</span>
-                            </div>
-                        </header>
-                        <div class="post-content" data-src="posts/post2.md"></div>
-                        <footer class="post-footer">
-                            <div class="post-tags">
-                                <span class="tag" data-ru="Технологии" data-en="Technology">Технологии</span>
-                                <span class="tag" data-ru="Инновации" data-en="Innovation">Инновации</span>
-                                <span class="tag" data-ru="Будущее" data-en="Future">Будущее</span>
-                            </div>
-                        </footer>
-                    </article>
-
-                    <article class="blog-post" id="text-3">
-                        <header class="post-header">
-                            <h2 class="post-title" data-ru="Предпринимательство в IT" data-en="Entrepreneurship in IT">
-                                Предпринимательство в IT
-                            </h2>
-                            <div class="post-meta">
-                                <time class="post-date" datetime="2025-09-30">30 сентября 2025</time>
-                                <span class="post-reading-time" data-ru="6 мин чтения" data-en="6 min read">6 мин чтения</span>
-                            </div>
-                        </header>
-                        <div class="post-content" data-src="posts/post3.md"></div>
-                        <footer class="post-footer">
-                            <div class="post-tags">
-                                <span class="tag" data-ru="Предпринимательство" data-en="Entrepreneurship">Предпринимательство</span>
-                                <span class="tag" data-ru="Стартапы" data-en="Startups">Стартапы</span>
-                                <span class="tag" data-ru="IT" data-en="IT">IT</span>
-                            </div>
-                        </footer>
-                    </article>
+                <div class="blog-search">
+                    <input type="text" id="blog-search" class="search-input" placeholder="Поиск по блогу..." data-ru="Поиск по блогу..." data-en="Search blog...">
                 </div>
-
-                <button id="show-more-posts" class="btn" data-ru="Показать все" data-en="Show all">Показать все</button>
-
-                <aside class="blog-sidebar">
-                    <div class="sidebar-widget">
-                        <h3 class="widget-title" data-ru="О блоге" data-en="About blog">О блоге</h3>
-                        <p class="widget-content" data-ru="Здесь я делюсь своими размышлениями о пересечении культуры, технологий и предпринимательства." data-en="Here I share my thoughts on the intersection of culture, technology and entrepreneurship.">
-                            Здесь я делюсь своими размышлениями о пересечении культуры, технологий и предпринимательства.
-                        </p>
-                    </div>
-
-                    <div class="sidebar-widget">
-                        <h3 class="widget-title" data-ru="Категории" data-en="Categories">Категории</h3>
-                        <ul class="widget-list">
-                            <li><a href="#" data-ru="Культура" data-en="Culture">Культура</a> <span class="count">(1)</span></li>
-                            <li><a href="#" data-ru="Технологии" data-en="Technology">Технологии</a> <span class="count">(1)</span></li>
-                            <li><a href="#" data-ru="Предпринимательство" data-en="Entrepreneurship">Предпринимательство</a> <span class="count">(1)</span></li>
-                        </ul>
-                    </div>
-
-                    <div class="sidebar-widget">
-                        <h3 class="widget-title" data-ru="Архив" data-en="Archive">Архив</h3>
-                        <ul class="widget-list">
-                            <li><a href="#" data-ru="Ноябрь 2025" data-en="November 2025">Ноябрь 2025</a> <span class="count">(1)</span></li>
-                            <li><a href="#" data-ru="Октябрь 2025" data-en="October 2025">Октябрь 2025</a> <span class="count">(1)</span></li>
-                            <li><a href="#" data-ru="Сентябрь 2025" data-en="September 2025">Сентябрь 2025</a> <span class="count">(1)</span></li>
-                        </ul>
-                    </div>
-                </aside>
+                <div class="blog-grid" id="blog-grid"></div>
             </div>
         </section>
     </main>
@@ -163,8 +77,8 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/blog.js"></script>
 </body>
 </html>
