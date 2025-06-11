@@ -203,6 +203,7 @@ a:focus {
 .nav-container {
   display: flex;
   align-items: center;
+  /* space-between keeps logo and controls at the edges */
   justify-content: space-between;
   height: 100%;
   max-width: var(--container-max-width);
@@ -219,6 +220,8 @@ a:focus {
 
 .nav-menu {
   display: flex;
+  flex: 1; /* take remaining space for symmetrical layout */
+  justify-content: center; /* center items between logo and controls */
   list-style: none;
   gap: var(--spacing-xl);
   margin: 0;
