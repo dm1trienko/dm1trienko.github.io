@@ -155,6 +155,7 @@ class ContactsPage {
             otherQuestion.setAttribute("aria-expanded", "false")
             const otherAnswer = otherQuestion.nextElementSibling
             otherAnswer.style.maxHeight = "0"
+            otherAnswer.classList.remove("open")
           }
         })
 
@@ -162,9 +163,11 @@ class ContactsPage {
         question.setAttribute("aria-expanded", !isExpanded)
 
         if (!isExpanded) {
+          answer.classList.add("open")
           answer.style.maxHeight = answer.scrollHeight + "px"
         } else {
           answer.style.maxHeight = "0"
+          answer.classList.remove("open")
         }
       })
     })

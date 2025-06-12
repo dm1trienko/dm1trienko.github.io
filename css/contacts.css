@@ -399,7 +399,14 @@ body {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  opacity: 0;
+  transform: translateY(-0.5rem);
+  transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+}
+
+.faq-answer.open {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .faq-answer p {
@@ -751,7 +758,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 0.5rem;
 }
 
