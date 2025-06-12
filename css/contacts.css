@@ -604,13 +604,6 @@ body {
     color: var(--color-stone-100);
   }
 
-  .social-links {
-    background: var(--color-stone-900);
-  }
-
-  .social-note {
-    color: var(--color-stone-300);
-  }
 }
 
 /* Responsive Design */
@@ -784,6 +777,15 @@ body {
 @media (prefers-color-scheme: dark) {
   .donate-section {
     background: var(--color-stone-900);
+  }
+
+  /* Social links dark theme */
+  .social-links {
+    background: var(--color-stone-900);
+  }
+
+  .social-note {
+    color: var(--color-stone-300);
   }
 
   .donate-section .section-title {
