@@ -151,3 +151,20 @@
     color: var(--color-primary-900);
   }
 }
+
+@media (max-width: 768px) and (orientation: portrait) {
+  .nav-menu,
+  .language-selector {
+    display: none !important;
+  }
+
+  .navbar-container {
+    justify-content: center;
+    position: relative;
+  }
+
+  .nav-toggle {
+    position: absolute;
+    right: var(--spacing-lg);
+  }
+}
