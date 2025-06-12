@@ -60,6 +60,15 @@ class BlogPage {
       })
       body = md.slice(match[0].length)
     }
+    if (meta['дата'] && !meta.date) {
+      meta.date = this.parseDate(meta['дата'])
+    }
+
+    if (!meta.title) {
+      const m = body.match(/^\s*#\s+(.*)/)
+      if (m) meta.title = m[1].trim()
+    }
+
     body = this.stripTitleFromContent(body, meta.title)
     const excerpt = body
       .trim()
@@ -158,6 +167,15 @@ class BlogPage {
 
   closeModal() {
     this.modal.classList.remove('active')
+  }
+
+  parseDate(str) {
+    const parts = str.split('.')
+    if (parts.length === 3) {
+      const [d, m, y] = parts
+      return `${y}-${m.padStart(2, '0')}-${d.padStart(2, '0')}`
+    }
+    return str
   }
 
   formatDate(dateStr) {
