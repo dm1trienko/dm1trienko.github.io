@@ -18,7 +18,8 @@ class BlogPreview {
         files.map(async (file) => {
           const md = await fetch(file.download_url).then((r) => r.text())
           const { meta, excerpt } = this.parseFrontmatter(md)
-          const title = meta.title || file.name.replace(/\.md$/i, '')
+          const rawTitle = meta.title || file.name
+          const title = rawTitle.replace(/\.md$/i, '')
           return {
             file: file.name,
             title,
