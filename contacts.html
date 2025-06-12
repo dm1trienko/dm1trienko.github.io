@@ -122,7 +122,22 @@
                         </div>
                         <div class="yandex-form-wrapper">
                             <script src="https://forms.yandex.ru/_static/embed.js"></script>
-                            <iframe src="https://forms.yandex.ru/u/684aaab3e010db0970e2a111/?iframe=1" frameborder="0" name="ya-form-684aaab3e010db0970e2a111" width="100%"></iframe>
+                            <iframe id="yaform" src="https://forms.yandex.ru/u/684aaab3e010db0970e2a111?iframe=1" frameborder="0" name="ya-form-684aaab3e010db0970e2a111" width="100%"></iframe>
+                            <script>
+                                (function () {
+                                    const frm = document.getElementById('yaform');
+                                    const prefers = window.matchMedia('(prefers-color-scheme: dark)');
+
+                                    function setTheme(isDark) {
+                                        const url = new URL(frm.src);
+                                        url.searchParams.set('theme', isDark ? 'dark' : 'light');
+                                        frm.src = url.toString();
+                                    }
+
+                                    setTheme(prefers.matches);
+                                    prefers.addEventListener('change', e => setTheme(e.matches));
+                                })();
+                            </script>
                         </div>
                     </div>
 
