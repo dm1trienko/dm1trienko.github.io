@@ -1,6 +1,6 @@
 // Roadmap Page JavaScript
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   // Initialize roadmap functionality
   initTimelineAnimations()
   initScrollProgress()
@@ -9,22 +9,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Timeline animations on scroll
 function initTimelineAnimations() {
-  const timelineItems = document.querySelectorAll(".timeline-item")
+  const timelineItems = document.querySelectorAll('.timeline-item')
 
   // Intersection Observer for timeline items
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
+    rootMargin: '0px 0px -50px 0px',
   }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("animate-in")
+        entry.target.classList.add('animate-in')
 
         // Add special effects for current item
-        if (entry.target.classList.contains("current")) {
-          entry.target.classList.add("highlight")
+        if (entry.target.classList.contains('current')) {
+          entry.target.classList.add('highlight')
         }
       }
     })
@@ -39,22 +39,22 @@ function initTimelineAnimations() {
 function initScrollProgress() {
   const progressBar = createProgressBar()
 
-  window.addEventListener("scroll", () => {
+  window.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset
     const docHeight = document.body.scrollHeight - window.innerHeight
     const scrollPercent = (scrollTop / docHeight) * 100
 
-    progressBar.style.width = scrollPercent + "%"
+    progressBar.style.width = scrollPercent + '%'
   })
 }
 
 function createProgressBar() {
-  const progressContainer = document.createElement("div")
-  progressContainer.className = "scroll-progress"
+  const progressContainer = document.createElement('div')
+  progressContainer.className = 'scroll-progress'
   progressContainer.innerHTML = '<div class="scroll-progress-bar"></div>'
 
   // Add CSS for progress bar
-  const style = document.createElement("style")
+  const style = document.createElement('style')
   style.textContent = `
         .scroll-progress {
             position: fixed;
@@ -83,16 +83,16 @@ function createProgressBar() {
   document.head.appendChild(style)
   document.body.appendChild(progressContainer)
 
-  return progressContainer.querySelector(".scroll-progress-bar")
+  return progressContainer.querySelector('.scroll-progress-bar')
 }
 
 // Animated stats counter
 function initStatsCounter() {
-  const statNumbers = document.querySelectorAll(".stat-number")
+  const statNumbers = document.querySelectorAll('.stat-number')
 
   const observerOptions = {
     threshold: 0.5,
-    rootMargin: "0px",
+    rootMargin: '0px',
   }
 
   const observer = new IntersectionObserver((entries) => {
@@ -117,7 +117,7 @@ function animateNumber(element) {
   const stepDuration = duration / steps
 
   let currentNumber = 0
-  element.textContent = "0"
+  element.textContent = '0'
 
   const timer = setInterval(() => {
     currentNumber += increment
@@ -132,33 +132,33 @@ function animateNumber(element) {
 }
 
 // Timeline item hover effects
-document.addEventListener("DOMContentLoaded", () => {
-  const timelineItems = document.querySelectorAll(".timeline-item")
+document.addEventListener('DOMContentLoaded', () => {
+  const timelineItems = document.querySelectorAll('.timeline-item')
 
   timelineItems.forEach((item) => {
-    const dot = item.querySelector(".timeline-dot")
-    const content = item.querySelector(".timeline-content")
+    const dot = item.querySelector('.timeline-dot')
+    const content = item.querySelector('.timeline-content')
 
-    item.addEventListener("mouseenter", () => {
-      if (!item.classList.contains("current")) {
-        dot.style.transform = "scale(1.1)"
-        dot.style.borderWidth = "4px"
+    item.addEventListener('mouseenter', () => {
+      if (!item.classList.contains('current')) {
+        dot.style.transform = 'scale(1.1)'
+        dot.style.borderWidth = '4px'
       }
     })
 
-    item.addEventListener("mouseleave", () => {
-      if (!item.classList.contains("current")) {
-        dot.style.transform = "scale(1)"
-        dot.style.borderWidth = "3px"
+    item.addEventListener('mouseleave', () => {
+      if (!item.classList.contains('current')) {
+        dot.style.transform = 'scale(1)'
+        dot.style.borderWidth = '3px'
       }
     })
   })
 })
 
 // Keyboard navigation for timeline
-document.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowDown" || e.key === "ArrowUp") {
-    const timelineItems = document.querySelectorAll(".timeline-item")
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    const timelineItems = document.querySelectorAll('.timeline-item')
     const currentFocused = document.activeElement
 
     let currentIndex = -1
@@ -172,28 +172,28 @@ document.addEventListener("keydown", (e) => {
       e.preventDefault()
 
       let nextIndex
-      if (e.key === "ArrowDown") {
+      if (e.key === 'ArrowDown') {
         nextIndex = (currentIndex + 1) % timelineItems.length
       } else {
-        nextIndex = currentIndex === 0 ? timelineItems.length - 1 : currentIndex - 1
+        nextIndex =
+          currentIndex === 0 ? timelineItems.length - 1 : currentIndex - 1
       }
 
       timelineItems[nextIndex].focus()
       timelineItems[nextIndex].scrollIntoView({
-        behavior: "smooth",
-        block: "center",
+        behavior: 'smooth',
+        block: 'center',
       })
     }
   }
 })
 
 // Add tabindex to timeline items for keyboard navigation
-document.addEventListener("DOMContentLoaded", () => {
-  const timelineItems = document.querySelectorAll(".timeline-item")
+document.addEventListener('DOMContentLoaded', () => {
+  const timelineItems = document.querySelectorAll('.timeline-item')
   timelineItems.forEach((item, index) => {
-    item.setAttribute("tabindex", "0")
-    item.setAttribute("role", "article")
-    item.setAttribute("aria-label", `Timeline event ${index + 1}`)
+    item.setAttribute('tabindex', '0')
+    item.setAttribute('role', 'article')
+    item.setAttribute('aria-label', `Timeline event ${index + 1}`)
   })
 })
-

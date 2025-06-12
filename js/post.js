@@ -93,7 +93,11 @@ class BlogPostPage {
 
   formatDate(str) {
     const d = new Date(str)
-    return d.toLocaleDateString('ru-RU', { year: 'numeric', month: 'long', day: 'numeric' })
+    return d.toLocaleDateString('ru-RU', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
   }
 }
 

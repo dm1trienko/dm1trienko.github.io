@@ -1,7 +1,11 @@
 /* Blog page redesign */
 .blog-hero {
   padding: var(--spacing-3xl) 0 var(--spacing-2xl) 0;
-  background: linear-gradient(135deg, var(--color-background) 0%, rgba(139,115,85,0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-background) 0%,
+    rgba(139, 115, 85, 0.05) 100%
+  );
   text-align: center;
 }
 
@@ -42,7 +46,9 @@
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   font-size: var(--font-size-base);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .search-input:focus {
@@ -67,7 +73,6 @@
   background: var(--color-stone-100);
 }
 
-
 .blog-status {
   text-align: center;
   margin-bottom: var(--spacing-lg);
@@ -81,12 +86,17 @@
 }
 
 .blog-card {
-  background: linear-gradient(0deg, var(--color-surface), var(--color-surface)) padding-box,
-    linear-gradient(135deg, var(--color-stone-100), var(--color-accent-100)) border-box;
+  background:
+    linear-gradient(0deg, var(--color-surface), var(--color-surface))
+      padding-box,
+    linear-gradient(135deg, var(--color-stone-100), var(--color-accent-100))
+      border-box;
   border: 1px solid transparent;
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
-  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  transition:
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -135,7 +145,7 @@
     flex-direction: column;
   }
 
-.search-btn {
+  .search-btn {
     margin-left: 0;
     margin-top: var(--spacing-sm);
     width: 100%;

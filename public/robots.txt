@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dm1trienko.github.io/sitemap.xml

@@ -15,7 +15,8 @@ class AnnouncementsLoader {
             card.querySelector('.card-title').textContent = meta.title
           }
           if (meta.description) {
-            card.querySelector('.card-description').textContent = meta.description
+            card.querySelector('.card-description').textContent =
+              meta.description
           }
           if (meta.date) {
             const time = card.querySelector('.card-date')
@@ -43,11 +44,14 @@ class AnnouncementsLoader {
 
   formatDate(d) {
     const date = new Date(d)
-    return date.toLocaleDateString(document.documentElement.lang === 'ru' ? 'ru-RU' : 'en-GB', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    })
+    return date.toLocaleDateString(
+      document.documentElement.lang === 'ru' ? 'ru-RU' : 'en-GB',
+      {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      },
+    )
   }
 }
 

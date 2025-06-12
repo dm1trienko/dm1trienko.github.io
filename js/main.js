@@ -1,7 +1,7 @@
 // Preserve saved language early
-(function () {
-  const saved = localStorage.getItem("portfolio-lang")
-  if (saved === "en" || saved === "ru") {
+;(function () {
+  const saved = localStorage.getItem('portfolio-lang')
+  if (saved === 'en' || saved === 'ru') {
     document.documentElement.lang = saved
   }
 })()
@@ -9,7 +9,7 @@
 // Main JavaScript functionality
 class PortfolioApp {
   constructor() {
-    this.currentLang = "ru"
+    this.currentLang = 'ru'
     this.init()
   }
 
@@ -24,8 +24,8 @@ class PortfolioApp {
 
   setupEventListeners() {
     // DOM Content Loaded
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
         this.onDOMReady()
       })
     } else {
@@ -33,8 +33,14 @@ class PortfolioApp {
     }
 
     // Window events
-    window.addEventListener("scroll", this.throttle(this.handleScroll.bind(this), 16))
-    window.addEventListener("resize", this.throttle(this.handleResize.bind(this), 100))
+    window.addEventListener(
+      'scroll',
+      this.throttle(this.handleScroll.bind(this), 16),
+    )
+    window.addEventListener(
+      'resize',
+      this.throttle(this.handleResize.bind(this), 100),
+    )
   }
 
   onDOMReady() {
@@ -45,16 +51,16 @@ class PortfolioApp {
     this.initializeComponents()
 
     // Add loading complete class
-    document.body.classList.add("loaded")
+    document.body.classList.add('loaded')
   }
 
   setupMobileMenu() {
-    const navToggle = document.getElementById("nav-toggle")
-    const navMenu = document.getElementById("nav-menu")
+    const navToggle = document.getElementById('nav-toggle')
+    const navMenu = document.getElementById('nav-menu')
 
     if (navToggle && navMenu) {
-      navToggle.addEventListener("click", () => {
-        const isActive = navMenu.classList.contains("active")
+      navToggle.addEventListener('click', () => {
+        const isActive = navMenu.classList.contains('active')
 
         if (isActive) {
           this.closeMobileMenu()
@@ -64,15 +70,15 @@ class PortfolioApp {
       })
 
       // Close menu when clicking on links
-      const navLinks = navMenu.querySelectorAll(".nav-link")
+      const navLinks = navMenu.querySelectorAll('.nav-link')
       navLinks.forEach((link) => {
-        link.addEventListener("click", () => {
+        link.addEventListener('click', () => {
           this.closeMobileMenu()
         })
       })
 
       // Close menu when clicking outside
-      document.addEventListener("click", (e) => {
+      document.addEventListener('click', (e) => {
         if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
           this.closeMobileMenu()
         }
@@ -81,74 +87,74 @@ class PortfolioApp {
   }
 
   openMobileMenu() {
-    const navToggle = document.getElementById("nav-toggle")
-    const navMenu = document.getElementById("nav-menu")
+    const navToggle = document.getElementById('nav-toggle')
+    const navMenu = document.getElementById('nav-menu')
 
-    navMenu.classList.add("active")
-    navMenu.setAttribute("aria-hidden", "false")
-    navToggle.classList.add("active")
-    navToggle.setAttribute("aria-expanded", "true")
+    navMenu.classList.add('active')
+    navMenu.setAttribute('aria-hidden', 'false')
+    navToggle.classList.add('active')
+    navToggle.setAttribute('aria-expanded', 'true')
 
     // Prevent body scroll
-    document.body.style.overflow = "hidden"
+    document.body.style.overflow = 'hidden'
   }
 
   closeMobileMenu() {
-    const navToggle = document.getElementById("nav-toggle")
-    const navMenu = document.getElementById("nav-menu")
+    const navToggle = document.getElementById('nav-toggle')
+    const navMenu = document.getElementById('nav-menu')
 
-    navMenu.classList.remove("active")
-    navMenu.setAttribute("aria-hidden", "true")
-    navToggle.classList.remove("active")
-    navToggle.setAttribute("aria-expanded", "false")
+    navMenu.classList.remove('active')
+    navMenu.setAttribute('aria-hidden', 'true')
+    navToggle.classList.remove('active')
+    navToggle.setAttribute('aria-expanded', 'false')
 
     // Restore body scroll
-    document.body.style.overflow = ""
+    document.body.style.overflow = ''
   }
 
   setupLanguageToggle() {
-    const langToggle = document.getElementById("lang-toggle")
-    const langOptions = document.getElementById("lang-options")
+    const langToggle = document.getElementById('lang-toggle')
+    const langOptions = document.getElementById('lang-options')
 
     if (langToggle && langOptions) {
-      langToggle.addEventListener("click", (e) => {
+      langToggle.addEventListener('click', (e) => {
         e.stopPropagation()
-        const expanded = langToggle.getAttribute("aria-expanded") === "true"
-        langToggle.setAttribute("aria-expanded", expanded ? "false" : "true")
-        langOptions.classList.toggle("open", !expanded)
+        const expanded = langToggle.getAttribute('aria-expanded') === 'true'
+        langToggle.setAttribute('aria-expanded', expanded ? 'false' : 'true')
+        langOptions.classList.toggle('open', !expanded)
       })
 
-      langOptions.querySelectorAll("[data-lang]").forEach((option) => {
-        option.addEventListener("click", () => {
-          const lang = option.getAttribute("data-lang")
+      langOptions.querySelectorAll('[data-lang]').forEach((option) => {
+        option.addEventListener('click', () => {
+          const lang = option.getAttribute('data-lang')
           this.currentLang = lang
           this.updateLanguage()
           this.saveLanguagePreference()
-          langOptions.classList.remove("open")
-          langToggle.setAttribute("aria-expanded", "false")
+          langOptions.classList.remove('open')
+          langToggle.setAttribute('aria-expanded', 'false')
         })
       })
 
-      document.addEventListener("click", (e) => {
+      document.addEventListener('click', (e) => {
         if (!langToggle.contains(e.target) && !langOptions.contains(e.target)) {
-          langOptions.classList.remove("open")
-          langToggle.setAttribute("aria-expanded", "false")
+          langOptions.classList.remove('open')
+          langToggle.setAttribute('aria-expanded', 'false')
         }
       })
     }
   }
 
   updateLanguage() {
-    const elements = document.querySelectorAll("[data-ru][data-en]")
-    const langToggle = document.getElementById("lang-toggle")
+    const elements = document.querySelectorAll('[data-ru][data-en]')
+    const langToggle = document.getElementById('lang-toggle')
 
     elements.forEach((element) => {
       const text = element.getAttribute(`data-${this.currentLang}`)
       if (!text) return
 
-      if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+      if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
         element.placeholder = text
-      } else if (element.tagName === "TITLE") {
+      } else if (element.tagName === 'TITLE') {
         document.title = text
         // also update the actual <title> element text for consistency
         element.textContent = text
@@ -159,17 +165,17 @@ class PortfolioApp {
 
     // Update language toggle button
     if (langToggle) {
-      const langCurrent = langToggle.querySelector(".lang-current")
+      const langCurrent = langToggle.querySelector('.lang-current')
       if (langCurrent) {
         langCurrent.textContent = this.currentLang.toUpperCase()
       }
     }
 
-    const langOptions = document.getElementById("lang-options")
+    const langOptions = document.getElementById('lang-options')
     if (langOptions) {
-      langOptions.querySelectorAll("[data-lang]").forEach((opt) => {
-        const selected = opt.getAttribute("data-lang") === this.currentLang
-        opt.setAttribute("aria-selected", selected ? "true" : "false")
+      langOptions.querySelectorAll('[data-lang]').forEach((opt) => {
+        const selected = opt.getAttribute('data-lang') === this.currentLang
+        opt.setAttribute('aria-selected', selected ? 'true' : 'false')
       })
     }
 
@@ -178,15 +184,15 @@ class PortfolioApp {
   }
 
   loadLanguage() {
-    const savedLang = localStorage.getItem("portfolio-lang")
-    if (savedLang && (savedLang === "ru" || savedLang === "en")) {
+    const savedLang = localStorage.getItem('portfolio-lang')
+    if (savedLang && (savedLang === 'ru' || savedLang === 'en')) {
       this.currentLang = savedLang
       this.updateLanguage()
     }
   }
 
   saveLanguagePreference() {
-    localStorage.setItem("portfolio-lang", this.currentLang)
+    localStorage.setItem('portfolio-lang', this.currentLang)
   }
 
   setupSmoothScrolling() {
@@ -194,10 +200,10 @@ class PortfolioApp {
     const anchorLinks = document.querySelectorAll('a[href^="#"]')
 
     anchorLinks.forEach((link) => {
-      link.addEventListener("click", (e) => {
-        const href = link.getAttribute("href")
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href')
 
-        if (href === "#") return
+        if (href === '#') return
 
         const target = document.querySelector(href)
         if (target) {
@@ -209,18 +215,18 @@ class PortfolioApp {
   }
 
   scrollToElement(element) {
-    const headerHeight = document.querySelector(".navbar").offsetHeight
+    const headerHeight = document.querySelector('.navbar').offsetHeight
     const elementPosition = element.offsetTop - headerHeight - 20
 
     window.scrollTo({
       top: elementPosition,
-      behavior: "smooth",
+      behavior: 'smooth',
     })
   }
 
   setupAnimations() {
     // Intersection Observer for animations
-    if ("IntersectionObserver" in window) {
+    if ('IntersectionObserver' in window) {
       this.setupScrollAnimations()
     }
   }
@@ -228,34 +234,36 @@ class PortfolioApp {
   setupScrollAnimations() {
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
+      rootMargin: '0px 0px -50px 0px',
     }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("animate-in")
+          entry.target.classList.add('animate-in')
         }
       })
     }, observerOptions)
 
     // Observe elements for animation
-    const animateElements = document.querySelectorAll(".announcement-card, .blog-card, .hero-content")
+    const animateElements = document.querySelectorAll(
+      '.announcement-card, .blog-card, .hero-content',
+    )
     animateElements.forEach((el) => {
-      el.classList.add("animate-on-scroll")
+      el.classList.add('animate-on-scroll')
       observer.observe(el)
     })
   }
 
   handleScroll() {
-    const header = document.querySelector(".navbar")
+    const header = document.querySelector('.navbar')
     const scrollY = window.scrollY
 
     // Add/remove scrolled class to header
     if (scrollY > 50) {
-      header.classList.add("scrolled")
+      header.classList.add('scrolled')
     } else {
-      header.classList.remove("scrolled")
+      header.classList.remove('scrolled')
     }
   }
 
@@ -267,19 +275,20 @@ class PortfolioApp {
   }
 
   setActiveNavLink() {
-    const currentPage = window.location.pathname.split("/").pop() || "index.html"
-    const navLinks = document.querySelectorAll(".nav-link")
+    const currentPage =
+      window.location.pathname.split('/').pop() || 'index.html'
+    const navLinks = document.querySelectorAll('.nav-link')
 
     navLinks.forEach((link) => {
-      link.classList.remove("active")
-      const href = link.getAttribute("href")
+      link.classList.remove('active')
+      const href = link.getAttribute('href')
 
       if (
         href === currentPage ||
-        (currentPage === "" && href === "index.html") ||
-        (currentPage === "index.html" && href === "index.html")
+        (currentPage === '' && href === 'index.html') ||
+        (currentPage === 'index.html' && href === 'index.html')
       ) {
-        link.classList.add("active")
+        link.classList.add('active')
       }
     })
   }
@@ -291,27 +300,27 @@ class PortfolioApp {
   }
 
   initializeCards() {
-    const cards = document.querySelectorAll(".announcement-card, .blog-card")
+    const cards = document.querySelectorAll('.announcement-card, .blog-card')
 
     cards.forEach((card) => {
       // Add hover effects
-      card.addEventListener("mouseenter", () => {
-        card.style.transform = "translateY(-4px)"
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-4px)'
       })
 
-      card.addEventListener("mouseleave", () => {
-        card.style.transform = "translateY(0)"
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)'
       })
     })
   }
 
   initializeButtons() {
-    const buttons = document.querySelectorAll(".btn")
+    const buttons = document.querySelectorAll('.btn')
 
     buttons.forEach((button) => {
       // Add click effect
-      button.addEventListener("click", (e) => {
-        const ripple = document.createElement("span")
+      button.addEventListener('click', (e) => {
+        const ripple = document.createElement('span')
         const rect = button.getBoundingClientRect()
         const size = Math.max(rect.width, rect.height)
         const x = e.clientX - rect.left - size / 2
@@ -330,8 +339,8 @@ class PortfolioApp {
                     pointer-events: none;
                 `
 
-        button.style.position = "relative"
-        button.style.overflow = "hidden"
+        button.style.position = 'relative'
+        button.style.overflow = 'hidden'
         button.appendChild(ripple)
 
         setTimeout(() => {
@@ -346,7 +355,7 @@ class PortfolioApp {
     let inThrottle
     return function () {
       const args = arguments
-      
+
       if (!inThrottle) {
         func.apply(this, args)
         inThrottle = true
@@ -358,7 +367,6 @@ class PortfolioApp {
   debounce(func, wait, immediate) {
     let timeout
     return function () {
-      
       const args = arguments
       const later = () => {
         timeout = null
@@ -398,14 +406,19 @@ const animationStyles = `
 `
 
 // Inject animation styles
-const styleSheet = document.createElement("style")
+const styleSheet = document.createElement('style')
 styleSheet.textContent = animationStyles
 document.head.appendChild(styleSheet)
 
 // Initialize the application
 const app = new PortfolioApp()
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+  })
+}
 // Export for potential use in other scripts
-if (typeof module !== "undefined" && module.exports) {
+if (typeof module !== 'undefined' && module.exports) {
   module.exports = PortfolioApp
 }
