@@ -755,6 +755,11 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.social-link img {
+  width: 1em;
+  height: 1em;
+}
+
 .social-note {
   font-size: 0.9rem;
   color: var(--color-stone-600);
