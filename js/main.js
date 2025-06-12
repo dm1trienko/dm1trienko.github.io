@@ -73,7 +73,12 @@ class PortfolioApp {
 
       // Close menu when clicking outside
       document.addEventListener("click", (e) => {
-        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+        const langSelector = document.querySelector(".language-selector")
+        if (
+          !navToggle.contains(e.target) &&
+          !navMenu.contains(e.target) &&
+          !(langSelector && langSelector.contains(e.target))
+        ) {
           this.closeMobileMenu()
         }
       })
