@@ -603,6 +603,7 @@ body {
   .donate-section code {
     color: var(--color-stone-100);
   }
+
 }
 
 /* Responsive Design */
@@ -772,7 +773,7 @@ body {
   color: var(--color-stone-600);
 }
 
-/* Dark theme override for donate section */
+/* Dark theme overrides for donate section and social links */
 @media (prefers-color-scheme: dark) {
   .donate-section {
     background: var(--color-stone-900);
@@ -795,5 +796,13 @@ body {
   .donate-section .copy-address:active {
     background: var(--color-stone-500);
     color: var(--color-stone-100);
+  }
+
+  .social-links {
+    background: var(--color-stone-900);
+  }
+
+  .social-note {
+    color: var(--color-stone-300);
   }
 }
