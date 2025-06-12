@@ -246,6 +246,7 @@ a:focus {
   gap: var(--spacing-xl);
   margin: 0;
   align-items: center;
+  height: 100%;
 }
 
 .nav-link {
@@ -416,7 +417,7 @@ a:focus {
   }
 
   .nav-menu .language-selector {
-    margin-top: auto;
+    margin-top: 0;
   }
 }
 
