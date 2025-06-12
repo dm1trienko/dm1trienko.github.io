@@ -719,10 +719,45 @@ body {
   cursor: pointer;
 }
 
-.copy-feedback {
-  font-size: 0.875rem;
-  color: var(--color-green-600);
-  min-height: 1em;
+
+/* Toast for copy feedback */
+.toast {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-amber-600);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
+.toast.show {
+  opacity: 1;
+}
+
+/* Social links bar */
+.social-links {
+  padding: 2rem 0;
+  background: var(--color-stone-50);
+  text-align: center;
+}
+
+.social-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.social-note {
+  font-size: 0.9rem;
+  color: var(--color-stone-600);
 }
 
 /* Dark theme override for donate section */

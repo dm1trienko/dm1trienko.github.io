@@ -50,8 +50,8 @@
         <li><a href="index.html" class="nav-link" data-ru="Главная" data-en="Home">Главная</a></li>
         <li><a href="blog.html" class="nav-link" data-ru="Блог" data-en="Blog">Блог</a></li>
         <li><a href="roadmap.html" class="nav-link" data-ru="Путь" data-en="Path">Путь</a></li>
-        <li><a href="culttech.html" class="nav-link" data-ru="CultTech Hub" data-en="CultTech Hub">CulTech Hub</a></li>
-        <li><a href="contacts.html" class="nav-link" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
+        <li><a href="culttech.html" class="nav-link" data-ru="CultTech Hub" data-en="CultTech Hub">CultTech Hub</a></li>
+        <li><a href="contacts.html" class="nav-link" aria-current="page" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
       </ul>
       <div class="language-selector">
         <button class="lang-toggle" id="lang-toggle" aria-label="Переключить язык" aria-haspopup="listbox" aria-controls="lang-options" aria-expanded="false">
@@ -88,11 +88,12 @@
         </section>
 
 
+
         <!-- Contact Methods -->
         <section class="contact-methods" aria-labelledby="methods-title">
             <div class="container">
-                <h2 id="methods-title" class="section-title" data-ru="Как со мной связаться" data-en="How to Reach Me">
-                    Как со мной связаться
+                <h2 id="methods-title" class="section-title" data-ru="Способы связаться" data-en="Ways to Get in Touch">
+                    Способы связаться
                 </h2>
                 
                 <div class="methods-grid">
@@ -110,78 +111,36 @@
                         </div>
                     </div>
 
-                    <div class="method-card" data-method="telegram">
-                        <div class="method-icon">💬</div>
-                        <h3 class="method-title" data-ru="Телеграм" data-en="Telegram">Телеграм</h3>
-                        <p class="method-description" data-ru="Мой Telegram-канал" data-en="My Telegram channel">
-                            Мой Telegram-канал
-                        </p>
-                        <a href="https://t.me/Eremei_Dmitrienko" class="method-link" target="_blank" rel="noopener">
-                            t.me/Eremei_Dmitrienko
-                        </a>
-                        <div class="method-response" data-ru="Не для связи со мной" data-en="Not for contacting me">
-                            Не для связи со мной
+                    <div class="form-wrapper">
+                        <div class="form-header">
+                            <h3 id="form-title" class="section-title" data-ru="Форма обратной связи" data-en="Contact Form">
+                                Форма обратной связи
+                            </h3>
+                            <p class="form-description" data-ru="Если не пользуетесь почтой, заполните форму ниже." data-en="If you don't use email, fill out the form below.">
+                                Если не пользуетесь почтой, заполните форму ниже.
+                            </p>
                         </div>
-                        </div>
-
-                    <div class="method-card" data-method="vk">
-                        <div class="method-icon">📱</div>
-                        <h3 class="method-title" data-ru="VK" data-en="VK">VK</h3>
-                        <p class="method-description" data-ru="Моя страница в VK" data-en="My VK page">
-                            Моя страница в VK
-                        </p>
-                        <a href="https://vk.com/dm1trienko" class="method-link" target="_blank" rel="noopener">
-                            vk.com/dm1trienko
-                        </a>
-                        <div class="method-response" data-ru="Не для связи со мной" data-en="Not for contacting me">
-                            Не для связи со мной
-                        </div>
+                        <div class="yandex-form-wrapper">
+                            <script src="https://forms.yandex.ru/_static/embed.js"></script>
+                            <iframe src="https://forms.yandex.ru/u/684aaab3e010db0970e2a111/?iframe=1" frameborder="0" name="ya-form-684aaab3e010db0970e2a111" width="100%"></iframe>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
-        <section class="donate-section" aria-labelledby="donate-title">
+        <section class="social-links" aria-labelledby="social-title">
             <div class="container">
-                <h2 id="donate-title" class="section-title" data-ru="Поддержать проект" data-en="Support">
-                    Поддержать проект
-                </h2>
-                <div class="donate-grid">
-                    <div class="donate-item">
-                        <img src="img/ton_qr.png" alt="TON QR">
-                        <button class="btn btn-primary copy-address" data-address="UQCb53PoQTmyikWaQwyhplh5ogfpmJCa2w6KRSNZcy56fhOm" data-ru="Скопировать TON" data-en="Copy TON">Скопировать TON</button>
-                        <span class="copy-feedback" aria-live="polite"></span>
-                    </div>
-                    <div class="donate-item">
-                        <img src="img/usdt_qr.png" alt="USDT TRC20 QR">
-                        <button class="btn btn-primary copy-address" data-address="TSxQ1aEvmTzjNZfYmXjrBMjuYNzEHRfi6T" data-ru="Скопировать USDT" data-en="Copy USDT">Скопировать USDT</button>
-                        <span class="copy-feedback" aria-live="polite"></span>
-                    </div>
+                <h2 id="social-title" class="section-title visually-hidden">Соцсети</h2>
+                <div class="social-bar">
+                    <a href="https://t.me/Eremei_Dmitrienko" class="social-link" target="_blank" rel="noopener" aria-label="Telegram">📢</a>
+                    <a href="https://vk.com/dm1trienko" class="social-link" target="_blank" rel="noopener" aria-label="VK">📱</a>
                 </div>
+                <p class="social-note" data-ru="Читайте, а не пишите" data-en="Read, don't message">Читайте, а не пишите</p>
             </div>
         </section>
 
-        <!-- Contact Form -->
-        <section class="contact-form-section" aria-labelledby="form-title">
-            <div class="container">
-                <div class="form-wrapper">
-                    <div class="form-header">
-                        <h2 id="form-title" class="section-title" data-ru="Отправить сообщение" data-en="Send a Message">
-                            Отправить сообщение
-                        </h2>
-                        <p class="form-description" data-ru="Заполните форму ниже, и я свяжусь с вами как можно скорее." data-en="Fill out the form below and I'll get back to you as soon as possible.">
-                            Заполните форму ниже, и я свяжусь с вами как можно скорее.
-                        </p>
-                    </div>
-
-                    <div class="yandex-form-wrapper">
-                        <script src="https://forms.yandex.ru/_static/embed.js"></script>
-                        <iframe src="https://forms.yandex.ru/u/684aaab3e010db0970e2a111/?iframe=1" frameborder="0" name="ya-form-684aaab3e010db0970e2a111" width="100%"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- FAQ Section -->
         <section class="faq-section" aria-labelledby="faq-title">
@@ -229,8 +188,8 @@
                             Как быстро вы отвечаете на сообщения?
                         </button>
                         <div class="faq-answer">
-                            <p data-ru="Стараюсь отвечать на все сообщения в течение 24 часов. Для срочных вопросов пишите на почту. Telegram — это мой канал, не для связи со мной. Сложные вопросы могут потребовать больше времени для обдуманного ответа." data-en="I try to respond to all messages within 24 hours. For urgent matters, please email me. Telegram is my channel and not for direct contact. Complex questions may require more time for a thoughtful response.">
-                                Стараюсь отвечать на все сообщения в течение 24 часов. Для срочных вопросов пишите на почту. Telegram — это мой канал, не для связи со мной. Сложные вопросы могут потребовать больше времени для обдуманного ответа.
+                            <p data-ru="TL;DR: 24 ч для e-mail, в срочных случаях пишите на почту, соцсети не читаю. Стараюсь отвечать на все сообщения в течение 24 часов. Telegram — это мой канал, не для связи со мной. Сложные вопросы могут потребовать больше времени для обдуманного ответа." data-en="TL;DR: 24h for email. For urgent matters email me, I don't read social media. I try to respond to all messages within 24 hours. Telegram is my channel and not for direct contact. Complex questions may require more time for a thoughtful response.">
+                                TL;DR: 24 ч для e-mail, в срочных случаях пишите на почту, соцсети не читаю. Стараюсь отвечать на все сообщения в течение 24 часов. Telegram — это мой канал, не для связи со мной. Сложные вопросы могут потребовать больше времени для обдуманного ответа.
                             </p>
                         </div>
                         </div>
@@ -254,8 +213,26 @@
                             <span data-ru="Написать Email" data-en="Send Email">Написать Email</span>
                         </a>
                         <a href="https://t.me/Eremei_Dmitrienko" class="btn btn-secondary" target="_blank" rel="noopener">
-                            <span data-ru="Канал в Telegram" data-en="Telegram channel">Канал в Telegram</span>
+                            <span data-ru="Перейти в канал" data-en="Go to channel">Перейти в канал</span>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="donate-section" aria-labelledby="donate-title">
+            <div class="container">
+                <h2 id="donate-title" class="section-title" data-ru="Поддержать проекты" data-en="Support Projects">
+                    Поддержать проекты
+                </h2>
+                <div class="donate-grid">
+                    <div class="donate-item">
+                        <img src="img/ton_qr.png" alt="QR-код кошелька TON">
+                        <button class="btn btn-primary copy-address" data-address="UQCb53PoQTmyikWaQwyhplh5ogfpmJCa2w6KRSNZcy56fhOm" data-ru="Скопировать TON" data-en="Copy TON">Скопировать TON</button>
+                    </div>
+                    <div class="donate-item">
+                        <img src="img/usdt_qr.png" alt="USDT TRC20 QR">
+                        <button class="btn btn-primary copy-address" data-address="TSxQ1aEvmTzjNZfYmXjrBMjuYNzEHRfi6T" data-ru="Скопировать USDT" data-en="Copy USDT">Скопировать USDT</button>
                     </div>
                 </div>
             </div>

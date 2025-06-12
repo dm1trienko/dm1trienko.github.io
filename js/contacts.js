@@ -240,6 +240,21 @@ class ContactsPage {
   setupCopyButtons() {
     const buttons = document.querySelectorAll(".copy-address")
 
+    const showToast = (message) => {
+      let toast = document.getElementById("copy-toast")
+      if (!toast) {
+        toast = document.createElement("div")
+        toast.id = "copy-toast"
+        toast.className = "toast"
+        document.body.appendChild(toast)
+      }
+      toast.textContent = message
+      toast.classList.add("show")
+      setTimeout(() => {
+        toast.classList.remove("show")
+      }, 2500)
+    }
+
     const copyText = async (text) => {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         try {
@@ -269,14 +284,8 @@ class ContactsPage {
         const address = btn.getAttribute("data-address")
         try {
           await copyText(address)
-          const feedback = btn.nextElementSibling
-          if (feedback) {
-            const text = document.documentElement.lang === "en" ? "Copied!" : "Скопировано!"
-            feedback.textContent = text
-            setTimeout(() => {
-              feedback.textContent = ""
-            }, 2000)
-          }
+          const text = document.documentElement.lang === "en" ? "Copied!" : "Скопировано!"
+          showToast(text)
         } catch (e) {
           console.error("Copy failed", e)
         }
