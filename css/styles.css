@@ -354,12 +354,12 @@ a:focus {
   background: none;
   border: none;
   cursor: pointer;
-  padding: var(--spacing-xs);
+  padding: var(--spacing-sm);
   gap: 3px;
 }
 
 .nav-toggle span {
-  width: 20px;
+  width: 24px;
   height: 2px;
   background-color: var(--color-primary);
   transition: all var(--transition-fast);
@@ -412,7 +412,11 @@ a:focus {
   }
 
   .nav-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .nav-menu .language-selector {
+    margin-top: auto;
   }
 }
 

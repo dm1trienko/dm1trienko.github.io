@@ -87,13 +87,13 @@
   gap: 3px;
   background: none;
   border: none;
-  padding: var(--spacing-xs);
+  padding: var(--spacing-sm);
   cursor: pointer;
   position: relative;
   z-index: 1001;
 }
 .nav-toggle span {
-  width: 20px;
+  width: 24px;
   height: 2px;
   background-color: var(--color-primary);
   transition: all var(--transition-fast);
@@ -132,19 +132,11 @@
     opacity: 0;
   }
   .nav-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
+    transform: rotate(-45deg) translate(5px, -5px);
   }
 
-  .language-selector {
-    display: none;
-  }
-
-  .nav-menu.active ~ .language-selector {
-    display: block;
-    position: fixed;
-    bottom: var(--spacing-lg);
-    left: 50%;
-    transform: translateX(-50%);
+  .nav-menu .language-selector {
+    margin-top: auto;
   }
 
   /* Keep close button fully visible */
