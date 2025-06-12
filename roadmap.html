@@ -1,247 +1,579 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-ru="Жизненный путь - Еремей Дмитриенко" data-en="Life Roadmap - Eremei Dmitrienko">Жизненный путь - Еремей Дмитриенко</title>
-    <meta name="description" content="Жизненный путь и учебные вехи Еремея - от детства до настоящего времени">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/navigation.css">
-    <link rel="stylesheet" href="css/roadmap.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title
+      data-ru="Жизненный путь - Еремей Дмитриенко"
+      data-en="Life Roadmap - Eremei Dmitrienko"
+    >
+      Жизненный путь - Еремей Дмитриенко
+    </title>
+    <meta
+      name="description"
+      content="Жизненный путь и учебные вехи Еремея - от детства до настоящего времени"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/navigation.css" />
+    <link rel="stylesheet" href="css/roadmap.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- Header -->
-<header class="navbar" role="banner">
-  <nav class="navbar-nav" role="navigation" aria-label="Основная навигация">
-    <div class="navbar-container">
-      <a href="index.html" class="navbar-brand">Еремей Дмитриенко</a>
-      <ul class="nav-menu" id="nav-menu" aria-hidden="true">
-        <li><a href="index.html" class="nav-link" data-ru="Главная" data-en="Home">Главная</a></li>
-        <li><a href="blog.html" class="nav-link" data-ru="Блог" data-en="Blog">Блог</a></li>
-        <li><a href="roadmap.html" class="nav-link" data-ru="Путь" data-en="Path">Путь</a></li>
-        <li><a href="culttech.html" class="nav-link" data-ru="CultTech Hub" data-en="CultTech Hub">CultTech Hub</a></li>
-        <li><a href="contacts.html" class="nav-link" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
-        <li class="language-selector">
-          <button class="lang-toggle" id="lang-toggle" aria-label="Переключить язык" aria-haspopup="listbox" aria-controls="lang-options" aria-expanded="false">
-            <span class="lang-current">RU</span>
-          </button>
-          <ul class="lang-options" id="lang-options" role="listbox" aria-label="Выбор языка">
-            <li data-lang="ru" role="option" aria-selected="true">RU</li>
-            <li data-lang="en" role="option" aria-selected="false">EN</li>
+    <header class="navbar" role="banner">
+      <nav class="navbar-nav" role="navigation" aria-label="Основная навигация">
+        <div class="navbar-container">
+          <a href="index.html" class="navbar-brand">Еремей Дмитриенко</a>
+          <ul class="nav-menu" id="nav-menu" aria-hidden="true">
+            <li>
+              <a
+                href="index.html"
+                class="nav-link"
+                data-ru="Главная"
+                data-en="Home"
+                >Главная</a
+              >
+            </li>
+            <li>
+              <a href="blog.html" class="nav-link" data-ru="Блог" data-en="Blog"
+                >Блог</a
+              >
+            </li>
+            <li>
+              <a
+                href="roadmap.html"
+                class="nav-link"
+                data-ru="Путь"
+                data-en="Path"
+                >Путь</a
+              >
+            </li>
+            <li>
+              <a
+                href="culttech.html"
+                class="nav-link"
+                data-ru="CultTech Hub"
+                data-en="CultTech Hub"
+                >CultTech Hub</a
+              >
+            </li>
+            <li>
+              <a
+                href="contacts.html"
+                class="nav-link"
+                data-ru="Контакты"
+                data-en="Contacts"
+                >Контакты</a
+              >
+            </li>
+            <li class="language-selector">
+              <button
+                class="lang-toggle"
+                id="lang-toggle"
+                aria-label="Переключить язык"
+                aria-haspopup="listbox"
+                aria-controls="lang-options"
+                aria-expanded="false"
+              >
+                <span class="lang-current">RU</span>
+              </button>
+              <ul
+                class="lang-options"
+                id="lang-options"
+                role="listbox"
+                aria-label="Выбор языка"
+              >
+                <li data-lang="ru" role="option" aria-selected="true">RU</li>
+                <li data-lang="en" role="option" aria-selected="false">EN</li>
+              </ul>
+            </li>
           </ul>
-        </li>
-      </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Открыть меню" aria-controls="nav-menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
-</header>
+          <button
+            class="nav-toggle"
+            id="nav-toggle"
+            aria-label="Открыть меню"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
 
     <!-- Main Content -->
     <main class="main">
-        <!-- Hero Section -->
-        <section class="roadmap-hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title" data-ru="Жизненный путь" data-en="Life Roadmap">Жизненный путь</h1>
-                    <p class="hero-subtitle" data-ru="Мой путь через жизнь, образование и личностный рост" data-en="My journey through life, education, and personal growth">
-                        Мой путь через жизнь, образование и личностный рост
-                    </p>
+      <!-- Hero Section -->
+      <section class="roadmap-hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1
+              class="hero-title"
+              data-ru="Жизненный путь"
+              data-en="Life Roadmap"
+            >
+              Жизненный путь
+            </h1>
+            <p
+              class="hero-subtitle"
+              data-ru="Мой путь через жизнь, образование и личностный рост"
+              data-en="My journey through life, education, and personal growth"
+            >
+              Мой путь через жизнь, образование и личностный рост
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Timeline Section -->
+      <section class="timeline-section">
+        <div class="container">
+          <div class="timeline">
+            <!-- Stage 0 -->
+            <div class="timeline-item" data-year="2011-2013">
+              <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-date">2011–2013</div>
+                <h3
+                  class="timeline-title"
+                  data-en="Pre-school prep"
+                  data-ru="Дошкольная подготовка"
+                >
+                  Дошкольная подготовка
+                </h3>
+                <p
+                  class="timeline-description"
+                  data-en="Gymnastics for 2.5 years. LEGO construction and basic math lessons."
+                  data-ru="Спортивная гимнастика — 2,5 года. LEGO-конструирование, базовые математические занятия."
+                >
+                  Спортивная гимнастика — 2,5 года. LEGO-конструирование,
+                  базовые математические занятия.
+                </p>
+                <div class="timeline-tags">
+                  <span
+                    class="timeline-tag"
+                    data-en="Physical base"
+                    data-ru="Физическая база"
+                    >Физическая база</span
+                  >
+                  <span
+                    class="timeline-tag"
+                    data-en="Math interest"
+                    data-ru="Математический интерес"
+                    >Математический интерес</span
+                  >
                 </div>
+              </div>
             </div>
-        </section>
 
-        <!-- Timeline Section -->
-        <section class="timeline-section">
-            <div class="container">
-                <div class="timeline">
-                    <!-- Stage 0 -->
-                    <div class="timeline-item" data-year="2011-2013">
-                        <div class="timeline-marker">
-                            <div class="timeline-dot"></div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2011–2013</div>
-                            <h3 class="timeline-title" data-en="Pre-school prep" data-ru="Дошкольная подготовка">Дошкольная подготовка</h3>
-                            <p class="timeline-description" data-en="Gymnastics for 2.5 years. LEGO construction and basic math lessons." data-ru="Спортивная гимнастика — 2,5 года. LEGO-конструирование, базовые математические занятия.">Спортивная гимнастика — 2,5 года. LEGO-конструирование, базовые математические занятия.</p>
-                            <div class="timeline-tags">
-                                <span class="timeline-tag" data-en="Physical base" data-ru="Физическая база">Физическая база</span>
-                                <span class="timeline-tag" data-en="Math interest" data-ru="Математический интерес">Математический интерес</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 1 -->
-                    <div class="timeline-item" data-year="2013-2019">
-                        <div class="timeline-marker">
-                            <div class="timeline-dot"></div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2013–2019</div>
-                            <h3 class="timeline-title" data-en="School foundation" data-ru="Школьная основа (1–7&nbsp;кл.)">Школьная основа (1–7&nbsp;кл.)</h3>
-                            <p class="timeline-description" data-en="Peterson curriculum. Extra English classes. Hobbies: puzzles and speedcubing (avg < 20 s)." data-ru="программа Петерсон. Доп. английский. Хобби: головоломки и спидкубинг (avg&nbsp;&lt;&nbsp;20&nbsp;c).">программа Петерсон. Доп. английский. Хобби: головоломки и спидкубинг (avg&nbsp;&lt;&nbsp;20&nbsp;c).</p>
-                            <div class="timeline-tags">
-                                <span class="timeline-tag" data-en="Math" data-ru="Математика">Математика</span>
-                                <span class="timeline-tag" data-en="English" data-ru="Английский">Английский</span>
-                                <span class="timeline-tag" data-en="Speedcubing" data-ru="Speed-cubing">Speed-cubing</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 2 -->
-                    <div class="timeline-item" data-year="2020-2021">
-                        <div class="timeline-marker">
-                            <div class="timeline-dot"></div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2020–2021</div>
-                            <h3 class="timeline-title" data-en="8th grade breakthrough" data-ru="8&nbsp;кл. — «олимпиадный щелчок»">8&nbsp;кл. — «олимпиадный щелчок»</h3>
-                            <p class="timeline-description" data-en="Regional prize in English Olympiad. Municipal prize in history. Finished the year with straight A's." data-ru="Региональный призёр ВсОШ‑английский. Муниципальный призёр по истории. Год закрыт одними «5».">Региональный призёр ВсОШ‑английский. Муниципальный призёр по истории. Год закрыт одними «5».</p>
-                            <div class="timeline-tags">
-                                <span class="timeline-tag" data-en="Olympiad stamina" data-ru="Олимпиадная устойчивость">Олимпиадная устойчивость</span>
-                                <span class="timeline-tag" data-en="Time management" data-ru="Time-management">Time-management</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 3 -->
-                    <div class="timeline-item" data-year="2021-2022">
-                        <div class="timeline-marker">
-                            <div class="timeline-dot"></div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2021–2022</div>
-                            <h3 class="timeline-title" data-en="9th grade to IT" data-ru="9&nbsp;кл. — разворот к IT">9&nbsp;кл. — разворот к IT</h3>
-                            <p class="timeline-description" data-en="OGE exams in English and Informatics — all A's. IQ 150. SSI Freediving certificate (basic)." data-ru="ОГЭ: англ. + информатика&nbsp;— «5». IQ&nbsp;150. Сертификат SSI Freediving (базовый).">ОГЭ: англ. + информатика&nbsp;— «5». IQ&nbsp;150. Сертификат SSI Freediving (базовый).</p>
-                            <div class="timeline-tags">
-                                <span class="timeline-tag" data-en="Python start" data-ru="Python Start">Python Start</span>
-                                <span class="timeline-tag" data-en="IQ 150" data-ru="IQ&nbsp;150">IQ&nbsp;150</span>
-                                <span class="timeline-tag" data-en="Self-management" data-ru="Самоорганизация">Самоорганизация</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 4 -->
-                    <div class="timeline-item" data-year="2022-2023">
-                        <div class="timeline-marker">
-                            <div class="timeline-dot"></div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2022–2023</div>
-                            <h3 class="timeline-title" data-en="10th grade math mode" data-ru="10&nbsp;кл. — математический режим">10&nbsp;кл. — математический режим</h3>
-                            <p class="timeline-description" data-en="MSU and MIPT tutors, online courses. Winner of Gazprom Olympiad, Foxford diploma II. Personal freediving record — 4:00." data-ru="Репетиторы МГУ и МФТИ, онлайн‑курсы. Победитель олимпиады «Газпром», диплом II Фоксфорда. Pers. freediving record&nbsp;— 4&nbsp;мин&nbsp;00&nbsp;с.">Репетиторы МГУ и МФТИ, онлайн‑курсы. Победитель олимпиады «Газпром», диплом II Фоксфорда. Pers. freediving record&nbsp;— 4&nbsp;мин&nbsp;00&nbsp;с.</p>
-                            <div class="timeline-tags">
-                                <span class="timeline-tag" data-en="Algebra 2.0" data-ru="Алгебра&nbsp;2.0">Алгебра&nbsp;2.0</span>
-                                <span class="timeline-tag" data-en="Olympiad TOP" data-ru="Олимпиада&nbsp;TOP">Олимпиада&nbsp;TOP</span>
-                                <span class="timeline-tag" data-en="Freediving 4:00" data-ru="Freediving&nbsp;4:00">Freediving&nbsp;4:00</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 5 -->
-                    <div class="timeline-item" data-year="2023-2024">
-                        <div class="timeline-marker">
-                            <div class="timeline-dot"></div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">2023–2024</div>
-                            <h3 class="timeline-title" data-en="11th grade sprint" data-ru="11&nbsp;кл. — спурт к Физтеху">11&nbsp;кл. — спурт к Физтеху</h3>
-                            <p class="timeline-description" data-en="Winner of the Yandex Olympiad. Prizewinner of the Phystech Olympiad. Heritage-NFT project. USE: Math 96, Russian 89*." data-ru="Победитель Яндекс‑олимпиады. Призёр «Физтех»-олимпиады. Проект Heritage‑NFT. ЕГЭ: М&nbsp;96, Р&nbsp;89*">Победитель Яндекс‑олимпиады. Призёр «Физтех»-олимпиады. Проект Heritage‑NFT. ЕГЭ: М&nbsp;96, Р&nbsp;89*</p>
-                            <div class="timeline-tags">
-                                <span class="timeline-tag" data-en="Yandex" data-ru="Яндекс">Яндекс</span>
-                                <span class="timeline-tag" data-en="MIPT" data-ru="Физтех">Физтех</span>
-                                <span class="timeline-tag" data-en="Heritage NFT" data-ru="Heritage‑NFT">Heritage‑NFT</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 6 -->
-                    <div class="timeline-item" data-year="2024">
-                        <div class="timeline-marker">
-                            <div class="timeline-dot"></div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">Июн – Авг&nbsp;2024</div>
-                            <h3 class="timeline-title" data-en="Graduation to MIPT" data-ru="Выпуск → МФТИ">Выпуск → МФТИ</h3>
-                            <p class="timeline-description" data-en="Congratulations from the head of Podolsk. Recommendations from 'Shkolkovo' and mentor. Enrolled in MIPT FPMI with a grant." data-ru="Поздравление главы Подольска. Рекомендации «Школково» и наставника. Зачислен на ФПМИ МФТИ, получен грант.">Поздравление главы Подольска. Рекомендации «Школково» и наставника. Зачислен на ФПМИ МФТИ, получен грант.</p>
-                            <div class="timeline-tags">
-                                <span class="timeline-tag" data-en="MIPT start" data-ru="Физтех-старт">Физтех-старт</span>
-                                <span class="timeline-tag" data-en="Grant" data-ru="Грант">Грант</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 7 -->
-                    <div class="timeline-item current" data-year="2024-2025">
-                        <div class="timeline-marker">
-                            <div class="timeline-dot current"></div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">Сент&nbsp;2024 – Авг&nbsp;2025</div>
-                            <h3 class="timeline-title" data-en="Reset & Upgrade" data-ru="Академ-пауза / фаза «Reset&nbsp;&amp;&nbsp;Upgrade»">Академ-пауза / фаза «Reset&nbsp;&amp;&nbsp;Upgrade»</h3>
-                            <p class="timeline-description" data-en="In-depth study of blockchain technologies. Return to cycling 50+ km per week. Re-evaluating priorities and online learning. Driver's license in summer 2025." data-ru="Углублённое изучение blockchain-технологий. Возврат к велоспорту 50&nbsp;км+ в неделю. Переосмысление приоритетов и онлайн-учёба. Получение водительских прав летом&nbsp;2025.">Углублённое изучение blockchain-технологий. Возврат к велоспорту 50&nbsp;км+ в неделю. Переосмысление приоритетов и онлайн-учёба. Получение водительских прав летом&nbsp;2025.</p>
-                            <div class="timeline-tags">
-                                <span class="timeline-tag current" data-en="Blockchain fundamentals" data-ru="Основы blockchain">Основы blockchain</span>
-                                <span class="timeline-tag" data-en="Endurance &amp; habits" data-ru="Выносливость и привычки">Выносливость и привычки</span>
-                                <span class="timeline-tag" data-en="Self-reflection" data-ru="Саморефлексия">Саморефлексия</span>
-                                <span class="timeline-tag" data-en="Distance-learning discipline" data-ru="Дисциплина онлайн-обучения">Дисциплина онлайн-обучения</span>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Stage 1 -->
+            <div class="timeline-item" data-year="2013-2019">
+              <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-date">2013–2019</div>
+                <h3
+                  class="timeline-title"
+                  data-en="School foundation"
+                  data-ru="Школьная основа (1–7&nbsp;кл.)"
+                >
+                  Школьная основа (1–7&nbsp;кл.)
+                </h3>
+                <p
+                  class="timeline-description"
+                  data-en="Peterson curriculum. Extra English classes. Hobbies: puzzles and speedcubing (avg < 20 s)."
+                  data-ru="программа Петерсон. Доп. английский. Хобби: головоломки и спидкубинг (avg&nbsp;&lt;&nbsp;20&nbsp;c)."
+                >
+                  программа Петерсон. Доп. английский. Хобби: головоломки и
+                  спидкубинг (avg&nbsp;&lt;&nbsp;20&nbsp;c).
+                </p>
+                <div class="timeline-tags">
+                  <span class="timeline-tag" data-en="Math" data-ru="Математика"
+                    >Математика</span
+                  >
+                  <span
+                    class="timeline-tag"
+                    data-en="English"
+                    data-ru="Английский"
+                    >Английский</span
+                  >
+                  <span
+                    class="timeline-tag"
+                    data-en="Speedcubing"
+                    data-ru="Speed-cubing"
+                    >Speed-cubing</span
+                  >
                 </div>
+              </div>
             </div>
-        </section>
-        <!-- Stats Section -->
-        <section class="stats-section">
-            <div class="container">
-                <h2 class="section-title" data-en="Journey in Numbers" data-ru="Путь в цифрах">Путь в цифрах</h2>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number">14</div>
-                        <div class="stat-label" data-en="Countries Visited" data-ru="Стран посещено">Стран посещено</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label" data-en="Major Olympiads" data-ru="Олимпиады‑«титаны»">Олимпиады‑«титаны»</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label" data-en="Certificates" data-ru="Сертификаты">Сертификаты</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">285</div>
-                        <div class="stat-label" data-en="Unified State Exam Score" data-ru="Баллы ЕГЭ">Баллы ЕГЭ</div>
-                    </div>
+
+            <!-- Stage 2 -->
+            <div class="timeline-item" data-year="2020-2021">
+              <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-date">2020–2021</div>
+                <h3
+                  class="timeline-title"
+                  data-en="8th grade breakthrough"
+                  data-ru="8&nbsp;кл. — «олимпиадный щелчок»"
+                >
+                  8&nbsp;кл. — «олимпиадный щелчок»
+                </h3>
+                <p
+                  class="timeline-description"
+                  data-en="Regional prize in English Olympiad. Municipal prize in history. Finished the year with straight A's."
+                  data-ru="Региональный призёр ВсОШ‑английский. Муниципальный призёр по истории. Год закрыт одними «5»."
+                >
+                  Региональный призёр ВсОШ‑английский. Муниципальный призёр по
+                  истории. Год закрыт одними «5».
+                </p>
+                <div class="timeline-tags">
+                  <span
+                    class="timeline-tag"
+                    data-en="Olympiad stamina"
+                    data-ru="Олимпиадная устойчивость"
+                    >Олимпиадная устойчивость</span
+                  >
+                  <span
+                    class="timeline-tag"
+                    data-en="Time management"
+                    data-ru="Time-management"
+                    >Time-management</span
+                  >
                 </div>
+              </div>
             </div>
-        </section>
-        <p class="timeline-footnote" data-en="* Key milestones only; full list available on request." data-ru="* Приведены самые показательные точки; полный перечень достижений доступен по запросу.">* Приведены самые показательные точки; полный перечень достижений доступен по запросу.</p>
+
+            <!-- Stage 3 -->
+            <div class="timeline-item" data-year="2021-2022">
+              <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-date">2021–2022</div>
+                <h3
+                  class="timeline-title"
+                  data-en="9th grade to IT"
+                  data-ru="9&nbsp;кл. — разворот к IT"
+                >
+                  9&nbsp;кл. — разворот к IT
+                </h3>
+                <p
+                  class="timeline-description"
+                  data-en="OGE exams in English and Informatics — all A's. IQ 150. SSI Freediving certificate (basic)."
+                  data-ru="ОГЭ: англ. + информатика&nbsp;— «5». IQ&nbsp;150. Сертификат SSI Freediving (базовый)."
+                >
+                  ОГЭ: англ. + информатика&nbsp;— «5». IQ&nbsp;150. Сертификат
+                  SSI Freediving (базовый).
+                </p>
+                <div class="timeline-tags">
+                  <span
+                    class="timeline-tag"
+                    data-en="Python start"
+                    data-ru="Python Start"
+                    >Python Start</span
+                  >
+                  <span
+                    class="timeline-tag"
+                    data-en="IQ 150"
+                    data-ru="IQ&nbsp;150"
+                    >IQ&nbsp;150</span
+                  >
+                  <span
+                    class="timeline-tag"
+                    data-en="Self-management"
+                    data-ru="Самоорганизация"
+                    >Самоорганизация</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 4 -->
+            <div class="timeline-item" data-year="2022-2023">
+              <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-date">2022–2023</div>
+                <h3
+                  class="timeline-title"
+                  data-en="10th grade math mode"
+                  data-ru="10&nbsp;кл. — математический режим"
+                >
+                  10&nbsp;кл. — математический режим
+                </h3>
+                <p
+                  class="timeline-description"
+                  data-en="MSU and MIPT tutors, online courses. Winner of Gazprom Olympiad, Foxford diploma II. Personal freediving record — 4:00."
+                  data-ru="Репетиторы МГУ и МФТИ, онлайн‑курсы. Победитель олимпиады «Газпром», диплом II Фоксфорда. Pers. freediving record&nbsp;— 4&nbsp;мин&nbsp;00&nbsp;с."
+                >
+                  Репетиторы МГУ и МФТИ, онлайн‑курсы. Победитель олимпиады
+                  «Газпром», диплом II Фоксфорда. Pers. freediving record&nbsp;—
+                  4&nbsp;мин&nbsp;00&nbsp;с.
+                </p>
+                <div class="timeline-tags">
+                  <span
+                    class="timeline-tag"
+                    data-en="Algebra 2.0"
+                    data-ru="Алгебра&nbsp;2.0"
+                    >Алгебра&nbsp;2.0</span
+                  >
+                  <span
+                    class="timeline-tag"
+                    data-en="Olympiad TOP"
+                    data-ru="Олимпиада&nbsp;TOP"
+                    >Олимпиада&nbsp;TOP</span
+                  >
+                  <span
+                    class="timeline-tag"
+                    data-en="Freediving 4:00"
+                    data-ru="Freediving&nbsp;4:00"
+                    >Freediving&nbsp;4:00</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 5 -->
+            <div class="timeline-item" data-year="2023-2024">
+              <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-date">2023–2024</div>
+                <h3
+                  class="timeline-title"
+                  data-en="11th grade sprint"
+                  data-ru="11&nbsp;кл. — спурт к Физтеху"
+                >
+                  11&nbsp;кл. — спурт к Физтеху
+                </h3>
+                <p
+                  class="timeline-description"
+                  data-en="Winner of the Yandex Olympiad. Prizewinner of the Phystech Olympiad. Heritage-NFT project. USE: Math 96, Russian 89*."
+                  data-ru="Победитель Яндекс‑олимпиады. Призёр «Физтех»-олимпиады. Проект Heritage‑NFT. ЕГЭ: М&nbsp;96, Р&nbsp;89*"
+                >
+                  Победитель Яндекс‑олимпиады. Призёр «Физтех»-олимпиады. Проект
+                  Heritage‑NFT. ЕГЭ: М&nbsp;96, Р&nbsp;89*
+                </p>
+                <div class="timeline-tags">
+                  <span class="timeline-tag" data-en="Yandex" data-ru="Яндекс"
+                    >Яндекс</span
+                  >
+                  <span class="timeline-tag" data-en="MIPT" data-ru="Физтех"
+                    >Физтех</span
+                  >
+                  <span
+                    class="timeline-tag"
+                    data-en="Heritage NFT"
+                    data-ru="Heritage‑NFT"
+                    >Heritage‑NFT</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 6 -->
+            <div class="timeline-item" data-year="2024">
+              <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-date">Июн – Авг&nbsp;2024</div>
+                <h3
+                  class="timeline-title"
+                  data-en="Graduation to MIPT"
+                  data-ru="Выпуск → МФТИ"
+                >
+                  Выпуск → МФТИ
+                </h3>
+                <p
+                  class="timeline-description"
+                  data-en="Congratulations from the head of Podolsk. Recommendations from 'Shkolkovo' and mentor. Enrolled in MIPT FPMI with a grant."
+                  data-ru="Поздравление главы Подольска. Рекомендации «Школково» и наставника. Зачислен на ФПМИ МФТИ, получен грант."
+                >
+                  Поздравление главы Подольска. Рекомендации «Школково» и
+                  наставника. Зачислен на ФПМИ МФТИ, получен грант.
+                </p>
+                <div class="timeline-tags">
+                  <span
+                    class="timeline-tag"
+                    data-en="MIPT start"
+                    data-ru="Физтех-старт"
+                    >Физтех-старт</span
+                  >
+                  <span class="timeline-tag" data-en="Grant" data-ru="Грант"
+                    >Грант</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Stage 7 -->
+            <div class="timeline-item current" data-year="2024-2025">
+              <div class="timeline-marker">
+                <div class="timeline-dot current"></div>
+              </div>
+              <div class="timeline-content">
+                <div class="timeline-date">Сент&nbsp;2024 – Авг&nbsp;2025</div>
+                <h3
+                  class="timeline-title"
+                  data-en="Reset & Upgrade"
+                  data-ru="Академ-пауза / фаза «Reset&nbsp;&amp;&nbsp;Upgrade»"
+                >
+                  Академ-пауза / фаза «Reset&nbsp;&amp;&nbsp;Upgrade»
+                </h3>
+                <p
+                  class="timeline-description"
+                  data-en="In-depth study of blockchain technologies. Return to cycling 50+ km per week. Re-evaluating priorities and online learning. Driver's license in summer 2025."
+                  data-ru="Углублённое изучение blockchain-технологий. Возврат к велоспорту 50&nbsp;км+ в неделю. Переосмысление приоритетов и онлайн-учёба. Получение водительских прав летом&nbsp;2025."
+                >
+                  Углублённое изучение blockchain-технологий. Возврат к
+                  велоспорту 50&nbsp;км+ в неделю. Переосмысление приоритетов и
+                  онлайн-учёба. Получение водительских прав летом&nbsp;2025.
+                </p>
+                <div class="timeline-tags">
+                  <span
+                    class="timeline-tag current"
+                    data-en="Blockchain fundamentals"
+                    data-ru="Основы blockchain"
+                    >Основы blockchain</span
+                  >
+                  <span
+                    class="timeline-tag"
+                    data-en="Endurance &amp; habits"
+                    data-ru="Выносливость и привычки"
+                    >Выносливость и привычки</span
+                  >
+                  <span
+                    class="timeline-tag"
+                    data-en="Self-reflection"
+                    data-ru="Саморефлексия"
+                    >Саморефлексия</span
+                  >
+                  <span
+                    class="timeline-tag"
+                    data-en="Distance-learning discipline"
+                    data-ru="Дисциплина онлайн-обучения"
+                    >Дисциплина онлайн-обучения</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Stats Section -->
+      <section class="stats-section">
+        <div class="container">
+          <h2
+            class="section-title"
+            data-en="Journey in Numbers"
+            data-ru="Путь в цифрах"
+          >
+            Путь в цифрах
+          </h2>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number">14</div>
+              <div
+                class="stat-label"
+                data-en="Countries Visited"
+                data-ru="Стран посещено"
+              >
+                Стран посещено
+              </div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">3</div>
+              <div
+                class="stat-label"
+                data-en="Major Olympiads"
+                data-ru="Олимпиады‑«титаны»"
+              >
+                Олимпиады‑«титаны»
+              </div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">5</div>
+              <div
+                class="stat-label"
+                data-en="Certificates"
+                data-ru="Сертификаты"
+              >
+                Сертификаты
+              </div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">285</div>
+              <div
+                class="stat-label"
+                data-en="Unified State Exam Score"
+                data-ru="Баллы ЕГЭ"
+              >
+                Баллы ЕГЭ
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <p
+        class="timeline-footnote"
+        data-en="* Key milestones only; full list available on request."
+        data-ru="* Приведены самые показательные точки; полный перечень достижений доступен по запросу."
+      >
+        * Приведены самые показательные точки; полный перечень достижений
+        доступен по запросу.
+      </p>
     </main>
 
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <p class="footer-text" data-ru="© 2025 Дмитриёнок. Все права защищены." data-en="© 2025 Dmitrienok. All rights reserved.">
-                        © 2025 Дмитриёнок. Все права защищены.
-                    </p>
-                </div>
-                <div class="footer-links">
-                    <a href="contacts.html" class="footer-link" data-ru="Контакты" data-en="Contacts">Контакты</a>
-                    <a href="blog.html" class="footer-link" data-ru="Блог" data-en="Blog">Блог</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <p
+              class="footer-text"
+              data-ru="© 2025 Дмитриёнок. Все права защищены."
+              data-en="© 2025 Dmitrienok. All rights reserved."
+            >
+              © 2025 Дмитриёнок. Все права защищены.
+            </p>
+          </div>
+          <div class="footer-links">
+            <a
+              href="contacts.html"
+              class="footer-link"
+              data-ru="Контакты"
+              data-en="Contacts"
+              >Контакты</a
+            >
+            <a
+              href="blog.html"
+              class="footer-link"
+              data-ru="Блог"
+              data-en="Blog"
+              >Блог</a
+            >
+          </div>
         </div>
+      </div>
     </footer>
 
     <script src="js/main.js"></script>
     <script src="js/roadmap.js"></script>
-</body>
+  </body>
 </html>

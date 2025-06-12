@@ -1,0 +1,15 @@
+{
+  "name": "Eremei Dmitrienko",
+  "short_name": "Dmitrienko",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#f5f2ed",
+  "theme_color": "#362f2d",
+  "icons": [
+    {
+      "src": "/img/telegram.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}

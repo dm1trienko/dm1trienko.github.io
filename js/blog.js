@@ -30,7 +30,7 @@ class BlogPage {
             date: meta.date || '',
             excerpt,
           }
-        })
+        }),
       )
 
       posts
@@ -183,7 +183,11 @@ class BlogPage {
   formatDate(dateStr) {
     if (!dateStr) return ''
     const date = new Date(dateStr)
-    return date.toLocaleDateString('ru-RU', { year: 'numeric', month: 'long', day: 'numeric' })
+    return date.toLocaleDateString('ru-RU', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
   }
 }
 

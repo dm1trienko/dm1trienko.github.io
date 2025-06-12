@@ -1,76 +1,154 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-ru="Пост - Еремей Дмитриенко" data-en="Post - Eremei Dmitrienko">Пост - Еремей Дмитриенко</title>
-    <meta name="description" content="Запись блога">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/navigation.css">
-    <link rel="stylesheet" href="css/blog.css">
-    <link rel="stylesheet" href="css/post.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-<header class="navbar" role="banner">
-  <nav class="navbar-nav" role="navigation" aria-label="Основная навигация">
-    <div class="navbar-container">
-      <a href="index.html" class="navbar-brand">Еремей Дмитриенко</a>
-      <ul class="nav-menu" id="nav-menu" aria-hidden="true">
-        <li><a href="index.html" class="nav-link" data-ru="Главная" data-en="Home">Главная</a></li>
-        <li><a href="blog.html" class="nav-link" data-ru="Блог" data-en="Blog">Блог</a></li>
-        <li><a href="roadmap.html" class="nav-link" data-ru="Путь" data-en="Path">Путь</a></li>
-        <li><a href="culttech.html" class="nav-link" data-ru="CultTech Hub" data-en="CultTech Hub">CultTech Hub</a></li>
-        <li><a href="contacts.html" class="nav-link" data-ru="Контакты" data-en="Contacts">Контакты</a></li>
-        <li class="language-selector">
-          <button class="lang-toggle" id="lang-toggle" aria-label="Переключить язык" aria-haspopup="listbox" aria-controls="lang-options" aria-expanded="false">
-            <span class="lang-current">RU</span>
-          </button>
-          <ul class="lang-options" id="lang-options" role="listbox" aria-label="Выбор языка">
-            <li data-lang="ru" role="option" aria-selected="true">RU</li>
-            <li data-lang="en" role="option" aria-selected="false">EN</li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title
+      data-ru="Пост - Еремей Дмитриенко"
+      data-en="Post - Eremei Dmitrienko"
+    >
+      Пост - Еремей Дмитриенко
+    </title>
+    <meta name="description" content="Запись блога" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/navigation.css" />
+    <link rel="stylesheet" href="css/blog.css" />
+    <link rel="stylesheet" href="css/post.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="navbar" role="banner">
+      <nav class="navbar-nav" role="navigation" aria-label="Основная навигация">
+        <div class="navbar-container">
+          <a href="index.html" class="navbar-brand">Еремей Дмитриенко</a>
+          <ul class="nav-menu" id="nav-menu" aria-hidden="true">
+            <li>
+              <a
+                href="index.html"
+                class="nav-link"
+                data-ru="Главная"
+                data-en="Home"
+                >Главная</a
+              >
+            </li>
+            <li>
+              <a href="blog.html" class="nav-link" data-ru="Блог" data-en="Blog"
+                >Блог</a
+              >
+            </li>
+            <li>
+              <a
+                href="roadmap.html"
+                class="nav-link"
+                data-ru="Путь"
+                data-en="Path"
+                >Путь</a
+              >
+            </li>
+            <li>
+              <a
+                href="culttech.html"
+                class="nav-link"
+                data-ru="CultTech Hub"
+                data-en="CultTech Hub"
+                >CultTech Hub</a
+              >
+            </li>
+            <li>
+              <a
+                href="contacts.html"
+                class="nav-link"
+                data-ru="Контакты"
+                data-en="Contacts"
+                >Контакты</a
+              >
+            </li>
+            <li class="language-selector">
+              <button
+                class="lang-toggle"
+                id="lang-toggle"
+                aria-label="Переключить язык"
+                aria-haspopup="listbox"
+                aria-controls="lang-options"
+                aria-expanded="false"
+              >
+                <span class="lang-current">RU</span>
+              </button>
+              <ul
+                class="lang-options"
+                id="lang-options"
+                role="listbox"
+                aria-label="Выбор языка"
+              >
+                <li data-lang="ru" role="option" aria-selected="true">RU</li>
+                <li data-lang="en" role="option" aria-selected="false">EN</li>
+              </ul>
+            </li>
           </ul>
-        </li>
-      </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Открыть меню" aria-controls="nav-menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
-</header>
+          <button
+            class="nav-toggle"
+            id="nav-toggle"
+            aria-label="Открыть меню"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
 
     <main class="main" role="main">
-        <article class="post-container">
-            <div class="container">
-                <h1 id="post-title" class="post-title"></h1>
-                <time id="post-date" class="post-date" datetime=""></time>
-                <div id="post-content" class="post-content"></div>
-            </div>
-        </article>
+      <article class="post-container">
+        <div class="container">
+          <h1 id="post-title" class="post-title"></h1>
+          <time id="post-date" class="post-date" datetime=""></time>
+          <div id="post-content" class="post-content"></div>
+        </div>
+      </article>
     </main>
 
     <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <p class="footer-text" data-ru="© 2025 Дмитриёнок. Все права защищены." data-en="© 2025 Dmitrienok. All rights reserved.">
-                        © 2025 Дмитриёнок. Все права защищены.
-                    </p>
-                </div>
-                <div class="footer-links">
-                    <a href="contacts.html" class="footer-link" data-ru="Контакты" data-en="Contacts">Контакты</a>
-                    <a href="blog.html" class="footer-link" data-ru="Блог" data-en="Blog">Блог</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <p
+              class="footer-text"
+              data-ru="© 2025 Дмитриёнок. Все права защищены."
+              data-en="© 2025 Dmitrienok. All rights reserved."
+            >
+              © 2025 Дмитриёнок. Все права защищены.
+            </p>
+          </div>
+          <div class="footer-links">
+            <a
+              href="contacts.html"
+              class="footer-link"
+              data-ru="Контакты"
+              data-en="Contacts"
+              >Контакты</a
+            >
+            <a
+              href="blog.html"
+              class="footer-link"
+              data-ru="Блог"
+              data-en="Blog"
+              >Блог</a
+            >
+          </div>
         </div>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/post.js"></script>
-</body>
+  </body>
 </html>

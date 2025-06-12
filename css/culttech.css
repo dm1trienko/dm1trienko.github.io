@@ -15,13 +15,17 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-accent-50) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-50) 0%,
+    var(--color-accent-50) 100%
+  );
   position: relative;
   overflow: hidden;
 }
 
 .culttech-hero::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -185,7 +189,11 @@
 
 .project-card__image {
   height: 200px;
-  background: linear-gradient(135deg, var(--color-primary-100), var(--color-accent-100));
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-100),
+    var(--color-accent-100)
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -258,14 +266,18 @@
 .interactive-map {
   width: 100%;
   height: 400px;
-  background: linear-gradient(135deg, var(--color-accent-100) 0%, var(--color-accent-900) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-accent-100) 0%,
+    var(--color-accent-900) 100%
+  );
   border-radius: 1rem;
   position: relative;
   overflow: hidden;
 }
 
 .interactive-map::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -353,7 +365,11 @@
 /* Join Community */
 .join-community {
   padding: 5rem 0;
-  background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-accent-50) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-50) 0%,
+    var(--color-accent-50) 100%
+  );
 }
 
 .join-form-wrapper {
@@ -408,7 +424,7 @@
   font-size: 0.875rem;
 }
 
-.checkbox-label input[type="checkbox"] {
+.checkbox-label input[type='checkbox'] {
   display: none;
 }
 
@@ -421,13 +437,13 @@
   transition: all 0.3s ease;
 }
 
-.checkbox-label input[type="checkbox"]:checked + .checkbox-custom {
+.checkbox-label input[type='checkbox']:checked + .checkbox-custom {
   background: var(--color-primary);
   border-color: var(--color-primary);
 }
 
-.checkbox-label input[type="checkbox"]:checked + .checkbox-custom::after {
-  content: "✓";
+.checkbox-label input[type='checkbox']:checked + .checkbox-custom::after {
+  content: '✓';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -616,15 +632,27 @@
 /* Dark theme adjustments */
 @media (prefers-color-scheme: dark) {
   .culttech-hero {
-    background: linear-gradient(135deg, var(--color-primary-900) 0%, var(--color-accent-900) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-900) 0%,
+      var(--color-accent-900) 100%
+    );
   }
 
   .interactive-map {
-    background: linear-gradient(135deg, var(--color-primary-900) 0%, var(--color-stone-900) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-900) 0%,
+      var(--color-stone-900) 100%
+    );
   }
 
   .join-community {
-    background: linear-gradient(135deg, var(--color-primary-900) 0%, var(--color-accent-900) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--color-primary-900) 0%,
+      var(--color-accent-900) 100%
+    );
   }
 }
 

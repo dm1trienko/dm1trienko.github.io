@@ -26,7 +26,7 @@ class BlogPreview {
             date: meta.date || '',
             excerpt,
           }
-        })
+        }),
       )
 
       posts.sort((a, b) => new Date(b.date) - new Date(a.date))

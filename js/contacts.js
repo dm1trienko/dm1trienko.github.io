@@ -2,11 +2,11 @@
 
 class ContactsPage {
   constructor() {
-    this.form = document.getElementById("contactForm")
-    this.submitBtn = document.getElementById("submitBtn")
-    this.successMessage = document.getElementById("formSuccess")
-    this.charCount = document.getElementById("charCount")
-    this.messageField = document.getElementById("message")
+    this.form = document.getElementById('contactForm')
+    this.submitBtn = document.getElementById('submitBtn')
+    this.successMessage = document.getElementById('formSuccess')
+    this.charCount = document.getElementById('charCount')
+    this.messageField = document.getElementById('message')
 
     this.init()
   }
@@ -23,11 +23,11 @@ class ContactsPage {
   }
 
   setupFormValidation() {
-    const inputs = this.form.querySelectorAll("input, select, textarea")
+    const inputs = this.form.querySelectorAll('input, select, textarea')
 
     inputs.forEach((input) => {
-      input.addEventListener("blur", () => this.validateField(input))
-      input.addEventListener("input", () => this.clearError(input))
+      input.addEventListener('blur', () => this.validateField(input))
+      input.addEventListener('input', () => this.clearError(input))
     })
   }
 
@@ -35,43 +35,43 @@ class ContactsPage {
     const value = field.value.trim()
     const fieldName = field.name
     let isValid = true
-    let errorMessage = ""
+    let errorMessage = ''
 
     // Clear previous error
     this.clearError(field)
 
     // Required field validation
-    if (field.hasAttribute("required") && !value) {
+    if (field.hasAttribute('required') && !value) {
       isValid = false
-      errorMessage = this.getErrorMessage("required", fieldName)
+      errorMessage = this.getErrorMessage('required', fieldName)
     }
 
     // Email validation
-    if (fieldName === "email" && value) {
+    if (fieldName === 'email' && value) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
       if (!emailRegex.test(value)) {
         isValid = false
-        errorMessage = this.getErrorMessage("email")
+        errorMessage = this.getErrorMessage('email')
       }
     }
 
     // Name validation
-    if (fieldName === "name" && value) {
+    if (fieldName === 'name' && value) {
       if (value.length < 2) {
         isValid = false
-        errorMessage = this.getErrorMessage("minLength", fieldName, 2)
+        errorMessage = this.getErrorMessage('minLength', fieldName, 2)
       }
     }
 
     // Message validation
-    if (fieldName === "message" && value) {
+    if (fieldName === 'message' && value) {
       if (value.length < 10) {
         isValid = false
-        errorMessage = this.getErrorMessage("minLength", fieldName, 10)
+        errorMessage = this.getErrorMessage('minLength', fieldName, 10)
       }
       if (value.length > 1000) {
         isValid = false
-        errorMessage = this.getErrorMessage("maxLength", fieldName, 1000)
+        errorMessage = this.getErrorMessage('maxLength', fieldName, 1000)
       }
     }
 
@@ -83,32 +83,32 @@ class ContactsPage {
   }
 
   clearError(field) {
-    field.classList.remove("error")
+    field.classList.remove('error')
     const errorElement = document.getElementById(`${field.name}-error`)
     if (errorElement) {
-      errorElement.textContent = ""
+      errorElement.textContent = ''
     }
   }
 
   showError(field, message) {
-    field.classList.add("error")
+    field.classList.add('error')
     const errorElement = document.getElementById(`${field.name}-error`)
     if (errorElement) {
       errorElement.textContent = message
     }
   }
 
-  getErrorMessage(type, fieldName = "", value = "") {
-    const isEnglish = document.documentElement.lang === "en"
+  getErrorMessage(type, fieldName = '', value = '') {
+    const isEnglish = document.documentElement.lang === 'en'
 
     const messages = {
       required: {
-        ru: "Это поле обязательно для заполнения",
-        en: "This field is required",
+        ru: 'Это поле обязательно для заполнения',
+        en: 'This field is required',
       },
       email: {
-        ru: "Введите корректный email адрес",
-        en: "Please enter a valid email address",
+        ru: 'Введите корректный email адрес',
+        en: 'Please enter a valid email address',
       },
       minLength: {
         ru: `Минимальная длина: ${value} символов`,
@@ -120,65 +120,65 @@ class ContactsPage {
       },
     }
 
-    return messages[type] ? messages[type][isEnglish ? "en" : "ru"] : ""
+    return messages[type] ? messages[type][isEnglish ? 'en' : 'ru'] : ''
   }
 
   setupCharacterCounter() {
     if (this.messageField && this.charCount) {
-      this.messageField.addEventListener("input", () => {
+      this.messageField.addEventListener('input', () => {
         const length = this.messageField.value.length
         this.charCount.textContent = length
 
         // Change color based on length
         if (length > 900) {
-          this.charCount.style.color = "var(--color-red-500)"
+          this.charCount.style.color = 'var(--color-red-500)'
         } else if (length > 800) {
-          this.charCount.style.color = "var(--color-amber-500)"
+          this.charCount.style.color = 'var(--color-amber-500)'
         } else {
-          this.charCount.style.color = "var(--color-stone-500)"
+          this.charCount.style.color = 'var(--color-stone-500)'
         }
       })
     }
   }
 
   setupFAQ() {
-    const faqQuestions = document.querySelectorAll(".faq-question")
+    const faqQuestions = document.querySelectorAll('.faq-question')
 
     faqQuestions.forEach((question) => {
-      question.addEventListener("click", () => {
-        const isExpanded = question.getAttribute("aria-expanded") === "true"
+      question.addEventListener('click', () => {
+        const isExpanded = question.getAttribute('aria-expanded') === 'true'
         const answer = question.nextElementSibling
 
         // Close all other FAQ items
         faqQuestions.forEach((otherQuestion) => {
           if (otherQuestion !== question) {
-            otherQuestion.setAttribute("aria-expanded", "false")
+            otherQuestion.setAttribute('aria-expanded', 'false')
             const otherAnswer = otherQuestion.nextElementSibling
-            otherAnswer.style.maxHeight = "0"
-            otherAnswer.classList.remove("open")
+            otherAnswer.style.maxHeight = '0'
+            otherAnswer.classList.remove('open')
           }
         })
 
         // Toggle current FAQ item
-        question.setAttribute("aria-expanded", !isExpanded)
+        question.setAttribute('aria-expanded', !isExpanded)
 
         if (!isExpanded) {
-          answer.classList.add("open")
-          answer.style.maxHeight = answer.scrollHeight + "px"
+          answer.classList.add('open')
+          answer.style.maxHeight = answer.scrollHeight + 'px'
         } else {
-          answer.style.maxHeight = "0"
-          answer.classList.remove("open")
+          answer.style.maxHeight = '0'
+          answer.classList.remove('open')
         }
       })
     })
   }
 
   setupFormSubmission() {
-    this.form.addEventListener("submit", async (e) => {
+    this.form.addEventListener('submit', async (e) => {
       e.preventDefault()
 
       // Validate all fields
-      const inputs = this.form.querySelectorAll("input, select, textarea")
+      const inputs = this.form.querySelectorAll('input, select, textarea')
       let isFormValid = true
 
       inputs.forEach((input) => {
@@ -189,7 +189,7 @@ class ContactsPage {
 
       if (!isFormValid) {
         // Focus on first error field
-        const firstError = this.form.querySelector(".error")
+        const firstError = this.form.querySelector('.error')
         if (firstError) {
           firstError.focus()
         }
@@ -197,7 +197,7 @@ class ContactsPage {
       }
 
       // Show loading state
-      this.submitBtn.classList.add("loading")
+      this.submitBtn.classList.add('loading')
       this.submitBtn.disabled = true
 
       try {
@@ -209,13 +209,16 @@ class ContactsPage {
 
         // Reset form
         this.form.reset()
-        this.charCount.textContent = "0"
+        this.charCount.textContent = '0'
       } catch (error) {
-        console.error("Form submission error:", error)
-        this.showError(this.form, "Произошла ошибка при отправке формы. Попробуйте еще раз.")
+        console.error('Form submission error:', error)
+        this.showError(
+          this.form,
+          'Произошла ошибка при отправке формы. Попробуйте еще раз.',
+        )
       } finally {
         // Hide loading state
-        this.submitBtn.classList.remove("loading")
+        this.submitBtn.classList.remove('loading')
         this.submitBtn.disabled = false
       }
     })
@@ -231,30 +234,30 @@ class ContactsPage {
   }
 
   showSuccess() {
-    this.successMessage.classList.add("show")
-    this.successMessage.scrollIntoView({ behavior: "smooth", block: "center" })
+    this.successMessage.classList.add('show')
+    this.successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' })
 
     // Hide success message after 10 seconds
     setTimeout(() => {
-      this.successMessage.classList.remove("show")
+      this.successMessage.classList.remove('show')
     }, 10000)
   }
 
   setupCopyButtons() {
-    const buttons = document.querySelectorAll(".copy-address")
+    const buttons = document.querySelectorAll('.copy-address')
 
     const showToast = (message) => {
-      let toast = document.getElementById("copy-toast")
+      let toast = document.getElementById('copy-toast')
       if (!toast) {
-        toast = document.createElement("div")
-        toast.id = "copy-toast"
-        toast.className = "toast"
+        toast = document.createElement('div')
+        toast.id = 'copy-toast'
+        toast.className = 'toast'
         document.body.appendChild(toast)
       }
       toast.textContent = message
-      toast.classList.add("show")
+      toast.classList.add('show')
       setTimeout(() => {
-        toast.classList.remove("show")
+        toast.classList.remove('show')
       }, 2500)
     }
 
@@ -264,33 +267,34 @@ class ContactsPage {
           await navigator.clipboard.writeText(text)
           return
         } catch (err) {
-          console.warn("Clipboard API failed, falling back", err)
+          console.warn('Clipboard API failed, falling back', err)
         }
       }
 
-      const temp = document.createElement("textarea")
+      const temp = document.createElement('textarea')
       temp.value = text
-      temp.style.position = "fixed"
-      temp.style.top = "-1000px"
+      temp.style.position = 'fixed'
+      temp.style.top = '-1000px'
       document.body.appendChild(temp)
       temp.focus()
       temp.select()
       try {
-        document.execCommand("copy")
+        document.execCommand('copy')
       } finally {
         document.body.removeChild(temp)
       }
     }
 
     buttons.forEach((btn) => {
-      btn.addEventListener("click", async () => {
-        const address = btn.getAttribute("data-address")
+      btn.addEventListener('click', async () => {
+        const address = btn.getAttribute('data-address')
         try {
           await copyText(address)
-          const text = document.documentElement.lang === "en" ? "Copied!" : "Скопировано!"
+          const text =
+            document.documentElement.lang === 'en' ? 'Copied!' : 'Скопировано!'
           showToast(text)
         } catch (e) {
-          console.error("Copy failed", e)
+          console.error('Copy failed', e)
         }
       })
     })
@@ -298,15 +302,15 @@ class ContactsPage {
 
   setupAccessibility() {
     // Keyboard navigation for method cards
-    const methodCards = document.querySelectorAll(".method-card")
+    const methodCards = document.querySelectorAll('.method-card')
 
     methodCards.forEach((card) => {
-      card.setAttribute("tabindex", "0")
+      card.setAttribute('tabindex', '0')
 
-      card.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault()
-          const link = card.querySelector(".method-link")
+          const link = card.querySelector('.method-link')
           if (link) {
             link.click()
           }
@@ -315,30 +319,30 @@ class ContactsPage {
     })
 
     // Enhanced focus management for FAQ
-    const faqQuestions = document.querySelectorAll(".faq-question")
+    const faqQuestions = document.querySelectorAll('.faq-question')
 
     faqQuestions.forEach((question, index) => {
-      question.addEventListener("keydown", (e) => {
+      question.addEventListener('keydown', (e) => {
         switch (e.key) {
-          case "ArrowDown":
+          case 'ArrowDown':
             e.preventDefault()
             const nextQuestion = faqQuestions[index + 1]
             if (nextQuestion) {
               nextQuestion.focus()
             }
             break
-          case "ArrowUp":
+          case 'ArrowUp':
             e.preventDefault()
             const prevQuestion = faqQuestions[index - 1]
             if (prevQuestion) {
               prevQuestion.focus()
             }
             break
-          case "Home":
+          case 'Home':
             e.preventDefault()
             faqQuestions[0].focus()
             break
-          case "End":
+          case 'End':
             e.preventDefault()
             faqQuestions[faqQuestions.length - 1].focus()
             break
@@ -361,25 +365,25 @@ class FormEnhancements {
   }
 
   setupFloatingLabels() {
-    const formGroups = document.querySelectorAll(".form-group")
+    const formGroups = document.querySelectorAll('.form-group')
 
     formGroups.forEach((group) => {
-      const input = group.querySelector("input, textarea, select")
-      const label = group.querySelector(".form-label")
+      const input = group.querySelector('input, textarea, select')
+      const label = group.querySelector('.form-label')
 
       if (input && label) {
         // Check if field has value on load
         this.toggleFloatingLabel(input, label)
 
-        input.addEventListener("focus", () => {
-          label.classList.add("floating")
+        input.addEventListener('focus', () => {
+          label.classList.add('floating')
         })
 
-        input.addEventListener("blur", () => {
+        input.addEventListener('blur', () => {
           this.toggleFloatingLabel(input, label)
         })
 
-        input.addEventListener("input", () => {
+        input.addEventListener('input', () => {
           this.toggleFloatingLabel(input, label)
         })
       }
@@ -387,10 +391,10 @@ class FormEnhancements {
   }
 
   toggleFloatingLabel(input, label) {
-    if (input.value.trim() !== "" || input === document.activeElement) {
-      label.classList.add("floating")
+    if (input.value.trim() !== '' || input === document.activeElement) {
+      label.classList.add('floating')
     } else {
-      label.classList.remove("floating")
+      label.classList.remove('floating')
     }
   }
 
@@ -399,8 +403,8 @@ class FormEnhancements {
     const phoneInputs = document.querySelectorAll('input[type="tel"]')
 
     phoneInputs.forEach((input) => {
-      input.addEventListener("input", (e) => {
-        let value = e.target.value.replace(/\D/g, "")
+      input.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, '')
         if (value.length > 0) {
           if (value.length <= 3) {
             value = `+7 (${value}`
@@ -418,12 +422,12 @@ class FormEnhancements {
   }
 
   setupAutoResize() {
-    const textareas = document.querySelectorAll("textarea")
+    const textareas = document.querySelectorAll('textarea')
 
     textareas.forEach((textarea) => {
-      textarea.addEventListener("input", () => {
-        textarea.style.height = "auto"
-        textarea.style.height = textarea.scrollHeight + "px"
+      textarea.addEventListener('input', () => {
+        textarea.style.height = 'auto'
+        textarea.style.height = textarea.scrollHeight + 'px'
       })
     })
   }
@@ -441,34 +445,36 @@ class ContactAnimations {
   }
 
   setupScrollAnimations() {
-    const animatedElements = document.querySelectorAll(".method-card, .form-wrapper, .faq-item")
+    const animatedElements = document.querySelectorAll(
+      '.method-card, .form-wrapper, .faq-item',
+    )
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.style.opacity = "1"
-            entry.target.style.transform = "translateY(0)"
+            entry.target.style.opacity = '1'
+            entry.target.style.transform = 'translateY(0)'
           }
         })
       },
       {
         threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
+        rootMargin: '0px 0px -50px 0px',
       },
     )
 
     animatedElements.forEach((element) => {
-      element.style.opacity = "0"
-      element.style.transform = "translateY(30px)"
-      element.style.transition = "opacity 0.6s ease, transform 0.6s ease"
+      element.style.opacity = '0'
+      element.style.transform = 'translateY(30px)'
+      element.style.transition = 'opacity 0.6s ease, transform 0.6s ease'
       observer.observe(element)
     })
   }
 
   setupCounterAnimations() {
     // If we add counters in the future
-    const counters = document.querySelectorAll("[data-counter]")
+    const counters = document.querySelectorAll('[data-counter]')
 
     const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -502,13 +508,13 @@ class ContactAnimations {
 }
 
 // Initialize when DOM is loaded
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   new ContactsPage()
   new FormEnhancements()
   new ContactAnimations()
 })
 
 // Export for potential use in other modules
-if (typeof module !== "undefined" && module.exports) {
+if (typeof module !== 'undefined' && module.exports) {
   module.exports = { ContactsPage, FormEnhancements, ContactAnimations }
 }
