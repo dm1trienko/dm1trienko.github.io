@@ -175,96 +175,10 @@
                         </p>
                     </div>
 
-                    <form class="contact-form" id="contactForm" novalidate>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name" class="form-label" data-ru="Имя *" data-en="Name *">Имя *</label>
-                                <input 
-                                    type="text" 
-                                    id="name" 
-                                    name="name" 
-                                    class="form-input" 
-                                    required 
-                                    aria-describedby="name-error"
-                                    data-ru="Ваше имя"
-                                    data-en="Your name"
-                                    placeholder="Ваше имя"
-                                >
-                                <div class="form-error" id="name-error" role="alert"></div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email" class="form-label" data-ru="Email *" data-en="Email *">Email *</label>
-                                <input 
-                                    type="email" 
-                                    id="email" 
-                                    name="email" 
-                                    class="form-input" 
-                                    required 
-                                    aria-describedby="email-error"
-                                    data-ru="ваш@email.com"
-                                    data-en="your@email.com"
-                                    placeholder="ваш@email.com"
-                                >
-                                <div class="form-error" id="email-error" role="alert"></div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject" class="form-label" data-ru="Тема *" data-en="Subject *">Тема *</label>
-                            <select id="subject" name="subject" class="form-select" required aria-describedby="subject-error">
-                                <option value="" data-ru="Выберите тему" data-en="Select a topic">Выберите тему</option>
-                                <option value="collaboration" data-ru="Сотрудничество" data-en="Collaboration">Сотрудничество</option>
-                                <option value="consultation" data-ru="Консультация" data-en="Consultation">Консультация</option>
-                                <option value="project" data-ru="Обсуждение проекта" data-en="Project Discussion">Обсуждение проекта</option>
-                                <option value="networking" data-ru="Нетворкинг" data-en="Networking">Нетворкинг</option>
-                                <option value="other" data-ru="Другое" data-en="Other">Другое</option>
-                            </select>
-                            <div class="form-error" id="subject-error" role="alert"></div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message" class="form-label" data-ru="Сообщение *" data-en="Message *">Сообщение *</label>
-                            <textarea 
-                                id="message" 
-                                name="message" 
-                                class="form-textarea" 
-                                rows="6" 
-                                required 
-                                aria-describedby="message-error"
-                                data-ru="Расскажите о вашей идее, проекте или вопросе..."
-                                data-en="Tell me about your idea, project, or question..."
-                                placeholder="Расскажите о вашей идее, проекте или вопросе..."
-                            ></textarea>
-                            <div class="form-error" id="message-error" role="alert"></div>
-                            <div class="character-count">
-                                <span id="charCount">0</span>/1000
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="privacy" name="privacy" required class="checkbox-input">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-text" data-ru="Согласен на обработку персональных данных" data-en="I agree to the processing of personal data">
-                                    Согласен на обработку персональных данных
-                                </span>
-                            </label>
-                            <div class="form-error" id="privacy-error" role="alert"></div>
-                        </div>
-
-                        <button type="submit" class="form-submit" id="submitBtn">
-                            <span class="submit-text" data-ru="Отправить сообщение" data-en="Send Message">Отправить сообщение</span>
-                            <span class="submit-loading" data-ru="Отправляю..." data-en="Sending...">Отправляю...</span>
-                        </button>
-
-                        <div class="form-success" id="formSuccess" role="alert">
-                            <div class="success-icon">✅</div>
-                            <div class="success-text" data-ru="Сообщение успешно отправлено! Скоро свяжусь с вами." data-en="Message sent successfully! I'll get back to you soon.">
-                                Сообщение успешно отправлено! Скоро свяжусь с вами.
-                            </div>
-                        </div>
-                    </form>
+                    <div class="yandex-form-wrapper">
+                        <script src="https://forms.yandex.ru/_static/embed.js"></script>
+                        <iframe src="https://forms.yandex.ru/u/684aaab3e010db0970e2a111/?iframe=1" frameborder="0" name="ya-form-684aaab3e010db0970e2a111" width="650"></iframe>
+                    </div>
                 </div>
             </div>
         </section>

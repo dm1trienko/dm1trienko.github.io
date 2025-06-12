@@ -12,10 +12,12 @@ class ContactsPage {
   }
 
   init() {
-    this.setupFormValidation()
-    this.setupCharacterCounter()
+    if (this.form) {
+      this.setupFormValidation()
+      this.setupCharacterCounter()
+      this.setupFormSubmission()
+    }
     this.setupFAQ()
-    this.setupFormSubmission()
     this.setupCopyButtons()
     this.setupAccessibility()
   }
