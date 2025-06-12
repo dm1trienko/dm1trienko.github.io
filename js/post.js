@@ -13,11 +13,13 @@ class BlogPostPage {
       }
       const text = await res.text()
       const { meta, content } = this.parseFrontmatter(text)
+      const rawTitle = meta.title || file
+      const title = rawTitle.replace(/\.md$/i, '')
       const body = this.stripTitleFromContent(content, meta.title)
 
-      if (meta.title) {
-        document.getElementById('post-title').textContent = meta.title
-        document.title = meta.title + ' - Еремей Дмитриенко'
+      if (title) {
+        document.getElementById('post-title').textContent = title
+        document.title = title + ' - Еремей Дмитриенко'
       }
 
       if (meta.date) {
