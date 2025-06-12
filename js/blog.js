@@ -22,9 +22,10 @@ class BlogPage {
         files.map(async (file) => {
           const md = await fetch(file.download_url).then((r) => r.text())
           const { meta, excerpt } = this.parseFrontmatter(md)
+          const title = meta.title || file.name.replace(/\.md$/i, '')
           return {
             file: file.name,
-            title: meta.title || file.name,
+            title,
             date: meta.date || '',
             excerpt,
           }
