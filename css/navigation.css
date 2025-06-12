@@ -146,6 +146,14 @@
     left: 50%;
     transform: translateX(-50%);
   }
+
+  /* Keep close button fully visible */
+  .nav-menu.active ~ .nav-toggle {
+    position: fixed;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    transform: none;
+  }
 }
 
 /* Active state for navigation links */
@@ -175,5 +183,12 @@
     right: var(--spacing-lg);
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  .nav-menu.active ~ .nav-toggle {
+    position: fixed;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    transform: none;
   }
 }
