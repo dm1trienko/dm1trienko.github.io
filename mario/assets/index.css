@@ -338,7 +338,7 @@ section.section-text {
 /* GameBoy-like container for mobile */
 #gameboy {
     width: 100%;
-    max-width: none;
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     background: #cfcfcf;
