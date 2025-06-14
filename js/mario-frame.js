@@ -5,17 +5,16 @@ export function initMarioFrame() {
   const controlsContainer = document.getElementById('mario-controls')
   if (!iframe || !controlsContainer) return
 
-  iframe.addEventListener('load', () => {
+  function moveControls() {
     try {
       const innerDoc = iframe.contentDocument || iframe.contentWindow.document
       const controls = innerDoc.getElementById('controls')
-      if (controls) {
-        // remove from iframe and adopt into outer document
+      if (controls && controls.childElementCount > 0) {
+        clearInterval(waiter)
         controls.remove()
         document.adoptNode(controls)
         controlsContainer.appendChild(controls)
 
-        // make controls clickable instead of hover-based
         const buttons = controls.querySelectorAll('.control')
         buttons.forEach((btn) => {
           btn.onmouseover = null
@@ -27,8 +26,16 @@ export function initMarioFrame() {
         })
       }
     } catch (err) {
+      clearInterval(waiter)
       console.error('Failed to move Mario controls', err)
     }
+  }
+
+  let waiter
+  iframe.addEventListener('load', () => {
+    moveControls()
+    waiter = setInterval(moveControls, 200)
+    setTimeout(() => clearInterval(waiter), 5000)
   })
 }
 
