@@ -16,11 +16,25 @@
 
 #mini-game button {
   padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
   border: none;
   border-radius: var(--border-radius);
-  background-color: var(--color-accent);
-  color: var(--color-white);
+  background-color: var(--color-primary);
+  color: var(--color-background);
   cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+#mini-game button:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-base);
+}
+
+#mini-game button:active {
+  background-color: var(--color-accent);
+  color: var(--color-background);
 }
 
 .game-frame {
@@ -43,27 +57,39 @@
 #mario-controls {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
 }
 
 #mario-controls .control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: auto;
   height: auto;
-  padding: 10px 20px;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
   border: none;
-  border-radius: 4px;
-  background: #2563eb;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
+  border-radius: var(--border-radius);
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  font-family: var(--font-family);
   box-shadow: none;
-  transition: background 0.2s;
+  transition: all var(--transition-base);
   cursor: pointer;
   position: relative;
 }
 
 #mario-controls .control:hover {
-  background: #1e40af;
+  background-color: var(--color-secondary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-base);
+}
+
+#mario-controls .control:active {
+  background-color: var(--color-accent);
+  color: var(--color-background);
 }
 
 #mario-controls .control .control-inner {
