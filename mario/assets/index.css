@@ -87,6 +87,7 @@ section#game {
 
 #controls {
     text-align: center;
+    display: none;
 }
 
     #controls .control {
