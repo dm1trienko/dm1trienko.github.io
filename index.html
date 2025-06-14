@@ -162,12 +162,15 @@
           <h2 class="section-title" data-ru="Мини-игра" data-en="Mini Game">
             Мини-игра
           </h2>
-          <iframe
-            src="mario/index.html"
-            id="mario-game"
-            title="Super Mario"
-            style="width: 100%; height: 512px; border: none"
-          ></iframe>
+          <div class="game-frame">
+            <iframe
+              src="mario/index.html"
+              id="mario-game"
+              title="Super Mario"
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div id="mario-controls"></div>
         </div>
       </section>
 
@@ -263,6 +266,7 @@
 
     <script type="module" src="js/announcements.js" defer></script>
     <script type="module" src="js/blog-preview.js" defer></script>
+    <script type="module" src="js/mario-frame.js" defer></script>
     <script type="module" src="js/main.js" defer></script>
   </body>
 </html>
