@@ -1,5 +1,5 @@
 PlayMarioJas.PlayMarioJas.settings.touch = {
-    "enabled": false,
+    "enabled": true,
     "styles": {
         "Button": {
             "elementInner": {
