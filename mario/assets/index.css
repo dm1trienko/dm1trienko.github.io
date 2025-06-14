@@ -345,6 +345,7 @@ section.section-text {
     background: #cfcfcf;
     border: 4px solid #999;
     border-radius: 12px;
+    overflow: hidden;
 }
 
 #mobile-controls {
