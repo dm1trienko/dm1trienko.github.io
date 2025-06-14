@@ -404,3 +404,10 @@ section.section-text {
     gap: 1rem;
     margin-top: 1rem;
 }
+
+/* Ensure the in-game canvas scales on narrow screens */
+section#game canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+}
