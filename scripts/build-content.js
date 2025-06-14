@@ -1,6 +1,10 @@
-const fs = require('fs')
-const path = require('path')
-const md = require('markdown-it')({ html: true })
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import MarkdownIt from 'markdown-it'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const md = new MarkdownIt({ html: true })
 
 function slugify(name) {
   return name

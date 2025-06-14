@@ -56,6 +56,12 @@
   border: none;
 }
 
+@media (max-width: 600px) {
+  .game-frame iframe {
+    aspect-ratio: 1 / 1;
+  }
+}
+
 #mario-controls {
   display: flex;
   justify-content: center;
