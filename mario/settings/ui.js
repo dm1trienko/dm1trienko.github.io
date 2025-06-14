@@ -21,7 +21,7 @@ var PlayMarioJas;
                 "font-style": "normal"
             }
         },
-        "sizeDefault": "Wide",
+        "sizeDefault": "Large",
         "sizes": {
             "NES": {
                 "width": 512,
@@ -87,10 +87,6 @@ var PlayMarioJas;
                             FSM.GamesRunner.setSpeed(Number(value.replace("x", "")));
                         },
                         "storeLocally": true
-                    },
-                    {
-                        "title": "View Mode",
-                        "type": "ScreenSize"
                     },
                     {
                         "title": "Framerate",
