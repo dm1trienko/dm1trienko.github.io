@@ -115,12 +115,20 @@ class MiniRunner {
   spawnObstacle() {
     const h = 20 + Math.random() * 20
     const w = 10 + Math.random() * 10
-    this.obstacles.push({
+    const typeIndex = Math.floor(Math.random() * 3)
+    const types = ['rect', 'circle', 'triangle']
+    const type = types[typeIndex]
+    const obstacle = {
       x: this.canvas.width,
       y: this.canvas.height - h - 10,
       w,
       h,
-    })
+      type,
+    }
+    if (type === 'circle') {
+      obstacle.r = Math.min(w, h) / 2
+    }
+    this.obstacles.push(obstacle)
   }
 
   draw() {
@@ -128,11 +136,62 @@ class MiniRunner {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     ctx.fillStyle = '#362f2d'
-    ctx.fillRect(this.player.x, this.player.y, this.player.w, this.player.h)
+    ctx.beginPath()
+    ctx.arc(
+      this.player.x + this.player.w / 2,
+      this.player.y + this.player.h / 2,
+      this.player.w / 2,
+      0,
+      Math.PI * 2
+    )
+    ctx.fill()
+    // eyes
+    ctx.fillStyle = '#fff'
+    ctx.beginPath()
+    ctx.arc(
+      this.player.x + this.player.w * 0.35,
+      this.player.y + this.player.h * 0.4,
+      this.player.w * 0.07,
+      0,
+      Math.PI * 2
+    )
+    ctx.fill()
+    ctx.beginPath()
+    ctx.arc(
+      this.player.x + this.player.w * 0.65,
+      this.player.y + this.player.h * 0.4,
+      this.player.w * 0.07,
+      0,
+      Math.PI * 2
+    )
+    ctx.fill()
+    ctx.strokeStyle = '#fff'
+    ctx.beginPath()
+    ctx.arc(
+      this.player.x + this.player.w / 2,
+      this.player.y + this.player.h * 0.65,
+      this.player.w * 0.25,
+      0,
+      Math.PI
+    )
+    ctx.stroke()
 
     ctx.fillStyle = '#bfa181'
     this.obstacles.forEach((o) => {
-      ctx.fillRect(o.x, o.y, o.w, o.h)
+      if (o.type === 'circle') {
+        ctx.beginPath()
+        ctx.arc(o.x + o.r, o.y + o.r, o.r, 0, Math.PI * 2)
+        ctx.fill()
+      } else if (o.type === 'triangle') {
+        ctx.beginPath()
+        ctx.moveTo(o.x, o.y + o.h)
+        ctx.lineTo(o.x + o.w / 2, o.y)
+        ctx.lineTo(o.x + o.w, o.y + o.h)
+        ctx.closePath()
+        ctx.fill()
+      } else {
+        ctx.fillRect(o.x, o.y, o.w, o.h)
+      }
     })
 
     ctx.fillStyle = '#362f2d'
