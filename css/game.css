@@ -53,6 +53,7 @@
   /* Real playable area is about 600x512 so use that ratio */
   aspect-ratio: 75 / 64;
   height: auto;
+  max-height: 90vh;
   border: none;
 }
 
