@@ -58,7 +58,8 @@
 
 @media (max-width: 600px) {
   .game-frame iframe {
-    aspect-ratio: 1 / 1;
+    /* Keep original proportion so game is fully visible */
+    aspect-ratio: 512 / 600;
   }
 }
 
