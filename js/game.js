@@ -4,6 +4,8 @@ class MiniRunner {
     this.btn = document.getElementById(startBtnId)
     if (!this.canvas || !this.btn) return
     this.ctx = this.canvas.getContext('2d')
+    this.resizeCanvas()
+    window.addEventListener('resize', () => this.resizeCanvas())
     this.bindEvents()
     this.reset()
   }
@@ -13,6 +15,18 @@ class MiniRunner {
     window.addEventListener('keydown', (e) => {
       if (e.code === 'Space') this.jump()
     })
+    this.canvas.addEventListener('mousedown', () => this.jump())
+    this.canvas.addEventListener('touchstart', (e) => {
+      e.preventDefault()
+      this.jump()
+    })
+  }
+
+  resizeCanvas() {
+    const ratio = 3
+    const width = this.canvas.parentElement.clientWidth
+    this.canvas.width = width
+    this.canvas.height = width / ratio
   }
 
   reset() {
