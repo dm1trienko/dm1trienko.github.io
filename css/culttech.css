@@ -292,6 +292,31 @@
   cursor: pointer;
 }
 
+.map-point--moscow {
+  top: 30%;
+  left: 55%;
+}
+
+.map-point--spb {
+  top: 25%;
+  left: 52%;
+}
+
+.map-point--london {
+  top: 35%;
+  left: 45%;
+}
+
+.map-point--ny {
+  top: 40%;
+  left: 25%;
+}
+
+.map-point--berlin {
+  top: 32%;
+  left: 48%;
+}
+
 .map-marker {
   width: 40px;
   height: 40px;
