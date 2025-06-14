@@ -27,7 +27,6 @@
     <meta name="twitter:card" content="summary" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/navigation.css" />
-    <link rel="stylesheet" href="css/game.css" />
     <link rel="manifest" href="manifest.json" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -163,17 +162,11 @@
           <h2 class="section-title" data-ru="Мини-игра" data-en="Mini Game">
             Мини-игра
           </h2>
-          <canvas id="game-canvas"></canvas>
-          <button
-            id="game-start"
-            class="btn btn-primary"
-            data-start="Старт"
-            data-start-en="Start"
-            data-restart="Заново"
-            data-restart-en="Restart"
-            data-ru="Старт"
-            data-en="Start"
-          >Старт</button>
+          <iframe
+            src="mario/index.html"
+            title="Super Mario"
+            style="width: 100%; height: 600px; border: none"
+          ></iframe>
         </div>
       </section>
 
@@ -269,7 +262,6 @@
 
     <script type="module" src="js/announcements.js" defer></script>
     <script type="module" src="js/blog-preview.js" defer></script>
-    <script type="module" src="js/game.js" defer></script>
     <script type="module" src="js/main.js" defer></script>
   </body>
 </html>
