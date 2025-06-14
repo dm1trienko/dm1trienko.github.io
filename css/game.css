@@ -49,8 +49,8 @@
 .game-frame iframe {
   display: block;
   width: 100%;
-  /* Increase visible area so Mario isn't cut off */
-  aspect-ratio: 512 / 480;
+  /* Further expand height to show Mario completely */
+  aspect-ratio: 512 / 600;
   height: auto;
   border: none;
 }
