@@ -356,3 +356,49 @@ section.section-text {
         display: block;
     }
 }
+
+/* Overrides for embedded version on portfolio site */
+#controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#controls .control {
+    width: auto;
+    height: auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background: #2563eb;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    box-shadow: none;
+    transition: background 0.2s;
+}
+
+#controls .control:hover {
+    background: #1e40af;
+    margin-top: 0;
+}
+
+#controls .control h4 {
+    position: static;
+    margin: 0;
+    font-size: 14px;
+}
+
+#controls .control-inner {
+    display: none !important;
+}
+
+.touch-passer-container {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    display: flex !important;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
