@@ -14,6 +14,17 @@ export function initMarioFrame() {
         controls.remove()
         document.adoptNode(controls)
         controlsContainer.appendChild(controls)
+
+        // make controls clickable instead of hover-based
+        const buttons = controls.querySelectorAll('.control')
+        buttons.forEach((btn) => {
+          btn.onmouseover = null
+          btn.onmouseout = null
+          btn.addEventListener('click', () => {
+            const isActive = btn.getAttribute('active') === 'on'
+            btn.setAttribute('active', isActive ? 'off' : 'on')
+          })
+        })
       }
     } catch (err) {
       console.error('Failed to move Mario controls', err)
