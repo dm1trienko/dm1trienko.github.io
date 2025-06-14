@@ -50,16 +50,16 @@
 .game-frame iframe {
   display: block;
   width: 100%;
-  /* Further expand height to show Mario completely */
-  aspect-ratio: 512 / 600;
+  /* Maintain 10:9 proportion for consistent sizing */
+  aspect-ratio: 10 / 9;
   height: auto;
   border: none;
 }
 
 @media (max-width: 600px) {
   .game-frame iframe {
-    /* Keep original proportion so game is fully visible */
-    aspect-ratio: 512 / 600;
+    /* Keep same 10:9 ratio on small screens */
+    aspect-ratio: 10 / 9;
   }
 }
 
