@@ -53,6 +53,7 @@
   /* Further expand height to show Mario completely */
   aspect-ratio: 512 / 600;
   height: auto;
+  max-height: 90vh;
   border: none;
 }
 

@@ -35,7 +35,7 @@ export function initMarioFrame() {
   iframe.addEventListener('load', () => {
     moveControls()
     waiter = setInterval(moveControls, 200)
-    setTimeout(() => clearInterval(waiter), 5000)
+    setTimeout(() => clearInterval(waiter), 15000)
   })
 }
 
