@@ -11,7 +11,6 @@ export function initMarioFrame() {
       const controls = innerDoc.getElementById('controls')
       if (controls && controls.childElementCount > 0) {
         clearInterval(waiter)
-        controls.remove()
         document.adoptNode(controls)
         controlsContainer.appendChild(controls)
 

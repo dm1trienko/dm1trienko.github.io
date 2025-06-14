@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/build-content.js && vite build && workbox generateSW workbox-config.js",
+    "build": "node scripts/build-content.js && vite build && workbox generateSW workbox-config.cjs",
     "lint:js": "eslint .",
     "lint:css": "stylelint \"**/*.css\"",
     "lint:html": "html-validate \"*.html\"",

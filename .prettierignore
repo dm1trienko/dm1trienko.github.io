@@ -1,0 +1,5 @@
+mario/**
+dist/**
+public/posts/**
+public/announcements/**
+js/game.js
