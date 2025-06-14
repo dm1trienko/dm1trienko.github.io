@@ -52,8 +52,7 @@
   width: 100%;
   /* Real playable area is about 600x512 so use that ratio */
   aspect-ratio: 75 / 64;
-  /* Ensure the full game fits on narrow screens */
-  min-height: 512px;
+  height: auto;
   border: none;
 }
 
@@ -61,7 +60,7 @@
   .game-frame iframe {
     /* Keep consistent ratio on small screens */
     aspect-ratio: 75 / 64;
-    min-height: 512px;
+    height: auto;
   }
 }
 
