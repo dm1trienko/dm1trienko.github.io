@@ -360,7 +360,8 @@ section.section-text {
 
 /* Overrides for embedded version on portfolio site */
 #controls {
-    display: flex;
+    /* Hide controls bar in the embedded version */
+    display: none;
     justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
