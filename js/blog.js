@@ -145,7 +145,14 @@ class BlogPage {
 
   async openPost(file) {
     try {
-      const url = 'posts/' + encodeURIComponent(file)
+      let url
+      if (location.protocol === 'file:') {
+        url =
+          'https://raw.githubusercontent.com/dm1trienko/dm1trienko.github.io/main/posts/' +
+          encodeURIComponent(file)
+      } else {
+        url = 'posts/' + encodeURIComponent(file)
+      }
       const res = await fetch(url)
       if (!res.ok) throw new Error(res.statusText)
       const md = await res.text()
