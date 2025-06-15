@@ -80,7 +80,7 @@
 }
 
 #mario-controls {
-  display: flex;
+  display: none;
   justify-content: center;
   gap: var(--spacing-md);
   position: absolute;
