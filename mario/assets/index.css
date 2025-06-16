@@ -10,8 +10,8 @@ hr {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(76,74,74,0.75), rgba(0, 0, 0, 0));
 }
 body {
-    background: #cfcfcf;
-    color: #fafafa;
+    background: #f5f2ed;
+    color: #362f2d;
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -338,14 +338,15 @@ section.section-text {
 
 /* GameBoy-like container for mobile */
 #gameboy {
-    width: 512px;
-    height: 480px;
-    margin: 40px auto;
-    background: #cfcfcf;
-    border: 12px solid #333;
+    width: 100%;
+    max-width: 512px;
+    height: auto;
+    aspect-ratio: 512 / 480;
+    margin: 0 auto;
+    background: #f5f2ed;
+    border: none;
     border-radius: 8px;
     overflow: hidden;
-    aspect-ratio: 512 / 480;
 }
 
 #mobile-controls {
