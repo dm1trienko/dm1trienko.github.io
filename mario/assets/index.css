@@ -338,15 +338,14 @@ section.section-text {
 
 /* GameBoy-like container for mobile */
 #gameboy {
-    width: 100vw;
-    height: 100vh;
-    max-width: none;
-    margin: 0;
-    padding: 0;
+    width: 512px;
+    height: 480px;
+    margin: 40px auto;
     background: #cfcfcf;
-    border: none;
-    border-radius: 0;
+    border: 12px solid #333;
+    border-radius: 8px;
     overflow: hidden;
+    aspect-ratio: 512 / 480;
 }
 
 #mobile-controls {
@@ -355,6 +354,10 @@ section.section-text {
 }
 
 @media (max-width: 600px) {
+    #gameboy {
+        width: 100%;
+        height: auto;
+    }
     #mobile-controls {
         display: block;
     }

@@ -21,11 +21,11 @@ var PlayMarioJas;
                 "font-style": "normal"
             }
         },
-        "sizeDefault": "Large",
+        "sizeDefault": "NES",
         "sizes": {
             "NES": {
                 "width": 512,
-                "height": 464,
+                "height": 480,
                 "full": false
             },
             "Wide": {
