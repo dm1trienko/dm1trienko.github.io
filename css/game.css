@@ -54,10 +54,14 @@
 }
 
 .game-frame {
-  border: none;
-  border-radius: 0;
+  background:
+    linear-gradient(0deg, var(--color-surface), var(--color-surface)) padding-box,
+    linear-gradient(135deg, var(--color-stone-100), var(--color-accent-100))
+      border-box;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-lg);
   overflow: hidden;
-  box-shadow: none;
+  box-shadow: var(--shadow-lg);
   max-width: 512px;
   width: 100%;
   aspect-ratio: 512 / 480;
