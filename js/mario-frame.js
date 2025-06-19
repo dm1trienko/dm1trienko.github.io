@@ -11,8 +11,11 @@ export function initMarioFrame() {
       const controls = innerDoc.getElementById('controls')
       if (controls && controls.childElementCount > 0) {
         clearInterval(waiter)
-        document.adoptNode(controls)
-        controlsContainer.appendChild(controls)
+
+        if (!controlsContainer.contains(controls)) {
+          document.adoptNode(controls)
+          controlsContainer.appendChild(controls)
+        }
 
         const buttons = controls.querySelectorAll('.control')
         buttons.forEach((btn) => {
@@ -23,6 +26,9 @@ export function initMarioFrame() {
             btn.setAttribute('active', isActive ? 'off' : 'on')
           })
         })
+
+        controlsContainer.style.display = 'flex'
+        controlsContainer.classList.add(`length-${buttons.length}`)
       }
     } catch (err) {
       clearInterval(waiter)
