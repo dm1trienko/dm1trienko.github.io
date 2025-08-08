@@ -4,7 +4,7 @@
   background: linear-gradient(
     135deg,
     var(--color-background) 0%,
-    rgba(139, 115, 85, 0.05) 100%
+    rgba(10, 132, 255, 0.1) 100%
   );
   text-align: center;
 }
@@ -62,8 +62,10 @@
   margin-left: var(--spacing-sm);
   font-size: var(--font-size-base);
   color: var(--color-primary);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: var(--glass-background);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
   border-radius: var(--border-radius);
   cursor: pointer;
   transition: background-color var(--transition-fast);
@@ -87,10 +89,12 @@
 
 .blog-card {
   background:
-    linear-gradient(0deg, var(--color-surface), var(--color-surface))
+    linear-gradient(0deg, var(--glass-background), var(--glass-background))
       padding-box,
     linear-gradient(135deg, var(--color-stone-100), var(--color-accent-100))
       border-box;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: 1px solid transparent;
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);

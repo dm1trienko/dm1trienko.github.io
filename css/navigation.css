@@ -4,9 +4,10 @@
   top: 0;
   left: 0;
   right: 0;
-  background: var(--navbar-background);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--glass-background);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--glass-border);
   height: var(--header-height);
   z-index: 1000;
 }
@@ -67,8 +68,10 @@
   position: absolute;
   right: 0;
   top: calc(100% + var(--spacing-xs));
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: var(--glass-background);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
   border-radius: var(--border-radius);
   list-style: none;
   padding: var(--spacing-xs) 0;
@@ -105,7 +108,9 @@
     inset: 0;
     width: 100vw;
     height: 100vh;
-    background: var(--color-surface);
+    background: var(--glass-background);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     flex-direction: column;
     justify-content: center;
     align-items: center;
