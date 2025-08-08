@@ -452,22 +452,42 @@ a:focus {
 
 /* Hero Section */
 .hero {
-  padding: var(--spacing-3xl) 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-3xl) var(--spacing-md);
+  min-height: calc(100vh - var(--header-height));
+  overflow: hidden;
   text-align: center;
-  background: linear-gradient(
-    135deg,
-    var(--color-background) 0%,
-    rgba(139, 115, 85, 0.05) 100%
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    var(--color-primary),
+    var(--color-accent),
+    var(--color-primary)
   );
+  animation: hero-rotate 25s linear infinite;
+  opacity: 0.12;
+  z-index: -1;
 }
 
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
+  animation: fade-in-up var(--transition-slow) ease-out both;
 }
 
 .hero-title {
-  font-size: var(--font-size-5xl);
+  font-size: clamp(2rem, 5vw + 1rem, var(--font-size-5xl));
   font-weight: 300;
   margin-bottom: var(--spacing-lg);
   color: var(--color-primary);
@@ -475,7 +495,7 @@ a:focus {
 }
 
 .hero-subtitle {
-  font-size: var(--font-size-xl);
+  font-size: clamp(1rem, 2vw + 0.5rem, var(--font-size-xl));
   color: var(--color-text-secondary);
   margin-bottom: var(--spacing-2xl);
   font-weight: 400;
@@ -486,6 +506,24 @@ a:focus {
   gap: var(--spacing-lg);
   justify-content: center;
   flex-wrap: wrap;
+}
+
+@keyframes hero-rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Buttons */
@@ -606,13 +644,16 @@ a:focus {
   border: 1px solid var(--glass-border);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
-  transition: all var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
   height: 100%;
 }
 
 .announcement-card:hover,
 .blog-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px) scale(1.02);
   box-shadow: var(--shadow-lg);
   border-color: var(--color-accent);
 }
@@ -711,7 +752,8 @@ a:focus {
   }
 
   .hero {
-    padding: var(--spacing-2xl) 0;
+    min-height: auto;
+    padding: var(--spacing-2xl) var(--spacing-md);
   }
 
   .hero-cta {
