@@ -1,52 +1,55 @@
 /* CSS Custom Properties */
 :root {
-  /* Colors - Old Money Beige palette */
-  --color-primary: #362f2d;
-  --color-secondary: #544d4b;
-  --color-accent: #bfa181;
-  --color-background: #f5f2ed;
-  --color-surface: #ffffff;
-  --navbar-background: rgba(255, 255, 255, 0.95);
-  --color-border: #d6cec3;
-  --color-text-primary: #362f2d;
-  --color-text-secondary: #5c544d;
-  --color-text-muted: #877f77;
+  /* Colors - Apple glassmorphism palette */
+  --color-primary: #0a84ff;
+  --color-secondary: #1c1c1e;
+  --color-accent: #5ac8fa;
+  --color-background: #f5f5f7;
+  --glass-background: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --color-surface: var(--glass-background);
+  --navbar-background: var(--glass-background);
+  --color-border: var(--glass-border);
+  --color-text-primary: #1c1c1e;
+  --color-text-secondary: #3a3a3c;
+  --color-text-muted: #8e8e93;
   --color-text: var(--color-text-primary);
+  --background-gradient: linear-gradient(135deg, #dfe9f3 0%, #ffffff 100%);
 
   /* System color schemes */
   color-scheme: light;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
 
   /* Extended palette */
-  --color-primary-50: #e9e5e1;
-  --color-primary-100: #d6cfc9;
-  --color-primary-900: #1c1918;
-  --color-accent-50: #f7f1e8;
-  --color-accent-100: #eddcc7;
-  --color-accent-900: #7a674e;
-  --color-accent-dark: #8f775c;
-  --color-stone-50: #f5f2ed;
-  --color-stone-100: #e5e0d8;
-  --color-stone-200: #d5cfc5;
-  --color-stone-300: #c6bfb3;
-  --color-stone-400: #b8b0a4;
-  --color-stone-500: #a79f93;
-  --color-stone-600: #948c80;
-  --color-stone-700: #80796d;
-  --color-stone-800: #6d665c;
-  --color-stone-900: #544d4b;
-  --color-amber-50: #f9f5ec;
-  --color-amber-300: #e2cfa6;
-  --color-amber-400: #d1b98c;
-  --color-amber-500: #bfa181;
-  --color-amber-600: #a98b6b;
-  --color-amber-700: #93765a;
-  --color-green-50: #e6f5e9;
-  --color-green-200: #b7ddb7;
-  --color-green-700: #407d52;
-  --color-red-400: #e08080;
-  --color-red-500: #d46a6a;
-  --color-red-600: #c05050;
+  --color-primary-50: #d6e4ff;
+  --color-primary-100: #add2ff;
+  --color-primary-900: #003a75;
+  --color-accent-50: #dff6ff;
+  --color-accent-100: #bfeeff;
+  --color-accent-900: #004b6b;
+  --color-accent-dark: #0073aa;
+  --color-stone-50: #f5f5f7;
+  --color-stone-100: #e5e5ea;
+  --color-stone-200: #d1d1d6;
+  --color-stone-300: #c7c7cc;
+  --color-stone-400: #aeaeb2;
+  --color-stone-500: #8e8e93;
+  --color-stone-600: #636366;
+  --color-stone-700: #48484a;
+  --color-stone-800: #3a3a3c;
+  --color-stone-900: #1c1c1e;
+  --color-amber-50: #fff1e5;
+  --color-amber-300: #ffd199;
+  --color-amber-400: #ffbf66;
+  --color-amber-500: #ffaa33;
+  --color-amber-600: #ff9500;
+  --color-amber-700: #cc7a00;
+  --color-green-50: #e9fff7;
+  --color-green-200: #b8f5d0;
+  --color-green-700: #1a9b55;
+  --color-red-400: #ff6b6b;
+  --color-red-500: #ff3b30;
+  --color-red-600: #e02916;
   --color-white: #ffffff;
 
   /* Typography */
@@ -93,17 +96,20 @@
 /* Dark Theme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: #eae5de;
-    --color-secondary: #d0c8be;
-    --color-accent: #cdb397;
-    --color-accent-dark: #c19c77;
-    --color-background: #2b2927;
-    --color-surface: #3b3835;
-    --navbar-background: rgba(59, 56, 53, 0.95);
-    --color-border: #4a4744;
-    --color-text-primary: #eae5de;
-    --color-text-secondary: #e8e0d7;
-    --color-text-muted: #d0c6bd;
+    --color-primary: #0a84ff;
+    --color-secondary: #f2f2f7;
+    --color-accent: #5ac8fa;
+    --color-accent-dark: #64d2ff;
+    --color-background: #1c1c1e;
+    --glass-background: rgba(44, 44, 46, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --color-surface: var(--glass-background);
+    --navbar-background: var(--glass-background);
+    --color-border: var(--glass-border);
+    --color-text-primary: #f2f2f7;
+    --color-text-secondary: #d1d1d6;
+    --color-text-muted: #8e8e93;
+    --background-gradient: linear-gradient(135deg, #1c1c1e 0%, #2c2c2e 100%);
 
     color-scheme: dark;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0.05);
@@ -127,7 +133,8 @@ body {
   font-size: var(--font-size-base);
   line-height: 1.6;
   color: var(--color-text-primary);
-  background-color: var(--color-background);
+  background: var(--background-gradient);
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -193,6 +200,15 @@ a:focus {
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--spacing-lg);
+}
+
+/* Generic glass panel */
+.glass {
+  background: var(--glass-background);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-lg);
 }
 
 @media (max-width: 768px) {
@@ -325,8 +341,10 @@ a:focus {
   position: absolute;
   right: 0;
   top: calc(100% + var(--spacing-xs));
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: var(--glass-background);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
   border-radius: var(--border-radius);
   list-style: none;
   padding: var(--spacing-xs) 0;
@@ -379,7 +397,9 @@ a:focus {
     inset: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--color-surface);
+    background: var(--glass-background);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -507,14 +527,18 @@ a:focus {
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-surface);
+  background: var(--glass-background);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-color: var(--color-accent);
   transform: translateY(-1px);
   box-shadow: var(--shadow-base);
 }
 
 .btn-secondary:active {
-  background-color: var(--color-surface);
+  background: var(--glass-background);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-color: var(--color-accent-dark);
   color: var(--color-primary);
 }
@@ -561,7 +585,10 @@ a:focus {
 /* Blog Preview Section */
 .blog-preview {
   padding: var(--spacing-3xl) 0;
-  background-color: var(--color-surface);
+  background: var(--glass-background);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
 }
 
 .blog-grid {
@@ -573,8 +600,10 @@ a:focus {
 /* Cards */
 .announcement-card,
 .blog-card {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
+  background: var(--glass-background);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
   transition: all var(--transition-base);
@@ -627,8 +656,10 @@ a:focus {
 
 /* Footer */
 .footer {
-  background-color: var(--color-surface);
-  border-top: 1px solid var(--color-border);
+  background: var(--glass-background);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-top: 1px solid var(--glass-border);
   padding: var(--spacing-2xl) 0;
   margin-top: var(--spacing-3xl);
 }
