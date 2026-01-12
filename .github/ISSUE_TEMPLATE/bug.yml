@@ -1,0 +1,31 @@
+name: "Ошибка / битая ссылка"
+description: "Сообщить об ошибке на сайте или нерабочей ссылке"
+title: "[Баг]: "
+labels: ["bug"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: "Страница"
+      description: "Ссылка на страницу сайта (или viewer.html?id=...)"
+      placeholder: "https://dmitrienok.ru/viewer.html?id=..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: "Что не так"
+      description: "Опиши проблему и что ожидалось"
+      placeholder: "..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: "Дополнительно"
+      description: "Скриншот, браузер, любая дополнительная инфа"
+      placeholder: "..."
+    validations:
+      required: false

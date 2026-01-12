@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Пост — dmitrienok.ru</title>
+  <meta name="description" content="Новости и объявления студенческого хаба." />
+  <meta property="og:title" content="Новости — Дмитриёнок" />
+  <meta property="og:description" content="Новости, объявления и обновления хаба." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/img/site_logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- PWA / Search / Feed -->
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/img/icon-192.png">
+  <link rel="search" type="application/opensearchdescription+xml" href="opensearch.xml" title="Поиск — Дмитриёнок">
+  <link rel="alternate" type="application/atom+xml" href="feed.xml" title="Новости — dmitrienok.ru">
+
+  <!-- Apply saved theme as early as possible (prevents flashing) -->
+  <script>
+    (function(){
+      try{
+        const t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      }catch(e){}
+    })();
+  </script>
+
+  <link rel="icon" href="assets/img/site_logo.png" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Перейти к содержимому</a>
+  <header>
+    <div class="header-container header-row">
+      <a class="brand" href="index.html#news" aria-label="Назад к новостям">
+        <div class="brand-badge" aria-hidden="true"></div>
+        <div class="brand-text">
+          <strong data-brand>Дмитриёнок</strong>
+          <span>Новости</span>
+        </div>
+      </a>
+
+      <nav id="primaryNav" aria-label="Разделы" class="tabs tabs-header">
+        <a class="tab-btn" href="index.html#home">Главная</a>
+        <a class="tab-btn" href="index.html#materials">Материалы</a>
+        <a class="tab-btn" href="index.html#schedules">Расписания</a>
+        <a class="tab-btn" href="index.html#calculator">Калькулятор</a>
+        <a class="tab-btn" href="index.html#news">Новости</a>
+        <a class="tab-btn" href="index.html#polls">Опросы</a>
+        <a class="tab-btn" href="index.html#community">Команда</a>
+        <a class="tab-btn" href="index.html#info">Справка</a>
+        <a class="tab-btn" href="index.html#contact">Обратная связь</a>
+        <a class="tab-btn" href="index.html#donate">Донат</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="navToggle" class="button ghost icon nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="primaryNav">
+          <span aria-hidden="true">☰</span>
+        </button>
+
+        <button id="installBtn" class="button ghost icon" type="button" aria-label="Установить" title="Установить" hidden>
+          <span aria-hidden="true">⬇️</span>
+        </button>
+
+        <button id="themeToggle" class="button ghost icon" type="button" aria-label="Сменить тему" title="Сменить тему">
+          <span data-theme-icon aria-hidden="true">☀️</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section" id="mainContent">
+    <div class="container">
+      <div class="card viewer-wrap">
+        <h2 style="margin:0 0 6px;" data-post-title>Пост</h2>
+        <div class="small"><span data-post-date></span> <span data-post-tags></span></div>
+
+        <div class="tools" style="margin-top:10px;">
+          <button class="button ghost icon tiny" type="button" data-fav title="В избранное" aria-label="В избранное">☆</button>
+          <button class="button ghost icon tiny" type="button" data-share title="Поделиться" aria-label="Поделиться">📤</button>
+          <button class="button ghost icon tiny" type="button" data-copy-link title="Скопировать ссылку" aria-label="Скопировать ссылку">⧉</button>
+        </div>
+
+
+        <hr class="sep"/>
+
+        <article id="postBody" class="card viewer-wrap" style="background: transparent; box-shadow: none; border:none; padding:0;">
+          <div class="notice">Загружаю…</div>
+        </article>
+
+        <hr class="sep"/>
+        <a class="button ghost" href="index.html#news">← Все посты</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="small">
+        © 2026 <span data-founder-name>Еремей Дмитриенко</span> • <span data-founder-role>Основатель хаба</span> • Проект поддерживается энтузиастами и развивается сообществом
+      </div>
+    </div>
+  </footer>
+
+  
+  <!-- Command palette -->
+  <div id="cmdk" class="cmdk" hidden>
+    <div class="cmdk-backdrop" data-cmdk-close></div>
+    <div class="cmdk-panel card" role="dialog" aria-modal="true" aria-labelledby="cmdkTitle">
+      <div class="cmdk-top">
+        <div class="small" id="cmdkTitle">Командная палитра</div>
+        <button type="button" class="button ghost icon tiny" data-cmdk-close aria-label="Закрыть">✕</button>
+      </div>
+      <input id="cmdkInput" class="input" placeholder="Поиск, раздел или команда…" autocomplete="off" />
+      <div class="cmdk-hint small">Enter — открыть • ↑↓ — выбрать • Esc — закрыть</div>
+      <div id="cmdkList" class="cmdk-list" role="listbox" aria-label="Результаты"></div>
+    </div>
+  </div>
+
+<script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+  <script src="assets/js/cmdk.js"></script>
+  <script src="assets/js/shortcuts.js"></script>
+
+  <script src="assets/js/post.js"></script>
+</body>
+</html>

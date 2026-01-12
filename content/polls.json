@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Опрос: что добавить в хаб в первую очередь?",
+    "description": "Собираю приоритеты: какие разделы/материалы/фичи нужны студентам.",
+    "category": "Сайт / развитие",
+    "status": "active",
+    "tags": [
+      "фичи",
+      "приоритеты"
+    ],
+    "created": "2026-01-09",
+    "url": "https://forms.fillout.com/t/t7xZyJR3cfus",
+    "embedUrl": "https://forms.fillout.com/t/t7xZyJR3cfus",
+    "id": "p_b9c42b28"
+  },
+  {
+    "title": "Опрос: удобство навигации по материалам",
+    "description": "Насколько удобно искать и открывать документы? Что улучшить?",
+    "category": "Сайт / UX",
+    "status": "active",
+    "tags": [
+      "поиск",
+      "каталог"
+    ],
+    "created": "2026-01-09",
+    "url": "https://forms.fillout.com/t/bsHwBmSqr7us",
+    "embedUrl": "https://forms.fillout.com/t/bsHwBmSqr7us",
+    "id": "p_18a6ee03"
+  }
+]

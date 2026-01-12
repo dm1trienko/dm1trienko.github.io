@@ -1,0 +1,2509 @@
+[
+  {
+    "id": "r_2b58da0308",
+    "title": "Пример: таблица оценок (XLSX)",
+    "description": "Пример локального Excel-файла, который можно просматривать прямо на сайте.",
+    "type": "xlsx",
+    "url": "files/demo/grades.xlsx",
+    "semester": "",
+    "subject": "Демо",
+    "tags": [
+      "excel",
+      "таблица"
+    ],
+    "folder": "Общее/Примеры"
+  },
+  {
+    "id": "r_494244d6bc",
+    "title": "Пример: таблица (CSV)",
+    "description": "Пример CSV-файла (обычно быстрее для больших таблиц).",
+    "type": "csv",
+    "url": "files/demo/sample.csv",
+    "semester": "",
+    "subject": "Демо",
+    "tags": [
+      "csv",
+      "таблица"
+    ],
+    "folder": "Общее/Примеры"
+  },
+  {
+    "id": "r_sheet_hub",
+    "title": "Таблица (Google Sheets)",
+    "description": "",
+    "url": "https://docs.google.com/spreadsheets/d/1Ru5E-_DdYkxENLvJLYE1jvDOctChaNiK2y8Y-x85iss/edit?usp=sharing",
+    "semester": "",
+    "subject": "Общее",
+    "folder": "Общее/Таблицы",
+    "tags": [
+      "таблица",
+      "google"
+    ]
+  },
+  {
+    "id": "r_yandex_disk_materials",
+    "title": "Материалы (Яндекс.Диск)",
+    "description": "",
+    "url": "https://disk.yandex.ru/d/ZViQIMLaJqFUFg",
+    "semester": "",
+    "subject": "Общее",
+    "folder": "Общее/Облако",
+    "tags": [
+      "yandex",
+      "disk"
+    ]
+  },
+  {
+    "id": "r_oktch_sheet_1",
+    "title": "ОКТЧ — таблица 1",
+    "description": "",
+    "url": "https://docs.google.com/spreadsheets/d/1iMfqihEYtzkrWh7CBeHk2BM8u-r0mCS9seb-Rj_0GfM/edit?gid=2005605583",
+    "semester": "1 семестр",
+    "subject": "ОКТЧ",
+    "folder": "1_семестр/ОКТЧ/Таблицы",
+    "tags": [
+      "ОКТЧ",
+      "таблица",
+      "google"
+    ]
+  },
+  {
+    "id": "r_oktch_sheet_2",
+    "title": "ОКТЧ — таблица 2",
+    "description": "",
+    "url": "https://docs.google.com/spreadsheets/d/1JQezWCvCCdeaZryML6146Zkddb1BOFBkwD1-PPSJvak/",
+    "semester": "1 семестр",
+    "subject": "ОКТЧ",
+    "folder": "1_семестр/ОКТЧ/Таблицы",
+    "tags": [
+      "ОКТЧ",
+      "таблица",
+      "google"
+    ]
+  },
+  {
+    "id": "r_7a29b195c4",
+    "title": "Bogdanov (2019)",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Алгем/2019_Bogdanov.pdf",
+    "semester": "1 семестр",
+    "subject": "Алгем",
+    "tags": [
+      "1 семестр",
+      "Алгем"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_0a2b2c9394",
+    "title": "Bogdanov (2025)",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Алгем/2025_bogdanov.pdf",
+    "semester": "1 семестр",
+    "subject": "Алгем",
+    "tags": [
+      "1 семестр",
+      "Алгем"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_b7ce28b47b",
+    "title": "Teorminimum Definitions",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Алгем/теорминимум/teorminimum_definitions.pdf",
+    "semester": "1 семестр",
+    "subject": "Алгем",
+    "tags": [
+      "1 семестр",
+      "Алгем",
+      "теорминимум"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_4f75fc854b",
+    "title": "Teorminimum Defs Theorems",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Алгем/теорминимум/teorminimum_defs_theorems.pdf",
+    "semester": "1 семестр",
+    "subject": "Алгем",
+    "tags": [
+      "1 семестр",
+      "Алгем",
+      "теорминимум"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_a6d5df1979",
+    "title": "Teorminimum Theorems",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Алгем/теорминимум/teorminimum_theorems.pdf",
+    "semester": "1 семестр",
+    "subject": "Алгем",
+    "tags": [
+      "1 семестр",
+      "Алгем",
+      "теорминимум"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_106a10297c",
+    "title": "Stepanov (2023)",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Алгосы/2023_Stepanov.pdf",
+    "semester": "1 семестр",
+    "subject": "Алгосы",
+    "tags": [
+      "1 семестр",
+      "Алгосы"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_e51a7df027",
+    "title": "Stepanov (2024)",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Алгосы/2024_Stepanov.pdf",
+    "semester": "1 семестр",
+    "subject": "Алгосы",
+    "tags": [
+      "1 семестр",
+      "Алгосы"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_23c6a0d2d9",
+    "title": "Stepanov (2025)",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Алгосы/2025_Stepanov.pdf",
+    "semester": "1 семестр",
+    "subject": "Алгосы",
+    "tags": [
+      "1 семестр",
+      "Алгосы"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_3e4a76e091",
+    "title": "Lectures Algosi",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Алгосы/lectures_algosi.pdf",
+    "semester": "1 семестр",
+    "subject": "Алгосы",
+    "tags": [
+      "1 семестр",
+      "Алгосы"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_e3836495c6",
+    "title": "Cpp Course Ru",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/C++/cpp-course-ru.pdf",
+    "semester": "1 семестр",
+    "subject": "C++",
+    "tags": [
+      "1 семестр",
+      "C++"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_f900edcb24",
+    "title": "Lukashov (2023)",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/2023_Lukashov.pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_78b415140b",
+    "title": "Lukashov (2025)",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/2025_lukashov.pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_4af6839c79",
+    "title": "Colloquium Matan",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/colloquium_matan.pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_adecf3ca74",
+    "title": "IvGE 1",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/IvGE_1.pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_84eb6b2cd6",
+    "title": "IvGE 2",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/IvGE_2 .pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_e953cd1cfe",
+    "title": "Nedolectures Matan",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/nedolectures_matan.pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_ea7ed0b774",
+    "title": "Teorminimum Matan",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/teorminimum_matan.pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_0aec99e5d0",
+    "title": "возможный слив билетов",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/возможный слив билетов.pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_f95d7efda8",
+    "title": "Программа ВвМА ФПМИ Лукашов-2025",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/Программа_ВвМА_ФПМИ_Лукашов-2025.pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_072a1a66b5",
+    "title": "Colloquium 2025",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/ФБВТ/Colloquium_2025.pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан",
+      "ФБВТ"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_2fbbc9d0cc",
+    "title": "12-23 Checklist",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/Письмак/12-23 Checklist.pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан",
+      "Письмак"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_586fcbf019",
+    "title": "ВвМА О 21",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/Письмак/ВвМА_О_21.pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан",
+      "Письмак"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_65d7d2b9ae",
+    "title": "ВвМА О 21ответы",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/Письмак/ВвМА_О_21ответы.pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан",
+      "Письмак"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_3a022be53b",
+    "title": "ВвМА О 22",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/Письмак/ВвМА_О_22.pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан",
+      "Письмак"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_c5c5f7cb69",
+    "title": "ВвМА О 22ответы",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/Письмак/ВвМА_О_22ответы.pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан",
+      "Письмак"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_2ecc69d814",
+    "title": "ВвМА О 23",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/Письмак/ВвМА_О_23.pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан",
+      "Письмак"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_c9bb622464",
+    "title": "ВвМА О 23ответы",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/Письмак/ВвМА_О_23ответы.pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан",
+      "Письмак"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_8f51e0ea01",
+    "title": "ВвМАv о24",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/Матан/Письмак/ВвМАv_о24.pdf",
+    "semester": "1 семестр",
+    "subject": "Матан",
+    "tags": [
+      "1 семестр",
+      "Матан",
+      "Письмак"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_0fc0e63606",
+    "title": "Oktch Exam",
+    "description": "",
+    "type": "pdf",
+    "url": "1_семестр/ОКТЧ/oktch_exam.pdf",
+    "semester": "1 семестр",
+    "subject": "ОКТЧ",
+    "tags": [
+      "1 семестр",
+      "ОКТЧ"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_3f12d5c959",
+    "title": "IvGE 1",
+    "description": "",
+    "type": "pdf",
+    "url": "2_семестр/Матан/IvGE_1.pdf",
+    "semester": "2 семестр",
+    "subject": "Матан",
+    "tags": [
+      "2 семестр",
+      "Матан"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_23da6868fb",
+    "title": "IvGE 2",
+    "description": "",
+    "type": "pdf",
+    "url": "2_семестр/Матан/IvGE_2 .pdf",
+    "semester": "2 семестр",
+    "subject": "Матан",
+    "tags": [
+      "2 семестр",
+      "Матан"
+    ],
+    "missing": true
+  },
+  {
+    "id": "r_d807344f85",
+    "title": "Telegram: Invader1711",
+    "description": "Всем привет! Поздравляю с поступлением на ФПМИ! Клуб Теха Лекций на связи! Ниже очень полезная инфа! (!!!) Добавьте в ПОНчик ваших друзей…",
+    "type": "telegram",
+    "url": "https://t.me/Invader1711",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_825a30ed54",
+    "title": "Наш Диск",
+    "description": "Всем привет! Поздравляю с поступлением на ФПМИ! Клуб Теха Лекций на связи! Ниже очень полезная инфа! (!!!) Добавьте в ПОНчик ваших друзей…",
+    "type": "yandex_disk",
+    "url": "https://disk.yandex.ru/d/IDUn8-HtGvIBYA",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "yandex_disk",
+      "disk.yandex.ru"
+    ]
+  },
+  {
+    "id": "r_a3e9621c86",
+    "title": "Наш Чатик",
+    "description": "Всем привет! Поздравляю с поступлением на ФПМИ! Клуб Теха Лекций на связи! Ниже очень полезная инфа! (!!!) Добавьте в ПОНчик ваших друзей…",
+    "type": "telegram",
+    "url": "https://t.me/+5hsnqVNk6-NkZjQy",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_8852706755",
+    "title": "наше сообщество в ВК",
+    "description": "Всем привет! Поздравляю с поступлением на ФПМИ! Клуб Теха Лекций на связи! Ниже очень полезная инфа! (!!!) Добавьте в ПОНчик ваших друзей…",
+    "type": "link",
+    "url": "https://vk.com/mipt_ltc",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "vk.com"
+    ]
+  },
+  {
+    "id": "r_a802e9ba75",
+    "title": "Google Таблица",
+    "description": "расписание Личный кабинет: Сайт студсовета: Семинары ТП: Кафедра общей физики (маршруты лаб и прочее): Лабы с самореза: Разборы задач по …",
+    "type": "google_sheet",
+    "url": "https://docs.google.com/spreadsheets/d/19cAbZq4UbMah5Rn5ieGJzTtWxYf6tfWKTaeplpKiW7Y/edit?usp=drivesdk",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "google_sheet",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_c7bda7b63d",
+    "title": "profile.mipt.ru",
+    "description": "расписание Личный кабинет: Сайт студсовета: Семинары ТП: Кафедра общей физики (маршруты лаб и прочее): Лабы с самореза: Разборы задач по …",
+    "type": "link",
+    "url": "https://profile.mipt.ru/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "profile.mipt.ru"
+    ]
+  },
+  {
+    "id": "r_0a69773f2a",
+    "title": "mipt.tech",
+    "description": "расписание Личный кабинет: Сайт студсовета: Семинары ТП: Кафедра общей физики (маршруты лаб и прочее): Лабы с самореза: Разборы задач по …",
+    "type": "link",
+    "url": "https://mipt.tech/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "mipt.tech"
+    ]
+  },
+  {
+    "id": "r_8c5eddaa8d",
+    "title": "drive.google.com: 1lJSQL1dT85dC lL ShQak7216IwTlLaQ",
+    "description": "расписание Личный кабинет: Сайт студсовета: Семинары ТП: Кафедра общей физики (маршруты лаб и прочее): Лабы с самореза: Разборы задач по …",
+    "type": "drive",
+    "url": "https://drive.google.com/drive/u/0/mobile/folders/1lJSQL1dT85dC_lL-ShQak7216IwTlLaQ?usp=sharing&pli=1",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "drive",
+      "drive.google.com"
+    ]
+  },
+  {
+    "id": "r_ede94d58ee",
+    "title": "mipt.ru: S I",
+    "description": "расписание Личный кабинет: Сайт студсовета: Семинары ТП: Кафедра общей физики (маршруты лаб и прочее): Лабы с самореза: Разборы задач по …",
+    "type": "link",
+    "url": "https://mipt.ru/education/chair/physics/S_I/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "mipt.ru"
+    ]
+  },
+  {
+    "id": "r_ea97fcc69e",
+    "title": "Mipt Lab",
+    "description": "расписание Личный кабинет: Сайт студсовета: Семинары ТП: Кафедра общей физики (маршруты лаб и прочее): Лабы с самореза: Разборы задач по …",
+    "type": "link",
+    "url": "https://github.com/BlackSamorez/mipt_lab/tree/master",
+    "embedUrl": "",
+    "semester": "",
+    "subject": ""
+  },
+  {
+    "id": "r_365d9aed59",
+    "title": "youtube.com: @llalla JIexu",
+    "description": "расписание Личный кабинет: Сайт студсовета: Семинары ТП: Кафедра общей физики (маршруты лаб и прочее): Лабы с самореза: Разборы задач по …",
+    "type": "video",
+    "url": "https://youtube.com/@llalla_JIexu",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "video",
+      "youtube.com"
+    ]
+  },
+  {
+    "id": "r_fdf1138304",
+    "title": "drive.google.com: 1RUegjqhPkQsCEeWs0yzThiTsvHQ4g tb",
+    "description": "расписание Личный кабинет: Сайт студсовета: Семинары ТП: Кафедра общей физики (маршруты лаб и прочее): Лабы с самореза: Разборы задач по …",
+    "type": "drive",
+    "url": "https://drive.google.com/drive/folders/1RUegjqhPkQsCEeWs0yzThiTsvHQ4g-tb",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "drive",
+      "drive.google.com"
+    ]
+  },
+  {
+    "id": "r_f9c2aaa373",
+    "title": "drive.google.com: 1pIoZHyIIoQNkH2wFI5CjMjHWWl3tYqds",
+    "description": "расписание Личный кабинет: Сайт студсовета: Семинары ТП: Кафедра общей физики (маршруты лаб и прочее): Лабы с самореза: Разборы задач по …",
+    "type": "drive",
+    "url": "https://drive.google.com/drive/folders/1pIoZHyIIoQNkH2wFI5CjMjHWWl3tYqds",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "drive",
+      "drive.google.com"
+    ]
+  },
+  {
+    "id": "r_68293987a8",
+    "title": "clck.ru: ydjsL",
+    "description": "расписание Личный кабинет: Сайт студсовета: Семинары ТП: Кафедра общей физики (маршруты лаб и прочее): Лабы с самореза: Разборы задач по …",
+    "type": "link",
+    "url": "https://clck.ru/ydjsL",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "clck.ru"
+    ]
+  },
+  {
+    "id": "r_ade19325dd",
+    "title": "VK",
+    "description": "расписание Личный кабинет: Сайт студсовета: Семинары ТП: Кафедра общей физики (маршруты лаб и прочее): Лабы с самореза: Разборы задач по …",
+    "type": "link",
+    "url": "https://vk.com/t_p_phystech",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "vk.com"
+    ]
+  },
+  {
+    "id": "r_d9fd245035",
+    "title": "lms.mipt.ru: Index",
+    "description": "расписание Личный кабинет: Сайт студсовета: Семинары ТП: Кафедра общей физики (маршруты лаб и прочее): Лабы с самореза: Разборы задач по …",
+    "type": "link",
+    "url": "https://lms.mipt.ru/login/index.php",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "lms.mipt.ru"
+    ]
+  },
+  {
+    "id": "r_abfda97406",
+    "title": "Yandex Disk",
+    "description": "расписание Личный кабинет: Сайт студсовета: Семинары ТП: Кафедра общей физики (маршруты лаб и прочее): Лабы с самореза: Разборы задач по …",
+    "type": "yandex_disk",
+    "url": "https://disk.yandex.ru/d/7gi3IcRf-x6A9w",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "yandex_disk",
+      "disk.yandex.ru"
+    ]
+  },
+  {
+    "id": "r_7ca17c52e7",
+    "title": "Расписание коллоквиума",
+    "description": "",
+    "type": "google_sheet",
+    "url": "https://docs.google.com/spreadsheets/d/1ynhSmS78ZXsXWToIdWp5GMTSBkqs98Bo-qtyYqECN2Y/edit?usp=drivesdk",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "google_sheet",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_b09c668f50",
+    "title": "Yandex Disk",
+    "description": "",
+    "type": "yandex_disk",
+    "url": "https://disk.yandex.ru/d/gLoygTT5nKWgcQ",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "yandex_disk",
+      "disk.yandex.ru"
+    ]
+  },
+  {
+    "id": "r_ec1a84e0c1",
+    "title": "neerc.ifmo.ru: Index",
+    "description": "Сборник полезной инфы по алгоритмам",
+    "type": "link",
+    "url": "https://neerc.ifmo.ru/wiki/index.php?title=Заглавная_страница#.D0.90.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D1.8B_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D1.8B_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "neerc.ifmo.ru"
+    ]
+  },
+  {
+    "id": "r_f5e023cf54",
+    "title": "lmarena.ai",
+    "description": "Неплохой сайт с нейронками мб кто-то знал о нем уже",
+    "type": "link",
+    "url": "https://lmarena.ai/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "lmarena.ai"
+    ]
+  },
+  {
+    "id": "r_7728d2fd28",
+    "title": "old.mipt.ru: Grafik",
+    "description": "",
+    "type": "link",
+    "url": "https://old.mipt.ru/education/chair/mathematics/study/methods/grafik.php",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "old.mipt.ru"
+    ]
+  },
+  {
+    "id": "r_f0fcf403ce",
+    "title": "Критерии оценки прошлого года матлога",
+    "description": "Кому интересно",
+    "type": "telegram",
+    "url": "https://t.me/diht_logic/1596",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_362fa2ee7e",
+    "title": "Telegram: CPPconspects",
+    "description": "Конспекты плюсов этого и прошлого года",
+    "type": "telegram",
+    "url": "https://t.me/CPPconspects",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_40190852a0",
+    "title": "Telegram: c",
+    "description": "Расшар оценки матлога и октч",
+    "type": "telegram",
+    "url": "https://t.me/c/2726411945/3892",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_d9b8f42003",
+    "title": "Google Таблица",
+    "description": "Матлог: Решаешь контрольные, решаешь домашки, набираешь как можно больше баллов за них. Затем Мусатову снятся баллы на каждую оценку, вот…",
+    "type": "google_sheet",
+    "url": "https://docs.google.com/spreadsheets/d/1JQezWCvCCdeaZryML6146Zkddb1BOFBkwD1-PPSJvak/edit?gid=2130643975#gid=2130643975",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "google_sheet",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_3d1f7c10c3",
+    "title": "Telegram: +hBhU6brFqn0zMjgy",
+    "description": "Ссылка на чат антистрессии",
+    "type": "telegram",
+    "url": "https://t.me/+hBhU6brFqn0zMjgy",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_efd2128a9b",
+    "title": "Запуск на письмак 10.01 проект",
+    "description": "",
+    "type": "link",
+    "url": "https://new.mipt.ru/upload/mathematics/novosti/25/%D0%9F_%D0%92%D0%B2%D0%9C%D0%90_10.01.26(2).pdf",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "new.mipt.ru"
+    ]
+  },
+  {
+    "id": "r_de134db884",
+    "title": "Расписание",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "google_sheet",
+    "url": "https://docs.google.com/spreadsheets/d/19cAbZq4UbMah5Rn5ieGJzTtWxYf6tfWKTaeplpKiW7Y/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "google_sheet",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_8d6d7f8953",
+    "title": "Таблица лектория",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "google_sheet",
+    "url": "https://docs.google.com/spreadsheets/d/1AKTSKL5dJMhKRCzyk6IKruTk_wGympscKkKmim6m5R8/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "google_sheet",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_4558e17aec",
+    "title": "Учебные планы",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "google_sheet",
+    "url": "https://docs.google.com/spreadsheets/d/15ho8pjuCYThsiF21NMiyV2xtEiBgHVDxgW9R2Du2ZVQ/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "google_sheet",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_6c9a8faf65",
+    "title": "✏️График учебного процесса",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/49",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_05e43c8335",
+    "title": "Полезные ссылки 3 курс",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_links",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_59ce9207de",
+    "title": "Контакты бакалавриат",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "link",
+    "url": "https://vk.com/@fpmi_edu-bachelor?anchor=&ref=im",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "vk.com"
+    ]
+  },
+  {
+    "id": "r_3661b7b7b1",
+    "title": "Канал курса",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/+HtiKQdgrFiplZmQy",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_5eaa4f077a",
+    "title": "Матпрактикум квм",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "drive",
+    "url": "https://drive.google.com/drive/folders/1QLbbnDFu8XDt7-tJJq6PagpXdugV_ogT",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "drive",
+      "drive.google.com"
+    ]
+  },
+  {
+    "id": "r_a410c7d61e",
+    "title": "БРС",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/6",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_643b46c469",
+    "title": "Задавальник",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/8?single",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_c38b729971",
+    "title": "Сборники задач",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/10",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_1521295f49",
+    "title": "Плейлист 2023",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "video",
+    "url": "https://www.youtube.com/playlist?list=PL4_hYwCyhAvbdt2O18E0WtMtp7bpjx1a8",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "video",
+      "youtube.com"
+    ]
+  },
+  {
+    "id": "r_9fa01eadb5",
+    "title": "Конспект 11 лекций 2025",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/28",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_c8ca7c5e47",
+    "title": "Тех матана 2023",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/13",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_4e031fec3b",
+    "title": "Тех матана 2025",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/33",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_07cca1f640",
+    "title": "Вопросы к коллоквиуму",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/25",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_3781c85aa9",
+    "title": "Расшар коллоквиума старый",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/24",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_20200b50f5",
+    "title": "Ретех коллоквиума от Еремея",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/Eremei_Dmitrienko/40",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_ec3ffe03c9",
+    "title": "Расшар задачек с предколлока",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/31",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_dc3af7160f",
+    "title": "Формочка 3 курса с вопросами с коллока",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/c/1904449546/49",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_78d0928ccd",
+    "title": "Формулы к семестровой",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/94",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_424b2cb82f",
+    "title": "Официальные варианты прошлых лет",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "link",
+    "url": "https://old.mipt.ru/education/chair/mathematics/exams/exams1.php",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "old.mipt.ru"
+    ]
+  },
+  {
+    "id": "r_4874b2c07b",
+    "title": "Больше вариантов с решениями",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "yandex_disk",
+    "url": "https://disk.yandex.ru/d/OnxDxiwFFl2xpQ",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "yandex_disk",
+      "disk.yandex.ru"
+    ]
+  },
+  {
+    "id": "r_3e394d95ed",
+    "title": "Методичка n-ая производная",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/43",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_e85d7d9cf6",
+    "title": "Методичка ряды Тейлора",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/44",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_a68ce2285d",
+    "title": "Telegram: svalka_sp",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/svalka_sp/11",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_a3c3b0080b",
+    "title": "Критерии проверки",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/93",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_5a9b1695a3",
+    "title": "БРС",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/5",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_c6d5fdb017",
+    "title": "Задавальник",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/7",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_4d63b4c512",
+    "title": "Сборник задач",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/11",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_d2793bbc02",
+    "title": "Тех 2019 Богданов",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/15?single",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_a10111d8d2",
+    "title": "Расписанные билеты 2024 Штепин",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/40?single",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_577afece75",
+    "title": "Табличка",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "google_sheet",
+    "url": "https://docs.google.com/spreadsheets/d/1Ru5E-_DdYkxENLvJLYE1jvDOctChaNiK2y8Y-x85iss/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "google_sheet",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_06cbdb8f5f",
+    "title": "Пороги оценок",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/diht_logic/1816",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_08930a09e9",
+    "title": "Допсемы 2022 NВана",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "google_sheet",
+    "url": "https://docs.google.com/spreadsheets/d/1hoihgw2_-TLOmczwS4rANbXcrMITJheXgu09F3G65uk/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "google_sheet",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_65b50f5d6c",
+    "title": "Допсемы 2023 осень",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "video",
+    "url": "https://www.youtube.com/playlist?list=PL4_hYwCyhAvbCbjTLw-3ANmBJR6A-qiCA",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "video",
+      "youtube.com"
+    ]
+  },
+  {
+    "id": "r_132cc975c8",
+    "title": "Допсемы 2024 осень",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "video",
+    "url": "https://www.youtube.com/playlist?list=PL4_hYwCyhAvbUpNa1qeNQ9xy5RNNDTn5N",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "video",
+      "youtube.com"
+    ]
+  },
+  {
+    "id": "r_05de22f242",
+    "title": "Сайтик Nвана Калинина",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "link",
+    "url": "https://1bah.github.io/my-site/#/mlta",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link"
+    ]
+  },
+  {
+    "id": "r_34d7c73b2c",
+    "title": "Тех 2020 Мусатов",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/21?single",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_368006816f",
+    "title": "Папка курса",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "drive",
+    "url": "https://drive.google.com/drive/u/0/folders/1vPhKQRKD3SSHiHZJAe1M-Hw9Ql3x017H",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "drive",
+      "drive.google.com"
+    ]
+  },
+  {
+    "id": "r_1e7c9ec913",
+    "title": "Допсемы 2023 осень",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "video",
+    "url": "https://www.youtube.com/playlist?list=PL4_hYwCyhAvZAqoL-DBUPyDbOOFteHaJC",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "video",
+      "youtube.com"
+    ]
+  },
+  {
+    "id": "r_ee0a91a42c",
+    "title": "Допсемы 2024 осень",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "video",
+    "url": "https://www.youtube.com/playlist?list=PL4_hYwCyhAvbk2YNyoOZJlzBtQXXrkbGU",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "video",
+      "youtube.com"
+    ]
+  },
+  {
+    "id": "r_dff088903f",
+    "title": "Допсемы 2025 осень",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "video",
+    "url": "https://www.youtube.com/playlist?list=PL4_hYwCyhAvYW086o4SDUg6csYY0q3KOK",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "video",
+      "youtube.com"
+    ]
+  },
+  {
+    "id": "r_e8b155b9b6",
+    "title": "Расписанные билеты 2024",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/37?single",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_58c90d049e",
+    "title": "Билеты NВана 2022",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "drive",
+    "url": "https://drive.google.com/drive/folders/1u_oe9fK4brrGEeGz8CYVqV8LcvlmfHL8",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "drive",
+      "drive.google.com"
+    ]
+  },
+  {
+    "id": "r_6e92895769",
+    "title": "Табличка",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "google_sheet",
+    "url": "https://docs.google.com/spreadsheets/d/1VdsKaBgFpB74yYTNS5SKgn0Yd9GzYUGJOT65twqNPZA/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "google_sheet",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_4122f0cbe1",
+    "title": "Устройство курса",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "link",
+    "url": "https://docs.google.com/document/d/1TNoAMWFGZHsEigH9BlM_lGI4jdHxxR66Y3jHGtntQME/edit?usp=sharing",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_c48ee07fde",
+    "title": "Кодстайл",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "link",
+    "url": "https://docs.google.com/document/d/1HmFPnUPKfx8fXtU_rNm0lWzMwo7zr7RdCfAHbAMedjo/edit?tab=t.0",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_675ec0e64a",
+    "title": "Автокодстайлер",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "link",
+    "url": "https://zed0.co.uk/clang-format-configurator/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "zed0.co.uk"
+    ]
+  },
+  {
+    "id": "r_416b211a77",
+    "title": "Статьи с ИТМО",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "link",
+    "url": "https://neerc.ifmo.ru/wiki/index.php?title=%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0#.D0.90.D0.BB.D0.B3.D0.BE.D1.80.D0.B8.D1.82.D0.BC.D1.8B_.D0.B8_.D1.81.D1.82.D1.80.D1.83.D0.BA.D1.82.D1.83.D1.80.D1.8B_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "neerc.ifmo.ru"
+    ]
+  },
+  {
+    "id": "r_c11ea3900d",
+    "title": "Расписанные билеты 2024",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/42",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_694e595c70",
+    "title": "Закреп с канала",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/c/3091806339/15",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_6e1e1e1b7b",
+    "title": "Кодстайл",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "link",
+    "url": "https://docs.google.com/document/d/1N8j7Xmz53b-2M-giU8aI09sLCcmb5vY7BxfWxBwsoFk/edit?tab=t.0",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_0af2f492ec",
+    "title": "Программа Мещерина 2024 1сем",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/51",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_39b8e7c33e",
+    "title": "Лекции 2023-2024 продва",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "video",
+    "url": "https://www.youtube.com/playlist?list=PLmSYEYYGhnBviRYhIDty-CSTDS16a3whl",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "video",
+      "youtube.com"
+    ]
+  },
+  {
+    "id": "r_b0214d91b2",
+    "title": "Лекции 2024-2025 основа",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/+9WyKieoXWT9hMWZi",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_96e943b4f6",
+    "title": "Лекции 2023-2024 основа",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/+NpyMcnMfJt80ZWFi",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_2064a565c9",
+    "title": "Конспекты 1сем 2024",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/52",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_ce9ce6e6b9",
+    "title": "Тех билеты 2сем 2024",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/34",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_a7514e5c14",
+    "title": "Задачи с зачетов прошлых лет с ответами",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/105",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_73701d52ca",
+    "title": "Задачи с консультации",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/131",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_b8d71fc9bc",
+    "title": "Задачи этого года",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/133",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_546e78a8c1",
+    "title": "Оценки",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "google_sheet",
+    "url": "https://docs.google.com/spreadsheets/d/1yBX6eKVoiTYguzTs56CFw4G383bOy2VCJaf2lPGH7lI/edit?usp=sharing",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "google_sheet",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_75ef783ad0",
+    "title": "Таблица со сдачей",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "google_sheet",
+    "url": "https://docs.google.com/spreadsheets/d/1vgcBLiY9KNR3N9BibeXtwR_D5MkLJ_wSvYpnzIlEm6A/edit?gid=0#gid=0",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "google_sheet",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_6c8946754e",
+    "title": "Куда сдавать",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/c/2963186658/61",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_e7200511cd",
+    "title": "Telegram: c",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/c/2963186658/32",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_bb3db2e9ac",
+    "title": "Telegram: c",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/c/2963186658/75",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_2503c5d1da",
+    "title": "Telegram: c",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/c/2963186658/77",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_d29b53f376",
+    "title": "Критерии оценки",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/c/2963186658/22",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_a8e16c0620",
+    "title": "Расширение автозарешка",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "link",
+    "url": "https://chromewebstore.google.com/detail/syncshare/lngijbnmdkejbgnkakeiapeppbpaapib?",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "chromewebstore.google.com"
+    ]
+  },
+  {
+    "id": "r_4edd991015",
+    "title": "Тест 1",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "link",
+    "url": "https://docs.google.com/document/d/1-bniB5pVJCExWabP0ssBV1-vhIm1jW0sUqNfPNLU9zI/edit?usp=sharing",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_1c0f5fd9c0",
+    "title": "Тест 2",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "link",
+    "url": "https://docs.google.com/document/d/11GsHLUq3e8gJnS3Jksun-Apx5s-ODtETfyCf6NQ-4Go/edit?usp=sharing",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_567c8967b9",
+    "title": "Тест 3",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "link",
+    "url": "https://docs.google.com/document/d/1BGLKrtZDG9NJLTkzVmcLV1ZzQO_I-51nG_PB8LH1DhA/edit?usp=sharing",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_8d1a1f3731",
+    "title": "Тест 4",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "link",
+    "url": "https://docs.google.com/document/d/16IHE0qPa_DZ5rdeb6wh3sh23NN3qsSmfOmdf90X4oZ0/edit?usp=sharing",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_11b94f9df6",
+    "title": "Тест 5",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "link",
+    "url": "https://docs.google.com/document/d/1TO4CHiHfD8b1H8wrC1qUhB0P8mamPhVPeIVFwsP0Hy0/edit?usp=sharing",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_c55bee64e1",
+    "title": "Lectures Tex Club",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "link",
+    "url": "https://github.com/LecturesTexClub/lectures_tex_club",
+    "embedUrl": "",
+    "semester": "",
+    "subject": ""
+  },
+  {
+    "id": "r_19805de1a4",
+    "title": "Диск Еремея",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "link",
+    "url": "https://clck.ru/3QoiQa",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "clck.ru"
+    ]
+  },
+  {
+    "id": "r_c5b667b37b",
+    "title": "Telegram: c",
+    "description": "- полное совпадение с 2025 Коллоквиум: Семестровая: + (по темам) - конспекты этого года + +",
+    "type": "telegram",
+    "url": "https://t.me/c/2606742168/21667",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_3601176d50",
+    "title": "Расписание сессии",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "google_sheet",
+    "url": "https://docs.google.com/spreadsheets/d/11eC7lYxTIiphbJfd7MUXi_NdY5Sr28-Wksv0xXRy2G8/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "google_sheet",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_b5b6404428",
+    "title": "Отзывы 2 года назад",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "google_sheet",
+    "url": "https://docs.google.com/spreadsheets/d/1UU0U6ChYoLvODpW0XR3SatlZNYWiwImqYXF_xPJwYAo/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "google_sheet",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_b9eb9f6780",
+    "title": "Отзывы 4 года назад",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "google_sheet",
+    "url": "https://docs.google.com/spreadsheets/d/1fE5-5I3jYoPn0LUD5WnKKisI4jxzOYOfmg5kdkXEMic/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "google_sheet",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_66e2ed025f",
+    "title": "Сессия блинб",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "link",
+    "url": "https://sess.ars.cx/585d77c312d140918e2ca7291352e576",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "sess.ars.cx"
+    ]
+  },
+  {
+    "id": "r_c370f92c04",
+    "title": "Пересчет БРС",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/125",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_b8e3d2ea4c",
+    "title": "Программа экзамена",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/129",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_1564563d4f",
+    "title": "Тех 2025",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "telegram",
+    "url": "https://t.me/con_tentishe/7",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_e4bfd77b5d",
+    "title": "Тех билетов 2025 Еремея",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/143",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_2c0659f5e5",
+    "title": "Связь рейтинга и оценки за экз",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/122",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_8e88888fda",
+    "title": "Программа экзамена",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/147",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_d68c31782f",
+    "title": "Заход на экзамен",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "google_sheet",
+    "url": "https://docs.google.com/spreadsheets/d/1B6MF8HKNRsRieFVkUIvUuxGCiXfioENcpxLXgF-Y2VE/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "google_sheet",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_0430bf6bc9",
+    "title": "Тех билетов 2025",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/141",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_36d9d24c3c",
+    "title": "Расписанные билеты 2021",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/137",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_29bff1b723",
+    "title": "Тех 2021",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/17",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_8e7dca56fc",
+    "title": "Пересчет БРС",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/124?single",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_2a0427ea6c",
+    "title": "Программа экзамена",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/130",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_4669fa50d2",
+    "title": "Тех 2025",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "telegram",
+    "url": "https://t.me/con_tentishe/8",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_de12853b5c",
+    "title": "Билеты с консультации Тюленева 2023",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/145",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_519d3ec355",
+    "title": "Еще варианты",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "link",
+    "url": "https://disk.360.yandex.ru/d/gLoygTT5nKWgcQ",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "disk.360.yandex.ru"
+    ]
+  },
+  {
+    "id": "r_080530f21e",
+    "title": "И еще варианты",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "yandex_disk",
+    "url": "https://disk.yandex.ru/d/Ala-L6_RqeJNEw",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "yandex_disk",
+      "disk.yandex.ru"
+    ]
+  },
+  {
+    "id": "r_b2e56035ec",
+    "title": "Telegram: pmi_links",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "telegram",
+    "url": "https://t.me/pmi_links/38",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_dafc7a9fb9",
+    "title": "Telegram: pmi_links",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "telegram",
+    "url": "https://t.me/pmi_links/40",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_f6df34ccef",
+    "title": "docs.yandex.ru: View",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "link",
+    "url": "https://docs.yandex.ru/docs/view?url=ya-disk-public%3A%2F%2F2iS87Ea%2B7zT90azIH7gbN1Yww1af%2FOYkRv9oZsi7ZSTsciK8Agw1k2J0JqJJOum6q%2FJ6bpmRyOJonT3VoXnDag%3D%3D%3A%2F%D0%BC%D0%B0%D1%82%D0%B0%D0%BD_1%D1%81%D0%B5%D0%BC%D0%B5%D1%81%D1%82%D1%80%2F%D1%81%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%8013.pdf&name=%D1%81%D0%B5%D0%BC%D0%B8%D0%BD%D0%B0%D1%8013.pdf&nosw=1",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "docs.yandex.ru"
+    ]
+  },
+  {
+    "id": "r_29dd95a80c",
+    "title": "Вопросы по программе 2024",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "google_sheet",
+    "url": "https://docs.google.com/spreadsheets/d/1EE6bS-zFBB2bxK65iJeLOyOTd4N7q_LUWjL0yb5WWOA/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "google_sheet",
+      "docs.google.com"
+    ]
+  },
+  {
+    "id": "r_328dd5f9af",
+    "title": "Программа экзамена",
+    "description": "- вообще все отзывы на экзы + + Методички: , , , Формулки:",
+    "type": "telegram",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/151",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_c5c8a2039d",
+    "title": "ОКТЧ",
+    "description": "Дроп форм к экзаменам!!! Ответы на формы смотреть тут: Огромная просьба заполнить форму после выхода с экзамена, это очень поможет вашим …",
+    "type": "form",
+    "url": "https://forms.fillout.com/t/t7xZyJR3cfus",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "form",
+      "forms.fillout.com"
+    ]
+  },
+  {
+    "id": "r_968130f0f4",
+    "title": "Алгебра и Геометрия / Аналитическая геометрия / Линейная алгебра",
+    "description": "Дроп форм к экзаменам!!! Ответы на формы смотреть тут: Огромная просьба заполнить форму после выхода с экзамена, это очень поможет вашим …",
+    "type": "form",
+    "url": "https://forms.fillout.com/t/bsHwBmSqr7us",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "form",
+      "forms.fillout.com"
+    ]
+  },
+  {
+    "id": "r_281dd332cd",
+    "title": "Присоединяйся,",
+    "description": "Привет! Меня зовут Еремей, и я рад, что ты здесь. Сейчас я учусь на первом курсе Физтех-школы прикладной математики и информатики МФТИ. М…",
+    "type": "telegram",
+    "url": "https://t.me/Eremei_Dmitrienko",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_1a86652d96",
+    "title": "Signal",
+    "description": "Привет! Меня зовут Еремей, и я рад, что ты здесь. Сейчас я учусь на первом курсе Физтех-школы прикладной математики и информатики МФТИ. М…",
+    "type": "link",
+    "url": "https://signal.me/#eu/761Wz6Gk_Z0l35e2lx6kU5cc4d6NYG6UF35G2Bt3UoOieCwd-u1Nj6JB--u7qXFK",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "signal.me"
+    ]
+  },
+  {
+    "id": "r_74c3b713dc",
+    "title": "Школково",
+    "description": "Как я поступил в Физтех-школу прикладной математики и информатики МФТИ С юных лет меня тянуло к расширению кругозора, получению знаний, я…",
+    "type": "link",
+    "url": "https://3.shkolkovo.online/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "3.shkolkovo.online"
+    ]
+  },
+  {
+    "id": "r_a64b20cb7b",
+    "title": "Getting Things Done (GTD)",
+    "description": "Контроль над информационным хаосом: система вместо силы воли В современном мире информация окружает нас повсюду. Соцсети, рабочие чаты, н…",
+    "type": "link",
+    "url": "https://ru.wikipedia.org/wiki/Getting_Things_Done",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "ru.wikipedia.org"
+    ]
+  },
+  {
+    "id": "r_403eda69dd",
+    "title": "Obsidian",
+    "description": "Контроль над информационным хаосом: система вместо силы воли В современном мире информация окружает нас повсюду. Соцсети, рабочие чаты, н…",
+    "type": "link",
+    "url": "https://obsidian.md/",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "obsidian.md"
+    ]
+  },
+  {
+    "id": "r_0a0a7b2789",
+    "title": "усовершенствованный вариант GTD от Александра Вотякова.",
+    "description": "Контроль над информационным хаосом: система вместо силы воли В современном мире информация окружает нас повсюду. Соцсети, рабочие чаты, н…",
+    "type": "video",
+    "url": "https://www.youtube.com/live/DXt9UvKXvwk?si=yiQDQDA2L6WOSJXr",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "video",
+      "youtube.com"
+    ]
+  },
+  {
+    "id": "r_374eaec274",
+    "title": "Telegram: +0fzTvNOI3Ro3Mjg6",
+    "description": "Каждый новый день дарит нам возможность осознанно проживать моменты, наполнять их глубоким смыслом и стремиться к внутреннему совершенств…",
+    "type": "telegram",
+    "url": "https://t.me/+0fzTvNOI3Ro3Mjg6",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "telegram",
+      "t.me"
+    ]
+  },
+  {
+    "id": "r_4b285fcbd6",
+    "title": "Виктор Кузнецов, основатель «ВсеИнструменты.ру»",
+    "description": "Теперь официально: я прошел отбор в «Поколение», моим наставником становится . Для меня это осознанный шаг: анкета, собеседование и тесто…",
+    "type": "link",
+    "url": "https://vk.com/video-83705541_456239570",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "link",
+      "vk.com"
+    ]
+  },
+  {
+    "id": "r_4649746945",
+    "title": "фильма Антона Орешкина и Романа Прохорова про МФТИ",
+    "description": "Был на премьере — и это действительно сильная работа. Картинка, истории выпускников, прогулки по кампусу собираются в…",
+    "type": "video",
+    "url": "https://youtu.be/PtQW2vVgbJ4",
+    "embedUrl": "",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "video",
+      "youtu.be"
+    ]
+  }
+]

@@ -1,0 +1,108 @@
+{
+  "sections": [
+    {
+      "title": "Навигация",
+      "items": [
+        {
+          "title": "Материалы",
+          "url": "index.html#materials",
+          "tags": [
+            "внутри хаба"
+          ]
+        },
+        {
+          "title": "Расписания и календари",
+          "url": "index.html#schedules",
+          "tags": [
+            "внутри хаба"
+          ]
+        },
+        {
+          "title": "Калькуляторы",
+          "url": "index.html#calculator",
+          "tags": [
+            "внутри хаба"
+          ]
+        },
+        {
+          "title": "Новости и анонсы",
+          "url": "index.html#news",
+          "tags": [
+            "внутри хаба"
+          ]
+        },
+        {
+          "title": "Опросы",
+          "url": "index.html#polls",
+          "tags": [
+            "внутри хаба"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Контакты",
+      "items": [
+        {
+          "title": "Telegram",
+          "url": "https://t.me/eremeidmitrienko",
+          "tags": [
+            "написать"
+          ]
+        },
+        {
+          "title": "VK",
+          "url": "https://vk.ru/dm1trienko",
+          "tags": [
+            "профиль"
+          ]
+        },
+        {
+          "title": "Email",
+          "url": "mailto:dmitrienko.ea@phystech.edu",
+          "tags": [
+            "почта"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Учебный блок",
+      "items": [
+        {
+          "title": "Расписание (таблица)",
+          "url": "https://docs.google.com/spreadsheets/d/19cAbZq4UbMah5Rn5ieGJzTtWxYf6tfWKTaeplpKiW7Y/",
+          "tags": [
+            "расписание",
+            "google"
+          ]
+        },
+        {
+          "title": "Таблица лектория",
+          "url": "https://docs.google.com/spreadsheets/d/1AKTSKL5dJMhKRCzyk6IKruTk_wGympscKkKmim6m5R8/",
+          "tags": [
+            "лекторий",
+            "google"
+          ]
+        },
+        {
+          "title": "Учебные планы",
+          "url": "https://docs.google.com/spreadsheets/d/15ho8pjuCYThsiF21NMiyV2xtEiBgHVDxgW9R2Du2ZVQ/",
+          "tags": [
+            "планы",
+            "google"
+          ]
+        },
+        {
+          "title": "График учебного процесса",
+          "url": "https://t.me/pmi_skatiki_2025_hlam/49",
+          "tags": [
+            "график",
+            "telegram"
+          ]
+        }
+      ]
+    }
+  ],
+  "intro": "Полезные ссылки, контакты и организационная информация."
+}

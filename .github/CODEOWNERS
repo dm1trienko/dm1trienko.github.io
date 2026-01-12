@@ -1,0 +1,6 @@
+# Замените @USERNAME на ваш GitHub логин.
+# CODEOWNERS работает вместе с branch protection (требованием ревью от code owners).
+
+/content/ @USERNAME
+/posts/   @USERNAME
+/files/   @USERNAME

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Новости — dmitrienok.ru</title>
+  <id>https://dmitrienok.ru/</id>
+  <link href="https://dmitrienok.ru/feed.xml" rel="self" />
+  <link href="https://dmitrienok.ru/" />
+  <updated>2026-01-09T00:00:00Z</updated>
+
+  <entry>
+    <title>Запуск dmitrienok.ru</title>
+    <id>https://dmitrienok.ru/post.html?id=welcome</id>
+    <link href="https://dmitrienok.ru/post.html?id=welcome" />
+    <updated>2026-01-09T00:00:00Z</updated>
+    <summary>Стартую учебный хаб: материалы, таблицы, билеты и полезные ссылки. Обновления — здесь.</summary>
+  </entry>
+
+  <entry>
+    <title>Как добавлять таблицы, PDF и Google Sheets</title>
+    <id>https://dmitrienok.ru/post.html?id=howto</id>
+    <link href="https://dmitrienok.ru/post.html?id=howto" />
+    <updated>2026-01-09T00:00:00Z</updated>
+    <summary>Короткая инструкция: куда класть файлы, как сделать embed Google Sheets и как добавлять пункты в базу.</summary>
+  </entry>
+
+</feed>

@@ -1,0 +1,100 @@
+name: "Добавление материала"
+description: "Предложить новый материал для каталога (таблица/конспект/билеты/ссылка)"
+title: "[Материал]: "
+labels: ["material"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: "Название"
+      description: "Как будет отображаться на сайте"
+      placeholder: "Матан • Теорминимум • 2025"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: "Тип"
+      options:
+        - pdf
+        - xlsx
+        - csv
+        - google_sheet
+        - form
+        - link
+        - telegram
+        - video
+        - drive
+        - github
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: "URL или путь в репозитории"
+      description: "Напр.: 1_семестр/Матан/teorminimum_matan.pdf или https://docs.google.com/spreadsheets/..."
+      placeholder: "..."
+    validations:
+      required: true
+
+  - type: input
+    id: embed
+    attributes:
+      label: "embedUrl (если нужно встроить)"
+      description: "Для Google Sheets/Forms: Файл → Опубликовать в интернете → Встроить"
+      placeholder: "https://docs.google.com/spreadsheets/d/e/.../pubhtml?widget=true&headers=false"
+    validations:
+      required: false
+
+  - type: input
+    id: semester
+    attributes:
+      label: "Семестр"
+      placeholder: "1 семестр"
+    validations:
+      required: false
+
+  - type: input
+    id: subject
+    attributes:
+      label: "Раздел / предмет"
+      placeholder: "Матан"
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Описание"
+      description: "1–2 предложения: что внутри и чем полезно"
+      placeholder: "..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: tags
+    attributes:
+      label: "Теги"
+      description: "Через запятую"
+      placeholder: "теормин, Лукашов, 2025"
+    validations:
+      required: false
+
+  - type: input
+    id: author
+    attributes:
+      label: "Автор/источник"
+      description: "Как указать автора (опционально)"
+      placeholder: "@username / ФИО / ссылка на источник"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: legal
+    attributes:
+      label: "Права"
+      options:
+        - label: "Я подтверждаю, что материал можно законно распространять"
+          required: true

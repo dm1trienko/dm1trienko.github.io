@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "brs_vvma_1sem",
+      "title": "Введение в математический анализ — 1 семестр (устный экзамен)",
+      "semester": "1 семестр",
+      "subject": "Введение в математический анализ",
+      "kind": "БРС: поправка к устной оценке",
+      "tags": [],
+      "brsRange": [
+        0,
+        60
+      ],
+      "oralGrades": [
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3
+      ],
+      "type": "calc",
+      "file": "content/calculators/brs_vvma_1sem.json"
+    },
+    {
+      "id": "brs_alggeom_1sem",
+      "title": "Алгебра и геометрия (ФПМИ) — 1 семестр (устный экзамен)",
+      "semester": "1 семестр",
+      "subject": "Алгебра и геометрия",
+      "kind": "БРС: поправка к устной оценке",
+      "tags": [],
+      "brsRange": [
+        0,
+        30
+      ],
+      "oralGrades": [
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3
+      ],
+      "type": "calc",
+      "file": "content/calculators/brs_alggeom_1sem.json"
+    }
+  ]
+}

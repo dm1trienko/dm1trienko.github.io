@@ -1,0 +1,59 @@
+[
+  {
+    "id": "sched_main",
+    "title": "Расписание",
+    "description": "Актуальное расписание занятий.",
+    "url": "https://docs.google.com/spreadsheets/d/19cAbZq4UbMah5Rn5ieGJzTtWxYf6tfWKTaeplpKiW7Y/",
+    "kind": "Расписание",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "расписание",
+      "google"
+    ],
+    "folder": "Общее/Расписание"
+  },
+  {
+    "id": "sched_lectory",
+    "title": "Таблица лектория",
+    "description": "Список лекций/лектория и сопутствующие пометки.",
+    "url": "https://docs.google.com/spreadsheets/d/1AKTSKL5dJMhKRCzyk6IKruTk_wGympscKkKmim6m5R8/",
+    "kind": "Таблица",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "лекторий",
+      "google",
+      "таблица"
+    ],
+    "folder": "Общее/Таблица"
+  },
+  {
+    "id": "sched_plans",
+    "title": "Учебные планы",
+    "description": "Планы, треки и структура обучения.",
+    "url": "https://docs.google.com/spreadsheets/d/15ho8pjuCYThsiF21NMiyV2xtEiBgHVDxgW9R2Du2ZVQ/",
+    "kind": "Учебные планы",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "планы",
+      "google"
+    ],
+    "folder": "Общее/Учебные планы"
+  },
+  {
+    "id": "sched_process",
+    "title": "График учебного процесса",
+    "description": "График учебного процесса (пост/обновления).",
+    "url": "https://t.me/pmi_skatiki_2025_hlam/49",
+    "kind": "График",
+    "semester": "",
+    "subject": "",
+    "tags": [
+      "график",
+      "telegram"
+    ],
+    "folder": "Общее/График"
+  }
+]

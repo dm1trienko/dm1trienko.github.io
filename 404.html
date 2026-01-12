@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Страница не найдена — dmitrienok.ru</title>
+
+  <!-- PWA / Search / Feed -->
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/img/icon-192.png">
+  <link rel="search" type="application/opensearchdescription+xml" href="opensearch.xml" title="Поиск — Дмитриёнок">
+  <link rel="alternate" type="application/atom+xml" href="feed.xml" title="Новости — dmitrienok.ru">
+
+  <!-- Apply saved theme as early as possible (prevents flashing) -->
+  <script>
+    (function(){
+      try{
+        const t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      }catch(e){}
+    })();
+  </script>
+
+  <link rel="icon" href="assets/img/site_logo.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Перейти к содержимому</a>
+  <main class="section" id="mainContent">
+    <div class="container">
+      <div class="card viewer-wrap">
+        <h2 style="margin-top:0;">404 — страница не найдена</h2>
+        <p class="lead">Возможно, ссылка устарела или файл ещё не загружен в хаб.</p>
+        <div class="tools">
+          <a class="button" href="index.html#materials">Перейти к материалам</a>
+          <a class="button ghost" href="index.html#contact">Написать об ошибке</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="small">
+        © 2026 <span data-founder-name>Еремей Дмитриенко</span> • <span data-founder-role>Основатель хаба</span> • Проект поддерживается энтузиастами и развивается сообществом
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

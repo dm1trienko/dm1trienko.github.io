@@ -1,0 +1,49 @@
+{
+  "site": {
+    "title": "dmitrienok.ru — учебный хаб",
+    "url": "https://dmitrienok.ru",
+    "brand": "Дмитриёнок",
+    "subtitle": "Учебный хаб",
+    "tagline": "Ясность и структура",
+    "heroSubtitle": "Таблицы, конспекты, билеты, ссылки и анонсы — всё в одном месте."
+  },
+  "founder": {
+    "name": "Еремей Дмитриенко",
+    "role": "Основатель хаба",
+    "photo": "assets/img/founder.jpg"
+  },
+  "socials": [
+    {
+      "label": "Telegram-канал",
+      "url": "https://t.me/eremeidmitrienko"
+    },
+    {
+      "label": "VK",
+      "url": "https://vk.ru/dm1trienko"
+    }
+  ],
+  "donate": [
+    {
+      "label": "Поддержать проект (Т‑Банк)",
+      "url": "https://www.tbank.ru/cf/4Okb7lcPZ0w"
+    },
+    {
+      "label": "Криптокошелёк",
+      "url": ""
+    },
+    {
+      "label": "Другие способы",
+      "url": ""
+    }
+  ],
+  "contact": {
+    "telegram": "https://t.me/eremeidmitrienko",
+    "email": "mailto:dmitrienko.ea@phystech.edu",
+    "form": {
+      "provider": "yandex",
+      "script": "https://forms.yandex.ru/_static/embed.js",
+      "iframe": "https://forms.yandex.ru/u/696306009029026f25ebe11e?iframe=1",
+      "name": "ya-form-696306009029026f25ebe11e"
+    }
+  }
+}

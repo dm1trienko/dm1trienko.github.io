@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Учебный хаб: таблицы, конспекты, билеты, расписания, опросы и полезные ссылки." />
+  <title>dmitrienok.ru</title>
+
+  <!-- PWA / Search / Feed -->
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="canonical" href="https://dmitrienok.ru/" />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/img/icon-192.png">
+  <link rel="search" type="application/opensearchdescription+xml" href="opensearch.xml" title="Поиск — Дмитриёнок">
+  <link rel="alternate" type="application/atom+xml" href="feed.xml" title="Новости — dmitrienok.ru">
+
+  <!-- Social preview -->
+  <meta property="og:title" content="Дмитриёнок — учебный хаб" />
+  <meta property="og:description" content="Учебный хаб: таблицы, конспекты, билеты, расписания, опросы и полезные ссылки." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dmitrienok.ru/" />
+  <meta property="og:image" content="https://dmitrienok.ru/assets/img/site_logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Дмитриёнок — учебный хаб",
+      "url": "https://dmitrienok.ru/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://dmitrienok.ru/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+
+  <!-- Apply saved theme as early as possible (prevents flashing) -->
+  <script>
+    (function(){
+      try{
+        const t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      }catch(e){}
+    })();
+  </script>
+
+  <link rel="icon" href="assets/img/site_logo.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Перейти к содержимому</a>
+  <!-- MAIN: top-level tabs (not a long scroll page) -->
+  <div class="tabset" data-tabs="main" data-default-tab="home">
+    <header>
+      <div class="header-container header-row">
+        <a class="brand" href="#home" aria-label="На главную">
+          <div class="brand-badge" aria-hidden="true"></div>
+          <div class="brand-text">
+            <strong data-brand>Дмитриёнок</strong>
+            <span data-brand-sub>Учебный хаб</span>
+          </div>
+        </a>
+
+        <nav id="primaryNav" aria-label="Разделы" class="tabs tabs-header">
+          <button class="tab-btn" data-tab="home" type="button">Главная</button>
+          <button class="tab-btn" data-tab="materials" type="button">Материалы</button>
+          <button class="tab-btn" data-tab="schedules" type="button">Расписания</button>
+          <button class="tab-btn" data-tab="calculator" type="button">Калькулятор</button>
+          <button class="tab-btn" data-tab="news" type="button">Новости</button>
+          <button class="tab-btn" data-tab="polls" type="button">Опросы</button>
+          <button class="tab-btn" data-tab="community" type="button">Команда</button>
+          <button class="tab-btn" data-tab="info" type="button">Справка</button>
+          <button class="tab-btn" data-tab="contact" type="button">Обратная связь</button>
+          <button class="tab-btn" data-tab="donate" type="button">Донат</button>
+        </nav>
+
+        <div class="header-actions">
+          <button id="navToggle" class="button ghost icon nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="primaryNav">
+            <span aria-hidden="true">☰</span>
+          </button>
+          <button id="installBtn" class="button ghost icon" type="button" aria-label="Установить" title="Установить" hidden>
+            <span aria-hidden="true">⬇️</span>
+          </button>
+          <button id="themeToggle" class="button ghost icon" type="button" aria-label="Сменить тему" title="Сменить тему">
+            <span data-theme-icon aria-hidden="true">☀️</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="mainContent">
+      <!-- HOME -->
+      <div class="tab-panel" data-panel="home">
+        <section class="hero" id="home">
+          <div class="container hero-grid">
+            <div class="card hero-left">
+<figure class="quote" aria-label="Цитата основателя">
+              
+              <p>
+                Цель этого хаба — ясность и структура: превратить разрозненные материалы в рабочую систему, где правильный путь — самый простой. Когда внимание не уходит на поиск и хаос, усилия превращаются в понимание и устойчивый результат — сегодня и для следующих поколений студентов
+              </p>
+            </figure>
+
+              <hr class="sep"/>
+
+              <div class="grid-3" role="list">
+                <div class="card kpi" role="listitem">
+                  <strong><span data-res-total>—</span></strong>
+                  <span>материалов в базе</span>
+                </div>
+                <div class="card kpi" role="listitem">
+                  <strong><span data-sched-total>—</span></strong>
+                  <span>расписаний/календарей</span>
+                </div>
+                <div class="card kpi" role="listitem">
+                  <strong><span data-news-count>—</span></strong>
+                  <span>постов/анонсов</span>
+                </div>
+              </div>
+
+              <div class="tools" style="margin-top: 14px; flex-wrap: wrap;">
+                <button class="button" type="button" onclick="window.showTab && window.showTab('main','materials')">Открыть материалы</button>
+                <button class="button ghost" type="button" onclick="window.showTab && window.showTab('main','schedules')">Расписания</button>
+                <button class="button ghost" type="button" onclick="window.showTab && window.showTab('main','calculator')">Калькулятор</button>
+                <button class="button ghost" type="button" onclick="window.showTab && window.showTab('main','polls')">Опросы</button>
+              </div>
+
+              <div class="small" style="margin-top: 10px;">
+                Ссылки на соцсети и Telegram — в разделе “Обратная связь”.
+              </div>
+            </div>
+
+            <div class="card hero-right" aria-label="Фото основателя">
+              <img data-founder-photo src="assets/img/founder.jpg" alt="Фото основателя" />
+              <a class="founder-badge" data-founder-link href="https://t.me/eremeidmitrienko" target="_blank" rel="noopener" aria-label="Открыть Telegram Еремея Дмитриенко">
+                <span data-founder-name>Еремей Дмитриенко</span> • <span data-founder-role>Основатель хаба</span>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="section" aria-label="Быстрый доступ">
+          <div class="container">
+            <div class="grid-3">
+              <div class="card kpi">
+                <strong>Быстрый поиск по материалам</strong>
+                <p class="small" style="margin-top:6px;">
+                  Поиск не учитывает регистр и устойчив к опечаткам. Нажми <kbd>Enter</kbd>.
+                </p>
+                <div class="tools" style="flex-wrap:wrap;">
+                  <input id="homeSearchQ" class="input" placeholder="Например: матан, теорминимум, билеты, БРС..." />
+                  <button id="homeSearchBtn" class="button" type="button">Найти</button>
+                </div>
+                <div class="small" style="margin-top:8px;">Результаты откроются во вкладке “Материалы”.</div>
+              </div>
+
+              <div class="card kpi">
+                <strong>Подборки / топ‑категории</strong>
+                <p class="small" style="margin-top:6px;">
+                  Быстрые фильтры, чтобы за 1 клик открыть нужный раздел материалов.
+                </p>
+                <div id="homeCollections" class="pills" style="margin-top:12px;" aria-label="Подборки на главной"></div>
+                <div class="small" style="margin-top:8px;">Откроется вкладка “Материалы” с уже выставленными фильтрами.</div>
+              </div>
+
+              <div class="card kpi">
+                <strong>Калькулятор БРС</strong>
+                <p class="small" style="margin-top:6px;">
+                  Рассчитай итоговую оценку: баллы БРС до устного + оценка устного ответа.
+                </p>
+                <div class="tools" style="flex-wrap:wrap;">
+                  <button class="button" type="button" onclick="window.showTab && window.showTab('main','calculator')">Открыть калькулятор</button>
+                  <button class="button ghost" type="button" onclick="window.showTab && window.showTab('main','schedules')">Открыть расписания</button>
+                </div>
+                <div class="small" style="margin-top:8px;">Хочешь добавить новый предмет/таблицу — напиши во вкладку “Обратная связь”.</div>
+              </div>
+            </div>
+
+            <div class="grid-2" style="margin-top:16px;">
+              <div class="card kpi">
+                <strong>Последние новости</strong>
+                <div id="homeNewsList" class="list" aria-live="polite" style="margin-top:10px;"></div>
+                <div class="tools" style="margin-top:10px;">
+                  <button class="button ghost" type="button" onclick="window.showTab && window.showTab('main','news')">Все новости</button>
+                </div>
+              </div>
+
+              <div class="card kpi">
+                <strong>Быстрые ссылки</strong>
+                <div class="small" style="margin-top:6px;">Ключевые разделы и соцсети.</div>
+                <div id="homeQuickLinks" class="tools" aria-label="Быстрые ссылки" style="margin-top:10px; flex-wrap:wrap;"></div>
+              </div>
+            </div>
+
+            <div class="grid-2" style="margin-top:16px;">
+              <div class="card kpi">
+                <strong>Избранное</strong>
+                <div id="homeFavs" class="list" aria-live="polite" style="margin-top:10px;"></div>
+                <div class="small" style="margin-top:8px;">
+                  Добавляй материалы в избранное кнопкой ★ при просмотре.
+                </div>
+              </div>
+
+              <div class="card kpi">
+                <strong>Недавние</strong>
+                <div id="homeRecents" class="list" aria-live="polite" style="margin-top:10px;"></div>
+                <div class="tools" style="margin-top:10px;">
+                  <button id="homeClearRecents" class="button ghost" type="button">Очистить</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+
+      <!-- MATERIALS -->
+      <div class="tab-panel" data-panel="materials" hidden>
+        <section class="section" id="materials">
+          <div class="container">
+            <h2>Материалы</h2>
+            <p class="lead">
+              Таблицы, конспекты, билеты и другое. Большинство материалов можно открыть прямо в хабе — либо перейти к источнику.
+            </p>
+
+            <div class="tabset" data-tabs="materials" data-default-tab="search">
+              <div class="tabs" aria-label="Вкладки материалов">
+                <button class="tab-btn" data-tab="search" type="button">Поиск</button>
+                <button class="tab-btn" data-tab="catalog" type="button">Каталог</button>
+                <button class="tab-btn" data-tab="howto" type="button">Как добавить</button>
+              </div>
+
+              <div class="tab-panel" data-panel="search">
+                <div class="tools">
+                  <input id="searchQ" class="input" placeholder="Поиск: “матан”, “теормин”, “таблица”..." />
+                  <select id="filterType" aria-label="Фильтр по типу"></select>
+                  <select id="filterSemester" aria-label="Фильтр по семестру"></select>
+                  <select id="filterSubject" aria-label="Фильтр по разделу"></select>
+                  <select id="filterFolder" aria-label="Фильтр по подкаталогу"></select>
+                  <button id="resetFilters" class="button ghost" type="button">Сброс</button>
+                </div>
+
+                <div class="small" style="margin:10px 2px 0;">
+                  Найдено: <span data-res-results>—</span> из <span data-res-total>—</span>
+                </div>
+
+                <div id="resourcesList" class="list" aria-live="polite"></div>
+              </div>
+
+              <div class="tab-panel" data-panel="catalog" hidden>
+                <div id="catalogHost"></div>
+              </div>
+
+              <div class="tab-panel" data-panel="howto" hidden>
+                <div class="card kpi">
+                  <strong>Как добавить материал</strong>
+                  <ul class="clean">
+                    <li class="small">• Хочешь предложить материал — напиши во вкладку “Обратная связь” (ссылкой или файлом).</li>
+                    <li class="small">• Мы проверяем материалы перед публикацией, чтобы в базе не было дублей и мусора.</li>
+                    <li class="small">• Прямое добавление получают только <em>верифицированные авторы</em> (см. “Команда”).</li>
+                  </ul>
+                  <div class="tools" style="margin-top:10px;">
+                    <button class="button" type="button" onclick="window.showTab && window.showTab('main','community')">Команда и роли</button>
+                    <a class="button ghost" href="post.html?id=howto">Подробный гайд</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- SCHEDULES / CALENDARS -->
+      <div class="tab-panel" data-panel="schedules" hidden>
+        <section class="section" id="schedules">
+          <div class="container">
+            <h2>Расписания, графики, календари</h2>
+            <p class="lead">
+              Отдельный каталог для расписаний, дедлайнов, консультаций, календарей и учебных графиков.
+              Открывай прямо в хабе или переходи к источнику.
+            </p>
+
+            <div class="tabset" data-tabs="schedules" data-default-tab="search">
+              <div class="tabs" aria-label="Вкладки расписаний">
+                <button class="tab-btn" data-tab="search" type="button">Поиск</button>
+                <button class="tab-btn" data-tab="catalog" type="button">Каталог</button>
+                <button class="tab-btn" data-tab="howto" type="button">Как добавить</button>
+              </div>
+
+              <div class="tab-panel" data-panel="search">
+                <div class="tools">
+                  <input id="schedQ" class="input" placeholder="Поиск: “сессия”, “коллоквиум”, “дедлайны”..." />
+                  <select id="schedFilterKind" aria-label="Фильтр по виду"></select>
+                  <select id="schedFilterSemester" aria-label="Фильтр по семестру"></select>
+                  <select id="schedFilterSubject" aria-label="Фильтр по предмету"></select>
+                  <select id="schedFilterType" aria-label="Фильтр по типу"></select>
+                  <button id="schedReset" class="button ghost" type="button">Сброс</button>
+                </div>
+
+                <div class="small" style="margin:10px 2px 0;">
+                  Найдено: <span data-sched-results>—</span> из <span data-sched-total>—</span>
+                </div>
+
+                <div id="schedulesList" class="list" aria-live="polite"></div>
+              </div>
+
+              <div class="tab-panel" data-panel="catalog" hidden>
+                <div id="schedulesCatalogHost"></div>
+              </div>
+
+              <div class="tab-panel" data-panel="howto" hidden>
+                <div class="card kpi">
+                  <strong>Как добавить расписание/календарь</strong>
+                  <ul class="clean">
+                    <li class="small">• Хочешь предложить расписание/календарь — напиши во вкладку “Обратная связь” (ссылкой или файлом).</li>
+                    <li class="small">• Мы проверяем и приводим к единому виду, чтобы не было дублей и путаницы.</li>
+                    <li class="small">• Прямое добавление получают только <em>верифицированные участники</em> (см. “Команда”).</li>
+                  </ul>
+                  <div class="small">Если хочешь помочь и получить роль в проекте — загляни в “Команда”.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+            <!-- CALCULATOR / BRS -->
+      <div class="tab-panel" data-panel="calculator" hidden>
+        <section class="section" id="calculator">
+          <div class="container">
+            <h2>Калькулятор баллов (БРС)</h2>
+            <p class="lead">
+              Выбери предмет и введи баллы БРС до устного и оценку устного ответа — получишь поправку и итоговую оценку.
+            </p>
+
+            <div class="grid-2">
+              <div class="card kpi">
+                <strong>Каталог калькуляторов</strong>
+                <p class="small" style="margin-top:6px;">
+                  Карточки + теги + фильтр. Выбери калькулятор — справа появится расчёт и таблица поправок.
+                </p>
+
+                <div class="tabset" data-tabs="calcCatalog" data-default-tab="cards" style="margin-top:10px;">
+                  <div class="tabs" aria-label="Вкладки каталога калькуляторов">
+                    <button class="tab-btn" type="button" data-tab="cards">Карточки</button>
+                    <button class="tab-btn" type="button" data-tab="folders">Папки</button>
+                  </div>
+
+                  <div class="tab-panel" data-panel="cards">
+                    <div class="tools" style="margin-top:10px; flex-wrap:wrap;">
+                      <input id="calcQ" class="input" placeholder="Поиск по предмету/семестру/тегам…" />
+                      <select id="calcFilterSemester" aria-label="Фильтр по семестру"></select>
+                      <select id="calcFilterSubject" aria-label="Фильтр по предмету"></select>
+                      <select id="calcFilterKind" aria-label="Фильтр по типу"></select>
+                      <button id="calcFilterReset" class="button ghost" type="button">Сброс</button>
+                    </div>
+
+                    <div class="small" style="margin:10px 2px 0;">
+                      Найдено: <span data-calc-results>—</span> из <span data-calc-total>—</span>
+                    </div>
+
+                    <div id="calcCatalogList" class="list" aria-live="polite" style="margin-top:10px;"></div>
+                  </div>
+
+                  <div class="tab-panel" data-panel="folders" hidden>
+                    <div id="calcExplorerHost" style="margin-top:10px;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="card kpi">
+                  <strong id="calcActiveTitle">Расчёт</strong>
+                  <div id="calcActiveMeta" class="small" style="margin-top:6px;">Выбери калькулятор слева.</div>
+
+                  <div class="tools" style="margin-top:10px; flex-wrap:wrap;">
+                    <input id="calcBRS" class="input" type="number" inputmode="numeric" placeholder="Баллы БРС (до устного)" />
+                    <select id="calcOral" aria-label="Оценка устного ответа"></select>
+                    <button id="calcCompute" class="button" type="button">Посчитать</button>
+                    <button id="calcReset" class="button ghost" type="button">Сброс</button>
+                    <button id="calcCopyLink" class="button ghost icon tiny" type="button" title="Скопировать ссылку на этот калькулятор" aria-label="Скопировать ссылку">⧉</button>
+                  </div>
+
+                  <div id="calcResult" class="notice" style="margin-top:12px;">Выбери калькулятор слева и введи данные.</div>
+                  <div class="small" style="margin-top:8px;">В ячейке таблицы: <em>поправка = итоговая − устная</em>.</div>
+                </div>
+
+                <div class="card kpi" style="margin-top:16px;">
+                  <strong>Таблица поправок</strong>
+                  <div class="small" style="margin-top:6px;">Показывается для выбранного калькулятора.</div>
+                  <div id="calcTableHost" class="table-wrap" style="margin-top:10px;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card kpi" style="margin-top:16px;">
+              <strong>Добавить новый калькулятор</strong>
+              <div class="small" style="margin-top:6px;">
+                Если в базе нет нужного предмета — напиши во вкладку “Обратная связь” и приложи таблицу/условия расчёта. Добавим после проверки.
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+<!-- NEWS -->
+      <div class="tab-panel" data-panel="news" hidden>
+        <section class="section" id="news">
+          <div class="container">
+            <h2>Новости и анонсы</h2>
+            <p class="lead">Короткие обновления и важные объявления по хабу.</p>
+            <div class="tools" style="margin: 10px 0 16px;">
+              <a class="button ghost" href="feed.xml" target="_blank" rel="noopener noreferrer" title="Подписаться через RSS/Atom">
+                Подписаться
+              </a>
+            </div>
+            <div id="newsList" class="list"></div>
+          </div>
+        </section>
+      </div>
+
+      <!-- POLLS -->
+      <div class="tab-panel" data-panel="polls" hidden>
+        <section class="section" id="polls">
+          <div class="container">
+            <h2>Опросы</h2>
+            <p class="lead">
+              Каталог опросов и форм. Активные опросы можно пройти прямо на сайте.
+            </p>
+
+            <div class="tabset" data-tabs="polls" data-default-tab="active">
+              <div class="tabs" aria-label="Вкладки опросов">
+                <button class="tab-btn" data-tab="active" type="button">Активные</button>
+                <button class="tab-btn" data-tab="catalog" type="button">Каталог</button>
+                <button class="tab-btn" data-tab="archive" type="button">Архив</button>
+                <button class="tab-btn" data-tab="howto" type="button">Как добавить</button>
+              </div>
+
+              <div class="tab-panel" data-panel="active">
+                <div id="pollsActiveTools"></div>
+                <div id="pollsActiveList" class="grid-2"></div>
+              </div>
+
+              <div class="tab-panel" data-panel="catalog" hidden>
+                <div id="pollsCatalogHost"></div>
+              </div>
+
+              <div class="tab-panel" data-panel="archive" hidden>
+                <div id="pollsArchiveList" class="grid-2"></div>
+              </div>
+
+              <div class="tab-panel" data-panel="howto" hidden>
+                <div class="card kpi">
+                  <strong>Как добавить опрос</strong>
+                  <ul class="clean">
+                    <li class="small">• Хочешь провести опрос — напиши во вкладку “Обратная связь” и пришли ссылку (или код для вставки, если есть).</li>
+                    <li class="small">• Мы добавим опрос в каталог, поможем с категорией и тегами, а активные — встроим на сайт.</li>
+                    <li class="small">• Старые/закрытые опросы переносим в архив, чтобы активные не тонули.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- COMMUNITY -->
+      <div class="tab-panel" data-panel="community" hidden>
+        <section class="section" id="community">
+          <div class="container">
+            <h2>Команда и сообщество</h2>
+            <p class="lead">Роли, верификация, команда, контрибьюторы и спонсоры.</p>
+
+            <div id="communityIntro"></div>
+
+            <!-- default tab = team (as requested) -->
+            <div class="tabset" data-tabs="community" data-default-tab="team" style="margin-top:14px;">
+              <div class="tabs" aria-label="Вкладки сообщества">
+                <button class="tab-btn" data-tab="team" type="button">Команда</button>
+                <button class="tab-btn" data-tab="roles" type="button">Роли и верификация</button>
+                <button class="tab-btn" data-tab="sponsors" type="button">Спонсоры</button>
+              </div>
+
+              <div class="tab-panel" data-panel="team">
+                <h3 style="margin:0 0 10px;">Команда</h3>
+                <div id="teamList"></div>
+
+                <hr class="sep"/>
+                <h3 style="margin:0 0 10px;">Контрибьюторы</h3>
+                <div id="contributorsList"></div>
+              </div>
+
+              <div class="tab-panel" data-panel="roles" hidden>
+                <div id="verificationHost"></div>
+                <hr class="sep"/>
+                <h3 style="margin:0 0 10px;">Роли</h3>
+                <div id="rolesList"></div>
+              </div>
+
+              <div class="tab-panel" data-panel="sponsors" hidden>
+                <h3 style="margin:0 0 10px;">Спонсоры</h3>
+                <p class="small">Список обновляется вручную: после доната напиши, как тебя указать (ник/имя).</p>
+                <div id="sponsorsList"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- INFO -->
+      <div class="tab-panel" data-panel="info" hidden>
+        <section class="section" id="info">
+          <div class="container">
+            <h2>Справка</h2>
+            <p class="lead">Сборник полезных ссылок, контактов и учебной/организационной информации.</p>
+
+            <div class="card kpi">
+              <strong>Быстрые контакты</strong>
+              <div id="infoQuickContacts" class="badges-row" style="margin-top:10px;" aria-label="Быстрые контакты"></div>
+            </div>
+
+            <div class="card kpi">
+              <strong>Заметка</strong>
+              <p class="small">
+                Если у тебя есть полезная ссылка или важная организационная информация — напиши во вкладку “Обратная связь”. Мы добавим в справку.
+              </p>
+            </div>
+
+            <div class="tabset" data-tabs="infoTabs" data-default-tab="catalog" style="margin-top:14px;">
+              <div class="tabs" aria-label="Вкладки справки">
+                <button class="tab-btn" type="button" data-tab="catalog">Каталог</button>
+                <button class="tab-btn" type="button" data-tab="cards">Подборки</button>
+              </div>
+
+              <div class="tab-panel" data-panel="catalog">
+                <div id="infoCatalogHost" class="explorer" aria-live="polite" style="margin-top:10px;"></div>
+              </div>
+
+              <div class="tab-panel" data-panel="cards" hidden>
+                <div id="infoHost" class="cards-grid" aria-live="polite" style="margin-top:10px;"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="tab-panel" data-panel="contact" hidden>
+        <section class="section" id="contact">
+          <div class="container">
+            <h2>Обратная связь</h2>
+            <div class="grid-2">
+              <div class="card kpi">
+                <strong>Написать</strong>
+                <p class="small">
+                  Быстрее всего — Telegram. Также можно на почту или через форму.
+                </p>
+                <div class="tools">
+                  <a class="button" data-contact-telegram href="https://t.me/eremeidmitrienko" target="_blank" rel="noopener noreferrer">Telegram</a>
+                  <a class="button ghost" data-contact-email href="mailto:dmitrienko.ea@phystech.edu">Email</a>
+                </div>
+                <hr class="sep"/>
+                <strong>Ссылки</strong>
+                <div id="socialLinks" class="tools" aria-label="Соцсети"></div>
+              </div>
+
+              <div class="card kpi">
+                <strong>Форма</strong>
+                <p class="small" id="contactStatus">Можно написать через форму ниже.</p>
+
+                <div id="contactEmbed" class="embed-card" aria-label="Форма обратной связи" style="margin-top:10px;">
+                  <div class="notice">Загружаю форму…</div>
+                </div>
+
+                <div class="small" style="margin-top:10px;">
+                  Если форма не открывается — напиши в Telegram или на почту (кнопки слева).
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- DONATE -->
+      <div class="tab-panel" data-panel="donate" hidden>
+        <section class="section" id="donate">
+          <div class="container">
+            <h2>Донат</h2>
+            <p class="lead">Если хаб помогает — можно поддержать проект.</p>
+
+            <div class="card kpi">
+              <strong>Поддержать проект</strong>
+              <div id="donateLinks" class="tools" aria-label="Донаты"></div>
+              <div class="small">
+                Любая поддержка помогает развивать хаб и держать материалы в порядке.
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="small">
+          © 2026 <span data-founder-name>Еремей Дмитриенко</span> • <span data-founder-role>Основатель хаба</span> • Проект поддерживается энтузиастами и развивается сообществом
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  
+  <!-- Command palette -->
+  <div id="cmdk" class="cmdk" hidden>
+    <div class="cmdk-backdrop" data-cmdk-close></div>
+    <div class="cmdk-panel card" role="dialog" aria-modal="true" aria-labelledby="cmdkTitle">
+      <div class="cmdk-top">
+        <div class="small" id="cmdkTitle">Командная палитра</div>
+        <button type="button" class="button ghost icon tiny" data-cmdk-close aria-label="Закрыть">✕</button>
+      </div>
+      <input id="cmdkInput" class="input" placeholder="Поиск, раздел или команда…" autocomplete="off" />
+      <div class="cmdk-hint small">Enter — открыть • ↑↓ — выбрать • Esc — закрыть</div>
+      <div id="cmdkList" class="cmdk-list" role="listbox" aria-label="Результаты"></div>
+    </div>
+  </div>
+
+<script src="assets/js/main.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/router.js"></script>
+  <script src="assets/js/home.js"></script>
+  <script src="assets/js/calculator.js"></script>
+
+  <script src="assets/js/resources.js"></script>
+  <script src="assets/js/explorer.js"></script>
+  <script src="assets/js/catalog.js"></script>
+  <script src="assets/js/schedules.js"></script>
+  <script src="assets/js/news.js"></script>
+  <script src="assets/js/polls.js"></script>
+    <script src="assets/js/info.js"></script>
+  <script src="assets/js/community.js"></script>
+  <script src="assets/js/contact.js"></script>
+  <script src="assets/js/cmdk.js"></script>
+  <script src="assets/js/shortcuts.js"></script>
+</body>
+</html>
