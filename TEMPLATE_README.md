@@ -52,6 +52,31 @@
 - `type` + `url` — что это за материал и где он лежит
 - `embedUrl` — если хочешь встроить Google Sheet/Calendar
 
+## Как добавить новость
+
+1) В `content/news.json` добавь запись:
+
+```json
+[
+  { "id": "welcome", "file": "posts/welcome.md" }
+]
+```
+
+2) В `posts/welcome.md` укажи front matter:
+
+```md
+---
+title: Запуск dmitrienok.ru
+date: 2026-01-09
+tags: [анонс]
+excerpt: Короткое описание для списка новостей.
+---
+
+Текст поста...
+```
+
+Дата используется для сортировки, а на сайте отображается в формате `dd.mm.yyyy`.
+
 ## Как добавить опрос
 
 Открой `content/polls.json`.

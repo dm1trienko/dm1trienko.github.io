@@ -55,7 +55,66 @@ function isLocalPath(u){
 
 function normalizeLocal(u){
   const s = String(u || '').trim();
-  return s.startsWith('/') ? s.slice(1) : s;
+  if (!s) return '';
+  const base = s.replace(/[?#].*$/, '');
+  if (!base) return '';
+  return base.startsWith('/') ? base.slice(1) : base;
+}
+
+function parseMetaValue(raw){
+  const s = String(raw || '').trim();
+  if (!s) return '';
+  if (s.startsWith('[') && s.endsWith(']')) {
+    const inner = s.slice(1, -1);
+    return inner.split(',').map((v) => v.trim()).filter(Boolean);
+  }
+  return s.replace(/^["']|["']$/g, '');
+}
+
+function parseFrontMatter(text){
+  const lines = String(text || '').split(/\r?\n/);
+  if (!lines.length || lines[0].trim() !== '---') return {};
+  let endIndex = -1;
+  for (let i = 1; i < lines.length; i++) {
+    if (lines[i].trim() === '---') {
+      endIndex = i;
+      break;
+    }
+  }
+  if (endIndex === -1) return {};
+
+  const meta = {};
+  let currentKey = null;
+  for (let i = 1; i < endIndex; i++) {
+    const raw = lines[i].trim();
+    if (!raw) continue;
+    const m = raw.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
+    if (m) {
+      currentKey = m[1].toLowerCase();
+      meta[currentKey] = parseMetaValue(m[2] || '');
+      continue;
+    }
+    if (currentKey && raw.startsWith('-')) {
+      const item = raw.replace(/^-+/, '').trim();
+      if (!item) continue;
+      if (!Array.isArray(meta[currentKey])) meta[currentKey] = meta[currentKey] ? [meta[currentKey]] : [];
+      meta[currentKey].push(item);
+    }
+  }
+  return meta;
+}
+
+function normalizeDateValue(s){
+  const v = String(s || '').trim();
+  if (!v) return '';
+  if (/^\d{4}-\d{2}-\d{2}$/.test(v)) return v;
+  const m = v.match(/^(\d{2})\.(\d{2})\.(\d{4})$/);
+  if (m) return `${m[3]}-${m[2]}-${m[1]}`;
+  return v;
+}
+
+function isExplicitMissing(it){
+  return !!it?.missing || !!it?.notUploaded || (String(it?.status || '').toLowerCase() === 'missing');
 }
 
 function checkIdUniq(items, label, errors){
@@ -88,13 +147,15 @@ function checkDateYYYYMMDD(dateStr, label, errors){
 }
 
 function checkUrls(it, urlFields, label, errors, warnings){
+  const allowMissing = isExplicitMissing(it);
   for (const f of urlFields) {
     const u = it?.[f];
     if (!u) continue;
     if (!isSafeUrl(u)) errors.push(`[${label}] unsafe URL in ${f}: "${u}" (id=${it?.id || '—'})`);
     if (isLocalPath(u)) {
       const local = normalizeLocal(u);
-      if (!exists(local)) {
+      if (!local) continue;
+      if (!allowMissing && !exists(local)) {
         const msg = `[${label}] local file not found for ${f}: "${u}" (expected ${local})`;
         (STRICT_FILES ? errors : (warnings || errors)).push(msg);
       }
@@ -160,9 +221,20 @@ try {
   const news = ensureArray(readJSON('content/news.json'));
   checkIdUniq(news, 'news', errors);
   for (const n of news) {
-    checkRequired(n, ['id','title','date','file'], 'news', errors);
-    checkDateYYYYMMDD(n?.date, 'news', errors);
-    if (n?.file && !exists(n.file)) errors.push(`[news] post file missing: ${n.file} (id=${n.id})`);
+    checkRequired(n, ['id','file'], 'news', errors);
+    if (n?.file && !exists(n.file)) {
+      errors.push(`[news] post file missing: ${n.file} (id=${n.id})`);
+      continue;
+    }
+
+    const fm = n?.file ? parseFrontMatter(readText(n.file)) : {};
+    const title = String(n?.title || fm?.title || '').trim();
+    const dateRaw = String(n?.date || fm?.date || '').trim();
+    const dateNorm = normalizeDateValue(dateRaw);
+
+    if (!title) errors.push(`[news] missing title in item or front matter (id=${n.id})`);
+    if (!dateRaw) errors.push(`[news] missing date in item or front matter (id=${n.id})`);
+    if (dateRaw) checkDateYYYYMMDD(dateNorm, 'news', errors);
   }
 
   const comm = ensureArray(readJSON('content/community.json'));

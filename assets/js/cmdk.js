@@ -44,6 +44,13 @@
       .trim();
   }
 
+  function formatNewsDate(date) {
+    if (window.NewsMeta && typeof window.NewsMeta.formatDateDisplay === "function") {
+      return window.NewsMeta.formatDateDisplay(date);
+    }
+    return date || "";
+  }
+
   function tokenize(s) {
     const clean = normalizeText(s).replace(/[^0-9a-zа-я]+/gi, " ");
     return clean.split(/\s+/).filter(Boolean);
@@ -370,14 +377,16 @@
     const news = window.NEWS || [];
     news.forEach((n) => {
       if (!n || !n.id) return;
-      const meta = [n.date, ...(n.tags || [])].filter(Boolean).join(" • ");
+      const dateText = n.dateDisplay || formatNewsDate(n.date);
+      const tags = Array.isArray(n.tags) ? n.tags : (n.tags ? [String(n.tags)] : []);
+      const meta = [dateText, ...tags].filter(Boolean).join(" • ");
       const url = `post.html?id=${encodeURIComponent(n.id)}`;
       docs.push(
         docBase({
           title: n.title || "Пост",
           subtitle: `📣 ${meta || "Новости"}`,
           icon: "📣",
-          keywords: [n.excerpt, ...(n.tags || [])],
+          keywords: [n.excerpt, ...tags],
           run: () => (window.location.href = url),
         })
       );
@@ -470,9 +479,17 @@
           : Promise.resolve(),
 
         needNews
-          ? fetch("content/news.json", { cache: "no-store" }).then(r => r.json()).then(d => {
+          ? fetch("content/news.json", { cache: "no-store" }).then(r => r.json()).then(async (d) => {
               const arr = Array.isArray(d) ? d : (d.items || []);
-              window.NEWS = arr;
+              if (window.NewsMeta && typeof window.NewsMeta.hydratePosts === "function") {
+                try {
+                  window.NEWS = await window.NewsMeta.hydratePosts(arr);
+                } catch (e) {
+                  window.NEWS = arr;
+                }
+              } else {
+                window.NEWS = arr;
+              }
               try{ document.dispatchEvent(new CustomEvent("news:loaded", { detail: window.NEWS })); }catch(e){}
             }).catch(() => {})
           : Promise.resolve(),

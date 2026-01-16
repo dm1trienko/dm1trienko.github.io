@@ -18,6 +18,13 @@
     return window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
   }
 
+  function formatDateDisplay(date){
+    if (window.NewsMeta && typeof window.NewsMeta.formatDateDisplay === "function") {
+      return window.NewsMeta.formatDateDisplay(date);
+    }
+    return date || "";
+  }
+
   function enhanceMarkdown(root){
     if (!root) return;
 
@@ -85,7 +92,8 @@
     let posts = [];
     try{
       const r = await fetch("content/news.json", { cache: "no-store" });
-      posts = await r.json();
+      const data = await r.json();
+      posts = Array.isArray(data) ? data : (data.items || []);
     }catch(e){
       if (titleEl) titleEl.textContent = "Ошибка";
       if (bodyEl) bodyEl.innerHTML = "<p class=\"small\">Не удалось загрузить новости.</p>";
@@ -99,29 +107,63 @@
       return;
     }
 
-    // Header
-    document.title = (post.title ? post.title + " — " : "") + "dmitrienok.ru";
-    if (titleEl) titleEl.textContent = post.title || "Пост";
-    $("[data-post-date]").textContent = post.date || "";
-    $("[data-post-tags]").textContent = (post.tags || []).map((t) => "#" + t).join(" ");
+    let mdText = "";
+    let mdBody = "";
+    let mdLoaded = false;
+    let meta = post;
 
-    // Load markdown
+    // Load markdown + front matter
     try{
-      const md = await (await fetch(post.file, { cache: "no-store" })).text();
-      const html = window.marked ? window.marked.parse(md) : `<pre>${escapeHtml(md)}</pre>`;
-      if (bodyEl){
-        bodyEl.innerHTML = html;
-        enhanceMarkdown(bodyEl);
+      mdText = await (await fetch(post.file, { cache: "no-store" })).text();
+      mdLoaded = true;
+      if (window.NewsMeta && typeof window.NewsMeta.parseFrontMatter === "function") {
+        const parsed = window.NewsMeta.parseFrontMatter(mdText);
+        mdBody = parsed.body;
+        if (typeof window.NewsMeta.mergePostMeta === "function") {
+          meta = window.NewsMeta.mergePostMeta(post, parsed.meta, parsed.body);
+        }
+      } else {
+        mdBody = mdText;
       }
     }catch(e){
       if (bodyEl) bodyEl.innerHTML = "<p class=\"small\">Не удалось загрузить файл поста.</p>";
     }
 
+    const dateText = meta?.dateDisplay || formatDateDisplay(meta?.date);
+    const tags = Array.isArray(meta?.tags) ? meta.tags : [];
+    const tagsEl = $("[data-post-tags]");
+
+    // Header
+    document.title = (meta?.title ? meta.title + " — " : "") + "dmitrienok.ru";
+    if (titleEl) titleEl.textContent = meta?.title || "Пост";
+    $("[data-post-date]").textContent = dateText || "";
+    if (tagsEl){
+      tagsEl.innerHTML = "";
+      if (tags.length){
+        tagsEl.hidden = false;
+        tags.forEach((t) => {
+          const span = document.createElement("span");
+          span.className = "tag";
+          span.textContent = t;
+          tagsEl.appendChild(span);
+        });
+      }else{
+        tagsEl.hidden = true;
+      }
+    }
+
+    // Render markdown
+    if (bodyEl && mdLoaded){
+      const html = window.marked ? window.marked.parse(mdBody || mdText) : `<pre>${escapeHtml(mdBody || mdText)}</pre>`;
+      bodyEl.innerHTML = html;
+      enhanceMarkdown(bodyEl);
+    }
+
     // Favorites / Recents (localStorage)
     const store = window.HubStore;
     const storeId = `post:${id}`;
-    const meta = [post.date, ...(post.tags || [])].filter(Boolean).join(" • ");
-    const entry = { id: storeId, title: post.title || "Пост", href: window.location.href, kind: "post", meta };
+    const metaText = [dateText, ...(tags || [])].filter(Boolean).join(" • ");
+    const entry = { id: storeId, title: meta?.title || "Пост", href: window.location.href, kind: "post", meta: metaText };
 
     try{ store?.addRecent?.(entry); }catch(e){}
 

@@ -4,6 +4,30 @@ async function loadJSON(path) {
   return res.json();
 }
 
+function formatDateDisplay(date) {
+  if (window.NewsMeta && typeof window.NewsMeta.formatDateDisplay === "function") {
+    return window.NewsMeta.formatDateDisplay(date);
+  }
+  return date || "";
+}
+
+function dateSortKey(date) {
+  if (window.NewsMeta && typeof window.NewsMeta.dateSortKey === "function") {
+    return window.NewsMeta.dateSortKey(date);
+  }
+  const s = (date || "").toString();
+  const m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!m) return 0;
+  return parseInt(`${m[1]}${m[2]}${m[3]}`, 10);
+}
+
+async function hydrateNewsPosts(posts) {
+  if (window.NewsMeta && typeof window.NewsMeta.hydratePosts === "function") {
+    return window.NewsMeta.hydratePosts(posts);
+  }
+  return posts;
+}
+
 function renderNewsList(posts) {
   const list = document.querySelector('#newsList');
   if (!list) return;
@@ -27,15 +51,31 @@ function renderNewsList(posts) {
 
     const meta = document.createElement('p');
     meta.className = 'item-meta';
-    meta.textContent = [p.date || '', ...(p.tags || [])].filter(Boolean).join(' • ');
+    const dateText = p.dateDisplay || formatDateDisplay(p.date);
+    if (dateText) {
+      const dateEl = document.createElement('span');
+      dateEl.textContent = dateText;
+      meta.appendChild(dateEl);
+    }
 
     const ex = document.createElement('p');
     ex.className = 'small';
     ex.textContent = p.excerpt || '';
 
+    const tagsList = Array.isArray(p.tags) ? p.tags : (p.tags ? [String(p.tags)] : []);
+    const tags = document.createElement('div');
+    tags.className = 'tags';
+    tagsList.slice(0, 6).forEach((t) => {
+      const span = document.createElement('span');
+      span.className = 'tag';
+      span.textContent = t;
+      tags.appendChild(span);
+    });
+
     left.appendChild(h);
-    left.appendChild(meta);
+    if (dateText) left.appendChild(meta);
     if (p.excerpt) left.appendChild(ex);
+    if (tagsList.length) left.appendChild(tags);
 
     const actions = document.createElement('div');
     actions.className = 'item-actions';
@@ -81,7 +121,7 @@ function renderHomeNewsPreview(posts) {
 
     const d = document.createElement('span');
     d.className = 'small';
-    d.textContent = p.date || '';
+    d.textContent = p.dateDisplay || formatDateDisplay(p.date);
 
     li.appendChild(a);
     li.appendChild(d);
@@ -93,9 +133,9 @@ function renderHomeNewsPreview(posts) {
 
 function sortNews(posts){
   return [...posts].sort((a,b) => {
-    const da = a.date || '';
-    const db = b.date || '';
-    if (da !== db) return db.localeCompare(da);
+    const da = typeof a?._dateSort === "number" ? a._dateSort : dateSortKey(a?.date);
+    const db = typeof b?._dateSort === "number" ? b._dateSort : dateSortKey(b?.date);
+    if (da !== db) return db - da;
     return (a.title || '').localeCompare(b.title || '', 'ru');
   });
 }
@@ -103,7 +143,9 @@ function sortNews(posts){
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     const data = await loadJSON('content/news.json');
-    const posts = sortNews(Array.isArray(data) ? data : (data.items || []));
+    const raw = Array.isArray(data) ? data : (data.items || []);
+    const hydrated = await hydrateNewsPosts(raw);
+    const posts = sortNews(hydrated);
     window.NEWS = posts;
     try{ document.dispatchEvent(new CustomEvent("news:loaded", { detail: posts })); }catch(e){}
 
