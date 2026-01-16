@@ -1,3 +1,4 @@
+(() => {
 // Home page helpers: quick search + quick links
 
 function normalizeHomeQuery(s){
@@ -262,3 +263,4 @@ document.addEventListener('DOMContentLoaded', () => {
     renderHomeFavsRecents();
   });
 });
+})();

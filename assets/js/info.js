@@ -1,3 +1,4 @@
+(() => {
 /* Info / Help section
    - Loads content/info.json
    - Renders cards with helpful links
@@ -301,3 +302,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (catalogHost) catalogHost.innerHTML = msg;
   }
 });
+})();

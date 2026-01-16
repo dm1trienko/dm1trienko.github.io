@@ -1,3 +1,4 @@
+(() => {
 /* Polls (опросы/формы)
    - catalogized by category
    - "smart" search: trigram + substring + token containment (typo-tolerant)
@@ -539,3 +540,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (archiveList) archiveList.innerHTML = `<div class="notice">Не получилось загрузить архив опросов. Попробуй обновить страницу или напиши в “Обратная связь”.</div>`;
   }
 });
+})();

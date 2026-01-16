@@ -1,3 +1,4 @@
+(() => {
 /* Keyboard shortcuts
    - Ctrl/Cmd + K : command palette (navigation + search + actions)
    - /            : command palette (quick open)
@@ -69,3 +70,4 @@ document.addEventListener("keydown", (e) => {
     else focusSearch();
   }
 });
+})();

@@ -1,3 +1,4 @@
+(() => {
 /* Calculator catalog (БРС)
    - Catalog with cards + tags + filters
    - Compute result + highlight in table
@@ -696,3 +697,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     resEl.innerHTML = "Не получилось загрузить калькуляторы.";
   }
 });
+})();

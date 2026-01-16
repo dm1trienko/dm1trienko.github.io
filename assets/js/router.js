@@ -1,3 +1,4 @@
+(() => {
 /* Router for top-level tabs on index.html
    - Keeps URL hash in sync: #home, #materials, #schedules, ...
    - Allows deep links from viewer/post pages back to a specific tab.
@@ -80,3 +81,4 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
+})();

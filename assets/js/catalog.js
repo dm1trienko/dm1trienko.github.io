@@ -1,3 +1,4 @@
+(() => {
 /* Materials catalog (Explorer view)
    - folder tree: semester → subject → subfolders (from repo path) → items
    - rendered as a "file explorer" (left tree + right pane)
@@ -148,3 +149,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     host.innerHTML = `<div class="notice">Не получилось загрузить каталог. Попробуй обновить страницу или напиши в “Обратная связь”.</div>`;
   }
 });
+})();

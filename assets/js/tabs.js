@@ -1,3 +1,4 @@
+(() => {
 /* Simple tabs for static pages
    Markup:
    <div class="tabset" data-tabs="name" data-default-tab="id">
@@ -60,3 +61,4 @@ function initTabsets() {
 }
 
 document.addEventListener("DOMContentLoaded", initTabsets);
+})();
