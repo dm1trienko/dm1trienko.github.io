@@ -9,7 +9,7 @@
 */
 
 // Bump VERSION whenever you change assets/content so users get a fresh cache.
-const VERSION = "2026-01-11-5";
+const VERSION = "2026-01-11-6";
 const CACHE = `dmitrienok-cache-${VERSION}`;
 
 const CORE = [
@@ -33,6 +33,7 @@ const CORE = [
   "assets/js/polls.js",
   "assets/js/catalog.js",
   "assets/js/calculator.js",
+  "assets/js/news-meta.js",
   "assets/js/news.js",
   "assets/js/community.js",
   "assets/js/info.js",
