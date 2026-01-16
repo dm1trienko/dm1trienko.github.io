@@ -528,6 +528,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     });
 
+    const searchBtn = document.querySelector("#resourcesSearchBtn");
+    if (searchBtn) {
+      searchBtn.addEventListener("click", () => renderResourcesList(resources));
+    }
+
     const reset = document.querySelector("#resetFilters");
     if (reset) {
       reset.addEventListener("click", () => {
