@@ -9,7 +9,7 @@
 */
 
 // Bump VERSION whenever you change assets/content so users get a fresh cache.
-const VERSION = "2026-01-11-7";
+const VERSION = "2026-01-11-8";
 const CACHE = `dmitrienok-cache-${VERSION}`;
 
 const CORE = [
