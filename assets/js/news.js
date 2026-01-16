@@ -4,6 +4,24 @@ async function loadJSON(path) {
   return res.json();
 }
 
+function initFeedSubscribe() {
+  const btn = document.querySelector('[data-feed-subscribe]');
+  if (!btn) return;
+
+  btn.addEventListener('click', async (e) => {
+    const href = btn.getAttribute('href') || 'feed.xml';
+    const url = new URL(href, window.location.href).toString();
+    e.preventDefault();
+
+    if (typeof window.copyToClipboard === "function") {
+      const ok = await window.copyToClipboard(url);
+      if (ok) return;
+    }
+
+    window.open(url, "_blank", "noopener,noreferrer");
+  });
+}
+
 function formatDateDisplay(date) {
   if (window.NewsMeta && typeof window.NewsMeta.formatDateDisplay === "function") {
     return window.NewsMeta.formatDateDisplay(date);
@@ -141,6 +159,7 @@ function sortNews(posts){
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+  initFeedSubscribe();
   try {
     const data = await loadJSON('content/news.json');
     const raw = Array.isArray(data) ? data : (data.items || []);
