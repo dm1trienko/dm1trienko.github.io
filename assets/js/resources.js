@@ -311,7 +311,7 @@ function getFilteredRanked(resources) {
   return ranked.map((x) => x.item);
 }
 
-function renderList(resources) {
+function renderResourcesList(resources) {
   const list = document.querySelector("#resourcesList");
   const results = document.querySelector("[data-res-results]");
   if (!list) return;
@@ -454,7 +454,7 @@ function applyFilters(resources, f = {}) {
     typeSel.value = labelCandidate;
   }
 
-  renderList(resources);
+  renderResourcesList(resources);
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -510,21 +510,21 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Optionally switch tab to search if tabs exist
         if (window.showTab) window.showTab("materials", "search");
       } else {
-        renderList(resources);
+        renderResourcesList(resources);
       }
     } catch {
-      renderList(resources);
+      renderResourcesList(resources);
     }
 
     // Hook up UI
     ["#searchQ", "#filterType", "#filterSemester", "#filterSubject", "#filterFolder"].forEach((sel) => {
       const el = document.querySelector(sel);
       if (!el) return;
-      el.addEventListener("input", () => renderList(resources));
-      el.addEventListener("change", () => renderList(resources));
+      el.addEventListener("input", () => renderResourcesList(resources));
+      el.addEventListener("change", () => renderResourcesList(resources));
       if (sel === "#searchQ") {
-        el.addEventListener("keyup", () => renderList(resources));
-        el.addEventListener("search", () => renderList(resources));
+        el.addEventListener("keyup", () => renderResourcesList(resources));
+        el.addEventListener("search", () => renderResourcesList(resources));
       }
     });
 
@@ -541,7 +541,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (s) s.value = "";
         if (sub) sub.value = "";
         if (f) f.value = "";
-        renderList(resources);
+        renderResourcesList(resources);
       });
     }
   } catch (e) {
