@@ -1,3 +1,4 @@
+(() => {
 /* Schedules (расписания/календарь/графики)
    - filters: kind / semester / subject / type
    - "smart" search: trigram + substring + token containment (typo-tolerant)
@@ -470,6 +471,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       el.addEventListener("change", () => renderSchedList(items));
     });
 
+    const searchBtn = document.querySelector("#schedSearchBtn");
+    if (searchBtn) {
+      searchBtn.addEventListener("click", () => renderSchedList(items));
+    }
+
     const reset = document.querySelector("#schedReset");
     if (reset) {
       reset.addEventListener("click", () => {
@@ -495,3 +501,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 });
+})();

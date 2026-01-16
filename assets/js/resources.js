@@ -1,3 +1,4 @@
+(() => {
 async function loadJSON(path) {
   const res = await fetch(path, { cache: "no-store" });
   if (!res.ok) throw new Error(`Failed to load ${path}: ${res.status}`);
@@ -556,3 +557,4 @@ document.addEventListener("DOMContentLoaded", async () => {
       list.innerHTML = `<div class="notice">Не получилось загрузить материалы. Попробуй обновить страницу или напиши в “Обратная связь”.</div>`;
   }
 });
+})();
