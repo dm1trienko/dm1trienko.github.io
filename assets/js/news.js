@@ -132,12 +132,17 @@ function renderHomeNewsPreview(posts) {
 }
 
 function sortNews(posts){
-  return [...posts].sort((a,b) => {
-    const da = typeof a?._dateSort === "number" ? a._dateSort : dateSortKey(a?.date);
-    const db = typeof b?._dateSort === "number" ? b._dateSort : dateSortKey(b?.date);
-    if (da !== db) return db - da;
-    return (a.title || '').localeCompare(b.title || '', 'ru');
-  });
+  return [...posts]
+    .map((post, index) => ({ post, index }))
+    .sort((a, b) => {
+      const da = Number.isFinite(a?.post?._dateSort) ? a.post._dateSort : dateSortKey(a?.post?.date);
+      const db = Number.isFinite(b?.post?._dateSort) ? b.post._dateSort : dateSortKey(b?.post?.date);
+      if (da !== db) return db - da;
+      const t = (a?.post?.title || '').localeCompare(b?.post?.title || '', 'ru');
+      if (t !== 0) return t;
+      return a.index - b.index;
+    })
+    .map(({ post }) => post);
 }
 
 document.addEventListener('DOMContentLoaded', async () => {

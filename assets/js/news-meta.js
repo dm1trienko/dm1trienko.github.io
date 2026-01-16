@@ -109,10 +109,13 @@
   }
 
   function dateSortKey(value) {
-    const iso = normalizeDate(value);
+    const s = (value || "").toString().trim();
+    if (!s) return 0;
+    const iso = normalizeDate(s);
     const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-    if (!m) return 0;
-    return parseInt(`${m[1]}${m[2]}${m[3]}`, 10);
+    if (m) return Date.UTC(parseInt(m[1], 10), parseInt(m[2], 10) - 1, parseInt(m[3], 10));
+    const t = Date.parse(iso);
+    return Number.isFinite(t) ? t : 0;
   }
 
   function toPlainText(mdText) {

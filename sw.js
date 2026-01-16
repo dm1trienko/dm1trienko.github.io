@@ -9,7 +9,7 @@
 */
 
 // Bump VERSION whenever you change assets/content so users get a fresh cache.
-const VERSION = "2026-01-11-8";
+const VERSION = "2026-01-11-9";
 const CACHE = `dmitrienok-cache-${VERSION}`;
 
 const CORE = [
@@ -55,11 +55,6 @@ const CORE = [
   // Posts (template examples)
   "posts/welcome.md",
   "posts/howto.md",
-
-  // Demo files
-  "files/demo/grades.xlsx",
-  "files/demo/sample.csv",
-  "files/demo/schedule.csv",
 
   // Meta
   "manifest.webmanifest",

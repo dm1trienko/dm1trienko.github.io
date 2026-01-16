@@ -6,5 +6,17 @@
   {
     "id": "howto",
     "file": "posts/howto.md"
+  },
+  {
+    "id": "algos-thresholds-2025",
+    "file": "posts/algos-thresholds-2025.md"
+  },
+  {
+    "id": "exam-forms-2025-12-25",
+    "file": "posts/exam-forms-2025-12-25.md"
+  },
+  {
+    "id": "grades-matlog-oktch-2025-12-11",
+    "file": "posts/grades-matlog-oktch-2025-12-11.md"
   }
 ]

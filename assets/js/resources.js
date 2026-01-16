@@ -79,16 +79,32 @@ function splitLocalPath(u) {
     });
 }
 
+function splitPathString(s) {
+  const raw = (s || "").toString().trim();
+  if (!raw) return [];
+  const norm = raw.replace(/\s*\/\s*/g, "/").replace(/\\+/g, "/");
+  return norm.split("/").map((x) => x.trim()).filter(Boolean);
+}
+
+function getExplicitPath(item) {
+  if (!item) return [];
+  if (Array.isArray(item.path)) return item.path.map(String).map((s) => s.trim()).filter(Boolean);
+  if (typeof item.path === "string") return splitPathString(item.path);
+  if (typeof item.folder === "string") return splitPathString(item.folder);
+  if (typeof item.dir === "string") return splitPathString(item.dir);
+  return [];
+}
+
 // Subject subfolders (used for catalog + extra filter)
 // Examples:
 //  1_семестр/Матан/Письмак/ВвМА_О_21.pdf -> "Письмак"
 //  1_семестр/Матан/file.pdf             -> "Общее"
-//  files/demo/grades.xlsx               -> "demo"
 function folderLabel(item) {
-  const segs = splitLocalPath(item?.url || "");
+  const explicit = getExplicitPath(item);
+  const segs = explicit.length ? explicit : splitLocalPath(item?.url || "");
   if (!segs.length) return "";
 
-  const dirs = segs.slice(0, -1);
+  const dirs = explicit.length ? segs : segs.slice(0, -1);
   if (!dirs.length) return "";
 
   let i = 0;
@@ -193,12 +209,16 @@ function getSelectedType() {
 function buildSearchIndex(resources) {
   resources.forEach((item) => {
     item._folder = folderLabel(item);
+    const urlSegs = splitLocalPath(item?.url || "");
+    const fileName = urlSegs.length ? urlSegs[urlSegs.length - 1] : "";
     const hayParts = [
       item.title,
       item.description,
       item.semester,
       item.subject,
       item._folder,
+      item.folder,
+      fileName,
       ...(item.tags || []),
     ];
 
@@ -502,6 +522,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (!el) return;
       el.addEventListener("input", () => renderList(resources));
       el.addEventListener("change", () => renderList(resources));
+      if (sel === "#searchQ") {
+        el.addEventListener("keyup", () => renderList(resources));
+        el.addEventListener("search", () => renderList(resources));
+      }
     });
 
     const reset = document.querySelector("#resetFilters");

@@ -157,7 +157,6 @@ python -m http.server 8000
       - `teorminimum_defs_theorems.pdf`
       - `teorminimum_theorems.pdf`
   - `Алгосы/`
-    - `2023_Stepanov.pdf`
     - `2024_Stepanov.pdf`
     - `2025_Stepanov.pdf`
     - `lectures_algosi.pdf`
@@ -168,7 +167,7 @@ python -m http.server 8000
     - `2025_lukashov.pdf`
     - `colloquium_matan.pdf`
     - `IvGE_1.pdf`
-    - `IvGE_2 .pdf`
+    - `IvGE_2.pdf`
     - `nedolectures_matan.pdf`
     - `teorminimum_matan.pdf`
     - `возможный слив билетов.pdf`
@@ -189,7 +188,7 @@ python -m http.server 8000
 - `2_семестр/`
   - `Матан/`
     - `IvGE_1.pdf`
-    - `IvGE_2 .pdf`
+    - `IvGE_2.pdf`
 
 </details>
 
